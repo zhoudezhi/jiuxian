@@ -1,0 +1,92 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body{ background:#f9f9f9;}
+.icon{ background:url(../img/icon.png) no-repeat;}
+.header{ width:100%; background:#339933;}
+.headerCon{ width:770px; height:84px; margin:0 auto; background:#339933;}
+.headerCon img{ margin-top:14px;}
+.mainBox{ width:100%;}
+.mainCon{ width:770px; margin:0 auto; background:#f9f9f9;}
+.itemsWrap{ padding:15px 0 25px; border-bottom:1px dotted #ccc;}
+.itemsWrap em{ font-style:normal;}
+.itemsCon.basicInfor{ padding-top:8px;}
+.itemsCon.basicInfor p{ line-height:32px; height:32px;}
+.itemsCon.basicInfor p *{ display:inline-block; float:left;}
+.itemsCon.basicInfor p b{color:#333; margin-right:25px;}
+.itemsCon.basicInfor p b.browser{ margin-right:6px;}
+.itemsCon .tit01{ font-size:14px; color:#333; font-family:"Microsoft YaHei"; margin-right:15px;}
+.itemsCon .weiyu{ color:#339933; margin-right:5px;}
+.itemsCon .ipAddress{ color:#339933; font-family:"Microsoft YaHei"; margin-right:15px;}
+.itemsCon .ipProvince,.itemsCon .ipType{ color:#339933; margin-right:10px;}
+.itemsCon .ipCity,.itemsCon .ipType{ color:#339933; margin-right:10px;}
+.itemsCon .couFlag{ margin:10px 10px 0 0;}
+.systemVer{ color:#333;}
+.systemVer em{ float:left; display:inline-block;}
+.systemVer img{ float:left; margin:8px 5px 0 0;}
+.agentVer img{ float:left; margin:5px 5px 0 0;}
+.itemsTitle{ height:30px; line-height:30px;}
+.itemsTitle i{ float:left; display:inline-block; width:4px; height:14px; font-size:0; background:#339933; margin:8px 5px 0 0;}
+.broadbandTest .lineList{ margin-top:10px;}
+.lineList li{ line-height:30px; padding-left:12px;}
+.lineList li em{margin-right:20px;}
+.lineList li .testStart{ color:#f00;}
+.lineList li .testOn{ color:#d800d9;}
+.lineList li .testEnd{ color:#339933;}
+.lineList li .textSpeed{display:none;}
+.lineList .btnBox{ margin-top:10px;}
+.lineList .btnBox span{display:none; color:#339933; font-size:14px;}
+.Btn01{ display:inline-block; height:30px; line-height:30px; color:#339933; border:1px solid #339933; background:#f8fff0; border-radius:1px; padding:0 12px; margin-right:15px;}
+.Btn01:hover{ text-decoration:none; color:#339933;}
+.Btn01.off{ color:#ccc; background:#fff; border:1px solid #ccc; display:none; cursor:default;}
+.Btn01.off:hover{ color:#ccc;}
+.proBox{ margin:25px 0 0 12px;}
+.proBox .zhu{ float:left; color:#ff9900; line-height:24px;}
+.proBox .proText{ float:left;}
+.proBox .proText p{ color:#999; line-height:24px; letter-spacing:1px;}
+.webTestTop{ height:58px; border:1px solid #ddd; border-bottom:none;}
+.webTestTop .topLeft{ float:left;}
+.topLeft *{ float:left; display:inline-block;}
+.topLeft span{ line-height:58px; color:#333; margin-left:35px; display:none;}
+.topLeft .state02{ color:#339933;}
+.topLeft span i{ width:34px; height:34px; margin:12px 10px 0 0;}
+.topLeft .state02 i{ background-position:-38px 0;}
+.topRight{ float:right; padding-top:14px;}
+.webTest .tableBox{ margin:10px 0 0 12px;}
+.webTestTable{ width:100%; border:1px solid #ddd; border-collapse:collapse;}
+.webTestTable th{ line-height:34px; background:#f3f3f3; padding-left:3%;}
+.webTestTable td{ line-height:34px; border-top:1px solid #ddd; padding-left:3%;}
+.webTestTable td .website{ white-space:nowrap; overflow:hidden;}
+.website i{ display:inline-block; width:13px; height:13px; background-position:-78px -14px; margin-right:12px; position:relative; top:2px;}
+.website span{ color:#3577bb; font-size:14px; font-family:"Microsoft YaHei";}
+.webTestTable td .notStart{ color:#999;}
+.webTestTable td .inTest{ color:#333;}
+.webTestTable td span.fast{ color:#339933;}
+.webTestTable td i.fast{ display:inline-block; height:7px; width:50px; line-height:0; font-size:0; background:#339933;}
+.webTestTable td span.middle{ color:#ff9900;}
+.webTestTable td i.middle{ display:inline-block; height:7px; width:100px; line-height:0; font-size:0; background:#ff9900;}
+.webTestTable td span.slow{ color:#f00;}
+.webTestTable td i.slow{ display:inline-block; height:7px; width:150px; line-height:0; font-size:0; background:#d00;}
+.webTestTable td i.speedStatus{ display:none;}
+.webTestTable td i.animate{animation:toWidth 1.4s linear; -webkit-animation:toWidth 1.2s linear;}
+.inforForm p{ margin-top:10px;}
+.inforForm p *{ float:left; display:inline-block;}
+.inforForm p .tit03{ color:#333; line-height:28px;}
+.inforForm p .from01{ width:160px; height:26px; border:1px solid #ddd; padding:0 5px; background:#fff;}
+.inforForm p .formPro{ font-weight:normal; margin-left:10px; display:none;}
+.inforForm p .formPro i{ width:10px; height:10px; background-position:-78px 0; overflow:hidden; margin:9px 6px 0 0;}
+.inforForm p .formPro em{ line-height:28px; color:#f00;}
+.inforForm p textarea{ width:580px; height:100px; padding:5px; border:1px solid #ddd; resize:none; background:#fff;}
+.inforForm p .pro{ margin-left:582px; color:#ccc;}
+.inforForm .proP{ margin-top:4px;}
+.submitBox{ margin:40px 0 100px; text-align:center;}
+.submit{ display:inline-block; width:110px; height:42px; line-height:42px; background:#339933; color:#fff; font-size:16px; font-family:"Microsoft YaHei"; border-radius:3px;}
+.submit:hover{ color:#fff; text-decoration:none;}
+@keyframes toWidth{
+	0%{ width:0;}
+	100{ width:100%;}
+	}
+@-webkit-keyframes toWidth{
+	0%{ width:0;}
+	100{ width:100%;}
+	}
+

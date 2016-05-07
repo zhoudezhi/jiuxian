@@ -1,0 +1,62 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/* 
+* Name: 店铺装修（PC端）首页css
+* Copyright: 赵雪珊 
+* Date: 2015-01-13  
+*/
+.editIcon{background:url(../images/editIcon.png) no-repeat;}
+.shopMain{width:100%; min-width:1200px; background:#fcfcfc; overflow:hidden; font-family:'Microsoft YaHei';}
+.shopMain .topNav{ position:relative; color:#fff; height:70px; background:#cc0000; }
+.shopMain .topNav .jxShopLogo{float:left; width:180px; height:70px; margin-left:30px; }
+.shopMain .topNav .userInfoBox{float:right; height:25px; margin:38px 30px 0 0; font-size:14px;}
+.shopMain .topNav .userInfoBox .returnBack{ display:inline-block; height:25px; width:40px; text-align:center; color:#fff;}
+.shopMain .topNav .userInfoBox .returnBack:hover{ text-decoration:none;}
+.homeNav{ background:#33454f;}
+.homeNav .homeNavList{ width:1200px; height:40px; margin:0 auto;}
+.homeNav .homeNavList li{float:left; width:130px; height:40px; line-height:40px; text-align:center; font-size:16px; position:relative;}
+.homeNav .homeNavList li a{ display:inline-block; width:127px; color:#fff;}
+.homeNav .homeNavList li a:hover{ color:#fff; text-decoration:none;}
+.homeNav .homeNavList li i{ float:right; width:3px; height:40px; background-position:-94px -15px;}
+.homeNav .homeNavList li em{ width:12px;  height:6px; position:absolute; left:58px; bottom:0px; background-position:-104px -32px; display:none;}
+.homeNav .homeNavList li.on em{ display:block;}
+.decMain{ width:1200px; margin:40px auto 20px;}
+.decMain .decMain-left{ float:left; width:820px;}
+.decMain .decMain-right{ float:left; width:360px; margin-left:20px;}
+.decMain .decMainTit{ height:38px; line-height:38px; font-size:16px; color:#fff; padding:0 20px; background:#cc0000;}
+
+.decMain .decTemplateBox{ width:818px; border:1px solid #ddd; box-shadow:0 0px 6px -2px #999; background:#fff;}
+.decMain .decTemplate{ padding:30px 13px 20px; overflow:hidden;}
+.decTemplate li{ float:left; width:246px; height:446px; margin:0 7px 15px; border:1px solid #ddd; box-shadow:0 0px 6px -2px #999;}
+.templateItem .templatePic{ width:218px; height:337px; text-align:center; overflow:hidden; padding:15px 15px 0;}
+.templateItem .templatePic img{ width:218px; height:auto;}
+.templateItem .templateName{ height:36px; line-height:36px; font-size:14px; padding:0 18px; margin-bottom:8px;}
+.templateItem .templateOpe{ height:50px; line-height:50px; background:#eee; padding:0 18px; position:relative;}
+.templateItem .templateOpe span{ display:inline-block; float:left; margin-right:22px;}
+.templateItem .templateOpe span i{ display:inline-block; float:left; width:20px; height:20px; margin:16px 8px 0 0;}
+.templateItem .templateOpe span.ope-use i{ background-position:-68px -26px;}
+.templateItem .templateOpe span.ope-prev i{ background-position:-44px -26px;}
+.templateItem .templateOpe span a{ display:inline-block; float:left; font-size:14px; color:#888; font-weight:bold;}
+.templateItem .templateOpe span a:hover{ color:#888; text-decoration:none;}
+.templateItem .templateOpe em{ position:absolute; top:0; left:25px; width:12px; height:8px; background-position:-150px -34px;}
+.decTemplate .templatePre{ background:#f5f4f3; text-align:center;}
+.decTemplate .templatePre .templateIcon{ margin-top:160px;}
+.decTemplate .templatePre .templateIcon i{ display:inline-block; width:62px; height:62px; background-position:0 -124px;}
+.decTemplate .templatePre .templateText{ line-height:22px; font-size:14px; color:#bbb; font-weight:bold; margin-top:12px;}
+
+.decMain .templateTopBox{ width:358px; border:1px solid #ddd; box-shadow:0 0px 6px -2px #999; background:#fff;}
+.decMain .templateTop{ padding:30px 20px 20px; overflow:hidden;}
+.templateTop li{ height:20px; line-height:20px; margin-bottom:18px;}
+.templateTop li .temTop-num{ float:left; width:18px; height:20px; font-size:14px; color:#598296; font-weight:bold; padding-left:6px; margin-right:10px;}
+.templateTop li .temTop-con{ float:left; width:284px; }
+.templateTop li .temTop-con h4{ float:left; font-size:14px; color:#375b70;}
+.templateTop li .temTop-con p{ float:right; font-size:14px; color:#999;}
+.templateTop li .temTop-con2{ display:none; float:left; width:284px; }
+.templateTop li .temTop-con2 .temTop-pic{ float:left; width:54px; height:54px; background-position:-72px -124px; margin-right:10px;}
+.templateTop li .temTop-con2 h4{ font-size:14px; color:#375b70;}
+.templateTop li .temTop-con2 p{ font-size:14px; color:#999; padding-top:8px;}
+.templateTop li.on{ height:54px;}
+.templateTop li.on .temTop-num{ color:#fff; background:url(../images/editIcon.png) no-repeat -17px -28px; margin:16px 10px 0 0;}
+.templateTop li.on .temTop-con{ display:none;}
+.templateTop li.on .temTop-con2{ display:block;}
+.templateTop .temTopIll{ width:318px; height:140px; background:url(../images/temTop.jpg) no-repeat center center; margin:60px 0 20px;}

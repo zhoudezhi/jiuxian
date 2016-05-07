@@ -1,0 +1,19 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/* 
+* Name: 店铺装修-默认模板2
+* Copyright: 赵雪珊 
+* Date: 2015-01-12  
+*/
+.shopNavCon li.on a{ background:#ea2763;}
+.shopNavSearch .search-text{ border:1px solid #ea2763;}
+.shopNavSearch .search-but{ background:#ea2763;}
+/*商品列表*/
+.shopComBox .sComIntro{ background:#f6f6f6;}
+.shopComBox .sComIntro .sCom-name a{ color:#333;}
+.shopComBox .sComIntro .sCom-pro{ color:#666; }
+.shopComBox .sComIntro .sCom-price span{ color:#ea2763;}
+.shopComBox .sBayBut{ border-radius:3px; background:url(../images/bbg04.jpg) repeat-x left center;}
+.shopComFilter .filterBox .fil-tit span{ background:#ea2763;}
+.shopDefaultTit{ background:#ea2763;}
+.shopComFilter .fil-con li a:hover{ color:#ea2763;}

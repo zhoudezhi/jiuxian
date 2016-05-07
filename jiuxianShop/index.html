@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商家后台</title>
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/userHome.css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+	var winHeight = $(window).height()-150;
+	var conHeight = winHeight-$(".mainBox .rightCon").height()-45;
+	if(conHeight>0){
+		$(".mainBox .rightBox").css({"height":winHeight});
+	}
+	$(window).bind("resize",function(){
+		var reHeight = $(window).height();
+		if(conHeight>0){
+			$(".mainBox .rightBox").css({"height":winHeight});
+		}
+	});
+	$(".tabTitle li").click(function(e) {
+        var index = $(".tabTitle li").index($(this));
+		$(this).addClass("on").siblings().removeClass("on");
+		$(this).parents(".tabTitle").next().find(".tabBox").hide().eq(index).show();
+		
+    });
+	
+});
+
+</script>
+</head>
+<body>
+
+<div class="header"><div class="headerBox clearfix">
+	<div class="leftBox clearfix"><a class="logo" href="javascript:;"><img src="images/logo.png" /></a><span>商家后台</span></div>
+    <div class="rightBox clearfix"><span>欢迎您：</span><span class="userName">jxwmaotai</span><a href="javascript:;">[退出]</a></div>
+</div></div>
+<div class="navigate"><div class="navListBox">
+	<ul class="clearfix">
+    	<li class="on"><a href="index.html">首页</a></li>
+    	<li><a href="shopManage.html">我的店铺</a></li>
+        <li><a href="javascript:;">商品管理</a></li>
+        <li><a href="javascript:;">促销管理</a></li>
+        <li><a href="javascript:;">订单管理</a></li>
+        <li><a href="javascript:;">我的配送</a></li>
+	</ul>
+</div></div>
+<div class="mainBody">
+    <div class="mainBox clearfix">
+        <div class="leftNav">
+        	<ul>
+            	<li class="on"><em><i class="homeIocn"></i></em><a href="index.html">商家首页</a></li>
+           		<li><em><i class="homeIocn"></i></em><a href="javascript:;">网站地图</a></li>
+            </ul>
+        </div>
+        <div class="rightBox">
+        	<div class="breadCrumb"><span>您所在的位置：</span><a href="index.html">首页</a><i>&gt;</i><span>商家首页</span></div>
+        	<div class="rightCon">
+            	<div class="conBox_1 clearfix">
+                <div class="left">
+                	<div class="shopInfoBox clearfix">
+                    	<div class="userImg"><img src="images/userImg.jpg" width="80" height="80" /></div>
+                        <div class="userInfo">
+                        	<ul class="clearfix">
+                            	<li><span>用户名称：</span><em>tongtian</em></li>
+                                <li><span>上次登录时间：</span><em>2014-12-24 08:34:47</em></li>
+                                <li><span>商家ID：</span><em>56859</em></li>
+                                <li><span>店铺ID：</span><em>52804</em></li>
+                                <li><span>商家类型：</span><em>SOP</em></li>
+                                <li><span>商铺名称：</span><a href="javascript:;" target="_blank">通天旗舰店</a></li>
+                        	</ul>
+                        </div>
+                    </div>
+                	<div class="taskBox">
+                    <ul class="clearfix">
+                    	<li><a href="javascript:;"><span>待结算确认</span><em class="number">(0)</em></a>
+                        <li><a href="javascript:;"><span>待处理订单</span><em class="number">(0)</em></a>
+                        <li><a href="javascript:;"><span>待审核促销</span><em class="number">(0)</em></a>
+                        <li><a href="javascript:;"><span>即将到期促销</span><em class="number">(0)</em></a>
+                        <li><a href="javascript:;"><span>待处理工单</span><em class="number">(0)</em></a>
+                        <li><a href="javascript:;"><span>待处理售后单</span><em class="number">(0)</em></a>
+                        <li><a href="javascript:;"><span>待退款审核</span><em class="number">(0)</em></a>
+                        <li><a href="javascript:;"><span>待处理赔付单</span><em class="number">(0)</em></a>
+                        <li><a href="javascript:;"><span>商品购买咨询</span><em class="number">(0)</em></a>
+                    </ul>
+                    </div>
+                </div>        
+                <div class="right">
+                	<div class="helpTitle"><i class="homeIocn"></i><span>帮助中心</span></div>
+                    <div class="helpBox">
+                    	<a class="on" href="javascript:;" target="_blank">新手必读</a>
+                        <a href="javascript:;" target="_blank">店铺装修</a>
+                        <a href="javascript:;" target="_blank">添加商品</a>
+                        <a href="javascript:;" target="_blank">创建促销</a>
+                        <a href="javascript:;" target="_blank">供应商结算</a>
+                        <a href="javascript:;" target="_blank">开放平台规则</a>
+                    </div>
+                </div>
+                </div>
+            	<div class="conBox_2 clearfix">
+                	<div class="left">
+                    <div class="commonBox">
+                    	<div class="commonTop">
+                        	<i class="homeIocn"></i><span>最新公告</span>
+                            <a href="javascript:;" target="_blank">更多新上线功能>></a>
+                            <a href="javascript:;" target="_blank">更多公告>></a>
+                        	
+                        </div>
+                        <div class="commonCon">
+                        <div class="conTitle tabTitle"><ul class="clearfix"><li class="on">最新通知</li><li>新上线功能</li></ul></div>
+                   		<div class="conBox">
+                        <div class="newNotice tabBox" >
+                        	<ul>
+                            	<li class="on clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="on clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="on clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="on clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="on clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>  
+                            </ul>
+                        </div>
+                        <div class="newFunction tabBox"  style="display:none;">
+                        	<ul>
+                            	<li class="on clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="on clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="on clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="on clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+                                <li class="clearfix"><span class="mark">▪</span><a class="title" href="javascript:;" target="_blank">2014年度十大最美前台评选活动上线通告</a><span class="time">[2014-12-24]</span></li>
+
+                            </ul>
+                        </div>
+                        </div>
+                        </div>
+                     </div>
+                    </div>
+                
+                	<div class="right">
+                    	<div class="topBox">
+                        	<div class="commonBox">
+                                <div class="commonTop">
+                                    <i class="homeIocn"></i><span>单品销售排行榜</span>                  
+                                    <a target="_blank" href="javascript:;">更多>></a>
+                                </div>
+                                <div class="commonCon">
+                                <div class="conTitle"><ul class="clearfix"><li class="rankTilte">排名</li><li class="idTitle">商品ID</li><li class="nameTitle">商品名称</li><li class="salesTtile">销量</li></ul></div>
+                                <div class="conBox tabBox">
+                                    <ul>
+                                        <li class="on clearfix"><span class="rank">1</span><span class="goodId">123456789</span><a target="_blank" href="javascript:;" class="goodTitle">2014年度十大最美前台评选活动上线通告</a><span class="sales">55588</span></li>
+                                        <li class="clearfix"><span class="rank">2</span><span class="goodId">123456789</span><a target="_blank" href="javascript:;" class="goodTitle">2014年度十大最美前台评选活动上线通告</a><span class="sales">55588</span></li>
+                                        <li class="on clearfix"><span class="rank">3</span><span class="goodId">123456789</span><a target="_blank" href="javascript:;" class="goodTitle">2014年度十大最美前台评选活动上线通告</a><span class="sales">55588</span></li>
+                                        <li class="clearfix"><span class="rank">4</span><span class="goodId">123456789</span><a target="_blank" href="javascript:;" class="goodTitle">2014年度十大最美前台评选活动上线通告</a><span class="sales">55588</span></li>
+                                        <li class="on clearfix"><span class="rank">5</span><span class="goodId">123456789</span><a target="_blank" href="javascript:;" class="goodTitle">2014年度十大最美前台评选活动上线通告</a><span class="sales">55588</span></li> 
+                                    </ul>                            
+                                </div>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="bottomBox">
+                        	<div class="commonBox">
+                                <div class="commonTop">
+                                    <i class="homeIocn"></i><span>销售情况</span>                  
+                                    <a target="_blank" href="javascript:;">更多>></a>
+                                </div>
+                                <div class="commonCon">
+                                <div class="conTitle"><ul class="clearfix"><li class="projectTilte">项目</li><li class="orderTitle">订单量</li><li class="moneyTitle">订单金额</li></ul></div>
+                                <div class="conBox tabBox">
+                                    <ul>
+                                        <li class="on clearfix"><span class="project">日销量</span><span class="order">123456789</span><span class="money">55588</span></li>
+                                        <li class="clearfix"><span class="project">日销量</span><span class="order">123456789</span><span class="money">55588</span></li>
+                                 
+                                       
+                                    </ul>                            
+                                </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        
+        </div>
+    </div>
+</div>
+</body>
+</html>

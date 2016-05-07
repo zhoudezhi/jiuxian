@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商家后台</title>
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/userHome.css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+    var winHeight = $(window).height();
+	$(".mainBox .leftNav").css({"height":winHeight-120});
+	$(window).bind("resize",function(){
+		var reHeight = $(window).height();
+		$(".mainBox .leftNav").css({"height":reHeight-120});	
+	});
+
+	
+});
+
+
+</script>
+</head>
+<body>
+
+<div class="header"><div class="headerBox clearfix">
+	<div class="leftBox clearfix"><a class="logo" href="javascript:;"><img src="images/logo.png" /></a><span>商家后台</span></div>
+    <div class="rightBox clearfix"><span>欢迎您：</span><span class="userName">jxwmaotai</span><a href="javascript:;">[退出]</a></div>
+</div></div>
+<div class="navigate"><div class="navListBox">
+	<ul class="clearfix">
+    	<li class="on"><a href="javascript:;">首页</a></li>
+    	<li><a href="javascript:;">我的店铺</a></li>
+        <li><a href="javascript:;">商品管理</a></li>
+        <li><a href="javascript:;">促销管理</a></li>
+        <li><a href="javascript:;">订单管理</a></li>
+        <li><a href="javascript:;">我的配送</a></li>
+	</ul>
+</div></div>
+<div class="mainBody">
+    <div class="mainBox clearfix">
+        <div class="leftNav">
+        	<ul>
+            	<li class="on"><em><i class="homeIocn"></i></em><a href="javascript:;">商家首页</a></li>
+           		<li><em><i class="homeIocn"></i></em><a href="javascript:;">商家首页</a></li>
+            </ul>
+        
+        </div>
+        <div class="rightBox">
+        	<div class="breadCrumb"><span>您所在的位置：</span><a href="index.html">首页</a><i>&gt;</i><span>商家首页</span></div>
+        	<div class="rightCon"></div>
+        
+        </div>
+        <div class="editPageBox">
+                        <div class="pageTotal">共<span>500</span>条记录</div>
+                        <div class="pageNumber">
+                            <a class="firstPage" href="javascript:;">首页</a><a class="prev" href="javascript:;">上一页</a><a class="num on" href="javascript:;">1</a><a class="num" href="javascript:;">2</a><a class="num" href="javascript:;">3</a><a class="pull" href="javascript:;">…</a><a class="num" href="javascript:;">20</a><a class="next" href="javascript:;">下一页</a><a class="lastPage" href="javascript:;">尾页</a>
+                        </div>
+                        <div class="pagePoint"><span>跳转到<input type="text" maxlength="4">页</span><a class="poiBut" href="javascript:;">GO</a></div>
+                    </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

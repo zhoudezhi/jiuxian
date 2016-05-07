@@ -1,0 +1,69 @@
+//主页轮播
+$(function(){
+	var iMax=2;
+	var num=0;
+	var timer=null;
+	var oBigLi=$('#bigUl li').get();  //
+	//主轮播按钮定位
+	$("#small").css('width',$("#small li").length*26);
+	tab();
+	$('#bigUl li:first').css({'opacity':'1','z-index':'1'});
+	
+	$('#small li').each(function(i){
+		$(this).bind('mouseover',function(){
+			//alert(num+'|'+i)
+			if(num==i) return
+			$('#small li').removeClass('active');
+			$(this).addClass('active');
+
+			$('#bigUl li').eq(i).css({'opacity':'0','z-index':iMax+1}).animate({opacity:1},500);
+			num=i;
+			
+			iMax++;
+		})
+	})
+	$('.mav a').mouseover(function(){
+		var n=$('.mav a').index($(this));
+		//alert(n);
+		$('.mav span').css('display','block');
+		$('.mav span').eq(n).hide();	
+	})
+	$('.mav a').mouseout(function(){
+
+		$('.mav span').hide();	
+	})
+	
+	$('#turn').mouseover(function(){
+		clearInterval(timer);
+	})
+	
+	$('#turn').mouseout(function(){
+		tab();
+	})
+	
+	
+    function tab(){
+		timer=setInterval(function(){
+			num++;
+			if(num==6)
+			{
+				num=0;	
+			}
+			iMax++;
+			$('#bigUl li').eq(num).css({'opacity':0,'z-index':iMax}).animate({opacity:1},800)
+			$('#small li').removeClass('active');
+			$('#small li').eq(num).addClass('active');
+			
+		},2400)	
+	}
+})
+
+
+
+//按钮样式
+
+.smallBtn{ position:absolute; width:100%; left:0; top:385px; text-align:center; z-index:1010;}
+#small{ margin:0  auto;}
+#small li{ float:left; margin-right:10px; display:inline;  width:16px; height:16px; line-height:0; font-size:0;}
+#small li a{  display:block; width:100%; height:100%; background:#b8b8b8; border-radius:50%; box-shadow:0 0 5px rgba(57, 57, 57, 0.6);}
+#small li.active a,#small li a:hover{ background:#d30311;}

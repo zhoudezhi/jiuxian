@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图片管理</title>
+<link rel="stylesheet" type="text/css" href="../../../css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/frame.css" />
+<!--<link rel="stylesheet" type="text/css" href="js/uploadify/uploadify.css" />-->
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/decPublic.js"></script>
+<!--<script type="text/javascript" src="js/uploadify/jquery.uploadify.js"></script>-->
+<script type="text/javascript">
+$(document).ready(function(){
+
+	/*装修模块高度控制start*/
+	var winHeight2 = $(window).height();
+	$(".mainEditCon").css({"height":winHeight2-71});
+	$(window).bind("resize",function(){
+		var reHeight2 = $(window).height();
+		$(".mainEditCon").css({"height":reHeight2-71});
+	});
+	
+	
+
+
+       
+   
+	
+});
+</script>
+</head>
+<body>
+<div class="shopMain">
+	<div class="topNav clearfix">
+    	<a class="jxShopLogo" href="javascript:;"><img src="images/JXShop_logo.png" alt="" /></a>
+        <div class="navList">
+        	<ul class="clearfix">
+        	<li><i class="editIcon"></i><a class="returnBack" href="indexPC.html">首页</a><em class="editIcon"></em></li>
+            <li><i class="editIcon"></i><a class="returnBack" href="home.html">店铺装修</a><em class="editIcon"></em></li>
+            <li><i class="editIcon"></i><a class="returnBack" href="promotionsDec.html">活动装修</a><em class="editIcon"></em></li>
+            <li class="on"><a class="returnBack" href="picManage.html">图片管理</a><em class="editIcon"></em></li>
+            </ul>
+        </div>
+        
+        <div class="userInfoBox">
+        <span>你好，</span>
+        <span class="userName">userName</span>
+        <span>，欢迎进入酒仙网店铺运营平台！</span>
+        <a class="returnBack" href="javascript:;">退出</a>
+        </div>
+    </div>
+    <div class="shopBox clearfix">
+    	<div class="leftNav">
+        <div class="pageBox">
+        <span>图片管理</span>
+        </div>
+        
+        <div class="pageList">
+        <ul>
+        <li>
+        	<div class="sort"><a href="picManage.html"><i class="editIcon"></i>全部图片</a></div>
+        </li>
+        <li class="on">
+        	<div class="sort"><a href="picUpload.html"><i class="editIcon"></i>上传图片</a></div>
+        </li>
+        <li>
+        	<div class="sort"><a href="picManageSort.html"><i class="editIcon"></i>图片分类</a></div>
+        </li>
+        </ul>
+        </div>
+        <div class="navSwitch"><i class="editIcon"></i></div>
+        </div>
+        <div class="mainEdit">
+            <div class="mainEditCon">
+                <div class="editManageBox">
+                	<!--<div class="editProBox"><span class="editPro">总共使用188.88MB的图片空间（上限为2048MB）</span></div>-->
+                    <div class="editOpeBox"><a id="file_upload_1" class="but editBut03" href="javascript:;">选择图片</a><span class="ope-tit">上传到：</span><select class="ope-sel"><option value="0">默认分类</option><option value="1">1</option><option value="2">2</option></select><select class="ope-sel"><option value="0">默认分类</option><option value="1">1</option><option value="2">2</option></select><a class="but editBut02" href="picManageSort.html">创建分类</a></div>
+                	<table class="editManTable picManageSort">
+                    <thead>
+                    <tr>
+                    	<th width="25%">文件名</th><th width="25%">状态</th><th width="25%">大小</th><th width="25%">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><span class="name" title="圣诞头图_05.jpg">圣诞头图_05.jpg</span></td>
+                        <td>等待上传...</td>
+                        <td>50.01kb</td>
+                        <td><a class="editTabBut01 delete" href="javascript:;">删除</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="name" title="圣诞头图_05.jpg">圣诞头图_05.jpg</span></td>
+                        <td>等待上传...</td>
+                        <td>50.01kb</td>
+                        <td><a class="editTabBut01 delete" href="javascript:;">删除</a></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <div class="editOpeBox"><a class="but editBut04 saveBtn" href="javascript:;">上传</a><a class="but editBut02 cancelBtn" href="javascript:;">取消</a><a class="but editBut02" href="javascript:;">清空上传记录</a></div>
+                    <div class="editProBox"><span class="editPro">支持常见图片格式，比如：jpg、jpeg、gif、png，单张容量最大300KB，单次批量最多可上传20张！</span></div>
+                </div>
+        	</div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

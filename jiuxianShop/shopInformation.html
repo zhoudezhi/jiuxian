@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>店铺装修设置</title>
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/userHome.css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+    var winHeight = $(window).height()-150;
+	var conHeight = winHeight-$(".mainBox .rightCon").height()-45;
+	if(conHeight>0){
+		$(".mainBox .rightBox").css({"height":winHeight});
+	}
+	$(window).bind("resize",function(){
+		var reHeight = $(window).height();
+		if(conHeight>0){
+			$(".mainBox .rightBox").css({"height":winHeight});
+		}
+	});
+
+});
+</script>
+</head>
+<body>
+
+<div class="header"><div class="headerBox clearfix">
+	<div class="leftBox clearfix"><a class="logo" href="javascript:;"><img src="images/logo.png" /></a><span>商家后台</span></div>
+    <div class="rightBox clearfix"><span>欢迎您：</span><span class="userName">jxwmaotai</span><a href="javascript:;">[退出]</a></div>
+</div></div>
+<div class="navigate"><div class="navListBox">
+	<ul class="clearfix">
+    	<li><a href="index.html">首页</a></li>
+    	<li class="on"><a href="shopManage.html">我的店铺</a></li>
+        <li><a href="javascript:;">商品管理</a></li>
+        <li><a href="javascript:;">促销管理</a></li>
+        <li><a href="javascript:;">订单管理</a></li>
+        <li><a href="javascript:;">我的配送</a></li>
+	</ul>
+</div></div>
+<div class="mainBody">
+    <div class="mainBox clearfix">
+        <div class="leftNav">
+        	<ul>
+            	<li><em><i class="homeIocn"></i></em><a href="shopManage.html">店铺管理</a></li>
+           		<li class="on"><em><i class="homeIocn"></i></em><a href="shopInformation.html">店铺装修设置</a></li>
+            </ul>
+        
+        </div>
+        <div class="rightBox">
+        	<div class="breadCrumb"><span>您所在的位置：</span><a href="index.html">首页</a><i>&gt;</i><a href="javascript:;">我的店铺</a><i>&gt;</i><a href="shopInformation.html">店铺装修设置</a><i>&gt;</i><span>店铺基本设置</span></div>
+        	<div class="rightCon">
+            	<div class="shopInforTit"><a class="Tit on" href="shopInformation.html">店铺基本设置</a><a class="Tit" href="myShop/shopDecoration/shopDecoPC/indexPC.html" target="_blank">店铺装修（PC端）</a><a class="myshop" href="javascript:;" target="_blank">查看我的店铺&nbsp;>></a></div>
+                <div class="shopInforCon">
+                	<h3>填写基本信息</h3>
+                	<div class="inforItems">
+                    	<p><b>店铺名称：</b><span class="infor">通天旗舰店</span></p>
+                    </div>
+                    <div class="inforItems">
+                    	<p><b>主营类目：</b><span class="infor">主营类目只能选择一次，设置生效后不可更改！</span></p>
+                        <p><b></b><select><option value="0">默认</option><option value="1">酒类</option></select></p>
+                    </div>
+                    <div class="inforItems">
+                    	<p><b>店铺Logo：</b><span class="infor">仅支持jpg,png和gif，默认风格模板内logo大小为180*60，大小限制在100k以内</span></p>
+                        <p><b></b><a class="iBut" href="javascript:;">选择文件</a></p>
+                    </div>
+                    <div class="inforItems">
+                    	<p><b>首页Banner：</b><span class="infor">仅支持jpg,png和gif，默认风格模板内banner大小为980*250，大小限制在300k以内</span></p>
+                        <p><b></b><a class="iBut" href="javascript:;">选择文件</a></p>
+                    </div>
+                    <div class="inforItems">
+                    	<p><b>店铺简介：</b><span class="infor">店铺简介将显示在店铺列表中，限制在20个字以内。</span></p>
+                        <p><b></b><input class="tex tex01" type="text" maxlength="20" /></p>
+                    </div>
+                    <div class="inforItems">
+                    	<p><b>品牌简介：</b><span class="infor">店铺简介将显示在店铺列表中，限制在500个字以内。</span></p>
+                        <p><b></b><textarea></textarea></p>
+                    </div>	
+                    <div class="shopBut inforBut"><a class="but01 Submit" href="javascript:;">保存</a><a class="but02 Cancel" href="javascript:;">取消</a></div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,980 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>店铺装修--公共头部</title>
+<link rel="stylesheet" type="text/css" href="../../../css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/colorpicker/colorpicker.css" />
+<link rel="stylesheet" type="text/css" href="css/datepicker/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="css/datepicker/jquery-ui-timepicker-addon.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-1.3.4.css" />
+<link rel="stylesheet" type="text/css" href="css/frame.css" />
+<link rel="stylesheet" type="text/css" href="shopTemplate/css/templateDefault.css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
+<script type="text/javascript" src="js/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
+<script type="text/javascript" src="js/colorpicker/colorpicker.js"></script>
+<script type="text/javascript" src="js/colorpicker/eye.js"></script>
+<script type="text/javascript" src="js/colorpicker/utils.js"></script>
+<script type="text/javascript" src="js/datepicker/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/datepicker/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="js/datepicker/jquery-ui-timepicker-zh-CN.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox-1.3.4.js"></script>
+<script type="text/javascript" src="js/json2.js"></script>
+<script type="text/javascript" src="js/modules.js"></script>
+<script type="text/javascript" src="js/decPublic.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	/*装修模块高度控制start*/
+	var winHeight2 = $(window).height();
+	$(".mainEditCon").css({"height":winHeight2-101});
+	$(window).bind("resize",function(){
+		var reHeight2 = $(window).height();
+		$(".mainEditCon").css({"height":reHeight2-101});
+	});
+});
+</script>
+</head>
+<body>
+<div class="shopMain">
+	<div class="topNav clearfix">
+    	<a class="jxShopLogo" href="javascript:;"><img src="images/JXShop_logo.png" alt="" /></a>
+        <div class="navList">
+        	<ul class="clearfix">
+        	<li><i class="editIcon"></i><a class="returnBack" href="indexPC.html">首页</a><em class="editIcon"></em></li>
+            <li class="on"><i class="editIcon"></i><a class="returnBack" href="Decoration.html">店铺装修</a><em class="editIcon"></em></li>
+            <li><i class="editIcon"></i><a class="returnBack" href="promotionsDec.html">活动装修</a><em class="editIcon"></em></li>
+            <li><a class="returnBack" href="picManage.html">图片管理</a><em class="editIcon"></em></li>
+            </ul>
+        </div>
+        <div class="userInfoBox">
+        <span>你好，</span>
+        <span class="userName">userName</span>
+        <span>，欢迎进入酒仙网店铺运营平台！</span>
+        <a class="returnBack" href="javascript:;">退出</a>
+       </div>  
+    </div>
+    <div class="shopBox clearfix">
+    	<div class="leftNav">
+        <div class="pageBox">
+        <em class="editIcon"></em>
+        <span>页面列表</span>
+        <a href="customAdd.html" title="添加自定义页面"><i class="editIcon"></i></a>
+        </div>
+        <div class="templateMarket">
+        <a href="myTemplate.html">模板<i class="editIcon"></i></a>   
+        </div>
+        <div class="pageList">
+        <ul>
+        <li class="on"><div class="sort"><a href="publicHeader.html"><i class="editIcon"></i>店铺公共头部</a></div></li>
+        <li><div class="sort"><a href="home.html"><i class="editIcon"></i>店铺首页</a></div></li>
+        <li class="userPage"><div class="sort"><a href="javascript:;"><i class="editIcon"></i>自定义页面</a></div><div class="sub"><a href="javascript:;">页面1</a><a href="javascript:;">页面2</a></div></li>
+        </ul>
+        </div>
+        <div class="navSwitch"><i class="editIcon"></i></div>
+        </div>
+        <div class="mainEdit">
+        <div class="topTool">
+            <div class="toolOpera">
+                    <div class="operateBox">
+                        <a href="javascript:;" class="preview"><i class="editIcon"></i>预览</a>
+                        <a href="javascript:;" class="save"><i class="editIcon"></i>保存</a>
+                        <a href="javascript:;" class="reback"><i class="editIcon"></i>还原</a>    
+                        <a class="release" href="javascript:;"><i class="editIcon"></i>发布</a>            
+                    </div>                
+            	</div>
+            </div>
+            <div class="mainEditCon tabBox">
+              <div class="layoutContain" id="layoutContain">
+                    <div class="layoutBox"><div class="layoutCon layoutWidAuto" layoutname="通栏布局(100%)">
+                        <div class="layoutOne"><div class="addModules"><a href="javascript:;" class="addModuleBtn">添加模块</a></div></div></div>
+                    </div>
+                    <div class="layoutBox"><div class="layoutCon layoutWidAuto" layoutname="通栏布局(100%)">
+                        <div class="layoutOne"><div class="addModules"><a href="javascript:;" class="addModuleBtn">添加模块</a></div></div></div>
+                    </div>
+               </div>
+               <!--<div id="insertLayout" class="insertLayout">
+                    <div class="addLayoutBox">
+                        <a href="javascript:;" class="addLayoutBtn"><strong>+</strong>添加布局</a>        	    	
+                    </div>
+               </div>-->
+        	</div>
+            
+            <div class="pageAttribute tabBox" style="display:none;">
+    			<div class="attributeBox">
+					<ul>
+                   		 <li class="on"><i class="xing">*</i><span class="title">页面名称：</span><input type="text" class="popForm popForm03" /></li>
+                         <li><i class="xing"></i><span class="title">页面地址：</span><span>http://www.jiuxian.com</span></li>
+                         <li><i class="xing">*</i><span class="title">页面标题：</span><input type="text" class="popForm popForm03" /><span class="tip">页面在网页显示的页面title</span></li>
+                         <li><i class="xing">*</i><span class="title">页面关键字：</span><input type="text" class="popForm popForm03" /><span class="tip">关键字之间用英文逗号（,）来分隔</span></li>	
+                         <li><i class="xing">*</i><span class="title">页面描述：</span><input type="text" class="popForm popForm04" maxlength="50"/><span class="tip">描述文字限制在50字以内</span></li>                         
+                         <li><i class="xing"></i><span class="title">页面背景：</span><input type="text" class="popForm popForm01 bgColor" /></li>	
+                         <li><i class="xing"></i><span class="title">背景图片：</span><input type="text" class="popForm popForm03" /><a class="selectBgImg" href="javascript:;">图片选择</a><a href="javascript:;" class="deleteBgImg">删除背景图</a></li>
+                         <li><i class="xing">*</i><span class="title">平铺方式：</span>
+                         	<select class="bgRepeat"><option value="repeat">平铺</option><option value="repeat-x">横向平铺</option><option value="repeat-y">纵向平铺</option><option value="no-repeat">不平铺</option></select>
+                          </li>
+					</ul>
+				</div>
+                <div class="btnBox"><a href="javascript:;" class="saveBtn">保存</a><a href="javascript:;" class="cancelBtn">取消</a></div>
+             </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!--编辑定位层start-->
+<div class="editToolBar">
+	<div class="toolBarBox">
+    	<div class="toolOprea">
+        <span class="editName">自定义内容区</span>
+        <a class="conEdit"  href="javascript:;">编辑</a>
+        <a class="other"  href="javascript:;" poptype="otherPop">其他</a>
+        <a class="conDelete editIcon" href="javascript:;"></a>        
+        </div>
+        <div class="addModulesBox"><a class="addModuleBtn" href="javascript:;">添加模块</a></div>
+    
+    </div>
+</div>
+<!--编辑定位层end-->
+
+
+
+<!--布局定位层start-->
+<div class="layoutToolBar clearfix">
+    <span class="layoutName">布局类型</span>
+    <a class="layoutSet" href="javascript:;" title="设置">设置</a>
+    <span class="layoutOperate clearfix">
+        <!--<a href="javascript:;" class="editIcon layoutDel" title="删除"></a>-->
+        <a href="javascript:;" class="editIcon layoutUp" title="上移"></a>
+        <a href="javascript:;" class="editIcon layoutDown"  title="下移"></a>
+    </span>
+</div>
+<!--布局定位层end-->
+
+<!--选择布局弹窗start -->
+<div class="commonPop layoutPop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">添加布局</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+<div class="tipBox"><i class="editIcon"></i><span>温馨提示：双击可直接完成添加布局</span></div>
+<div class="layoutAllBox">
+<ul class="clearfix">
+<li layoutType="layoutOne">
+<div class="layoutDemo">
+<div class="one"></div>
+</div>
+<span class="layoutName">通栏布局(100%)</span>
+</li>
+<li layoutType="layoutOne990">
+<div class="layoutDemo">
+<div class="one"></div>
+</div>
+<span class="layoutName">通栏布局(990)</span>
+</li>
+<li layoutType="layoutTwo_1">
+<div class="layoutDemo">
+<div class="layoutTwo_1 clearfix">
+<div class="left moduleDemo"></div>
+<div class="right moduleDemo"></div>
+</div>
+</div>
+<span class="layoutName">左右布局(490+490)</span>
+</li>
+<li layoutType="layoutTwo_2">
+<div class="layoutDemo">
+<div class="layoutTwo_2 clearfix">
+<div class="left moduleDemo"></div>
+<div class="right moduleDemo"></div>
+</div>
+</div>
+<span class="layoutName">左右布局(240+740)</span>
+</li>
+<li layoutType="layoutTwo_3">
+<div class="layoutDemo" >
+<div class="layoutTwo_3 clearfix">
+<div class="left moduleDemo"></div>
+<div class="right moduleDemo"></div>
+</div>
+</div>
+<span class="layoutName">左右布局(740+240)</span>
+</li>
+<li layoutType="layoutTwo_4">
+<div class="layoutDemo">
+<div class="layoutTwo_4 clearfix">
+<div class="left moduleDemo"></div>
+<div class="right moduleDemo"></div>
+</div>
+</div>
+<span class="layoutName">左右布局(330+650)</span>
+</li>
+<li layoutType="layoutTwo_5">
+<div class="layoutDemo">
+<div class="layoutTwo_5 clearfix">
+<div class="left moduleDemo"></div>
+<div class="right moduleDemo"></div>
+</div>
+</div>
+<span class="layoutName">左右布局(650+330)</span>
+</li>
+<li layoutType="layoutThree_1">
+<div class="layoutDemo">
+<div class="layoutTwo_6 clearfix">
+<div class="left moduleDemo"></div>
+<div class="middle moduleDemo"></div>
+<div class="right moduleDemo"></div>
+</div>
+</div>
+<span class="layoutName">左中右布局(240+490+240)</span>
+</li>
+<li layoutType="layoutThree_2">
+<div class="layoutDemo">
+<div class="layoutTwo_7 clearfix">
+<div class="left moduleDemo"></div>
+<div class="middle moduleDemo"></div>
+<div class="right moduleDemo"></div>
+</div>
+</div>
+<span class="layoutName">左中右布局(240+240+490)</span>
+</li>
+<li layoutType="layoutThree_3">
+<div class="layoutDemo">
+<div class="layoutTwo_8 clearfix">
+<div class="left moduleDemo"></div>
+<div class="middle moduleDemo"></div>
+<div class="right moduleDemo"></div>
+</div>
+</div>
+<span class="layoutName">左中右布局(490+240+240)</span>
+</li>
+<li layoutType="layoutNav">
+<div class="layoutDemo">
+<div class="layoutTwo_9 clearfix">
+<div class="right"></div>
+</div>
+</div>
+<span class="layoutName">右导航</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!--选择布局弹窗end -->
+
+<!--添加模块start -->
+<div class="commonPop addModulesPop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">添加模块</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain clearfix">
+<div class="addModulesLeft">
+<ul>
+<li class="on">公共头部</li>
+<!--<li>基础模块</li>
+<li>公共头部</li>-->
+
+</ul>
+</div>
+<div class="addModulesRight">
+<div class="rightBox first">
+<ul>
+<li class="shopSign">
+<span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">店招</p><p class="modulesDetail">此模块数据是从店铺后台调取过来，在店铺装修中不能设置</p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType=""  modulesName="店招">置入</a></div>
+</li>
+<li class="addNav">
+<span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">导航</p><p class="modulesDetail">可以添加页面的链接地址到导航中， 供用户快速切换浏览</p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType="addNavPop" modulesName="导航" >置入</a></div>
+</li>
+<li class="userCon">
+<span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">自定义内容区</p><p class="modulesDetail">您可以在里面自由的发挥，如编写html代码、css代码 等</p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType="userConPop" modulesName="自定义内容区">置入</a></div>
+</li>
+</ul>
+</div>
+<!--<div class="rightBox">
+<ul>
+<li class="userCon">
+<span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">自定义内容区</p><p class="modulesDetail">您可以在里面自由的发挥，如编写html代码、css代码 等</p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType="userConPop" modulesName="自定义内容区">置入</a></div>
+</li>
+<li class="countdown">
+<span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">倒计时</p><p class="modulesDetail">为店铺全场活动执行倒计时</p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType="countdownPop"  modulesName="倒计时">置入</a></div>
+</li>
+<li class="coupon">
+<span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">优惠券</p><p class="modulesDetail">为促销活动设置优惠券，需要上传优惠券图片</p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType="couponPop"  modulesName="优惠券">置入</a></div>
+</li>
+<li class="shopSearch">
+<span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">店内搜索</p><p class="modulesDetail">提供商品搜索输入框，此模块数据是从店铺后台调取过来，在店铺装修中不能设置</p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType=""  modulesName="店内搜索">置入</a></div>
+</li>
+<li class="goods">
+<span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">商品</p><p class="modulesDetail">商家可在该模块里通过”ID“和”搜索”录入商品，可添加“店长推荐”“热卖” “新品上市”等促销标签</p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType="goodsPop" modulesName="商品">置入</a></div>
+</li>
+<li class="slider">
+<span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">图片轮播</p><p class="modulesDetail">主要应用于活动和商品的推广，可在模块设置里添加图片和图片链接地址，实现图片轮播效果</p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType="sliderPop" modulesName="图片轮播">置入</a></div>
+</li>
+<li class="adverse">
+<span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">广告位</p><p class="modulesDetail">商家可以在里面自由上传广告图片和链接</p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType="adversePop" modulesName="广告位">置入</a></div>
+</li>
+<li class="classify">
+<span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">商品分类</p><p class="modulesDetail">展示商家编辑的商品类目名称。用户点击这些商品类目名称可以查看该类目下的所有商品（支持二级类目）</p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType="classifyPop" modulesName="商品分类">置入</a></div>
+</li>
+<li class="leaderboard"><span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">排行榜</p><p class="modulesDetail">展示商家编辑的销售排行榜。用户点击这些商品可以查看商品详情 </p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType="leaderboardPop" modulesName="排行榜">置入</a></div>
+</li>
+<li class="anchorNav">
+<span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">右导航</p><p class="modulesDetail">需要上传导航图片，可以根据锚点设置右侧导航 </p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType="anchorNavPop" modulesName="右导航">置入</a></div>
+</li>
+</ul>
+</div>-->
+
+
+<!--<div class="rightBox">
+<ul>
+<li class="shopProfile">
+<span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">店铺简介</p><p class="modulesDetail">此模块数据是从店铺后台调取过来，在店铺装修中不能设置</p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType=""  modulesName="店铺简介">置入</a></div>
+<li class="shopNotice">
+<span class="modulesIcon editIcon"></span><div class="modulesTypeBox"><p class="modulesName">店铺公告</p><p class="modulesDetail">可以设置店铺的优惠，促销等公告信息</p></div>
+<div class="insertBtnBox"><a class="insertBtn" href="javascript:;" popType="shopNoticePop" modulesName="店铺公告" >置入</a></div>
+</li>
+</li>
+</ul>
+</div>-->
+</div>
+</div>
+</div>
+</div>
+<!--添加模块end -->
+
+<!--自定义内容start -->
+<div class="commonPop userConPop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">自定义内容区</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+<div class="btnBox popOperate"><span class="opeTit">内容宽度：</span><input class="popForm popForm05" type="text" id="userConWidth" /><span class="opeTit">像素</span><span class="opePro">使用通栏100％布局时，请设置宽度。</span></div>
+<div class="textaeraBox"><textarea id="xheditor_1"  class="xheditor" style="width: 100%; height:150px;"></textarea></div>
+<div class="tipBox"><i class="editIcon"></i><span>温馨提示：自定义样式命名必须以.user为前缀，如.user-banner{}或.user_baner{}或.userbane</span></div>
+<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">保存</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a><a class="popBut03 openFile" href="javascript:;">展开文件选择器</a></div>
+</div>
+<div class="popContain fileChooserBox">
+	<div class="popComTitle"><div class="pcTit on"><a href="javascript:;" class="selBut">从图片库中选择</a></div><div class="pcTit"><a href="javascript:;" class="selBut">上传新图片</a></div></div>
+    <div class="popConItem">
+    	<div class="btnBox popOperate"><span class="opeTit">分类：</span><select class="opeSel"><option value="0">默认分类</option><option value="1">1</option><option value="2">2</option></select><span class="opeTit">图片名称：</span>
+        <input class="popForm popForm05" type="text" /><a class="popBut05 serachBtn" href="javascript:;">搜索</a></div>
+        <div class="popTableBox">
+           <ul class="popPicList clearfix">
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="1234adgadggdgfdh5.jpg">1234adgadggdgfdh5.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           </ul>
+        </div>
+        <div class="popPageBox">
+            <div class="pageTotal">共<span>500</span>条记录</div>
+            <div class="pageNumber">
+            	<a class="firstPage" href="javascript:;">首页</a><a class="prev" href="javascript:;">上一页</a><a class="num on" href="javascript:;">1</a><a class="num" href="javascript:;">2</a>
+                <a class="pull" href="javascript:;">…</a><a class="num" href="javascript:;">4</a><a class="num" href="javascript:;">5</a><a class="next" href="javascript:;">下一页</a><a class="lastPage" href="javascript:;">尾页</a>
+            </div>
+            <div class="pagePoint"><span>跳转到<input type="text" maxlength="4" />页</span><a class="poiBut" href="javascript:;">GO</a></div>
+        </div>
+    </div>
+    <div class="popConItem" style=" display:none;">
+    	<div class="btnBox popOperate"><a href="javascript:;" class="popBut03">选择文件</a><span class="opeTit">上传到：</span><select class="opeSel"><option value="0">默认分类</option><option value="1">1</option><option value="2">2</option></select>
+        <a href="javascript:;" class="popBut04">上传</a><a href="javascript:;" class="popBut02 cancelBtn">取消</a></div>
+        <div class="popTableBox">
+            <table class="popTable">
+                <tr>
+                    <th width="20%">文件名</th><th width="20%">图片</th><th width="25%">状态</th><th width="20%">大小</th><th width="15%">操作</th>
+                </tr>
+            </table>
+            <div class="tableConList">
+            <table class="popTable">
+                <tr>
+                    <td width="20%"><div class="popPicName" title="12345.jpg">12345.jpg</div></td>
+                    <td width="20%"><div class="popSmallPic"><img src="images/floorSlider_1.jpg" /></div></td>
+                    <td width="25%">等待上传</td>
+                    <td width="20%">50.8kb</td>
+                    <td width="15%"><a class="popTabOpe conDelete" href="javascript:;" title="删除"></a></td>
+                </tr>
+                <tr>
+                    <td width="20%"><div class="popPicName" title="12345.jpg">12345.jpg</div></td>
+                    <td width="20%"><div class="popSmallPic"><img src="images/floorSlider_1.jpg" /></div></td>
+                    <td width="25%">等待上传</td>
+                    <td width="20%">50.8kb</td>
+                    <td width="15%"><a class="popTabOpe conDelete" href="javascript:;" title="删除"></a></td>
+                </tr>
+                <tr>
+                    <td width="20%"><div class="popPicName" title="12345.jpg">12345.jpg</div></td>
+                    <td width="20%"><div class="popSmallPic"><img src="images/floorSlider_1.jpg" /></div></td>
+                    <td width="25%">等待上传</td>
+                    <td width="20%">50.8kb</td>
+                    <td width="15%"><a class="popTabOpe conDelete" href="javascript:;" title="删除"></a></td>
+                </tr>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!--自定义内容end -->
+
+<!--店铺公告start -->
+<div class="commonPop shopNoticePop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">店铺公告</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+<div class="tipBox"><i class="editIcon"></i><span>温馨提示：可以设置关于运费、促销等信息公告</span></div>
+<div class="textaeraBox"><textarea class="popTextaera noticeDetail"></textarea></div>
+<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">保存</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a></div>
+</div>
+</div>
+</div>
+<!--店铺公告end -->
+
+<!--全场倒计时start -->
+<div class="commonPop countdownPop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">全场倒计时</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+	<div class="countdownCon">
+    <p><span>倒计时开始时间：</span><input type="text" class="popForm popForm05 time timeStart"></p>
+    <p><span>倒计时结束时间：</span><input type="text" class="popForm popForm05 time timeEnd"></p>
+    </div>
+	<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">保存</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a></div>
+</div>
+</div>
+</div>
+<!--全场倒计时end -->
+
+<!--商品弹窗start -->
+<div class="commonPop goodsPop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">商品</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+<div class="btnBox"><a class="popBut03 sukInput" href="javascript:;" popType="SUKInputPop">SUK录入</a><a class="popBut03 choseInput" href="javascript:;" popType="choseInputPop">筛选录入</a>
+<a class="popBut02 deleteGoods" href="javascript:;">删除</a></div>
+<div class="popTableBox">
+    <table class="popTable">
+        <tr>
+           <th width="6%"><input type="checkbox" class="allCheck" /></th> <th width="10%">ID</th><th width="22%">名称</th><th width="22%">广告语</th><th width="15%">促销标签</th><th width="10%">价格</th><th width="15">操作</th>
+        </tr>
+    </table>
+    <div class="tableConList">
+        <table class="popTable">
+        <tr>
+            <td width="6%"><input type="checkbox"  /></td>
+            <td width="10%" class="goodId">1234569</td>
+            <td width="22%"><div class="goodInfoBox"><em class="goodTitle" title="53°飞天茅台">53°飞天茅台</em><input class="popForm popForm01 userGoodTitle" type="text" placeholder="自定义商品名称" /></div></td>                  
+            <td width="22%"><div class="goodInfoBox"><em class="slogan">默认广告语</em><input type="text" class="popForm popForm01 userSlogan" placeholder="自定义广告语"></div></td>       
+            <td width="15%"><select class="tabSel promotion"><option value="0">请选择</option><option value="1">标签1</option><option value="2">标签2</option></select></td>
+            <td width="10%" class="goodPrice">199</td>
+            <input type="hidden" class="imgSrc" value="src" />
+            <input type="hidden" class="imgHref" value="href" />
+            <td width="15%"><a title="上移" href="javascript:;" class="popTabOpe moveUp"></a><a title="下移" href="javascript:;" class="popTabOpe moveDown"></a><a title="删除" href="javascript:;" class="popTabOpe conDelete"></a></td>         
+        </tr>
+        <tr>
+            <td width="6%"><input type="checkbox"  /></td>
+            <td width="10%" class="goodId">1234569</td>
+            <td width="22%"><div class="goodInfoBox"><em class="goodTitle" title="53°飞天茅台">53°飞天茅台</em><input class="popForm popForm01 userGoodTitle" type="text" placeholder="自定义商品名称" /></div></td>                  
+            <td width="22%"><div class="goodInfoBox"><em class="slogan">默认广告语</em><input type="text" class="popForm popForm01 userSlogan" placeholder="自定义广告语"></div></td>       
+            <td width="15%"><select class="tabSel promotion"><option value="0">请选择</option><option value="1">标签1</option><option value="2">标签2</option></select></td>
+            <td width="10%" class="goodPrice">199</td>
+            <input type="hidden" class="imgSrc" value="src" />
+            <input type="hidden" class="imgHref"  value="href"/>
+            <td width="15%"><a title="上移" href="javascript:;" class="popTabOpe moveUp"></a><a title="下移" href="javascript:;" class="popTabOpe moveDown"></a><a title="删除" href="javascript:;" class="popTabOpe conDelete"></a></td>         
+        </tr>
+        </table>
+    </div>
+</div>
+<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">保存</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a></div>
+</div>
+</div>
+</div>
+<!--商品弹窗end -->
+
+<!--排行榜start -->
+<div class="commonPop leaderboardPop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">排行榜</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+<div class="popOperate"><div class="box"><i class="xing">*</i><span class="opeTit">排行榜标题：</span><input type="text" class="popForm popForm02 boardTitle"></div></div>
+<div class="btnBox"><a class="popBut03 sukInput" href="javascript:;" popType="SUKInputPop">SUK录入</a><a class="popBut03 choseInput" href="javascript:;" popType="choseInputPop">筛选录入</a><a class="popBut02 deleteGoods" href="javascript:;">删除</a></div>
+<div class="popTableBox">
+    <table class="popTable">
+        <tr>
+           <th width="10%"><input type="checkbox" class="allCheck" /></th> <th width="20%">ID</th><th width="30%">名称</th><th width="15%">价格</th><th width="25">操作</th>
+        </tr>
+    </table>
+    <div class="tableConList">
+        <table class="popTable">
+        <tr>
+            <td width="10%"><input type="checkbox"  /></td>
+            <td width="20%" class="goodId">1234569</td>
+            <td width="30%"><em class="goodTitle" title="53°飞天茅台">53°飞天茅台</em></td>                     
+            <td width="15%" class="goodPrice">199</td>
+            <input type="hidden" class="imgSrc" value="src" />
+            <input type="hidden" class="imgHref" value="href" />
+            <td width="25%"><a title="上移" href="javascript:;" class="popTabOpe moveUp"></a><a title="下移" href="javascript:;" class="popTabOpe moveDown"></a><a title="删除" href="javascript:;" class="popTabOpe conDelete"></a></td>         
+        </tr>
+         <tr>
+            <td width="10%"><input type="checkbox"  /></td>
+            <td width="20%" class="goodId">1234569</td>
+            <td width="30%"><em class="goodTitle" title="53°飞天茅台">53°飞天茅台</em></td>                     
+            <td width="15%" class="goodPrice">199</td>
+            <input type="hidden" class="imgSrc" value="src" />
+            <input type="hidden" class="imgHref" value="href" />
+            <td width="25%"><a title="上移" href="javascript:;" class="popTabOpe moveUp"></a><a title="下移" href="javascript:;" class="popTabOpe moveDown"></a><a title="删除" href="javascript:;" class="popTabOpe conDelete"></a></td>         
+        </tr>
+        </table>
+    </div>
+</div>
+<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">保存</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a></div>
+</div>
+</div>
+</div>
+<!--排行榜end -->
+
+<!--广告位弹窗start -->
+<div class="commonPop adversePop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">广告位</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+<div class="popTableBox">
+    <table class="popTable">
+        <tr>
+            <th width="45%">图片</th><th width="55%">链接</th>
+        </tr>
+    </table>
+    <div class="tableConList">
+        <table class="popTable">
+            <tr>
+                <td width="45%"><span class="upImgBtn"><i>选择图片</i><img  class="adverseImg bigImg" src="images/floorSlider_1.jpg" href="images/floorSlider_1.jpg" /></td>                  
+                <td width="55%"><input type="text" class="popForm popForm02 adverseHref" value="http://"></td>                   
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">保存</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a></div>
+</div>
+</div>
+</div>
+<!--广告位弹窗end -->
+<!--优惠券弹窗start -->
+<div class="commonPop couponPop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">优惠券</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+<div class="btnBox popOperate"><div class="box"><i class="xing">*</i><span class="opeTit">活动ID：</span><input type="text" class="popForm popForm04 activeId" /></div></div>
+<div class="btnBox"><a class="popBut03 addCouponBtn" href="javascript:;">增加优惠券</a></div>
+<div class="popTableBox">
+	<table class="popTable">
+        <tr>
+            <th width="35%">图片</th><th width="35%">优惠券ID</th><th width="30%">操作</th>
+        </tr>
+    </table>
+    <div class="tableConList">
+    <table class="popTable">
+        <tr>
+            <td width="35%"><span class="upImgBtn"><i>选择图片</i><img  class="couponImg bigImg" src="images/quan.jpg" href="images/quan.jpg" /></td>
+            <td width="35%"><input type="text" class="popForm popForm04 couponId"></td>
+            <td width="30%"><a title="上移" href="javascript:;" class="popTabOpe moveUp"></a><a title="下移" href="javascript:;" class="popTabOpe moveDown"></a><a title="删除" href="javascript:;" class="popTabOpe conDelete"></a></td>
+        </tr>
+    </table>
+    </div>
+</div>
+<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">保存</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a></div>
+</div>
+</div>
+</div>
+<!--优惠券弹窗end -->
+
+<!--轮播start -->
+<div class="commonPop sliderPop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">图片轮播</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+<div class="popOperate"><div class="box"><input class="sliderSeL slider_1" name="sliderSeL" id="slider_1" type="radio" checked="checked" /><label for="slider_1"><span class="opeTit">渐隐渐现效果</span></label>
+<input class="sliderSeL slider_2" name="sliderSeL" id="slider_2" type="radio" /><label><span class="opeTit">水平滚动效果</span></label></div></div>
+<div class="popOperate"><div class="box"><i class="xing">*</i><span class="opeTit">轮播高度：</span><input type="text" class="popForm popForm03 sliderHeight" /><span class="opeTit">像素</span></div><div class="box"><i class="xing">*</i>
+<span class="opeTit">间隔时间：</span><input class="popForm popForm03 sliderTime" type="text" /><span class="opeTit">秒</span></div></div>
+<div class="btnBox"><a class="popBut03 addSliderBtn" href="javascript:;">增加轮播图</a></div>
+<div class="popTableBox">
+	<table class="popTable">
+        <tr>
+            <th width="25%">图片</th><th width="15%">背景颜色</th><th width="45%">链接</th><th width="15%">操作</th>
+        </tr>
+    </table>
+    <div class="tableConList">
+    <table class="popTable">
+        <tr>
+            <td width="25%"><span class="upImgBtn"><i>选择图片</i><img  class="sliderImg bigImg" src="images/floorSlider_1.jpg" href="images/floorSlider_1.jpg" /></span></td>
+            <td width="15%"><input type="text" class="popForm popForm04 bgColor" maxlength="6"></td>
+            <td width="45%"><input type="text" class="popForm popForm06 imgHref" value="http://"></td>
+            <td width="15%"><a title="上移" href="javascript:;" class="popTabOpe moveUp"></a><a title="下移" href="javascript:;" class="popTabOpe moveDown"></a><a title="删除" href="javascript:;" class="popTabOpe conDelete"></a></td>
+        </tr>
+        <tr>
+            <td width="25%"><span class="upImgBtn"><i>选择图片</i><img  class="sliderImg bigImg" src="images/floorSlider_1.jpg" href="images/floorSlider_1.jpg" /></td>
+            <td width="15%"><input type="text" class="popForm popForm04 bgColor" maxlength="6"></td>
+            <td width="45%"><input type="text" class="popForm popForm06 imgHref" value="http://"></td>
+            <td width="15%"><a title="上移" href="javascript:;" class="popTabOpe moveUp"></a><a title="下移" href="javascript:;" class="popTabOpe moveDown"></a><a title="删除" href="javascript:;" class="popTabOpe conDelete"></a></td>
+        </tr>
+        <tr>
+            <td width="25%"><span class="upImgBtn"><i>选择图片</i><img  class="sliderImg bigImg" src="images/floorSlider_1.jpg" href="images/floorSlider_1.jpg" /></td>
+            <td width="15%"><input type="text" class="popForm popForm04 bgColor" maxlength="6"></td>
+            <td width="45%"><input type="text" class="popForm popForm06 imgHref" value="http://"></td>
+            <td width="15%"><a title="上移" href="javascript:;" class="popTabOpe moveUp"></a><a title="下移" href="javascript:;" class="popTabOpe moveDown"></a><a title="删除" href="javascript:;" class="popTabOpe conDelete"></a></td>
+        </tr>
+    </table>
+    </div>
+</div>
+<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">保存</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a></div>
+</div>
+</div>
+</div>
+<!--轮播end -->
+
+<!--商品分类start -->
+<div class="commonPop classifyPop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">商品分类</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+<div class="btnBox"><a class="popBut03 addClassify" href="javascript:;">增加分类</a></div>
+<div class="popTableBox">
+	<table class="popTable">
+        <tr>
+            <th width="35%">分类名称</th><th width="45%">添加子分类</th><th width="20%">操作</th>
+        </tr>
+    </table>
+    <div class="tableConList">
+    <table class="popTable">
+        <tr class="firstClassify">
+            <td width="35%"><input type="text" class="popForm popForm01"></td>
+            <td width="45%"><div class="btnBox"><a class="popBut04 addSecond" href="javascript:;">添加子分类</a></div></td>  
+            <td width="20%"><a title="上移" href="javascript:;" class="popTabOpe moveUp"></a><a title="下移" href="javascript:;" class="popTabOpe moveDown"></a><a title="删除" href="javascript:;" class="popTabOpe conDelete"></a></td>
+        </tr>
+        <tr class="secondClassify">
+            <td colspan="2"><div class="secondBox"><span>子分类：</span><input type="text" class="popForm popForm01" value=""><span>链接：</span><input type="text" class="popForm popForm02" value=""></div></td> 
+            <td width="20%"><a title="删除" href="javascript:;" class="popTabOpe conDelete"></a></td>
+        </tr>
+       <tr class="firstClassify">
+            <td width="35%"><input type="text" class="popForm popForm01"></td>
+            <td width="45%"><div class="btnBox"><a class="popBut04 addSecond" href="javascript:;">添加子分类</a></div></td>
+            <td width="20%"><a title="上移" href="javascript:;" class="popTabOpe moveUp"></a><a title="下移" href="javascript:;" class="popTabOpe moveDown"></a><a title="删除" href="javascript:;" class="popTabOpe conDelete"></a></td>
+        </tr>
+       <tr class="firstClassify">
+            <td width="35%"><input type="text" class="popForm popForm01"></td>
+            <td width="45%"><div class="btnBox"><a class="popBut04 addSecond" href="javascript:;">添加子分类</a></div></td>
+            <td width="20%"><a title="上移" href="javascript:;" class="popTabOpe moveUp"></a><a title="下移" href="javascript:;" class="popTabOpe moveDown"></a><a title="删除" href="javascript:;" class="popTabOpe conDelete"></a></td>
+        </tr>
+    </table>
+    </div>
+</div>
+<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">保存</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a></div>
+</div>
+</div>
+</div>
+<!--商品分类end -->
+
+
+<!--导航弹窗start-->
+<div class="commonPop addNavPop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">导航</span><a href="javascript:;" class="popClose editIcon"></a></div>
+<div class="popContain clearfix">
+    <div class="btnBox"><a href="javascript:;" class="popBut03 addNavBtn">增加导航</a></div>
+    <div class="popTableBox">
+    	<table class="popTable">
+        <tr>
+            <th width="30%">名称</th><th width="50%">链接地址</th><th width="20%">操作</th>
+        </tr>
+        </table>
+        <div class="tableConList">
+            <table class="popTable">
+                <tr>
+                    <td width="30%"><input class="popForm popForm01" type="text" /></td>
+                    <td width="50%"><input class="popForm popForm02" type="text" value="http://" /></td>
+                    <td width="20%"><a class="popTabOpe moveUp" href="javascript:;" title="上移"></a><a class="popTabOpe moveDown" href="javascript:;" title="下移"></a><a class="popTabOpe conDelete" href="javascript:;" title="删除"></a></td>
+                </tr>
+                <tr>
+                    <td width="30%"><input class="popForm popForm01" type="text" /></td>
+                    <td width="50%"><input class="popForm popForm02" type="text" value="http://" /></td>
+                    <td width="20%"><a class="popTabOpe moveUp" href="javascript:;" title="上移"></a><a class="popTabOpe moveDown" href="javascript:;" title="下移"></a><a class="popTabOpe conDelete" href="javascript:;" title="删除"></a></td>
+                </tr>
+                <tr>
+                    <td width="30%"><input class="popForm popForm01" type="text" /></td>
+                    <td width="50%"><input class="popForm popForm02" type="text" value="http://" /></td>
+                    <td width="20%"><a class="popTabOpe moveUp" href="javascript:;" title="上移"></a><a class="popTabOpe moveDown" href="javascript:;" title="下移"></a><a class="popTabOpe conDelete" href="javascript:;" title="删除"></a></td>
+                </tr>
+                <tr>
+                    <td width="30%"><input class="popForm popForm01" type="text" /></td>
+                    <td width="50%"><input class="popForm popForm02" type="text" value="http://" /></td>
+                    <td width="20%"><a class="popTabOpe moveUp" href="javascript:;" title="上移"></a><a class="popTabOpe moveDown" href="javascript:;" title="下移"></a><a class="popTabOpe conDelete" href="javascript:;" title="删除"></a></td>
+                </tr>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="btnBox"><a href="javascript:;" class="popBut01 saveBtn">保存</a><a href="javascript:;" class="popBut02 cancelBtn">取消</a></div>
+</div>
+</div>
+</div>
+<!--导航弹窗end-->
+
+<!--右导航start -->
+<div class="commonPop anchorNavPop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">右导航</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+<div class="popOperate">
+	<div class="box"><i class="xing">*</i><span class="opeTit">背景图片：</span><input type="text" class="popForm popForm02 anchorImg" ><a href="javascript:;" class="openFile">文件选择器</a></div>
+</div>
+<div class="popOperate">
+	<div class="box"><i class="xing">*</i><span class="opeTit">图片高度：</span><input type="text" class="popForm popForm03 imgHeight" ><span class="opeTit">像素</span></div>
+    <div class="box"><i class="xing">*</i><span class="opeTit">图片宽度：</span><input type="text" class="popForm popForm03 imgWidth" ><span class="opeTit">像素</span></div>
+	<div class="box"><span class="opeTit">上边距：</span><input type="text" class="popForm popForm03 marginTop" ><span class="opeTit">像素</span></div>
+</div>
+<div class="btnBox"><a class="popBut03 addAnchorBtn" href="javascript:;">增加锚点</a></div>
+<div class="popTableBox">
+	<table class="popTable">
+        <tr>
+            <th width="15%">锚点链接</th><th width="15%">链接高度</th><th width="20%">操作</th>
+        </tr>
+    </table>
+    <div class="tableConList">
+    <table class="popTable">
+        <tr>
+            <td width="15%"><input type="text" class="popForm popForm04" value="#"></td>
+            <td width="15%"><input type="text" class="popForm popForm04">像素</td>    
+            <td width="20%"><a class="popTabOpe conDelete" href="javascript:;" title="删除"></a></td>   
+        </tr>
+        <tr>
+            <td width="15%"><input type="text" class="popForm popForm04" value="#"></td>
+            <td width="15%"><input type="text" class="popForm popForm04">像素</td>    
+            <td width="20%"><a class="popTabOpe conDelete" href="javascript:;" title="删除"></a></td>        
+        </tr>
+        <tr>
+            <td width="15%"><input type="text" class="popForm popForm04" value="#"></td>
+            <td width="15%"><input type="text" class="popForm popForm04">像素</td>  
+            <td width="20%"><a class="popTabOpe conDelete" href="javascript:;" title="删除"></a></td>    
+        </tr>
+    </table>
+    </div>
+</div>
+<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">保存</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a></div>
+</div>
+</div>
+</div>
+<!--右导航end -->
+
+
+<!--文件选择器start-->
+<div class="commonPop selectorPop secondPop" style=" display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">文件选择器</span><a href="javascript:;" class="popClose editIcon"></a></div>
+<div class="popContain fileChooserBox">
+    <div class="popComTitle"><div class="pcTit on"><a href="javascript:;" class="selBut">从图片库中选择</a></div><div class="pcTit"><a href="javascript:;" class="selBut">上传新图片</a></div></div>
+    <div class="popConItem">
+    	<div class="btnBox popOperate"><span class="opeTit">分类：</span><select class="opeSel"><option value="0">默认分类</option><option value="1">1</option><option value="2">2</option></select>
+        <span class="opeTit">图片名称：</span><span class="popSearch"><input class="popForm popForm05" type="text" /><a class="popBut05 serachBtn" href="javascript:;">搜索</a></span></div>
+        <div class="popTableBox">
+           <ul class="popPicList clearfix">
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="1234adgadggdgfdh5.jpg">1234adgadggdgfdh5.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           <li><div class="pop-pic"><img src="images/floorSlider_1.jpg" /></div><div class="pop-picName" title="12345.jpg">12345.jpg</div></li>
+           </ul>
+        </div>
+        <div class="popPageBox">
+            <div class="pageTotal">共<span>500</span>条记录</div>
+            <div class="pageNumber">
+            	<a class="firstPage" href="javascript:;">首页</a><a class="prev" href="javascript:;">上一页</a><a class="num on" href="javascript:;">1</a><a class="num" href="javascript:;">2</a>
+                <a class="pull" href="javascript:;">…</a><a class="num" href="javascript:;">4</a><a class="num" href="javascript:;">5</a><a class="next" href="javascript:;">下一页</a>
+                <a class="lastPage" href="javascript:;">尾页</a>
+            </div>
+            <div class="pagePoint"><span>跳转到<input type="text" maxlength="4" />页</span><a class="poiBut" href="javascript:;">GO</a></div>
+        </div>
+    </div>
+    <div class="popConItem" style=" display:none;">
+    	<div class="btnBox popOperate"><a href="javascript:;" class="popBut03">选择文件</a><span class="opeTit">上传到：</span>
+       		 <select class="opeSel"><option value="0">默认分类</option><option value="1">1</option><option value="2">2</option></select>
+       		 <a href="javascript:;" class="popBut04">上传</a><a href="javascript:;" class="popBut02 cancelBtn">取消</a></div>
+        <div class="popTableBox">
+            <table class="popTable">
+                <tr>
+                    <th width="20%">文件名</th><th width="20%">图片</th><th width="25%">状态</th><th width="20%">大小</th><th width="15%">操作</th>
+                </tr>
+            </table>
+            <div class="tableConList">
+            <table class="popTable">
+                <tr>
+                    <td width="20%"><div class="popPicName" title="12345.jpg">12345.jpg</div></td>
+                    <td width="20%"><div class="popSmallPic"><img src="images/floorSlider_1.jpg" /></div></td>
+                    <td width="25%">等待上传</td>
+                    <td width="20%">50.8kb</td>
+                    <td width="15%"><a class="popTabOpe conDelete" href="javascript:;" title="删除"></a></td>
+                </tr>
+                <tr>
+                    <td width="20%"><div class="popPicName" title="12345.jpg">12345.jpg</div></td>
+                    <td width="20%"><div class="popSmallPic"><img src="images/floorSlider_1.jpg" /></div></td>
+                    <td width="25%">等待上传</td>
+                    <td width="20%">50.8kb</td>
+                    <td width="15%"><a class="popTabOpe conDelete" href="javascript:;" title="删除"></a></td>
+                </tr>
+                <tr>
+                    <td width="20%"><div class="popPicName" title="12345.jpg">12345.jpg</div></td>
+                    <td width="20%"><div class="popSmallPic"><img src="images/floorSlider_1.jpg" /></div></td>
+                    <td width="25%">等待上传</td>
+                    <td width="20%">50.8kb</td>
+                    <td width="15%"><a class="popTabOpe conDelete" href="javascript:;" title="删除"></a></td>
+                </tr>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!--文件选择器end-->
+
+<!--SUK录入start -->
+<div class="commonPop SUKInputPop secondPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">SUK录入</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+<div class="tipBox"><i class="editIcon"></i><span>温馨提示：请输入商品编号（SKU ID），编号与编号之间用英文逗号隔开，最多可输入100个ID。</span></div>
+<div class="textaeraBox"><textarea class="popTextaera inputId" ></textarea></div>
+<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">保存</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a></div>
+</div>
+</div>
+</div>
+<!--SUK录入end -->
+
+<!--筛选录入start -->
+<div class="commonPop choseInputPop secondPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">筛选录入</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+<div class="btnBox popOperate"><span class="opeTit">商品名称：</span><input type="text" class="popForm popForm05"><a href="javascript:;" class="popBut05 serachBtn">搜索</a></div>
+<div class="popTableBox">
+    <table class="popTable">
+        <tr>
+           <th width="15%"><input type="checkbox" class="allCheck" />全选</th><th width="15%">ID</th><th width="30%">名称</th><th width="30%">图片</th><th width="10%">价格</th>
+        </tr>
+    </table>
+    <div class="tableConList">
+    <table class="popTable">
+        <tr>
+            <td width="15%"><input type="checkbox"  /></td>
+            <td width="15%">123456789</td>
+            <td width="30%">53°飞天茅台</td>                  
+            <td width="30%"><div class="popSmallPic"><img src="images/floorSlider_1.jpg"></div></td>                      
+            <td width="10%" class="goodPrice">199</td>        
+        </tr>
+        <tr>
+            <td width="15%"><input type="checkbox" /></td>
+            <td width="15%">123456789</td>
+            <td width="30%">53°飞天茅台</td>                  
+            <td width="30%"><div class="popSmallPic"><img src="images/floorSlider_1.jpg"></div></td>                      
+            <td width="10%" class="goodPrice">199</td>        
+        </tr>
+        <tr>
+            <td width="15%"><input type="checkbox"  /></td>
+            <td width="15%">123456789</td>
+            <td width="30%">53°飞天茅台</td>                  
+            <td width="30%"><div class="popSmallPic"><img src="images/floorSlider_1.jpg"></div></td>                      
+            <td width="10%" class="goodPrice">199</td>        
+        </tr>
+    </table>
+    </div>
+</div>
+<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">添加</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a></div>
+</div>
+</div>
+</div>
+<!--筛选录入end -->
+<!--其他弹窗start -->
+<div class="commonPop otherPop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">其他</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+<div class="tipBox"><i class="editIcon"></i><span>温馨提示：模块ID不能重复，添加锚点时需要用到此ID，请记住添加的ID；下边距为当前模块距离下面模块的距离</span></div>
+	<div class="otherBox">
+    <p><span>模块ID：</span><input type="text" class="popForm popForm04 moduleId"></p>
+    <p><span>下边距：</span><input type="text" class="popForm popForm04 moduleMargin" maxlength="2"><span>像素</span></p>
+    </div>
+	<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">保存</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a></div>
+</div>
+</div>
+</div>
+<!--其他弹窗end -->
+
+<!--设置背景弹窗start -->
+<div class="commonPop backColorPop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">背景设置</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+<div class="tipBox"><i class="editIcon"></i><span>温馨提示：模块ID不能重复，添加锚点时需要用到此ID，请记住添加的ID；下边距为当前模块距离下面模块的距离</span></div>
+	<div class="backColorBox">
+    <p><span>布局背景颜色：</span><input type="text" class="popForm popForm04 bgColor" maxlength="6"></p>
+    <p><span>布局区域背景颜色：</span><input type="text" class="popForm popForm04 bgColor" maxlength="6"></p>
+    <p><span>布局区域背景图片：</span><input type="text" class="popForm popForm02 bgImgSrc"><a class="selectBgImg" href="javascript:;">图片选择</a><a href="javascript:;" class="deleteBgImg">删除背景图</a></p>
+    <p><span>背景图片平铺方式：</span><select class="bgRepeat"><option value="repeat">平铺</option><option value="repeat-x">横向平铺</option><option value="repeat-y">纵向平铺</option><option value="no-repeat">不平铺</option></select></p>
+    </div>
+	<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">保存</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a></div>
+</div>
+</div>
+</div>
+<!--设置背景弹窗end -->
+
+
+<!--遮罩层start -->
+<div class="bgPop01"></div>
+<div class="bgPop02"></div>
+<div class="bgPop03"></div>
+<!--遮罩层end -->
+
+<!--alert弹窗start -->
+<div class="pop-wrap pop-wrap1">
+<div class="pop-layer">
+<div class="pop-title">
+<p class="alertTitle">提示</p>
+<i class="popIcon alertClose"></i>
+</div>
+<div class="pop-main">
+<i class="popIcon success"></i><i class="popIcon fail"></i><i class="popIcon alarm"></i><i class="popIcon confirm"></i>
+<p>
+<span class="alertContent">操作成功</span>
+<em></em>
+</p>
+</div>
+<div class="pop-bottom">
+<span class="confirm alertSure"><b>确定</b></span><span class="cancel alertCancel"><b>取消</b></span>
+</div>
+</div>
+</div>
+<!--alert弹窗end -->
+</body>
+</html>

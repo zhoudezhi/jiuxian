@@ -1,0 +1,459 @@
+@charset "utf-8";
+/* CSS Document */
+/* 
+* Name: 店铺装修（PC端）
+* Copyright: 赵雪珊 
+* Date: 2015-01-04  
+*/
+body{ overflow-y:hidden;}
+.editIcon,.popTabOpe{background:url(../images/editIcon.png) no-repeat;}
+.subOpe{ background:url(../images/editIcon.png) no-repeat; background-size:300px 300px;}
+.shopBox { background:url(../images/leftBg.jpg) repeat-y #fff;}
+.shopMain{width:100%; min-width:1200px; background:#fff; overflow:hidden; font-family:'Microsoft YaHei'; }
+.shopMain .topNav{ position:relative; color:#fff; height:70px; background:#cc0000; z-index:10000; border-bottom:1px solid #333; }
+.shopMain .topNav .jxShopLogo{float:left; width:180px; height:70px; margin-left:30px; }
+.shopMain .topNav .navList{float:left;height:45px; margin-top:10px;}
+.shopMain .topNav .navList li{float:left; width:130px; height:60px; line-height:60px; text-align:center; font-size:16px; cursor:pointer; position:relative;}
+.shopMain .topNav .navList li a{ color:#fff;}
+.shopMain .topNav .navList li a:hover{ color:#fff; text-decoration:none;}
+.shopMain .topNav .navList li i{ float:right; width:3px; height:40px; background-position:-168px -12px; margin-top:7px;}
+.shopMain .topNav .navList li em{ width:12px;  height:6px; position:absolute; left:58px; bottom:0px; background-position:-123px -32px; display:none;}
+.shopMain .topNav .navList li.on em{ display:block;}
+.shopMain .topNav .userInfoBox{float:right; height:25px; margin:38px 30px 0 0; font-size:14px;}
+.shopMain .topNav .userInfoBox .returnBack{ display:inline-block; height:25px; width:40px; text-align:center; color:#ccc;}
+.shopMain .topNav .userInfoBox .returnBack:hover{ text-decoration:none;}
+.shopBox .leftNav{ float:left; width:208px; background:#4e4d4d; color:#fff; height:100%;border-right:2px solid #333; position:relative;}
+.shopBox .leftNav .pageBox{height:40px; padding-left:10px; font-size:16px; background:#333;}
+.shopBox .leftNav .pageBox em{ float:left; display:inline-block; width:25px;  height:25px; margin-top:3px; background-position:-191px -18px;}
+.shopBox .leftNav .pageBox span{float:left; display:inline-block; height:40px; line-height:40px;}
+.shopBox .leftNav .pageBox a{ float:right; display:inline-block; height:40px; width:40px;}
+.shopBox .leftNav .pageBox a:hover{ background:#33454f;}
+.shopBox .leftNav .pageBox a i{ display:inline-block; width:20px; height:20px;  background-position:-225px -25px; margin:10px 0 0 10px;}
+.shopBox .leftNav .pageBox a.back i{ background-position:-22px 2px;}
+.shopBox .leftNav .templateMarket{height:30px; background:#666;font-size:16px;}
+.shopBox .leftNav .templateMarket a{display:inline-block; height:30px; line-height:30px; padding:0 10px; background:#598296; color:#fff; position:relative;}
+.shopBox .leftNav .templateMarket a:hover{text-decoration:none;}
+.shopBox .leftNav .templateMarket i{width:4px; height:8px; position:absolute; right:0; top:11px; background-position:-140px -32px;}
+.shopBox .leftNav .pageList{position:relative; height:500px; padding:25px 0 0 0; overflow:hidden; }
+.shopBox .leftNav .pageList li{ margin-bottom:5px;}
+.shopBox .leftNav .pageList li a,.shopBox .leftNav .pageList li a:hover{ color:#fff; text-decoration:none;}
+.shopBox .leftNav .pageList li .sort a{ display:block; height:32px; line-height:32px; padding-left:30px; font-size:14px;}
+.shopBox .leftNav .pageList li .sort a:hover{ background:#666;}
+.shopBox .leftNav .pageList li .sort i{float:left; width:15px; height:15px; background-position:-254px -26px; margin:9px 5px 0 0;}
+.shopBox .leftNav .pageList li.on .sort a{ font-weight:bold; background:#666;}
+.shopBox .leftNav .pageList li.on .sort i{ background-position:-149px -28px;}
+.shopBox .leftNav .pageList li .sub { display:none;}
+.shopBox .leftNav .pageList li.on .sub { display:block;}
+.shopBox .leftNav .pageList li .sub a{ display:block; height:26px; line-height:26px; padding-left:52px;}
+.shopBox .leftNav .pageList li .sub a:hover{ background:#333;}
+.shopBox .leftNav .pageList li .sub a.on{ background:#6699cc;}
+.shopBox .leftNav .navSwitch{ width:18px; height:40px; position:absolute; top:300px; right:-20px; background:#333; cursor:pointer;}
+.shopBox .leftNav .navSwitch i{ display:block; width:12px; height:10px; margin:15px 0 0 2px; background-position:-282px -30px;}
+.shopBox .leftNav .navSwitch.open i{ background-position:-422px -30px;}
+.shopBox .mainEdit{ background:#fff; margin-left:210px;}
+.shopBox .mainEdit .topTool{ height:30px; background:#33454f;font-size:14px; color:#fff; position:relative; z-index:10000;}
+.shopBox .mainEdit .topTool .toolList{float:left;}
+.shopBox .mainEdit .topTool .toolList li{ float:left;}
+.shopBox .mainEdit .topTool .toolList li a{display:inline-block; height:30px; line-height:30px; padding:0 20px; color:#fff;}
+.shopBox .mainEdit .topTool .toolList li a:hover{text-decoration:none;}
+.shopBox .mainEdit .topTool .toolList li.on a{ background:#fff; color:#999;}
+.shopBox .mainEdit .deleteBox a:hover{text-decoration:none;}
+.shopBox .mainEdit .toolOpera{float:right;height:30px; margin-right:30px;}
+.shopBox .mainEdit .toolOpera .commonHeader{float:left; margin:5px 50px 0 0 ; }
+.shopBox .mainEdit .toolOpera .operateBox{float:left;}
+.shopBox .mainEdit .toolOpera .operateBox a{display:inline-block; height:24px; line-height:24px; border-radius:3px; margin:3px 8px 0 0; padding:0 10px 0 5px; color:#fff; background-position:-254px -27px;}
+.shopBox .mainEdit .toolOpera .operateBox a:hover{text-decoration:none;}
+.shopBox .mainEdit .toolOpera .operateBox a i{ float:left; display:inline-block; width:23px; height:23px;}
+.shopBox .mainEdit .toolOpera .operateBox a.delete { background:#cf000d;}
+.shopBox .mainEdit .toolOpera .operateBox a.preview { background:#a4a5ad;}
+.shopBox .mainEdit .toolOpera .operateBox a.release { background:#a4a5ad;}
+.shopBox .mainEdit .toolOpera .operateBox a.save { background:#ff9900;}
+.shopBox .mainEdit .toolOpera .operateBox a.reback { background:#ff9900;}
+.shopBox .mainEdit .toolOpera .operateBox a.delete  i{background-position:-438px -23px;}
+.shopBox .mainEdit .toolOpera .operateBox a.preview i{ background-position:-310px -22px;}
+.shopBox .mainEdit .toolOpera .operateBox a.release i{ background-position:-340px -23px;}
+.shopBox .mainEdit .toolOpera .operateBox a.save i{ background-position:-369px -23px;}
+.shopBox .mainEdit .toolOpera .operateBox a.reback i{ background-position:-397px -22px;}
+.shopBox .mainEdit .toolOpera .operateBox a.preview:hover{background:#93979f;}
+.shopBox .mainEdit .toolOpera .operateBox a.release:hover{background:#93979f;}
+.shopBox .mainEdit .toolOpera .operateBox a.save:hover{background:#e18d0c;}
+.shopBox .mainEdit .toolOpera .operateBox a.reback:hover{background:#e18d0c;}
+.shopBox .mainEdit .mainEditCon{ overflow-y:auto;}
+.shopBox .mainEdit .mainEditCon .publicHeaderBox{display:none;}
+.shopBox .mainEdit .mainEditCon .publicHeader{width:990px; margin:30px auto 0 auto; height:60px; }
+.shopBox .mainEdit .mainEditCon .layoutContain{margin-top:50px;}
+/*页面属性start*/
+.pageAttribute{ background:#fff; padding:40px 70px 0; color:#333; font-size:14px; overflow-y:auto;}
+.pageAttribute .attributeBox{ padding:10px 0;}
+.pageAttribute .attributeBox li{height:50px; padding-left:30px; }
+.pageAttribute .attributeBox li.tipLi{height:20px; padding:0 0 10px 150px;}
+.pageAttribute .attributeBox li.tipLi span{ float:left; height:20px; line-height:20px; font-size:12px; color:#666;}
+.pageAttribute .attributeBox li .xing{float:left; line-height:50px; display:inline-block; width:15px; height:50px;  color:#f00; font-style:normal; font-weight:bolder; padding-right:5px;}
+.pageAttribute .attributeBox li span{float:left; height:50px; line-height:50px; }
+.pageAttribute .attributeBox li .title{ width:115px;  text-align:left; }
+.pageAttribute .attributeBox li .popForm{ float:left; height:24px; border:1px solid #e8e8e7; margin:12px 10px 0 0; padding:0 5px;}
+.pageAttribute .attributeBox li .popForm.popForm01{ width:50px;}
+.pageAttribute .attributeBox li .popForm.popForm02{ width:150px;}
+.pageAttribute .attributeBox li .popForm.popForm03{ width:300px;}
+.pageAttribute .attributeBox li .popForm.popForm04{ width:660px;}
+.pageAttribute .attributeBox li .endTime{ margin-left:10px;}
+.pageAttribute .attributeBox li .tip{float:left; height:50px; line-height:50px; font-size:12px; color:#666;}
+.pageAttribute .attributeBox li .bgRepeat{ float:left; height:24px; border:1px solid #ccc; margin-top:15px;}
+.pageAttribute .attributeBox li a{display:inline-block; float:left; padding:0 8px; height:24px; line-height:24px; text-align:center; margin:12px 10px 0 0;}
+.pageAttribute .attributeBox li a:hover{ text-decoration:none;}
+.pageAttribute .attributeBox li .selectBgImg{ color:#fff; border:1px solid #8cae23; background:#b2cf41;}
+.pageAttribute .attributeBox li .deleteBgImg{ color:#333; border:1px solid #b5b4b4; background:#e8e8e8;}
+.pageAttribute .editOpeBox{ border-bottom:none; padding:15px 30px;}
+/*添加布局start*/
+.insertLayout{margin:10px 0 10px 0;}
+.insertLayout .addLayoutBox{ width:990px; height:60px; margin:0 auto;}
+.insertLayout .addLayoutBox .addLayoutBtn{display:block; height:58px; line-height:58px; text-indent:25px; color:#333; font-weight:bold; border:1px dashed #d4b38d; background:#fff5e6; font-family:'Microsoft YaHei'; }
+.insertLayout .addLayoutBox .addLayoutBtn:hover{text-decoration:none; color:#333;}
+/*添加布局end*/
+/*布局栏编辑框start*/
+.layoutToolBar{ position:absolute; top:0; left:0; height:40px; line-height:40px; font-size:14px; background:#4a5e69; color:#fff; z-index:9999; width:990px; font-family: "Microsoft YaHei"; font-weight:bold; display:none;}
+.layoutToolBar .layoutName,.layoutToolBar .layoutSet{margin-left:12px;}
+.layoutToolBar a{color:#fff;}
+.layoutToolBar .layoutOperate{float:right; margin-right:13px;}
+.layoutToolBar .layoutOperate a{ float:right; display:inline-block; width:20px; height:20px; margin:10px 0 0 5px; cursor:pointer;}
+.layoutToolBar .layoutOperate a.layoutDel{background-position:-8px -95px;}
+.layoutToolBar .layoutOperate a.layoutUp{background-position:-35px -96px;}
+.layoutToolBar .layoutOperate a.layoutDown{background-position:-59px -96px;}
+.layoutToolBar a:hover{color:#fff;text-decoration:none;}
+.addModules{ position:relative; height:26px; background:#eee; border:1px dashed #bdbebe; overflow:hidden;}
+.addModuleBtn{position:absolute; left:0; bottom:0; height:26px; line-height:26px; color:#feeeee; font-family:'Microsoft YaHei'; background:#bb0000; padding:0 10px; }
+.addModuleBtn:hover{color:#feeeee;text-decoration:none;}
+/*布局栏编辑框end*/
+/*模块编辑框start*/
+.editToolBar{position:absolute; top:0; left:0; height:62px; font-size:14px;  color:#fff; z-index:9999; width:990px;font-family: "Microsoft YaHei";display:none;}
+.editToolBar .toolBarBox{ position:relative; border:1px dashed #96b4be; background:rgba(200, 220, 230, 0.5); min-height:60px; }
+.editToolBar .toolBarBox .toolOprea{height:30px; line-height:30px; background:#eff9ff; font-weight:bold;}
+.editToolBar .toolBarBox .toolOprea .editName{ float:left; color:#333333; padding-left:12px; margin-right:5px;}
+.editToolBar .toolBarBox .toolOprea a{float:left;color:#375b70; margin:0 6px; }
+.editToolBar .toolBarBox .toolOprea a:hover{text-decoration:none;color:#375b70;}
+.editToolBar .toolBarBox .toolOprea .conDelete{ float:right; width:20px; height:20px;  margin:7px 8px 0 0; background-position:-86px -97px;}
+.editToolBar .toolBarBox .addModulesBox{width:100%; position:absolute; left:0; bottom:0; height:26px; }
+
+/*模块编辑框start*/
+/*请设置数据start*/
+.msgDefaults{ background:#e3e3e3; height:60px; line-height:60px; text-align:center; color:#333; font-family:'Microsoft YaHei'; border:1px dashed #adbaca;}
+/*请设置数据end*/
+
+/*弹窗共用样式start*/
+.commonPop{ position:absolute; width:690px; height:auto; left:30%; top:30%; _position:absolute; _top:expression(eval(document.documentElement.scrollTop)+400); background:url(../images/popBg.png);
+ border-radius:5px; box-shadow:0 0 6px 1px #828282; z-index:10001; padding:5px; display:none;}
+.commonPop .popLayer{ width:690px; height:auto; background:#fff; border-radius:3px; font-family:'Microsoft YaHei';}
+.commonPop .popLayer .popTitle{ background:#354650; height:40px; padding-left:15px;  color:#fff; cursor:move;}
+.commonPop .popLayer .popTitle .titleName{float:left; line-height:40px; font-size:18px;}
+.commonPop .popLayer .popTitle .popClose{float:right; width:40px; height:40px; background-position:-137px -86px;}
+.commonPop .popLayer .popContain{ padding:10px 10px 12px;}
+.commonPop .tipBox{height:20px; line-height:20px; padding-top:6px;}
+.commonPop .tipBox i{ float:left; display:inline-block; width:30px; height:20px; background-position:-185px -97px;}
+.commonPop .tipBox span{ float:left; display:inline-block;}
+.commonPop .btnBox{ height:26px; margin-top:12px;}
+.commonPop .btnBox a{ float:left; display:inline-block; height:24px; line-height:24px; padding:0 20px; margin-right:20px; font-size:14px;}
+.commonPop .btnBox a:hover{text-decoration:none;}
+.commonPop .btnBox a.popBut01{background:#da111e; color:#fff; border:1px solid #ae010c;}
+.commonPop .btnBox a.popBut02{background:#eceaea; color:#333; border:1px solid #b5b4b4;}
+.commonPop .btnBox a.popBut03{background:#b2cf41; color:#fff; border:1px solid #8cae23;}
+.commonPop .btnBox a.popBut04{background:#ff9900; color:#fff; border:1px solid #e2760a;}
+.commonPop .btnBox a.popBut05{background:#da111e; color:#fff; border:1px solid #ae010c; padding:0 10px;}
+.commonPop .popOperate{ height:26px; margin-top:10px;}
+.commonPop .popOperate .opeSel{ float:left; height:26px; line-height:26px; color:#333; padding:0 5px; border:1px solid #ccc; margin-right:20px;}
+.commonPop .popOperate span.opeTit{ float:left; line-height:26px; font-size:14px; margin-right:2px;}
+.commonPop .popOperate span.opePro{ float:left; line-height:26px; font-size:14px; margin-left:15px;}
+.commonPop .popOperate select{float:left; margin:2px 0 0 0; height:24px;}
+.commonPop .popOperate .box{ float:left; margin-right:20px;}
+.commonPop .popOperate .box .xing{ float:left; line-height:26px; display:inline-block; color:#f00; font-style:normal; font-weight:bolder; padding-right:5px;}
+.commonPop .popOperate .box .sliderSeL{float:left; margin:7px 5px 0 0;}
+.commonPop .popOperate .box .slider_2{margin-left:20px;}
+.commonPop .textaeraBox{margin-top:10px;}
+.commonPop .textaeraBox .popTextaera{width:80%; height:80px; color:#333; overflow-y:auto; resize:none; border:1px solid #ccc; padding:5px;}
+.commonPop .popForm{ display:inline-block; height:22px; line-height:22px; border:1px solid #ccc; padding:0 5px; margin-right:5px;}
+.commonPop .popForm.popForm01{ width:120px;}
+.commonPop .popForm.popForm02{ width:200px;}
+.commonPop .popForm.popForm03{ float:left; width:30px; margin:1px 5px 0 0;}
+.commonPop .popForm.popForm04{ width:50px;}
+.commonPop .popForm.popForm05{ float:left; width:150px; height:24px; line-height:24px;}
+.commonPop .popForm.popForm06{ width:250px;}
+.commonPop .popForm.popForm07{ float:left; width:80px; height:24px; line-height:24px;}
+.popTabOpe{ display:inline-block; width:20px; height:20px; margin-right:10px; vertical-align:middle;}
+.popTabOpe.moveUp{ background-position:-34px -96px;}
+.popTabOpe.moveDown{ background-position:-58px -96px;}
+.popTabOpe.conDelete{ background-position:-84px -95px;}
+.subOpe{ display: inline-block; width:12px; height:12px; vertical-align: middle; margin-right: 10px;}
+.subOpe.conDelete{background-position:-51px -57px;}
+.subOpe.moveUp{background-position:-21px -58px;}
+.subOpe.moveDown{background-position:-34px -58px;}
+.commonPop .popTableBox{ margin-top:15px; background:#f2f2f2; padding:8px 10px;}
+.commonPop .tableConList{ max-height:150px; overflow-y:auto;}
+.commonPop .popTable{ width:100%; border-collapse:collapse;}
+.commonPop .popTable th{ line-height:30px; font-size:14px; font-family:'Microsoft YaHei'; font-weight:normal;}
+.commonPop .popTable td{ padding:8px 0; border-top:1px dashed #bbb; color:#333;}
+.commonPop .popTable td em{font-style:normal;}
+.popTable td .popPicName{ width:110px; overflow:hidden; text-overflow:ellipsis;}
+.popTable td .popSmallPic img{ max-width:120%; max-height:50px;}
+.popTable td .upImgBtn{display:inline-block; width:120px; height:50px; background:#fff; border:1px solid #999;  cursor:pointer; position:relative;}
+.popTable td .upImgBtn i{ height:20px; width:120px; line-height:20px; text-align:center; background:rgba(200,200,200,0.8); font-style:normal; position:absolute; left:0; top:0;}
+.popTable td .upImgBtn img{ max-width:120px; max-height:50px;}
+.popTable th .allCheck{ margin-right:5px;}
+.popTable td .tabSel{ height:24px; line-height:24px; color:#333; padding:0 5px; border:1px solid #ccc;}
+/*弹窗共用样式end*/
+/*选择布局弹窗start*/
+.layoutPop .layoutAllBox{height:370px; margin-top:10px; overflow:auto;}
+.layoutPop .layoutAllBox li{float:left; margin:0 10px 15px 0; cursor:pointer;}
+.layoutPop .layoutAllBox li.on .layoutDemo{border:1px solid #c41921;}
+.layoutPop .layoutAllBox li .layoutName{ display:block; width:150px; height:18px; line-height:18px; text-align:center; margin-top:5px;}
+.layoutPop .layoutAllBox li .layoutDemo{ background:#e4e4e4; width:120px;  height:110px; padding:30px 15px 0 15px; border:1px solid #cbcbcb;}
+.layoutPop .layoutAllBox li .layoutDemo .one{ width:120px; height:25px; margin:0 auto; background:#f2f2f2; border:1px solid #cbcbcb;}
+.layoutPop .layoutAllBox li .layoutDemo .moduleDemo{float:left; height:80px; background:#f2f2f2; border:1px solid #cbcbcb;}
+.layoutPop .layoutTwo_1 .left{ width:52px; margin-right:10px;}
+.layoutPop .layoutTwo_1 .right{ width:52px;}
+.layoutPop .layoutTwo_2 .left{ width:26px; margin-right:10px;}
+.layoutPop .layoutTwo_2 .right{ width:79px;}
+.layoutPop .layoutTwo_3 .left{ width:79px; margin-right:10px;}
+.layoutPop .layoutTwo_3 .right{ width:26px;}
+.layoutPop .layoutTwo_4 .left{ width:35px; margin-right:10px;}
+.layoutPop .layoutTwo_4 .right{ width:70px;}
+.layoutPop .layoutTwo_5 .left{ width:70px; margin-right:10px;}
+.layoutPop .layoutTwo_5 .right{ width:35px;}
+.layoutPop .layoutTwo_6 .left{ width:21px;  margin-right:10px;}
+.layoutPop .layoutTwo_6 .middle{ width:50px;  margin-right:10px;}
+.layoutPop .layoutTwo_6 .right{ width:21px;}
+.layoutPop .layoutTwo_7 .left{ width:21px; margin-right:10px;}
+.layoutPop .layoutTwo_7 .middle{ width:21px; margin-right:10px;}
+.layoutPop .layoutTwo_7 .right{ width:50px;}
+.layoutPop .layoutTwo_8 .left{ width:50px; margin-right:10px;}
+.layoutPop .layoutTwo_8 .middle{ width:21px; margin-right:10px;}
+.layoutPop .layoutTwo_8 .right{ width:21px;}
+.layoutPop .layoutTwo_9 .left{ width:21px; margin-right:70px; }
+.layoutPop .layoutTwo_9 .right{ width:21px; }
+/*选择布局弹窗end*/
+/*添加模块start*/
+.addModulesPop .popLayer .popContain{padding:0; }
+.addModulesPop .addModulesLeft{ float:left; width:140px; height:400px; background:#eee; }
+.addModulesPop .addModulesLeft li{height:50px; line-height:50px; padding-left:15px;  font-size:14px; color:#333; cursor:pointer; }
+.addModulesPop .addModulesLeft li.on{ background:#fff;}
+.addModulesPop .addModulesRight{float:right; width:550px; height:400px;  background:#fff;}
+.addModulesPop .addModulesRight .rightBox{padding:10px 25px; height:380px; overflow:auto; display:none;}
+.addModulesPop .addModulesRight .rightBox.first{display:block;}
+.addModulesPop .addModulesRight .rightBox li{ width:500px; height:55px; padding:15px 0 15px 0; border-bottom:1px dotted #999;}
+.addModulesPop .rightBox li .modulesIcon{ float:left; width:50px; height:50px; margin-right:20px; background-position:-185px -91px;}
+.addModulesPop .rightBox li .modulesTypeBox{float:left; width:310px; margin-right:20px; overflow:hidden;}
+.addModulesPop .rightBox li .modulesName{ color:#000; font-weight:bold; font-size:14px;}
+.addModulesPop .rightBox li .modulesDetail{ color:#999; font-size:12px; margin-top:3px;}
+.addModulesPop .rightBox li .insertBtnBox{ float:right; width:100px; height:50px; margin:0; }
+.addModulesPop .rightBox li .insertBtn{display:inline-block; padding:5px 20px; background:#da111e; color:#fff; border:1px solid #ae010c; margin:15px 0 0 30px; }
+.addModulesPop .rightBox li .insertBtn:hover{text-decoration:none;}
+.addModulesPop .rightBox li.userCon .modulesIcon{ background-position:0 -196px;}
+.addModulesPop .rightBox li.countdown .modulesIcon{ background-position:-54px -196px;}
+.addModulesPop .rightBox li.coupon .modulesIcon{ background-position:-108px -196px;}
+.addModulesPop .rightBox li.shopSearch .modulesIcon{ background-position:-162px -196px;}
+.addModulesPop .rightBox li.goods .modulesIcon{ background-position:-215px -196px;}
+.addModulesPop .rightBox li.slider .modulesIcon{ background-position:-269px -196px;}
+.addModulesPop .rightBox li.adverse .modulesIcon{ background-position:-322px -196px;}
+.addModulesPop .rightBox li.classify .modulesIcon{ background-position:-377px -196px;}
+.addModulesPop .rightBox li.leaderboard .modulesIcon{ background-position:-431px -196px;}
+.addModulesPop .rightBox li.anchorNav .modulesIcon{ background-position:0 -253px;}
+.addModulesPop .rightBox li.addNav .modulesIcon{ background-position:-54px -253px;}
+.addModulesPop .rightBox li.shopNotice .modulesIcon{ background-position:-108px -253px;}
+.addModulesPop .rightBox li.shopSign .modulesIcon{ background-position:-162px -253px;}
+.addModulesPop .rightBox li.shopProfile .modulesIcon{ background-position:-216px -253px;}
+/*添加模块end*/
+/*自定义、文件选择器start*/
+.fileChooserBox{ height:281px; background:#eee;}
+.userConPop .fileChooserBox{display:none;}
+.popComTitle{ height:36px; background:#eee;}
+.popComTitle .pcTit{ float:left; padding:5px;}
+.popComTitle .pcTit.on{ background:#fff;}
+.popComTitle .pcTit .selBut{ display:inline-block; height:24px; line-height:24px; color:#333; font-size:14px; background:#e8e8e8; border:1px solid #b5b4b4; padding:0 20px;}
+.popComTitle .pcTit.on .selBut{background:#b2cf41; color:#fff; border:1px solid #8cae23;}
+.popComTitle .pcTit a:hover{text-decoration:none;}
+.popConItem{ padding:5px; background:#fff;}
+.popConItem .tableConList{ max-height:132px;}
+.popPicList{ height:118px; padding:0px 11px; overflow:hidden;}
+.popPicList li{ float:left; width:91px; margin:6px; text-align:center;}
+.popPicList .pop-pic{ display:table-cell; overflow:hidden; position:relative; width:89px; height:89px; border:1px solid #ddd; background:#fff; vertical-align:middle;}
+.popPicList .pop-pic img{ max-width:89px; height:auto; max-height:89px; vertical-align:middle;}
+.popPicList .pop-picName{ width:91px; height:20px; line-height:20px; color:#333; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+/*翻页*/
+.popPageBox{ height:24px; padding:0 5px; margin:10px 0; color:#333;}
+.popPageBox .pageTotal{ float:left; font-size:14px; margin-right:8px; line-height:24px;}
+.popPageBox .pageTotal span{ padding:0 2px;}
+.popPageBox .pageNumber{ float:left;}
+.popPageBox .pageNumber a{ display:inline-block; height:22px; line-height:22px; color:#333; padding:0 8px; border:1px solid #ccc; margin-right:8px;}
+.popPageBox .pageNumber a:hover{ color:#cc0000; text-decoration:none;}
+.popPageBox .pageNumber a.on{ color:#fff; background:#da111e; border:1px solid #ae010c;}
+.popPageBox .pageNumber a.on:hover{ color:#fff;}
+.popPageBox .pagePoint{ float:left;}
+.popPageBox .pagePoint span{ float:left; display:inline-block; height:24px; line-height:24px; font-size:14px; margin-right:8px;}
+.popPageBox .pagePoint span input{ width:25px; height:22px; line-height:22px; font-size:12px; text-align:center; border:1px solid #ccc; margin:0 5px; vertical-align:top;}
+.popPageBox .pagePoint .poiBut{ float:left; display:inline-block; height:22px; line-height:22px; color:#333; font-size:14px; border:1px solid #ccc; padding:0 5px; background:#f1f1f1;}
+.popPageBox .pagePoint .poiBut:hover{ color:#333; text-decoration:none;}
+
+/*商品弹窗start*/
+.goodsPop .popTable .goodInfoBox{ display:inline-block; width:140px; height:60px;}
+.goodsPop .popTable .goodInfoBox em{font-style:normal; display:inline-block; width:130px; height:25px; line-height:25px; margin-top:-7px; overflow:hidden;}
+/*商品弹窗end*/
+/*倒计时弹窗start*/
+.countdownPop .countdownCon{ margin:10px 0; padding:10px 15px; background:#eee;}
+.countdownPop .countdownCon p{ height:26px; padding:5px 0; font-size:14px; }
+.countdownPop .countdownCon p span{ float:left; line-height:26px; margin-right:2px;}
+.countdownPop .countdownCon p .actionChoose{float:left; margin:6px 5px 0 0;}
+.countdownPop .countdownCon p label{float:left; line-height:26px; margin-right:10px;}
+/*倒计时弹窗end*/
+/*SUK&&筛选录入弹窗start*/
+.selectorPop,.choseInputPop {z-index:11001;}
+/*SUK&&筛选录入弹窗end*/
+/*其他弹窗start*/
+.otherPop .otherBox{margin:10px 0; padding:10px 15px; background:#eee;}
+.otherPop .otherBox p{ height:26px; padding:5px 0;}
+.otherPop .otherBox p span{ float:left; line-height:26px; font-size:14px; margin-right:2px;}
+.otherPop .otherBox p  input{float:left;}
+/*其他弹窗start*/
+/*背景设置弹窗start*/
+.backColorPop .backColorBox{margin:10px 0; padding:10px 15px; background:#eee;}
+.backColorPop .backColorBox p{ height:26px; padding:5px 0;}
+.backColorPop .backColorBox p span{ float:left; line-height:26px; font-size:14px; margin-right:2px;}
+.backColorPop .backColorBox p  input{float:left;}
+.backColorPop .backColorBox p a{display:inline-block; float:left; padding:0 5px; height:22px; line-height:22px; text-align:center;}
+.backColorPop .backColorBox p a:hover{text-decoration:none;}
+.backColorPop .backColorBox p .selectBgImg{ color:#fff; border:1px solid #8cae23; background:#b2cf41; margin-right:10px;}
+.backColorPop .backColorBox p .deleteBgImg{ color:#333; border:1px solid #b5b4b4; background:#e8e8e8;}
+.backColorPop .backColorBox p .bgRepeat{ float:left; height:22px; border:1px solid #ccc; margin-top:2px;}
+/*背景设置弹窗end*/
+/*商品分类弹窗start*/
+.classifyPop tr .btnBox{margin:0;}
+.classifyPop tr .btnBox a{margin:0}
+.classifyPop .secondClassify table{ width:100%; border-collapse:collapse;}
+.classifyPop .secondClassify table td{ border-top:0px none;}
+.classifyPop .secondClassify .secondBox{padding-left:10px;}
+.classifyPop .secondClassify span{float:left; height:20px; line-height:20px; margin-right:5px;}
+.classifyPop .secondClassify input{float:left;height:20px; line-height:20px; margin-right:10px;}
+/*商品分类弹窗end*/
+/*锚点导航弹窗start*/
+.anchorNavPop .popOperate input{float:left; }
+.anchorNavPop .popOperate .openFile{ float:left; display:inline-block; font-size:14px; height:22px; line-height:22px; padding:0 20px;color:#fff; border:1px solid #8cae23; background:#b2cf41;}
+.anchorNavPop .popOperate .openFile:hover{ text-decoration:none;}
+/*锚点导航弹窗end*/
+
+/*自定义弹窗插件start*/
+.bgPop01,.bgPop02,.bgPop03{display:none; background:#000; width:100%; height:100%; position:fixed; left:0; top:0; opacity:0.5; filter:alpha(opacity=50); _position:absolute; _top:expression(eval(document.documentElement.scrollTop)); }
+.bgPop01{z-index:10000;}
+.bgPop02{z-index:11000;}
+.bgPop03{ z-index:12000;}
+.popIcon{ background:url(../images/popIcon.png) no-repeat 0 0;}/*公共icon*/
+.pop-wrap1{display:none;  width:400px; height:200px; position:fixed; left:50%; top:50%; margin:-105px 0 0 -205px; _position:absolute; _top:expression(eval(document.documentElement.scrollTop)+400); background: url(../images/popBg.png); border-radius:5px; box-shadow:0 0 6px 1px #828282; z-index:12001; padding:5px;}
+.pop-wrap1 .pop-layer{ width:400px; height:200px; background:#fff; border-radius:3px;}
+.pop-wrap1 .pop-title{ height:40px; line-height:40px; background:#c40001; border-top-left-radius:3px; border-top-right-radius:3px; padding-left:16px;}
+.pop-wrap1 .pop-title p{ float:left; color:#fff; font-size:14px;}
+.pop-wrap1 .pop-title i{ background-position:0 -45px; display:inline-block; float:right; width:14px; height:14px; cursor:pointer; margin:13px 13px 0 0;}
+.pop-wrap1 .pop-main{ height:79px; background:#fff; padding:41px 50px 0 50px;}
+.pop-wrap1 .pop-main i{ width:40px; height:40px; display: inline-block; float:left; display:none;}
+.pop-wrap1 .pop-main .success{ background-position:0 0;}
+.pop-wrap1 .pop-main .alarm{background-position:-41px 0;}
+.pop-wrap1 .pop-main .fail{ background-position:-81px 0;}
+.pop-wrap1 .pop-main .confirm{background-position:-121px 0;}
+.pop-wrap1 .pop-main p{ font-size:16px; font-family:"Microsoft YaHei"; color:#000; float:right; width:250px; height:38px;}
+.pop-wrap1 .pop-main p span{ display:inline-block; width:100%; vertical-align:middle; height:auto;}
+.pop-wrap1 .pop-main p em{ display:inline-block; vertical-align:middle; height:100%; width:0; overflow:hidden;}
+.pop-wrap1 .pop-bottom{ height:40px; background:#f1f1f1; border-bottom-left-radius:3px; border-bottom-right-radius:3px; text-align:right; padding-right:25px;}
+.pop-wrap1 .pop-bottom span{ display:inline-block; width:58px; height:22px; font-size:0; border-radius:2px; text-align:center; line-height:22px; cursor:pointer; margin:8px 0 0 5px;}
+.pop-wrap1 .pop-bottom .confirm{ border:1px solid #c40001; color:#c40001; background:#ffe6e6;}
+.pop-wrap1 .pop-bottom span b{ font-size:12px; font-weight:normal; display:inline-block;}
+.pop-wrap1 .pop-bottom .cancel{ border:1px solid #ccc; color:#666666; background:#fff;display:none;}
+/*自定义弹窗插件end*/
+/****图片管理start****/
+.editSearchBox{ margin:30px 30px 0 30px;}
+.editSearchBox .es-tit{ line-height:28px; display:inline-block; font-size:14px; color:#333; margin:0 5px 12px 0; vertical-align:middle;}
+.editSearchBox .esForm{ display:inline-block; height:26px; line-height:26px; border:1px solid #ddd; padding:0 5px; margin:0 10px 12px 0; font-family:"Microsoft YaHei";}
+.editSearchBox .form01{ width:200px;}
+.editSearchBox .form02{ width:120px;}
+.editSearchBox select{ display:inline-block; height:28px; line-height:28px; border:1px solid #ccc; margin:0 10px 12px 0; margin-right:10px; vertical-align:middle; font-size:14px; font-family:"Microsoft YaHei";}
+.editSearchBox .es-zhi{ display:inline-block; line-height:28px; font-style:normal; margin:0 10px 12px 0;; vertical-align:middle;}
+.editSearchBox a{ margin-bottom:12px;}
+.editOpeBox{ height:26px; line-height:26px; padding:12px 10px; background:#f3f3f3; border-bottom:1px solid #ddd;}
+.editOpeBox .checkAllBox{ display:inline-block; margin-right:20px; color:#333; font-size:14px; font-weight:bold;}
+.editOpeBox .checkAllBox input{ margin-right:8px;}
+.editOpeBox .ope-tit{ font-size:14px; color:#333; vertical-align:middle;}
+.editOpeBox select{ height:24px; line-height:24px; color:#333; border:1px solid #ddd; padding:0 5px; margin-right:10px;}
+.mainEdit .but{ display:inline-block; height:24px; line-height:24px; font-size:14px; padding:0 18px; margin-right:12px; vertical-align:middle; font-family:"Microsoft YaHei";}
+.mainEdit .but:hover{ text-decoration:none;}
+.mainEdit .editBut01{background:#da111e; color:#fff; border:1px solid #ae010c;}
+.mainEdit .editBut02{background:#eceaea; color:#333; border:1px solid #b5b4b4;}
+.mainEdit .editBut03{background:#b2cf41; color:#fff; border:1px solid #8cae23;}
+.mainEdit .editBut04{background:#ff9900; color:#fff; border:1px solid #e2760a;}
+.editProBox{ line-height:50px;}
+.editManageBox{ margin:20px 30px 0 30px;}
+.editManTable{ width:100%; border-collapse:collapse; border-bottom:1px solid #ddd; text-align:left; color:#333;}
+.editManTable th{ line-height:24px; background:#f6f6f6; padding:10px; font-size:14px;}
+.editManTable th .ord{ cursor:pointer;}
+.editManTable th .thOrder{ display:inline-block; width:12px; height:12px; background-position:0 -29px; vertical-align:middle; margin-left:5px;}
+.editManTable th .thOrder.on{ background-position:-123px -29px;}
+.editManTable td{ padding:10px; font-size:14px;}
+.editManTable tbody tr.bg td{ background:#f3f3f3;}
+.editManTable td .editTabBut01{ display:inline-block; color:#375b70; margin-right:15px;}
+.editManTable td .tfont{ color:#339900;}
+.movePop .moveBox{height:24px; padding:20px;}
+.movePop .moveBox span{float:left; height:24px; line-height:24px; margin-right:10px;}
+.movePop .moveBox select{float:left; height:24px; margin-right:20px; }
+
+/*翻页*/
+.editPageBox{ height:24px; padding:0 5px; margin:30px 0; color:#333;}
+.editPageBox .pageTotal{ float:left; font-size:14px; margin-right:8px; line-height:24px;}
+.editPageBox .pageTotal span{ padding:0 2px;}
+.editPageBox .pageNumber{ float:left;}
+.editPageBox .pageNumber a{ display:inline-block; height:22px; line-height:22px; color:#333; padding:0 8px; border:1px solid #ccc; margin-right:8px;}
+.editPageBox .pageNumber a:hover{ color:#cc0000; text-decoration:none;}
+.editPageBox .pageNumber a.on{ color:#fff; background:#da111e; border:1px solid #ae010c;}
+.editPageBox .pageNumber a.on:hover{ color:#fff;}
+.editPageBox .pagePoint{ float:left;}
+.editPageBox .pagePoint span{ float:left; display:inline-block; height:24px; line-height:24px; font-size:14px; margin-right:8px;}
+.editPageBox .pagePoint span input{ width:25px; height:22px; line-height:22px; font-size:12px; text-align:center; border:1px solid #ccc; margin:0 5px; vertical-align:top;}
+.editPageBox .pagePoint .poiBut{ float:left; display:inline-block; height:22px; line-height:22px; color:#333; font-size:14px; border:1px solid #ccc; padding:0 5px; background:#f1f1f1;}
+.editPageBox .pagePoint .poiBut:hover{ color:#333; text-decoration:none;}
+/*全部图片*/
+.editManTable td .pic{ display:table-cell; width:150px; height:50px; text-align:center; vertical-align:middle; border:1px solid #ddd; padding:1%; background:#fff; overflow:hidden;}
+.editManTable td .pic img{ max-width:98%; max-height:50px; vertical-align:middle;}
+.editManTable td .name{ display:block; width:150px; height:20px; line-height:20px; overflow:hidden;text-overflow:ellipsis; white-space:nowrap;}
+/*大图显示*/
+.manageBigPic li{ float:left; width:182px; text-align:center; margin:20px 10px 0;}
+.manageBigPic li .bigPic{ display:table-cell; width:180px; height:180px; vertical-align:middle; overflow:hidden; border:1px solid #ddd;}
+.manageBigPic li .bigPic img{ max-width:180px; max-height:180px; vertical-align:middle;}
+.bigPicInfo p{ width:172px; line-height:20px; padding:0 5px; overflow:hidden;}
+.bigPicInfo .picName{ height:20px; line-height:20px; font-size:14px; color:#444; white-space:nowrap; text-overflow:ellipsis; margin-top:10px;}
+.bigPicInfo .picTime{ height:20px; line-height:20px; color:#999; margin-top:2px;}
+.bigPicInfo .picPro{ margin-top:2px;}
+.bigPicInfo .picPro input{ margin-right:7px;}
+.bigPicInfo .picPro a{ font-size:14px; color:#375b70; margin-right:7px; white-space:nowrap; vertical-align:middle;}
+.bigPicInfo .picPro a:hover{ color:#cc0001; text-decoration:none;}
+/*图片分类*/
+.editManTable td .tabForm{ display:inline-block; border:1px solid #ddd; padding:0 5px; font-family:"Microsoft YaHei";}
+.editManTable td .tabForm.form01{ width:300px; height:30px; line-height:30px; font-size:15px;}
+.editManTable td .tabForm.form02{ width:200px; height:26px; line-height:26px; color:#555; margin-right:10px;}
+.picManageSort .editManTable{ border-bottom:none;}
+.picManageSort .editManTable td{ border-bottom:1px solid #e9e9e9;}
+.editManTable td .subSort span{ display:inline-block; width:20px; height:20px; border-left:1px solid #ddd; border-bottom:1px solid #ddd; margin:10px 0 0 5px;}
+/****图片管理end****/
+/*活动装修start*/
+.promotionsDec .editManTable{ border-top:1px solid #ddd;}
+/*模板列表start*/
+.decTemplate{ padding:30px 40px 20px; overflow:hidden;}
+.decTemplate li{ float:left; width:248px; height:446px; margin:0 7px 15px; border:1px solid #ddd; box-shadow:0 0px 6px -2px #999;}
+.decTemplate .templateItem .templatePic{ width:218px; height:337px; text-align:center; overflow:hidden; padding:15px 15px 0;}
+.decTemplate .templateItem .templatePic img{ width:218px; height:auto;}
+.decTemplate .templateItem .templateName{ height:36px; line-height:36px; font-size:14px; padding:0 18px; margin-bottom:8px;}
+.decTemplate .templateItem .templateOpe{ height:50px; line-height:50px; background:#eee; padding:0 18px; position:relative;}
+.decTemplate .templateItem .templateOpe span{ display:inline-block; float:left; margin-right:22px;}
+.decTemplate .templateItem .templateOpe span i{ display:inline-block; float:left; width:20px; height:20px; margin:16px 8px 0 0;}
+.decTemplate .templateItem .templateOpe span.ope-use i{ background-position:-68px -26px;}
+.decTemplate .templateItem .templateOpe span.ope-prev i{ background-position:-44px -26px;}
+.decTemplate .templateItem .templateOpe span.ope-del i{ background-position:-46px 1px;}
+.decTemplate .templateItem .templateOpe span a{ display:inline-block; float:left; font-size:14px; color:#888; font-weight:bold;}
+.decTemplate .templateItem .templateOpe span a:hover{ color:#888; text-decoration:none;}
+.decTemplate .templateItem .templateOpe em{ position:absolute; top:0; left:25px; width:12px; height:8px; background-position:-150px -34px;}
+.decTemplate .templatePre{ background:#f5f4f3; text-align:center;}
+.decTemplate .templatePre .templateIcon{ margin-top:160px;}
+.decTemplate .templatePre .templateIcon i{ display:inline-block; width:62px; height:62px; background-position:0 -124px;}
+.decTemplate .templatePre .templateText{ line-height:22px; font-size:14px; color:#bbb; font-weight:bold; margin-top:12px;}
+

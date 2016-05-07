@@ -1,0 +1,867 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<link rel="apple-touch-icon-precomposed" href="http://m.jiuxian.com/images/apple-touch-icon.png"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+<title>无酒不成席  酒仙网聘你回家</title>
+<link rel='stylesheet' type='text/css' href='css/reset.css' />
+<style type="text/css">
+html{height:100%;}
+body,p,input,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form{margin:0;padding:0;list-style:none;vertical-align:middle;line-height:1;}
+body{font-family:"微软雅黑",helvetica,arial;color:#000;min-width:320px;height:100%;}
+header,section,footer,img{display:block;margin:0;padding:0}
+img{border:0}
+
+.swiper-container {
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+	backface-visibility:hidden;
+	/* Fix of Webkit flickering */
+	z-index:1;
+}
+.swiper-wrapper {
+	position:relative;
+	width:100%;
+	height:100%;
+	-webkit-transition-property:-webkit-transform, left, top;
+	-webkit-transition-duration:0s;
+	-webkit-transform:translate3d(0px,0,0);
+	-webkit-transition-timing-function:ease;
+	
+	-moz-transition-property:-moz-transform, left, top;
+	-moz-transition-duration:0s;
+	-moz-transform:translate3d(0px,0,0);
+	-moz-transition-timing-function:ease;
+	
+	-o-transition-property:-o-transform, left, top;
+	-o-transition-duration:0s;
+	-o-transform:translate3d(0px,0,0);
+	-o-transition-timing-function:ease;
+	-o-transform:translate(0px,0px);
+	
+	-ms-transition-property:-ms-transform, left, top;
+	-ms-transition-duration:0s;
+	-ms-transform:translate3d(0px,0,0);
+	-ms-transition-timing-function:ease;
+	
+	transition-property:transform, left, top;
+	transition-duration:0s;
+	transform:translate3d(0px,0,0);
+	transition-timing-function:ease;
+}
+.swiper-free-mode > .swiper-wrapper {
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-timing-function: ease-out;
+	-ms-transition-timing-function: ease-out;
+	-o-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+	margin: 0 auto;
+}
+
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
+}
+.swiper-container {
+	/*max-width: 640px;*/
+	max-width: 640px;
+	height: 100%;
+	margin: 0 auto;
+}
+.swiper-slide {
+	float: left;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.pagination {
+	position: absolute;
+	left: 0;
+	text-align: center;
+	top: 320px;
+	width: 100%;
+	z-index: 10000;
+}
+.swiper-pagination-switch {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background: #999;
+	margin: 0 3px;
+	cursor: pointer;
+}
+.swiper-active-switch {
+	background: #fff;
+}
+@font-face{ 
+  font-family:"iconfont";
+  src: url('css/iconfont.eot'); /* IE9*/
+  src: url('css/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('css/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('css/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('css/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+ }
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.tipBox{ background:#cd2737; height:100%; width:100%; display:none; color:#fff;}
+.tipBox .phone{ font-size:30px; color:#fff; position:absolute; left:50%; top:50%; margin:-50px 0 0 -20px;  animation:rotate 1.5s infinite linear; transform-origin: center center; -webkit-animation:rotate 1.5s infinite linear;   -webkit-transform-origin: center center;}
+.tipBox span{position:absolute; text-align:center; width:100%; height:20px; left:50%; top:50%; margin:-10px 0 0 -50%;}
+@media (orientation:landscape){.tipBox{ display:block; position:relative; z-index:10000;} .swiper-container{display:none;}}
+
+@keyframes rotate{
+0%{ transform:rotate(0deg);}		
+50%{ transform:rotate(-90deg);}
+100%{ transform:rotate(0deg);}	
+}
+
+@-webkit-keyframes rotate{
+0%{ -webkit-transform:rotate(-0deg);}
+50%{ -webkit-transform:rotate(-90deg);}
+100%{ -webkit-transform:rotate(0deg);}	
+}
+
+
+@keyframes upDown1{
+0%{ transform:translateY(0px);}	
+70%{ transform:translateY(-20px);}	
+100%{ transform:translateY(0px);}	
+}
+@-webkit-keyframes upDown1{
+0%{ -webkit-transform:translateY(0px);}	
+70%{ -webkit-transform:translateY(-20px);}	
+100%{ -webkit-transform:translateY(0px);}		
+}
+@keyframes upDown2{
+0%{ opacity:1; transform:translateY(0);}
+100%{ opacity:0; transform:translateY(-15px);}
+}
+@-webkit-keyframes upDown2{
+0%{ opacity:1; -webkit-transform:translateY(0);}
+100%{ opacity:0; -webkit-transform:translateY(-15px);}
+}
+
+@keyframes leftRight{
+0%{ transform:translateX(0px);}	
+25%{ transform:translateX(-20px);}
+50%{ transform:translateX(0px);}	
+75%{ transform:translateX(20px);}	
+100%{ transform:translateX(0px);}	
+}
+@-webkit-keyframes leftRight{
+0%{ -webkit-transform:translateX(0px);}	
+25%{ -webkit-transform:translateX(-20px);}	
+50%{ -webkit-transform:translateX(0px);}	
+75%{ -webkit-transform:translateX(20px);}	
+100%{ -webkit-transform:translateX(0px);}		
+}
+
+@keyframes haizi{
+0%{ transform:scale(0); opacity:0;}	
+50%{ transform:scale(1.2); opacity:0.7}
+100%{ transform:scale(1); opacity:1;}
+}
+@-webkit-keyframes haizi{
+0%{ -webkit-transform:scale(0); opacity:0;}	
+50%{ -webkit-transform:scale(1.2); opacity:0.7;}
+100%{ -webkit-transform:scale(1); opacity:1;}
+
+}
+
+@keyframes opacity1{
+0%{ opacity:0}	
+100%{ opacity:0.8}	
+}
+@-webkit-keyframes opacity1{
+0%{ opacity:0}	
+100%{ opacity:0.8}	
+}
+@keyframes opacity2{
+0%{ opacity:0}	
+100%{ opacity:0.6}	
+}
+@-webkit-keyframes opacity2{
+0%{ opacity:0}	
+100%{ opacity:0.6}	
+}
+@keyframes opacity3{
+0%{ opacity:0}	
+100%{ opacity:0.7}	
+}
+@-webkit-keyframes opacity3{
+0%{ opacity:0}	
+100%{ opacity:0.7}	
+}
+@keyframes opacity4{
+0%{ opacity:0}	
+100%{ opacity:0.5}	
+}
+@-webkit-keyframes opacity4{
+0%{ opacity:0}	
+100%{ opacity:0.5}	
+}
+@-webkit-keyframes opacity5{
+0%{ opacity:0.5}	
+100%{ opacity:1}	
+}
+@keyframes leftToRight{
+0%{ transform:translate(0);}
+100%{transform:translate(35px,10px);}
+}
+@-webkit-keyframes leftToRight{
+0%{ -webkit-transform:translate(0);}
+100%{-webkit-transform:translate(35px,10px);}
+}
+@keyframes leftToRight1{
+0%{ transform:translateX(0);}
+50%{transform:translateX(30px);}
+100%{transform:translateX(0);}
+}
+@-webkit-keyframes leftToRight1{
+0%{ -webkit-transform:translateX(0);}
+50%{-webkit-transform:translateX(30px);}
+100%{-webkit-transform:translateX(0);}
+}
+
+@keyframes leftToRight2{
+0%{ transform:translateX(0);}
+100%{transform:translateX(15px);}
+}
+@-webkit-keyframes leftToRight2{
+0%{ opacity:1; -webkit-transform:translateX(0);}
+100%{ opacity:0; -webkit-transform:translateX(-15px);}
+}
+@keyframes leftToRight3{
+0%{ transform:translateX(500px); opacity:1;}
+70%{transform:translateX(-30px); opacity:1;}
+100%{transform:translateX(0); opacity:1;}
+}
+	
+@-webkit-keyframes leftToRight3{
+0%{ -webkit-transform:translateX(500px); opacity:1;}
+70%{-webkit-transform:translateX(-30px); opacity:1;}
+100%{-webkit-transform:translateX(0); opacity:1;}
+}
+
+@keyframes leftToRight4{
+0%{ transform:translate(0); }
+100%{transform:translate(120px,-50px);  }
+}
+	
+@-webkit-keyframes leftToRight4{
+0%{ -webkit-transform:translate(0); }
+100%{-webkit-transform:translate(120px,-50px);}
+}
+@keyframes rightToLeft2{
+0%{ transform:translateX(200px);}
+100%{transform:translateX(0);}
+}
+
+@-webkit-keyframes rightToLeft2{
+0%{ -webkit-transform:translateX(200px); opacity:0; }
+100%{-webkit-transform:translateX(0);  opacity:1;}
+}
+@keyframes rightToLeft3{
+0%{ transform:translateX(-300px); opacity:1;}
+70%{transform:translateX(30px); opacity:1;}
+100%{transform:translateX(0); opacity:1;}
+}
+
+@-webkit-keyframes rightToLeft3{
+0%{ -webkit-transform:translateX(-300px); opacity:1;}
+70%{-webkit-transform:translateX(30px); opacity:1;}
+100%{-webkit-transform:translateX(0); opacity:1;}
+}
+
+
+@keyframes topToBottom{
+0%{ transform:translateY(-350px); opacity:0;}
+100%{transform:translateY(0); opacity:1;}
+}
+@-webkit-keyframes topToBottom{
+0%{ -webkit-transform:translateY(-350px); opacity:0}
+100%{-webkit-transform:translateY(0); opacity:1;}
+}
+@keyframes topToBottom2{
+0%{ transform:translateY(-350px); opacity:0;}
+50%{transform:translateY(30px); opacity:1;}
+100%{transform:translateY(0px); opacity:1;}
+}
+@-webkit-keyframes topToBottom2{
+0%{ -webkit-transform:translateY(-350px); opacity:0}
+50%{-webkit-transform:translateY(30px); opacity:1;}
+100%{-webkit-transform:translateY(0); opacity:1;}
+}
+
+@keyframes toBig{
+0%{ transform:scale(0.5); opacity:0;}
+50%{transform:scale(1.2); opacity:0.8;}
+100%{transform:scale(1);opacity:1;}	
+}
+@-webkit-keyframes toBig{
+0%{ -webkit-transform:scale(0.5); opacity:0;}
+50%{-webkit-transform:scale(1.2); opacity:0.8;}
+100%{-webkit-transform:scale(1);opacity:1;}	
+}
+
+@keyframes flash{
+0%{ opacity:0;}
+100%{opacity:1;}	
+}
+@-webkit-keyframes flash{
+0%{opacity:0;}
+100%{opacity:1;}	
+}
+#loading { position: absolute; width: 100%; height: 100%; background: #fff url(images/load.gif) 50% 50% no-repeat; -webkit-background-size: 28px auto; background-size: 28px auto; z-index: 100000; top: 0;}
+#loading p { position: absolute; width: 100%; text-align: center; top: 50%; margin-top: 20px; font-size: 13px; color: #666;}
+.icon1{background:url(images/icon1.png) no-repeat; background-size:330px 500px;}
+.icon2{background:url(images/icon2.png) no-repeat; background-size:500px 500px;}
+.icon3{background:url(images/icon3.png) no-repeat; background-size:500px 500px;}
+.page1{background:#ffe5c0;}
+.page2{background:#e7141a;}
+.page3{background:#e7141a;}
+.page4{background:#ffe8c7;}
+.comPage{background:#fff9f0;}
+.page10{background:#e7141a;}
+.arrow{ position:absolute; width:30px; height:30px; left:50%; bottom:10px; margin:0 0 0 -15px; background-position:5px 9px; z-index:10; animation:upDown2 ease-in 1.5s infinite; -webkit-animation:upDown2 ease-in 1.5s infinite;	}
+.logo{ position:absolute; width:50px; height:30px; left:50%; bottom:30px; margin:0 0 0 -20px; background-position:-32px 4px; z-index:10;  }
+.page1 .wenzi{ position:absolute; width:260px; height:120px; left:50%; top:50%; margin:-210px 0 0 -128px; background-position:0px -186px;}
+.page1 .qizi{ position:absolute; width:230px; height:175px; left:50%; top:50%; margin:-90px 0 0 -137px; background-position:-82px 0px;}
+.page1 .renqun{ position:absolute; width:240px; height:140px; left:50%; top:50%; margin:20px 0 0 -90px; background-position:0px -310px; z-index:1}
+.page1 .ren1{ position:absolute; width:45px; height:64px; left:50%; top:50%; margin:90px 0 0 -6px; background-position:0px -30px; z-index:2; }
+.page1 .ren2 { position:absolute; width:40px; height:50px; left:50%; top:50%; margin:80px 0 0 -85px; background-position:-43px -30px; z-index:2;}
+.page2 .title { position:absolute; width:175px; height:60px; left:50%; top:50%; margin:-140px 0 0 -87px; background-position:-185px -5px; }
+.page2 .fangzi { position:absolute; width:140px; height:155px; left:50%; top:50%; margin:0px 0 0 -70px; background-position:14px -40px; z-index:2; }
+.page2 .yun{position:absolute; width:38px; height:29px; left:50%; top:50%;}
+.page2 .yun1 { margin:-20px 0 0 -100px; background-position:-80px -5px; }
+.page2 .yun2 { margin:0px 0 0 70px; background-position:-30px -5px; }
+.page2 .yun3 { margin:57px 0 0 45px; background-position:-125px -5px;}
+.page2 .yun4 { margin:15px 0 0 -109px; background-position:-80px -5px; z-index:1; }
+.page2 .honghaizi{position:absolute; width:15px; height:17px; left:50%; top:50%; z-index:2; opacity:0;}
+.page2 .honghaizi1{ margin:45px 0 0 -30px; background-position:-6px -7px;}
+.page2 .honghaizi2{ margin:77px 0 0 -16px; background-position:-6px -7px;}
+.page2 .honghaizi3{ margin:62px 0 0 5px; background-position:-6px -7px;}
+.page2 .wenzi{ position:absolute; width:75px; height:20px; left:50%; top:50%; font-size:15px; color:#ffe5c0; opacity:0; }
+.page2 .wenzi1{ margin:-175px 0 0 -100px;}
+.page2 .wenzi2{ margin:-190px 0 0 45px;}
+.page2 .wenzi3{ margin:-65px 0 0 75px }
+.page2 .wenzi4{ margin:-45px 0 0 0px; }
+.page2 .wenzi5{ margin:-70px 0 0 -120px; }
+.page2 .wenzi6{ margin:-75px 0 0 -20px; }
+.page2 .wenzi7{ margin:-160px 0 0 -10px;}
+.page2 .wenzi8{ margin:-195px 0 0 -10px;}
+.page3 .wancan{position:absolute; width:100px; height:120px; left:50%; top:50%;  margin:-220px 0 0 -130px; background-position:-114px -107px; opacity:0;}
+.page3 .zhushu{position:absolute; width:110px; height:190px; left:50%; top:50%;  margin:-230px 0 0 0px; background-position:0px -41px; opacity:0;}
+.page3 .banche{position:absolute; width:130px; height:120px; left:50%; top:50%;  margin:-68px 0 0 -130px; background-position:0px -235px; opacity:0;}
+.page3 .jiuquan{position:absolute; width:100px; height:120px; left:50%; top:50%;  margin:-24px 0 0 19px; background-position:-230px -250px; opacity:0;}
+.page3 .lvyou{position:absolute; width:100px; height:120px; left:50%; top:50%;  margin:50px 0 0 -50px; background-position:-122px -241px; opacity:0;}
+.page3 .feiji{position:absolute; width:100px; height:50px; left:50%; top:50%;  margin:100px 0 0 -140px; background-position:-240px -210px; z-index:2;}
+.page3 .qiche{position:absolute; width:110px; height:65px; left:50%; top:50%;  margin:-65px 0 0 -110px; background-position:-232px -136px; z-index:2; opacity:0;}
+.page3 .loufan{position:absolute; width:100px; height:100px; left:50%; top:50%;  margin:-207px 0 0 7px; background-position:-104px 0px; z-index:2;}
+.page3 .xiaoren{position:absolute; width:100px; height:120px; left:50%; top:50%;  margin:86px 0 0 22px; background-position:-195px 0px; z-index:2;}
+.page3 .deng{position:absolute; width:5px; height:5px; left:50%; top:50%; background:#fff; z-index:3;}
+.page3 .deng1{ margin:-167px 0 0 56px;}
+.page3 .deng2{ margin:-145px 0 0 62px;}
+.page4 .title{ position:absolute; width:260px; height:160px; left:50%; top:50%; margin:-250px 0 0 -130px; background-position:0px -200px; }
+.page4 .officeBox{ position:absolute; width:260px; height:auto; left:50%; top:50%; margin:-100px 0 0 -130px;}
+.page4 .officeBox li{ width:100%; height:45px; margin-top:5px; }
+.page4 .more{ position:absolute; width:240px; height:30px; line-height:30px; text-align:center; left:50%; bottom:65px; margin:150px 0 0 -120px; border:1px solid #b26a04; font-size:17px; color:#b26a04; background:#ffe6c3; border-radius:4px;  }
+.page4 .officeBox li .offcieDetail{ float:left; width:70%;}
+.page4 .officeBox li .salary{ float:left; width:30%; height:40px; line-height:40px; text-align:right; color:#e7141a; font-size:14px;}
+.page4 .officeBox li .offcieDetail .offcieName{ display:inline-block; color:#e7141a; font-size:14px; height:25px; line-height:25px;}
+.page4 .officeBox li .offcieDetail .offcieInfo{ display:inline-block; color:#b26a04; font-size:12px; height:15px; line-height:15px;}
+.comPage .title{ display:inline-block; width:80%; height:30px; background:#e7141a; padding:15px 10% 0 10%;}
+.comPage .title .name{ float:left; display:inline-block; height:30px; line-height:20px; color:#fff; font-size:24px; }
+.comPage .title .money{ float:right; display:inline-block; height:30px; line-height:30px; color:#fff; font-size:16px; }
+.comPage .requriedBox{display:inline-block; width:80%; height:40px; background:#ffe9c9; padding:3px 10%;}
+.comPage .requriedBox p{ color:#e7141a; height:40px; line-height:20px;}
+.comPage .detailBox{display:inline-block; width:80%; height:auto; padding:10px 10% 0 10%;}
+.comPage .detailBox h3{ font-size:15px; color:#e7141a; height:20px; line-height:20px;}
+.comPage .detailBox span{ display:block;  font-size:12px; margin-top:3px; line-height:16px; color:#b26a04;}
+.comPage .respons{ padding-bottom:8px; border-bottom:1px dotted #b26a04;}
+.comPage .request{ margin-top:8px; }
+.comPage .arrow2{ position:absolute; width:30px; height:28px; right:20px; top:50%;  margin:0 0 0 -15px; background-position:5px -89px; z-index:10; animation:leftToRight2 ease-in 1.5s infinite; -webkit-animation:leftToRight2 ease-in 1.5s infinite;}
+.comPage .arrow3{position:absolute; width:30px; height:20px; left:50%; bottom:10px; margin:0 0 0 -15px; background-position:5px -110px; z-index:10; animation:upDown2 ease-in 1.5s infinite; -webkit-animation:upDown2 ease-in 1.5s infinite;	}
+.page10 .emailIocn1{ position:absolute; width:50px; height:30px; left:50%; top:50%; margin:-100px 0 0 -32px; background-position:-138px -50px;}
+.page10 .emailIocn2{ position:absolute; width:80px; height:80px; left:50%; top:50%; margin:-100px 0 0 -32px; background-position:-138px -80px;}
+.page10 .share{ position:absolute; width:186px; height:85px; left:50%; top:50%; margin:-48px 0 0 -99px; background-position:-225px -80px; z-index:2;}
+.page10 .title{ position:absolute; width:200px; height:20px; line-height:20px; text-align:center; left:50%; top:50%; margin:60px 0 0 -100px; font-size:15px; color:#ffe5c0; z-index:2;}
+.page10 .email{ position:absolute; width:200px; height:20px; line-height:20px; text-align:center; left:50%; top:50%; margin:90px 0 0 -100px; font-size:15px; color:#ffe5c0; font-family:Arial; opacity:0; z-index:2;}
+.page10 .logo{ background-position:-375px -20px;}
+
+.page10 .banquan{position:absolute; width:120px; height:20x; left:50%; bottom:10px;  margin:0 0 0 -52px; color:#ffe5c0; font-size:12px; text-align:center; line-height:20px;}
+.swiper-slide-active .ren1{
+	animation:leftRight ease-in   2s infinite;
+	 -webkit-animation:leftRight ease-in    2s infinite;	
+	}
+.swiper-slide-active .ren2{
+	animation:upDown1 ease-in   1s infinite;
+	 -webkit-animation:upDown1 ease-in 1s infinite;	
+	}	
+.swiper-slide-active .honghaizi1{
+	animation:haizi 0.8s forwards ;
+	-webkit-animation:haizi 0.8s forwards;
+	 }	 
+.swiper-slide-active .honghaizi2{
+	animation:haizi 0.8s forwards 1.5s;
+	-webkit-animation:haizi 0.8s forwards 1.5s;
+	 }
+.swiper-slide-active .honghaizi3{
+	animation:haizi 0.8s forwards 1.8s ;
+	-webkit-animation:haizi 0.8s forwards 1.8s;
+	}
+	
+.swiper-slide-active .wenzi1{
+	animation:opacity1 1.5s forwards 0.5s ;
+	-webkit-animation:opacity1 1.5s forwards 0.5s;
+	}
+.swiper-slide-active .wenzi2,.swiper-slide-active .wenzi3,.swiper-slide-active .wenzi4,.swiper-slide-active .wenzi5{
+	animation:opacity2 1.2s forwards ;
+	-webkit-animation:opacity2 1.2s forwards;
+	}
+.swiper-slide-active .wenzi6{
+	animation:opacity3 1.5s forwards 0.8s;
+	-webkit-animation:opacity3 1.5s forwards 0.8s;
+	}
+.swiper-slide-active .wenzi7,.swiper-slide-active .wenzi8{
+	animation:opacity4 1s forwards ;
+	-webkit-animation:opacity4 1s forwards;
+	}
+.swiper-slide-active .yun4{
+	animation:leftToRight 1.5s forwards ;
+	-webkit-animation:leftToRight 1.5s  forwards ;
+	}
+.swiper-slide-active .yun2{
+	animation:leftToRight1 5s forwards infinite;
+	-webkit-animation:leftToRight1 5s  forwards infinite ;
+	}
+.swiper-slide-active .emailIocn1{
+	animation:topToBottom 1.5s forwards ;
+	-webkit-animation:topToBottom 1.5s  forwards  ;
+	}
+	
+.swiper-slide-active .email{
+	animation:toBig 1.5s forwards 1s ;
+	-webkit-animation:toBig 1.5s  forwards 1s;
+	}
+.swiper-slide-active.page2 .title{
+	animation:toBig  1s; 
+	-webkit-animation:toBig  1s; 
+	}
+.swiper-slide-active.page3 .fuli{
+	animation:toBig  1s forwards; 
+	-webkit-animation:toBig  1s forwards; 
+	}
+	
+.swiper-slide-active.page3 .feiji{
+	animation:leftToRight4  2.5s forwards 2s; 
+	-webkit-animation:leftToRight4  2.5s forwards 2s; 
+	}	
+.swiper-slide-active.page3 .qiche{
+	animation:rightToLeft2  2s forwards 1s; 
+	-webkit-animation:rightToLeft2  2s forwards 1s; 
+	}
+.swiper-slide-active.page3 .loufan{
+	animation:opacity5 1s  forwards 1s ;
+	-webkit-animation:opacity5 1s forwards 1s;
+	}
+	
+.swiper-slide-active.page3 .xiaoren{
+	animation:upDown1 ease-in 1s infinite;
+	-webkit-animation:upDown1 ease-in 1s infinite;
+	}
+.swiper-slide-active.page3 .deng1{
+	animation:flash  0.5s 0.5s linear 10;
+	-webkit-animation:flash 0.5s 0.5s linear 10;
+	}
+.swiper-slide-active.page3 .deng2{
+	animation:flash  0.8s infinite linear; 
+	-webkit-animation:flash 0.8s infinite  linear; 
+	}
+.swiper-slide-active.page4 .title{
+	animation:topToBottom2  1s forwards ; 
+	-webkit-animation:topToBottom2  1s forwards; 
+	}
+.swiper-slide-active.page4 .more{
+	animation:toBig  1s 0.5s ; 
+	-webkit-animation:toBig  1s 0.5s; 
+	}
+.swiper-slide-active.comPage .zhizhe1{
+	animation:leftToRight3  1s  forwards;
+	-webkit-animation:leftToRight3  1s forwards; 
+	}
+.swiper-slide-active.comPage .zhizhe2{
+	animation:leftToRight3  1s forwards ;
+	-webkit-animation:leftToRight3  1s forwards;  
+	}
+.swiper-slide-active.comPage .zhizhe3{
+	animation:leftToRight3  1s forwards ;
+	-webkit-animation:leftToRight3  1s forwards; 
+	}
+.swiper-slide-active.comPage .zhizhe4{
+	animation:leftToRight3  1s  forwards ;
+	-webkit-animation:leftToRight3  1s forwards; 
+	}
+.swiper-slide-active.comPage .yaoqiu1{
+	animation:leftToRight3  1s forwards ;
+	-webkit-animation:leftToRight3  1s forwards ; 
+	}
+.swiper-slide-active.comPage .yaoqiu1{
+	animation:rightToLeft3  1s forwards ;
+	-webkit-animation:rightToLeft3  1s forwards ; 
+	}
+.swiper-slide-active.comPage .yaoqiu2{
+	animation:rightToLeft3  1s  forwards;
+	-webkit-animation:rightToLeft3  1s forwards ; 
+	}
+.swiper-slide-active.comPage .yaoqiu3{
+	animation:rightToLeft3  1s forwards ;
+	-webkit-animation:rightToLeft3  1s forwards; 
+	}
+.swiper-slide-active.comPage .yaoqiu4{
+	animation:rightToLeft3  1s forwards ;
+	-webkit-animation:rightToLeft3  1s forwards; 
+	}
+
+@media(max-height:480px){
+.page4 .title{ margin:-235px 0 0 -130px;}
+.page4 .officeBox{margin:-90px 0 0 -130px;}
+.page4 .officeBox li{height:35px;}
+.comPage .detailBox span{font-size:10px; line-height:15px;}
+}
+
+
+</style>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/idangerous.swiper-2.1.min.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?ad2ae15d5f900b85b8732fcb5d4d9ac3";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+var imgUrl = 'http://special.jiuxian.com/topic/weixin/jxzp/images/share.png';
+var lineLink = 'http://special.jiuxian.com/topic/weixin/jxzp/index.html';
+var descContent = "无酒不成席  酒仙网聘你回家";
+var shareTitle = '无酒不成席  酒仙网聘你回家';
+var appid = '';
+function shareFriend() {
+	WeixinJSBridge.invoke('sendAppMessage',{
+		"appid": appid,
+		"img_url": imgUrl,
+		"img_width": "80",
+		"img_height": "80",
+		"link": lineLink,
+		"desc": descContent,
+		"title": shareTitle
+	}, function(res) {
+		//_report('send_msg', res.err_msg);
+	})
+}
+function shareTimeline() {
+	WeixinJSBridge.invoke('shareTimeline',{
+		"img_url": imgUrl,
+		"img_width": "80",
+		"img_height": "80",
+		"link": lineLink,
+		"desc": descContent,
+		"title": shareTitle
+	}, function(res) {
+		   //_report('timeline', res.err_msg);
+	});
+}
+function shareWeibo() {
+	WeixinJSBridge.invoke('shareWeibo',{
+		"content": descContent,
+		"url": lineLink,
+	}, function(res) {
+		//_report('weibo', res.err_msg);
+	});
+}
+// 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+	// 发送给好友
+	WeixinJSBridge.on('menu:share:appmessage', function(argv){
+		shareFriend();
+	});
+	// 分享到朋友圈
+	WeixinJSBridge.on('menu:share:timeline', function(argv){
+		shareTimeline();
+	});
+	// 分享到微博
+	WeixinJSBridge.on('menu:share:weibo', function(argv){
+		shareWeibo();
+	});
+}, false);
+
+</script>
+
+</head>
+<body  onLoad="load()">
+<img src="images/share.png" style="" width="0" height="0"/>
+<div class="tipBox"><i class="iconfont phone">&#x3448;</i><span>为了更好的浏览效果,请将屏幕竖向浏览</span></div>
+<div id="loading">
+	<p>别急，我马上就来！</p>
+</div>
+<div class="swiper-container">
+	<ul class="swiper-wrapper">
+		<li class="swiper-slide page page1">
+      		<img src="images/page1.png" style="width:100%;height:100%;" />
+            <span class="icon1 wenzi"></span>
+            <span class="icon1 qizi"></span>
+            <span class="icon1 renqun"></span>
+            <span class="icon1 ren1"></span>
+            <span class="icon1 ren2"></span>     
+            <span class="icon1 logo"></span>
+			<span class="icon1 arrow"></span>       
+		</li>
+		<li class="swiper-slide page page2">
+			<img src="images/page2.png" style="width:100%;height:100%;" />
+            <span class="icon2 title"></span>
+            <span class="icon2 fangzi"></span>
+            <span class="icon2 yun yun1"></span>
+            <span class="icon2 yun yun2"></span>
+            <span class="icon2 yun yun3"></span>
+            <span class="icon2 yun yun4"></span>
+            <span class="icon2 honghaizi honghaizi1"></span>
+            <!--<span class="icon2 honghaizi honghaizi2"></span>-->
+            <span class="icon2 honghaizi honghaizi3"></span>
+            <span class="wenzi wenzi1">扁平管理</span>
+            <span class="wenzi wenzi2">岗位晋升</span>
+            <span class="wenzi wenzi3">专项奖金</span>
+            <span class="wenzi wenzi4">免费班车</span>
+            <span class="wenzi wenzi5">电子商务</span>
+            <span class="wenzi wenzi6">绩效奖金</span>
+            <span class="wenzi wenzi7">D轮级以上</span>
+            <span class="wenzi wenzi8">北京</span> 
+            <span class="icon1 logo"></span>
+			<span class="icon1 arrow"></span>      
+		</li>
+        <li class="swiper-slide page page3">
+			<img src="images/page3.png" style="width:100%;height:100%;" />
+            <span class="icon3 fuli wancan"></span>
+            <span class="icon3 fuli zhushu"></span>
+            <span class="icon3 fuli banche"></span>
+            <span class="icon3 fuli jiuquan"></span>
+			<span class="icon3 fuli lvyou"></span> 
+            <span class="icon3 feiji"></span>  
+            <span class="icon3 qiche"></span>  
+            <span class="icon3 loufan"></span>  
+             <span class="icon3 xiaoren"></span> 
+             <span class="deng deng1"></span>
+              <span class="deng deng2"></span>
+		</li>
+		 <li class="swiper-slide page page4">   
+       		<img src="images/page4.png" style="width:100%;height:100%;" />
+            <span class="icon2 title"></span>
+             <div class="officeBox">
+             	<ul>
+                <li class="clearfix">
+                <div class="offcieDetail">
+                <span class="offcieName">招聘经理</span>
+                <span class="offcieInfo">3年以上工作经验   专科学历以上</span>                
+                </div>
+                <div class="salary">￥8k-10k</div>
+                </li>
+                <li class="clearfix">
+                <div class="offcieDetail">
+                <span class="offcieName">市场经理</span>
+                <span class="offcieInfo">1年以上工作经验   专科学历以上</span>                
+                </div>
+                <div class="salary">￥5k-10k</div>
+                </li>
+                <li class="clearfix">
+                <div class="offcieDetail">
+                <span class="offcieName">java开发工程师</span>
+                <span class="offcieInfo">3年以上工作经验  本科学历以上</span>                
+                </div>
+                <div class="salary">￥15k-30k</div>
+                </li>
+                <li class="clearfix">
+                <div class="offcieDetail">
+                <span class="offcieName">大客户经理</span>
+                <span class="offcieInfo">2年以上工作经验  专科学历以上</span>                
+                </div>
+                <div class="salary">￥10k-20k</div>
+                </li>           
+                 <li class="clearfix">
+                <div class="offcieDetail">
+                <span class="offcieName">BD经理</span>
+                <span class="offcieInfo">1年以上工作经验  本科学历以上</span>                
+                </div>
+                <div class="salary">￥8k-20k</div>
+                </li>
+                </ul>
+             </div>  
+            <a class="more" href="http://m.zhaopin.com/beijing-530/?keyword=%E9%85%92%E4%BB%99%E7%BD%91%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8">查看更多职位</a>        
+			<span class="icon1 logo"></span>
+			<span class="icon1 arrow"></span>  
+		</li>
+         <li class="swiper-slide page page5 comPage">
+            <div class="title clearfix"><p class="name">招聘经理</p><p class="money">￥8k-10k</p></div>
+            <div class="requriedBox">
+            <p>所在城市  北京 | 招聘人数  1人 | 工作经验  3年以上 | 学历  专科学历以上</p>
+            </div>
+            <div class="detailBox">
+                <div class="respons">
+                    <h3>岗位职责</h3>
+                    <span class="zhizhe1">1、全面负责公司的招聘工作，包括招聘方案制订、具体推进执行、后续跟踪评估等，完成公司的招聘目标</span>
+                    <span class="zhizhe1">2、与公司内部沟通，了解具体的招聘需求，进行职位分析，提供详细的招聘计划和方案</span>
+                    <span class="zhizhe1">3、选择和开拓招聘渠道，开展招聘活动</span>
+                    <span class="zhizhe1">4、建立人才搜寻渠道，了解行业内中高端人才的动态信息，完善公司的后备人才库</span>
+                </div>
+                <div class="request">
+                    <h3>任职要求</h3>
+                    <span class="yaoqiu1">1、大学专科以上学历，人力资源专业优先考虑</span>
+                    <span class="yaoqiu1">2、3年以上专业招聘经验，熟悉各种招聘渠道，拥有一定的电商后备人才资源者优先</span>
+                    <span class="yaoqiu1">3、拥有对人的敏锐洞察力和判断力，熟悉人才的甄选技巧</span>
+                    <span class="yaoqiu1">4、具有良好的职业道德素养，品行端正，谈吐大方，心理素质佳</span>
+                </div>
+            </div>                            
+            <span class="icon1 logo"></span>
+            <span class="icon1 arrow3"></span>  
+        </li>
+         <li class="swiper-slide page page6 comPage">
+            <div class="title clearfix"><p class="name">市场经理</p><p class="money">￥12k-24k</p></div>
+            <div class="requriedBox">
+            <p>所在城市  北京 | 招聘人数  7人 | 工作经验  1年以上 | 学历    专科学历以上</p>
+            </div>
+            <div class="detailBox">
+                <div class="respons">
+                    <h3>岗位职责</h3>
+                    <span class="zhizhe1">1、负责全国各地区市场加盟渠道的拓展及加盟商洽谈</span>
+                    <span class="zhizhe1">2、监督并辅导加盟商注册下单工作，提高店铺运作质量</span>
+                    <span class="zhizhe1">3、参与加盟商宣传、培训工作，协助解决加盟商运营中出现的问题</span>
+                    <span class="zhizhe1">4、其他突发性工作及上级领导交办的其他事务</span>
+                </div>
+                <div class="request">
+                    <h3>任职要求</h3>
+                    <span class="yaoqiu1">1、销售或市场主管1年以上工作经验，吃苦耐劳，能适应经常性出差</span>
+                    <span class="yaoqiu1">2、有较强的沟通能力和应变能力</span>
+                    <span class="yaoqiu1">3、熟练使用Office软件及办公设备</span>                                    
+                    <span class="yaoqiu1">4、高度的工作热情，责任感、良好的团队合作精神</span>
+                </div>
+            </div>                            
+            <span class="icon1 logo"></span>
+            <span class="icon1 arrow3"></span>  
+        </li>
+         <li class="swiper-slide page page7 comPage">
+            <div class="title clearfix"><p class="name">java开发工程师</p><p class="money">￥15k-30k</p></div>
+            <div class="requriedBox">
+            <p>所在城市  北京 | 招聘人数  2人 | 工作经验  3年以上 | 学历  本科学历以上</p>
+            </div>
+            <div class="detailBox">
+                <div class="respons">
+                    <h3>岗位职责</h3>
+                    <span class="zhizhe1">1、负责编写技术方案，系统设计文档</span>
+                    <span class="zhizhe1">2、负责系统架构搭建</span>
+                    <span class="zhizhe1">3、负责关键技术编码实现</span>
+                    <span class="zhizhe1">4、负责指导项目组成员完成技术工作</span>
+                </div>
+                <div class="request">
+                    <h3>任职要求</h3>
+                    <span class="yaoqiu1">1、计算机相关专业本科以上学历，毕业后3年实际工作经验以上</span>
+                    <span class="yaoqiu1">2、精通Spring框架，iBatis或其他数据持久层框架</span>
+                    <span class="yaoqiu1">3、熟练掌握Linux/unix服务器使用</span>
+                    <span class="yaoqiu1">4、有电商移动服务端开发经验最佳</span>
+                </div>
+            </div>                            
+            <span class="icon1 logo"></span>
+            <span class="icon1 arrow3"></span>  
+        </li>
+         <li class="swiper-slide page page8 comPage">
+            <div class="title clearfix"><p class="name">大客户经理</p><p class="money">￥15k-30k</p></div>
+            <div class="requriedBox">
+            <p>所在城市  北京 | 招聘人数  5人 | 工作经验  2年以上 | 学历    专科学历以上</p>
+            </div>
+            <div class="detailBox">
+                <div class="respons">
+                    <h3>岗位职责</h3>
+                    <span class="zhizhe1">1、客户关系管理：制定年度大客户拜访计划，并组织实施，确保客户满意，同大客户建立良好的关系</span>
+                    <span class="zhizhe1">2、市场推广活动实施：执行市场推广计划和产品组合方案，并对执行结果进行分析</span>
+                    <span class="zhizhe1">3、职能业务协调：协调官网事业部、商城事业部、整合营销部等部门与本部门的关系，调动各种资源，提高对大客户的服务</span>
+                    <span class="zhizhe1">4、信息管理：收集大客户的需求信息和满意度信息</span>
+                </div>
+                <div class="request">
+                    <h3>任职要求</h3>
+                    <span class="yaoqiu1">1、有酒水销售经验，热爱销售</span>
+                    <span class="yaoqiu1">2、抗压能力强，愿意挑战高薪，专科学历以上</span>
+                </div>
+            </div>                            
+            <span class="icon1 logo"></span>
+            <span class="icon1 arrow3"></span>  
+        </li>
+         <li class="swiper-slide page page9 comPage">
+            <div class="title clearfix"><p class="name">BD经理</p><p class="money">￥10k-20k</p></div>
+            <div class="requriedBox">
+            <p>所在城市  北京 | 招聘人数  2人 | 工作经验  1年以上 | 学历  本科学历以上</p>
+            </div>
+            <div class="detailBox">
+                <div class="respons">
+                    <h3>岗位职责</h3>
+                    <span class="zhizhe1">1、利用已有的资源策划执行合作，推广酒快到安卓及IOS客户端</span>
+                    <span class="zhizhe1">2、协助产品运营部门进行有针对性的推广传播</span>
+                    <span class="zhizhe1">3、根据业务发展需要，挖掘新的合作资源</span>
+                    <span class="zhizhe1">4、根据合作效果制定优化解决方案</span>
+                </div>
+                <div class="request">
+                    <h3>任职要求</h3>
+                    <span class="yaoqiu1">1、了解移动互联网领域的各种商业模式，熟悉中国手机市场及移动应用产业的现状和发展</span>
+                    <span class="yaoqiu1">2、沟通能力强，创新意识强，思维活跃；有较强的营销策划和创意能力 </span>
+                    <span class="yaoqiu1">3、掌握丰富的移动互联网合作资源，能有效拓展新的合作资源</span>
+                    <span class="yaoqiu1">4、有互联网营销行业策划工作经验者优先考虑</span>
+                </div>
+            </div>                            
+            <span class="icon1 logo"></span>
+            <span class="icon1 arrow3"></span>  
+        </li>
+       
+        <li class="swiper-slide page page10">
+            <img src="images/page5.png" style="width:100%;height:100%;" />
+            <span class="icon2 emailIocn1"></span>
+            <span class="icon2 emailIocn2"></span>
+            <span class="icon2 share"></span>
+            <span class="title">酒仙网等你回家</span>
+            <span class="email">gaoxiaoyu@jiuxian.com</span>
+            <span class="icon2 logo"></span>
+            <span class="banquan">技术中心-UED</span>
+		</li>
+	</ul> 
+</div>
+</body>
+
+<script type="text/javascript">
+function load(){
+	document.getElementById("loading").style.display = "none";
+	//$('.swiper-container').addClass('load');
+}
+var mySwiper = new Swiper('.swiper-container',{
+	mode: 'vertical'
+});
+
+</script>
+</html>

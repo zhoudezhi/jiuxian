@@ -1,0 +1,33 @@
+$.each使用方法：
+
+
+1.遍历数组
+
+var anArray = ['one','two','three'];
+$.each(anArray,function(index,value) {     //function包含两个参数    第一个返回当前数组的索引；第二个返回当前数组内容
+            alert(index+':'+value)        //显示结果为:     0:one;   1:two;   2 three;
+});
+
+
+
+
+
+2.遍历对象
+
+var obj ={"name":"项海军","password":"123456"};
+$.each(obj,function(n,value) {        //function包含两个参数  第一个返回当前对象的成员；第二个返回当前对象成员的内容
+       alert(n+':'+value);            //显示结果为:     name:项海军;   password:123456;
+       alert(obj["name"])             //显示结果为：   显示项海军2次
+       
+});
+
+
+
+3.遍历List集合
+var obj =[{"name":"项海军","password":"123456"},{"name":"科比","password":"333333"}];
+$.each(obj,function(n,value) {        //function包含两个参数  第一个返回当前对象的索引；第二个返回当前对象的内容
+       alert(value.name+' '+value.password);            //显示结果为:    项海军 123456;  科比 333333;
+       alert(value["name"]+' '+value["password"]);      //显示结果为:    项海军 123456;  科比 333333;
+});
+
+

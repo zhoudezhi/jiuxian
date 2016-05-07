@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商家后台</title>
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/userHome.css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+    var winHeight = $(window).height();
+	$(".mainBox .leftNav").css({"height":winHeight-120});
+	$(window).bind("resize",function(){
+		var reHeight = $(window).height();
+		$(".mainBox .leftNav").css({"height":reHeight-120});	
+	});
+	
+	$(".errorPage .returnBtn").click(function(e) {
+        window.location.href = "http://shop.jiuxian.com";
+    });
+	
+	
+	var time = 5;
+	function timeLast(){
+		time--;
+		if(time>0){
+			$(".errorPage .timeLast").text(time);			
+		}else if(time==0){
+			window.location.href = "http://shop.jiuxian.com";
+		}
+	}
+	
+	//setInterval(function(){timeLast()},1000)
+});
+
+
+</script>
+</head>
+<body>
+
+<div class="header"><div class="headerBox clearfix">
+	<div class="leftBox clearfix"><a class="logo" href="javascript:;"><img src="images/logo.png" /></a><span>商家后台</span></div>
+    <div class="rightBox clearfix"><span>欢迎您：</span><span class="userName">jxwmaotai</span><a href="javascript:;">[退出]</a></div>
+</div></div>
+<div class="navigate"><div class="navListBox">
+	<ul class="clearfix">
+    	<li class="on"><a href="javascript:;">首页</a></li>
+    	<li><a href="javascript:;">我的店铺</a></li>
+        <li><a href="javascript:;">商品管理</a></li>
+        <li><a href="javascript:;">促销管理</a></li>
+        <li><a href="javascript:;">订单管理</a></li>
+        <li><a href="javascript:;">我的配送</a></li>
+	</ul>
+</div></div>
+
+    <div class="mainBox clearfix">
+    	<div class="errorPage">
+       		<p class="errorTip">页面出错, <span class="timeLast">5</span> 秒后跳回商家后台</p>
+            <p class="returnTip clearfix"><a class="returnBtn" href="javascript:;">返回商家后台</a><span>您已经出现越权操作，请第一时间联系管理员</span></p>
+            <p class="otherTip">世界这么大，醉了都说好</p>
+        	<img class="errorImg" width="570" height="562" src="images/error.jpg" />	
+        </div>
+
+    </div>
+
+
+
+
+</body>
+</html>

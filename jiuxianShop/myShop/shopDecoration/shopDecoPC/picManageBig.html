@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图片管理</title>
+<link rel="stylesheet" type="text/css" href="../../../css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-1.3.4.css" />
+<link rel="stylesheet" type="text/css" href="css/frame.css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox-1.3.4.js"></script>
+<script type="text/javascript" src="js/decPublic.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	/*装修模块高度控制start*/
+	var winHeight2 = $(window).height();
+	$(".mainEditCon").css({"height":winHeight2-71});
+	$(window).bind("resize",function(){
+		var reHeight2 = $(window).height();
+		$(".mainEditCon").css({"height":reHeight2-71});
+	});
+	
+	//查看大图
+	$(".bigImg").fancybox(); 
+	
+	//图片选中状态
+	$(".manageBigPic input[name=items]:checked").each(function() {
+        $(this).parents("li").find(".bigPic").css('border-color','#ff9900');
+    });
+	$(".manageBigPic input[name=items]:checkbox").change(function(){
+		if($(this).is(":checked")){
+			$(this).parents("li").find(".bigPic").css('border-color','#ff9900');
+		}else{
+			$(this).parents("li").find(".bigPic").css('border-color','#ddd');
+		}
+	});
+	$(".manageBigPic li").hover(function(){
+		$(this).find(".bigPic").css('border-color','#ff9900');
+	},function(){
+		if($(this).find("input[name=items]:checkbox").is(":checked")){
+			return;
+		}else{
+			$(this).find(".bigPic").css('border-color','#ddd');
+		}
+	});
+	
+	$("#moveCheckedBig,.moveImg").click(function(e) {
+        $(".bgPop01,.movePop").show();
+    });
+	$(".movePop .cancelBtn,.movePop .popClose").click(function(e) {
+ 		$(".bgPop01,.movePop").hide();
+    });
+	
+	  /*拖拽函数start*/
+	var dragObj={"status":false,"pagex":0,"pagey":0}
+	$(".popTitle").bind({
+		"mousedown":function(e){
+			dragObj.pagex=e.pageX;
+			dragObj.pagey=e.pageY;
+			dragObj.status=true;
+		},
+		"mousemove":function(e){
+			if(dragObj.status==true)
+			{
+				var left=$(this).parents(".commonPop").offset().left+e.pageX-dragObj.pagex;		
+				var top=$(this).parents(".commonPop").offset().top+e.pageY-dragObj.pagey;				
+				$(this).parents(".commonPop").css({"left":left,"top":top});
+				dragObj.pagex=e.pageX;
+				dragObj.pagey=e.pageY;
+			}
+		},
+		"mouseup":function(e){
+			dragObj.status=false;
+		},
+		"mouseout":function(e){
+			dragObj.status=false;
+		}		
+	});
+	/*拖拽函数end*/  
+	 
+});
+</script>
+</head>
+<body>
+<div class="shopMain">
+	<div class="topNav clearfix">
+    	<a class="jxShopLogo" href="javascript:;"><img src="images/JXShop_logo.png" alt="" /></a>
+        <div class="navList">
+        	<ul class="clearfix">
+        	<li><i class="editIcon"></i><a class="returnBack" href="indexPC.html">首页</a><em class="editIcon"></em></li>
+            <li><i class="editIcon"></i><a class="returnBack" href="home.html">店铺装修</a><em class="editIcon"></em></li>
+            <li><i class="editIcon"></i><a class="returnBack" href="promotionsDec.html">活动装修</a><em class="editIcon"></em></li>
+            <li class="on"><a class="returnBack" href="picManage.html">图片管理</a><em class="editIcon"></em></li>
+            </ul>
+        </div>
+        
+        <div class="userInfoBox">
+        <span>你好，</span>
+        <span class="userName">userName</span>
+        <span>，欢迎进入酒仙网店铺运营平台！</span>
+        <a class="returnBack" href="javascript:;">退出</a>
+        </div>
+    </div>
+    <div class="shopBox clearfix">
+    	<div class="leftNav">
+        <div class="pageBox">
+        <span>图片管理</span>
+        </div>
+        
+        <div class="pageList">
+        <ul>
+        <li class="on">
+        	<div class="sort"><a href="picManage.html"><i class="editIcon"></i>全部图片</a></div>
+        </li>
+        <li>
+        	<div class="sort"><a href="picUpload.html"><i class="editIcon"></i>上传图片</a></div>
+        </li>
+        <li>
+        	<div class="sort"><a href="picManageSort.html"><i class="editIcon"></i>图片分类</a></div>
+        </li>
+        </ul>
+        </div>
+        <div class="navSwitch"><i class="editIcon"></i></div>
+        </div>
+        <div class="mainEdit">
+            <div class="mainEditCon">
+                <div class="editSearchBox"><span class="es-tit">图片名称：</span><input class="esForm form01" type="text" /><span class="es-tit">图片分类：</span><select class="picClassify"><option value="0">全部</option><option value="1">分类1</option><option value="2">分类2</option></select><select class="picClassify"><option value="0">全部</option><option value="1">分类1</option><option value="2">分类2</option></select><span class="es-tit">上传日期：</span><input class="esForm form02" type="text" /><em class="es-zhi">至</em><input class=" esForm form02" type="text" /><a class="but editBut01 searchBut" href="javascript:;">搜索</a></div>
+                
+                <div class="editManageBox">
+                    <div class="editOpeBox">
+                        <span class="checkAllBox"><input class="checkAll" type="checkbox" id="checkAllBig" />全选</span><a class="but editBut03" id="moveCheckedBig" href="javascript:;">移动图片</a><a class="but editBut02" id="deleteCheckedBig" href="javascript:;">删除选中图片</a><a class="but editBut02" style="float:right;" href="picManage.html">切换到列表</a></div>
+                	<div class="manageBigPic">
+                    	<ul class="clearfix">
+                        <li>
+                        	<div class="bigPic"><a href="javascript:;"><img  class="bigImg" href="images/floorSlider_1.jpg" src="images/floorSlider_1.jpg" /></a></div>
+                            <div class="bigPicInfo">
+                            	<p class="picName">圣诞头图_05.jpg</p>
+                                <p class="picTime">2014-12-25 10:42:35</p>
+                                <p class="picPro clearfix"><input name="items" type="checkbox" /><a class="editTabBut01 bigImg" href="images/floorSlider_1.jpg">查看</a><a class="editTabBut01 moveImg" href="javascript:;">移动</a><a class="editTabBut01 delete" href="javascript:;">删除</a><a class="editTabBut01" href="javascript:;">复制链接</a></p>
+                            </div>
+                        </li>
+                       <li>
+                        	<div class="bigPic"><a href="javascript:;"><img  class="bigImg" href="images/floorSlider_1.jpg" src="images/floorSlider_1.jpg" /></a></div>
+                            <div class="bigPicInfo">
+                            	<p class="picName">圣诞头图_05.jpg</p>
+                                <p class="picTime">2014-12-25 10:42:35</p>
+                                <p class="picPro clearfix"><input name="items" type="checkbox" /><a class="editTabBut01 bigImg" href="images/floorSlider_1.jpg">查看</a><a class="editTabBut01 moveImg" href="javascript:;">移动</a><a class="editTabBut01 delete" href="javascript:;">删除</a><a class="editTabBut01" href="javascript:;">复制链接</a></p>
+                            </div>
+                        </li>
+                        <li>
+                        	<div class="bigPic"><a href="javascript:;"><img  class="bigImg" href="images/floorSlider_1.jpg" src="images/floorSlider_1.jpg" /></a></div>
+                            <div class="bigPicInfo">
+                            	<p class="picName">圣诞头图_05.jpg</p>
+                                <p class="picTime">2014-12-25 10:42:35</p>
+                                <p class="picPro clearfix"><input name="items" type="checkbox" /><a class="editTabBut01 bigImg" href="images/floorSlider_1.jpg">查看</a><a class="editTabBut01 moveImg" href="javascript:;">移动</a><a class="editTabBut01 delete" href="javascript:;">删除</a><a class="editTabBut01" href="javascript:;">复制链接</a></p>
+                            </div>
+                        </li>
+                        <li>
+                        	<div class="bigPic"><a href="javascript:;"><img  class="bigImg" href="images/floorSlider_1.jpg" src="images/floorSlider_1.jpg" /></a></div>
+                            <div class="bigPicInfo">
+                            	<p class="picName">圣诞头图_05.jpg</p>
+                                <p class="picTime">2014-12-25 10:42:35</p>
+                                <p class="picPro clearfix"><input name="items" type="checkbox" /><a class="editTabBut01 bigImg" href="images/floorSlider_1.jpg">查看</a><a class="editTabBut01 moveImg" href="javascript:;">移动</a><a class="editTabBut01 delete" href="javascript:;">删除</a><a class="editTabBut01" href="javascript:;">复制链接</a></p>
+                            </div>
+                        </li>
+                        <li>
+                        	<div class="bigPic"><a href="javascript:;"><img  class="bigImg" href="images/floorSlider_1.jpg" src="images/floorSlider_1.jpg" /></a></div>
+                            <div class="bigPicInfo">
+                            	<p class="picName">圣诞头图_05.jpg</p>
+                                <p class="picTime">2014-12-25 10:42:35</p>
+                                <p class="picPro clearfix"><input name="items" type="checkbox" /><a class="editTabBut01 bigImg" href="images/floorSlider_1.jpg">查看</a><a class="editTabBut01 moveImg" href="javascript:;">移动</a><a class="editTabBut01 delete" href="javascript:;">删除</a><a class="editTabBut01" href="javascript:;">复制链接</a></p>
+                            </div>
+                        </li>
+                        <li>
+                        	<div class="bigPic"><a href="javascript:;"><img  class="bigImg" href="images/floorSlider_1.jpg" src="images/floorSlider_1.jpg" /></a></div>
+                            <div class="bigPicInfo">
+                            	<p class="picName">圣诞头图_05.jpg</p>
+                                <p class="picTime">2014-12-25 10:42:35</p>
+                                <p class="picPro clearfix"><input name="items" type="checkbox" /><a class="editTabBut01 bigImg" href="images/floorSlider_1.jpg">查看</a><a class="editTabBut01 moveImg" href="javascript:;">移动</a><a class="editTabBut01 delete" href="javascript:;">删除</a><a class="editTabBut01" href="javascript:;">复制链接</a></p>
+                            </div>
+                        </li>
+                        <li>
+                        	<div class="bigPic"><a href="javascript:;"><img  class="bigImg" href="images/floorSlider_1.jpg" src="images/floorSlider_1.jpg" /></a></div>
+                            <div class="bigPicInfo">
+                            	<p class="picName">圣诞头图_05.jpg</p>
+                                <p class="picTime">2014-12-25 10:42:35</p>
+                                <p class="picPro clearfix"><input name="items" type="checkbox" /><a class="editTabBut01 bigImg" href="images/floorSlider_1.jpg">查看</a><a class="editTabBut01 moveImg" href="javascript:;">移动</a><a class="editTabBut01 delete" href="javascript:;">删除</a><a class="editTabBut01" href="javascript:;">复制链接</a></p>
+                            </div>
+                        </li>
+                        <li>
+                        	<div class="bigPic"><a href="javascript:;"><img  class="bigImg" href="images/floorSlider_1.jpg" src="images/floorSlider_1.jpg" /></a></div>
+                            <div class="bigPicInfo">
+                            	<p class="picName">圣诞头图_05.jpg</p>
+                                <p class="picTime">2014-12-25 10:42:35</p>
+                                <p class="picPro clearfix"><input name="items" type="checkbox" /><a class="editTabBut01 bigImg" href="images/floorSlider_1.jpg">查看</a><a class="editTabBut01 moveImg" href="javascript:;">移动</a><a class="editTabBut01 delete" href="javascript:;">删除</a><a class="editTabBut01" href="javascript:;">复制链接</a></p>
+                            </div>
+                        </li>
+                        <li>
+                        	<div class="bigPic"><a href="javascript:;"><img  class="bigImg" href="images/floorSlider_1.jpg" src="images/floorSlider_1.jpg" /></a></div>
+                            <div class="bigPicInfo">
+                            	<p class="picName">圣诞头图_05.jpg</p>
+                                <p class="picTime">2014-12-25 10:42:35</p>
+                                <p class="picPro clearfix"><input name="items" type="checkbox" /><a class="editTabBut01 bigImg" href="images/floorSlider_1.jpg">查看</a><a class="editTabBut01 moveImg" href="javascript:;">移动</a><a class="editTabBut01 delete" href="javascript:;">删除</a><a class="editTabBut01" href="javascript:;">复制链接</a></p>
+                            </div>
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="editPageBox">
+                        <div class="pageTotal">共<span>500</span>条记录</div>
+                        <div class="pageNumber">
+                            <a href="javascript:;" class="firstPage">首页</a><a href="javascript:;" class="prev">上一页</a><a href="javascript:;" class="num on">1</a><a href="javascript:;" class="num">2</a><a href="javascript:;" class="num">3</a><a href="javascript:;" class="pull">…</a><a href="javascript:;" class="num">20</a><a href="javascript:;" class="next">下一页</a><a href="javascript:;" class="lastPage">尾页</a>
+                        </div>
+                        <div class="pagePoint"><span>跳转到<input type="text" maxlength="4">页</span><a href="javascript:;" class="poiBut">GO</a></div>
+                    </div>
+                </div>
+        	</div>
+        </div>
+    </div>
+
+</div>
+<div class="bgPop01"></div>
+<!--移动图片弹窗start -->
+<div class="commonPop movePop firstPop" style="display:none;">
+<div class="popLayer">
+<div class="popTitle"><span class="titleName">移动图片</span><a class="popClose editIcon" href="javascript:;"></a></div>
+<div class="popContain">
+	<div class="moveBox">
+    	<span>一级目录：</span>
+		<select class="moveSele"><option value="0">分类1</option><option value="0">分类1</option><option value="0">分类1</option></select>
+        <span>二级目录：</span>
+        <select class="moveSele"><option value="0">分类1</option><option value="0">分类1</option><option value="0">分类1</option></select>
+    </div>
+	<div class="btnBox"><a class="popBut01 saveBtn" href="javascript:;">保存</a><a class="popBut02 cancelBtn" href="javascript:;">取消</a></div>
+</div>
+</div>
+</div>
+<!--移动图片弹窗end -->
+
+</body>
+</html>

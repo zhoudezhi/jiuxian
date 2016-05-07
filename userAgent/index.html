@@ -1,0 +1,486 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户反馈系统</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var image1;
+    var image2;
+    var image3; 
+	var statrTime1;
+	var statrTime2;
+	var bandTestspeedData ={"bandTestSpeed1":"","bandTestSpeed2":"","bandTestSpeed3":""};
+	var iframeNew;	
+	
+	function getRadom(){
+		return new Date().getTime();		
+	}
+	
+	//获取客户端信息
+	function getUserAgent(){
+		var resultData={"browser":"","version":"","os":""};
+		var os = getOs();
+		resultData["os"] = os;
+		var userAgent = window.navigator.userAgent.toLowerCase();
+		if(userAgent.indexOf("firefox")>-1){
+			var startIndex = userAgent.indexOf("firefox");
+			var data = userAgent.substring(startIndex).split("/");
+			resultData["browser"] = "Firefox";
+			resultData["version"] = data[1];
+			
+		}else if(userAgent.indexOf("msie")>-1){
+			//var startIndex = userAgent.indexOf("msie");
+			var data = $.trim(userAgent.split(";")[1]).split(" ");
+			resultData["browser"] = "Internet Explorer";
+			resultData["version"] = data[1];
+		}else if(userAgent.indexOf("chrome")>-1){
+			var startIndex = userAgent.indexOf("chrome");
+			var data = userAgent.substr(startIndex,11).split("/")
+			resultData["browser"] = "Chrome";
+			resultData["version"] = data[1];
+		}else if(userAgent.indexOf("opera")>-1){
+			var startIndex = userAgent.indexOf("opera");
+			var data = userAgent.substr(startIndex,10).split("/")
+			resultData["browser"] = "Opera";
+			resultData["version"] = data[1];
+		}else if(userAgent.indexOf("safari")>-1){
+			var startIndex = userAgent.indexOf("version");
+			var data = userAgent.substr(startIndex,11).split("/")
+			resultData["browser"] = "Safari";
+			resultData["version"] = data[1];
+		}else{
+			resultData["browser"] = "other";
+			resultData["version"] = "";
+			
+		}		
+		return 	resultData;
+	}
+	
+	//获取操作系统
+	function getOs() { 
+		var sUserAgent = navigator.userAgent; 		
+		var isWin = (navigator.platform == "Win32") || (navigator.platform == "Windows"); 
+		var isMac = (navigator.platform == "Mac68K") || (navigator.platform == "MacPPC") || (navigator.platform == "Macintosh") || (navigator.platform == "MacIntel"); 
+		if (isMac) return "Mac"; 
+			var isUnix = (navigator.platform == "X11") && !isWin && !isMac; 
+		if (isUnix) return "Unix"; 
+			var isLinux = (String(navigator.platform).indexOf("Linux") > -1); 		
+			var bIsAndroid = sUserAgent.toLowerCase().match(/android/i) == "android";
+		if (isLinux) {
+			if(bIsAndroid) return "Android";
+			else return "Linux"; 
+		}
+		if (isWin) { 
+		var isWin2K = sUserAgent.indexOf("Windows NT 5.0") > -1 || sUserAgent.indexOf("Windows 2000") > -1; 
+		if (isWin2K) return "Window2000"; 
+		var isWinXP = sUserAgent.indexOf("Windows NT 5.1") > -1 || sUserAgent.indexOf("Windows XP") > -1; 
+		if (isWinXP) return "WindowXP"; 
+		var isWin2003 = sUserAgent.indexOf("Windows NT 5.2") > -1 || sUserAgent.indexOf("Windows 2003") > -1; 
+		if (isWin2003) return "Window2003"; 
+		var isWinVista= sUserAgent.indexOf("Windows NT 6.0") > -1 || sUserAgent.indexOf("Windows Vista") > -1; 
+		if (isWinVista) return "WindowVista"; 
+		var isWin7 = sUserAgent.indexOf("Windows NT 6.1") > -1 || sUserAgent.indexOf("Windows 7") > -1; 
+		if (isWin7) return "Window7"; 
+		var isWin8 = sUserAgent.indexOf("Windows NT 7.1") > -1 || sUserAgent.indexOf("Windows 8") > -1; 
+		if (isWin8) return "Window8"; 
+		var isWin10 = sUserAgent.indexOf("Windows NT 8.1") > -1 || sUserAgent.indexOf("Windows 10") > -1; 
+		if (isWin10) return "Window8"; 
+		} 
+		return "other"; 
+	}
+	
+	/****************宽带测速start****************/
+	
+	function broadbandTest1(size){		
+		var imageSize1 = size
+		var bandTestEndTime1 = new Date().getTime();
+		var bandTestSpeed1 = imageSize1*1000/(bandTestEndTime1-statrTime1);
+		bandTestSpeed1 = Math.round(bandTestSpeed1);
+		$(".test01 .line").addClass("testEnd").text("测试完成");
+		$(".test01 .textSpeed").text(bandTestSpeed1+"KB/秒").show();
+		bandTestspeedData["bandTestSpeed1"] = bandTestSpeed1;
+		$(".test02 .line").addClass("testOn").text("测试中...");		
+		var radom2 = getRadom();
+		image2 = "<img  src='http://img10.jiuxian.com/speedtest.jpg?"+radom2+"' onload='broadbandTest2(973)' style='display:none;' />";
+		statrTime1 = new Date().getTime();
+		$("body").append(image2);
+
+	}
+	
+	function broadbandTest2(size){
+		var imageSize2 = size
+		var bandTestEndTime2 = new Date().getTime();
+		var bandTestSpeed2 = imageSize2*1000/(bandTestEndTime2-statrTime1);
+		bandTestSpeed2 = Math.round(bandTestSpeed2);
+		$(".test02 .line").addClass("testEnd").text("测试完成");
+		$(".test02 .textSpeed").text(bandTestSpeed2+"KB/秒").show();
+		bandTestspeedData["bandTestSpeed2"] = bandTestSpeed2;
+		$(".test03 .line").addClass("testOn").text("测试中...");		
+		var radom3 = getRadom();
+		image3 = "<img  src='http://foruser.jiuxian.com/static/speedtest.jpg?"+radom3+"' onload='broadbandTest3(973)' style='display:none;' />";
+		statrTime1 = new Date().getTime();
+		$("body").append(image3);
+	}
+	
+	function broadbandTest3(size){
+		var imageSize3 = size
+		var bandTestEndTime3 = new Date().getTime();
+		var bandTestSpeed3 = imageSize3*1000/(bandTestEndTime3-statrTime1);
+		bandTestSpeed3 = Math.round(bandTestSpeed3);
+		$(".test03 .line").addClass("testEnd").text("测试完成");
+		$(".test03 .textSpeed").text(bandTestSpeed3+"KB/秒").show();
+		bandTestspeedData["bandTestSpeed3"] = bandTestSpeed3;
+		$(".lineList .Btn01.off").hide()
+		$(".lineList .Btn01.on").text("重新测试").css("display","inline-block");
+		var averageSpeed = Math.ceil((bandTestspeedData["bandTestSpeed1"]+bandTestspeedData["bandTestSpeed2"]+bandTestspeedData["bandTestSpeed3"])/3);
+		var bandResult;		
+		if(averageSpeed<231){
+			bandResult="2M以下";			
+		}else if(averageSpeed>=231&&averageSpeed<256){
+			bandResult="2M";		
+		}else if(averageSpeed>=256&&averageSpeed<461){
+			bandResult="2M-4M";		
+		}else if(averageSpeed>=461&&averageSpeed<512){
+			bandResult="4M";		
+		}else if(averageSpeed>=512&&averageSpeed<922){
+			bandResult="4M-8M";		
+		}else if(averageSpeed>=922&&averageSpeed<1024){
+			bandResult="8M";		
+		}else if(averageSpeed>=1024&&averageSpeed<1383){
+			bandResult="8M-12M";		
+		}else if(averageSpeed>=1383&&averageSpeed<1536){
+			bandResult="12M";		
+		}else if(averageSpeed>=1536){
+			bandResult="12M以上";		
+		}
+		$(".lineList .btnBox .averageSpeed").text(averageSpeed+"KB/秒");
+        $(".lineList .btnBox .maxSpeed").text(maxSpeed+"KB/秒");
+        $(".lineList .btnBox .bandResult").text(bandResult);
+        $(".lineList .btnBox span").show();
+	}
+	/****************宽带测速end****************/
+	
+	
+	/****************网页测速start****************/
+	function timeTest01(){		
+		var timeTestEndTime1;
+		var timeTestSpeed1;		
+		iframeNew.src = "http://www.baidu.com";				
+		if (iframeNew.attachEvent){
+			iframeNew.attachEvent("onload", function(){
+				timeTestEndTime1 = new Date().getTime();
+				timeTestSpeed1 = (timeTestEndTime1 - statrTime2)/1000;
+				var className= checkSpeed(timeTestSpeed1);
+				$(".timeTest01 .testStatus").hide();				
+				$(".timeTest01 .speedStatus").addClass(className).css({"display":"inline-block"}).addClass("animate");				
+				statrTime2 =  new Date().getTime();
+				$(".timeTest02 .testStatus").text("正常测试中...").addClass("inTest");
+				setTimeout(function(){
+					$(".timeTest01 .timeSpeed").addClass(className).text(timeTestSpeed1+"秒").show();
+					$(".timeTest02 .testStatus").text("正常测试中...").addClass("inTest");
+					timeTest02();					
+				},1500);
+			});
+		} else {
+			iframeNew.onload = function(){
+				timeTestEndTime1 = new Date().getTime();	
+				timeTestSpeed1 = (timeTestEndTime1 - statrTime2)/1000;
+				var className= checkSpeed(timeTestSpeed1);
+				$(".timeTest01 .testStatus").hide();
+				$(".timeTest01 .speedStatus").addClass(className).css({"display":"inline-block"}).addClass("animate");				
+				statrTime2 =  new Date().getTime();				
+				setTimeout(function(){
+					$(".timeTest01 .timeSpeed").addClass(className).text(timeTestSpeed1+"秒").show();
+					$(".timeTest02 .testStatus").text("正常测试中...").addClass("inTest");
+					timeTest02();					
+				},1500);
+			};
+		} 		
+	}
+	
+	
+	function timeTest02(){		
+		var timeTestEndTime1;
+		var timeTestSpeed1;		
+		iframeNew.src = "http://www.taobao.com";				
+		if (iframeNew.attachEvent){
+			iframeNew.attachEvent("onload", function(){
+				timeTestEndTime1 = new Date().getTime();
+				timeTestSpeed1 = (timeTestEndTime1 - statrTime2)/1000;
+				var className= checkSpeed(timeTestSpeed1);
+				$(".timeTest02 .testStatus").hide();				
+				$(".timeTest02 .speedStatus").addClass(className).css({"display":"inline-block"}).addClass("animate");				
+				statrTime2 =  new Date().getTime();
+				$(".timeTest03 .testStatus").text("正常测试中...").addClass("inTest");
+				setTimeout(function(){
+					$(".timeTest02 .timeSpeed").addClass(className).text(timeTestSpeed1+"秒").show();
+					$(".timeTest03 .testStatus").text("正常测试中...").addClass("inTest");
+					timeTest03();					
+				},1500);
+			});
+		} else {
+			iframeNew.onload = function(){
+				timeTestEndTime1 = new Date().getTime();	
+				timeTestSpeed1 = (timeTestEndTime1 - statrTime2)/1000;
+				var className= checkSpeed(timeTestSpeed1);
+				$(".timeTest02 .testStatus").hide();
+				$(".timeTest02 .speedStatus").addClass(className).css({"display":"inline-block"}).addClass("animate");				
+				statrTime2 =  new Date().getTime();				
+				setTimeout(function(){
+					$(".timeTest02 .timeSpeed").addClass(className).text(timeTestSpeed1+"秒").show();
+					$(".timeTest03 .testStatus").text("正常测试中...").addClass("inTest");
+					timeTest03();					
+				},1500);
+			};
+		} 		
+	}
+	
+	function timeTest03(){		
+		var timeTestEndTime1;
+		var timeTestSpeed1;		
+		iframeNew.src = "http://www.jd.com";				
+		if (iframeNew.attachEvent){
+			iframeNew.attachEvent("onload", function(){
+				timeTestEndTime1 = new Date().getTime();
+				timeTestSpeed1 = (timeTestEndTime1 - statrTime2)/1000;
+				var className= checkSpeed(timeTestSpeed1);
+				$(".timeTest03 .testStatus").hide();				
+				$(".timeTest03 .speedStatus").addClass(className).css({"display":"inline-block"}).addClass("animate");				
+				statrTime2 =  new Date().getTime();				
+				setTimeout(function(){
+					$(".timeTest03 .timeSpeed").addClass(className).text(timeTestSpeed1+"秒").show();
+					$(".timeTest04 .testStatus").text("正常测试中...").addClass("inTest");
+					timeTest04();					
+				},1500);
+			});
+		} else {
+			iframeNew.onload = function(){
+				timeTestEndTime1 = new Date().getTime();	
+				timeTestSpeed1 = (timeTestEndTime1 - statrTime2)/1000;
+				var className= checkSpeed(timeTestSpeed1);
+				$(".timeTest03 .testStatus").hide();
+				$(".timeTest03 .speedStatus").addClass(className).css({"display":"inline-block"}).addClass("animate");				
+				statrTime2 =  new Date().getTime();
+				$(".timeTest04 .testStatus").text("正常测试中...").addClass("inTest");
+				setTimeout(function(){
+					$(".timeTest03 .timeSpeed").addClass(className).text(timeTestSpeed1+"秒").show();
+					$(".timeTest04 .testStatus").text("正常测试中...").addClass("inTest");
+					timeTest04();					
+				},1500);
+				
+			};
+		} 		
+	}
+	
+	function timeTest04(){		
+		var timeTestEndTime1;
+		var timeTestSpeed1;		
+		iframeNew.src = "http://www.jiuxian.com";				
+		if (iframeNew.attachEvent){
+			iframeNew.attachEvent("onload", function(){
+				timeTestEndTime1 = new Date().getTime();
+				timeTestSpeed1 = (timeTestEndTime1 - statrTime2)/1000;
+				var className= checkSpeed(timeTestSpeed1);
+				$(".timeTest04 .testStatus").hide();				
+				$(".timeTest04 .speedStatus").addClass(className).css({"display":"inline-block"}).addClass("animate");				
+				setTimeout(function(){
+					$(".timeTest04 .timeSpeed").addClass(className).text(timeTestSpeed1+"秒").show();
+					$(".webTest .Btn01.off").hide();
+					$(".webTest .Btn01.on").text("重新测试").css("display","inline-block");
+					$(".topLeft .state01").hide();
+					$(".topLeft .state02").show();
+					$(".broadbandTest .Btn01.on").css("display","inline-block");
+					$(".broadbandTest .Btn01.off").hide();
+				},1500);
+				
+				
+			});
+		} else {
+			iframeNew.onload = function(){
+				timeTestEndTime1 = new Date().getTime();	
+				timeTestSpeed1 = (timeTestEndTime1 - statrTime2)/1000;
+				var className= checkSpeed(timeTestSpeed1);
+				$(".timeTest04 .testStatus").hide();
+				$(".timeTest04 .speedStatus").addClass(className).css({"display":"inline-block"}).addClass("animate");
+				setTimeout(function(){
+					$(".timeTest04 .timeSpeed").addClass(className).text(timeTestSpeed1+"秒").show();
+					$(".webTest .Btn01.off").hide();
+					$(".webTest .Btn01.on").text("重新测试").css("display","inline-block");
+					$(".topLeft .state01").hide();
+					$(".topLeft .state02").show();
+					$(".broadbandTest .Btn01.on").css("display","inline-block");
+					$(".broadbandTest .Btn01.off").hide();
+				},1500);
+			};
+		} 		
+	}
+	
+	
+	function checkSpeed(speed){
+		var speedResule;
+		if(speed<0.5){
+			speedResule = "fast";
+		}else if(speed>=0.5&&speed<1){
+			speedResule = "middle";			
+		}else{
+			speedResule = "slow";		
+		}
+		return speedResule;		
+	}
+	
+	
+	/****************网页测速end****************/
+	
+$(document).ready(function(e) {	
+	/*var userIp = "106.37.209.14"; 
+	$.get("http://ip.taobao.com/service/getIpInfo.php?ip="+userIp,function(data){
+		
+		if(data&&data.code==0){
+			alert(data)
+		}else{
+			
+		}
+		
+		
+	})*/
+
+
+
+	var userAgentInfo = getUserAgent();
+	$(".basicInfor .browser").text(userAgentInfo["browser"]);
+	$(".basicInfor .browserVer").text(userAgentInfo["version"]);
+	$(".basicInfor .systemVer em").text(userAgentInfo["os"]);
+	if(userAgentInfo["os"].indexOf("Window")>-1){
+		$(".systemVer img").attr("src","img/sys.jpg");
+	}else if(userAgentInfo["os"].indexOf("WindowXP")>-1){
+		$(".systemVer img").attr("src","img/xp.gif");		
+	}else if(userAgentInfo["os"].indexOf("Mac")>-1){
+		$(".systemVer img").attr("src","img/mac.jpg");		
+	}
+
+	 $(".broadbandTest .Btn01.on").click(function(e) {
+		$(".lineList .line").removeClass().addClass("line testStart").text("测试未开始");
+		$(".lineList .textSpeed").hide();
+		$(".webTest .Btn01.on").hide();
+		$(".webTest .Btn01.off").css("display","inline-block");
+		var radom1 = getRadom();
+		image1 = "<img  src='http://img01.jiuxian.com/speedtest.jpg?"+radom1+"' onload='broadbandTest1(973)' style='display:none;'/>";
+		$(this).hide();
+		$(".broadbandTest .Btn01.off").css("display","inline-block");
+        statrTime1 = new Date().getTime();
+		$(".test01 .line").addClass("testOn").text("测试中...");
+		$("body").append(image1);
+    });
+
+	
+	$(".webTest .Btn01.on").click(function(e) {
+		$(".topLeft .state02").hide();
+		$(".topLeft .state01").show();
+		$(".broadbandTest .Btn01.on").hide();
+		$(".broadbandTest .Btn01.off").css("display","inline-block");		
+		$(this).hide();
+		$(".webTest .Btn01.off").css("display","inline-block");
+		$(".webTestTable .testStatus").removeClass().addClass("testStatus notStart ").text("测试未开始").show();
+		$(".webTestTable .speedStatus").removeClass().addClass("speedStatus").hide();
+		$(".webTestTable .timeSpeed").removeClass().addClass("timeSpeed").text("等待结果"); 
+		iframeNew = document.createElement("iframe");
+		iframeNew.width=0;
+		iframeNew.height=0;
+		iframeNew.style.display = "none";
+		document.body.appendChild(iframeNew);		
+		statrTime2 =  new Date().getTime();
+		$(".timeTest01 .testStatus").text("正常测试中...").addClass("inTest");
+		timeTest01();
+
+    });
+	
+
+    $(".submit").bind('click',function(){	
+            var value = $.trim($(".phone").val());
+			if(value==""){
+				$(".phone").siblings(".formPro").show();
+			}
+		
+	});
+	
+	$(".inforForm .phone").focus(function(){
+		$(this).siblings(".formPro").hide();
+	});
+	
+	$(".inforForm .phone").blur(function(){
+		var value = $.trim($(this).val());
+		if(value == ""){
+			$(this).siblings(".formPro").show();
+		}
+		
+	});
+	
+	
+})
+</script>
+</head>
+
+<body>
+<div class="header">
+<div class="headerCon"><img src="img/logo.jpg" width="277" height="57" /></div>
+</div>
+
+<div class="mainBox">
+<div class="mainCon">
+	<div class="itemsWrap">
+    <div class="itemsCon basicInfor">
+    	<p><span class="tit01">您的IP地址</span><b class="ipAddress">106.37.209.14</b><span class="weiyu">位于</span><img class="couFlag" src="img/add.jpg" width="19" height="13" /><em class="ipCity"></em><em class="ipType"></em></p>
+        <p><span class="tit01">您正在使用的浏览器</span><b class="browser"></b><b class="browserVer"></b></p>
+        <p><span class="tit01">您正在使用</span><b class="systemVer"><img src="img/sys.jpg" width="16" height="16" /><em></em></b></p>
+    </div>
+    </div>
+    <div class="itemsWrap">
+    <div class="itemsTitle"><i></i><b>宽带测试</b></div>
+    <div class="itemsCon broadbandTest">
+    	<ul class="lineList">
+    	<li class="test01"><span class="tit">下载线路一：</span><em class="line testStart">测试未开始</em><em class="textSpeed"></em></li>
+        <li class="test02"><span class="tit">下载线路二：</span><em class="line testStart">测试未开始</em><em class="textSpeed"></em></li>
+        <li class="test03"><span class="tit">下载线路三：</span><em class="line testStart">测试未开始</em><em class="textSpeed"></em></li>
+        <li class="btnBox"><a class="Btn01 on" href="javascript:;">开始测试</a><a href="javascript:;" class="Btn01 off">开始测试</a><span>宽带测试结果：平均下载速度为</span><span class="averageSpeed"></span><span>，相当于</span><span class="bandResult">2M</span><span>宽带</span></li>
+        </ul>
+        <div class="proBox clearfix"><div class="zhu">注：</div><div class="proText"><p>1、带宽测速原理是通过加载指定大小图片资源，获得加载时间计算出下载速度；</p><p>2、测试结果会受用户计算机性能、资源使用</p></div></div>
+    </div>
+    </div>
+    <div class="itemsWrap">
+    <div class="itemsTitle"><i></i><b>网页测试</b></div>
+    <div class="itemsCon webTest">
+    	<div class="tableBox">
+    	<div class="webTestTop">
+        	<div class="topLeft"><span class="state01"><i class="icon"></i><em>正在测试中...</em></span><span class="state02"><i class="icon"></i><em>测试完成</em></span></div>
+            <div class="topRight"><a class="Btn01 off" href="javascript:;">开始测试</a><a class="Btn01 on" href="javascript:;">开始测试</a></div>
+        </div>
+    	<table class="webTestTable">
+        <thead><tr><th width="40%">测试网址</th><th width="40%">响应时间</th><th width="20%">访问速度</th></tr></thead>
+        <tbody>
+        <tr class="timeTest01"><td><div class="website"><i class="icon"></i><span class="sit" title="http://www.baidu.com">www.baidu.com</span></div></td><td><span class="testStatus notStart">测试未开始</span><i class="speedStatus"></i></td><td><span class="timeSpeed">等待结果</span></td></tr>
+        <tr class="timeTest02"><td><div class="website"><i class="icon"></i><span class="sit" title="http://www.taobao.com">www.taobao.com</span></div></td><td><span class="testStatus notStart">测试未开始</span><i class="speedStatus"></i></td><td><span class="timeSpeed">等待结果</span></td></tr>
+        <tr class="timeTest03"><td><div class="website"><i class="icon"></i><span class="sit" title="http://www.jd.com">www.jd.com</span></div></td><td><span class="testStatus notStart">测试未开始</span><i class="speedStatus"></i></td><td><span class="timeSpeed">等待结果</span></td></tr>
+        <tr class="timeTest04"><td><div class="website"><i class="icon"></i><span class="sit" title="http://www.jiuxian.com">www.jiuxian.com</span></div></td><td><span class="testStatus notStart">测试未开始</span><i class="speedStatus"></i></td><td><span class="timeSpeed">等待结果</span></td></tr>       
+        </tbody>
+        </table>
+        </div>
+        <div class="proBox clearfix"><div class="zhu">注：</div><div class="proText"><p>1、网页测速原理是通过框架加载网页，获得网页完全打开时间；</p><p>2、网页打开时间为真实本地浏览器打开时间，由于缓存的原</p></div></div>
+    </div>
+    </div>
+    <div class="itemsWrap">
+    <div class="itemsCon inforForm">
+    	<p class="clearfix"><span class="tit03">联系电话：</span><input class="from01 phone" type="text" /><b class="formPro"><i class="icon"></i><em>请填写联系电话</em></b></p>
+        <p class="clearfix"><span class="tit03">邮箱地址：</span><input class="from01" type="text" /><b class="formPro"><i class="icon"></i><em>请填写邮箱地址</em></b></p>
+        <p class="clearfix"><span class="tit03">问题描述：</span><textarea class="fText"></textarea><b class="formPro"><i class="icon"></i><em>请填写问题描述</em></b></p>
+        <p class="clearfix proP"><em class="pro">最多350个字</em></p>
+    </div>
+    </div>
+    <div class="submitBox"><a class="submit" href="javascript:;">提交测试</a></div>
+</div>
+</div>
+
+</body>
+</html>

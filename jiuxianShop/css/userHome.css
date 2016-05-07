@@ -1,0 +1,195 @@
+@charset "utf-8";
+/* CSS Document */
+/* 
+* Name: 店铺装修（PC端）首页css
+* Copyright: 赵雪珊 
+* Date: 2015-01-19  
+*/
+/*商家后台公共样式start*/
+.homeIocn{background:url(../../../images/shop/homeIocn.png) no-repeat;}
+.header{ background:#fff; width:100%; height:70px; min-width:1200px; font-family:'Microsoft YaHei';}
+.header .headerBox{ width:1200px; margin:0 auto; height:53px; padding:10px 0 7px 0;}
+.header .headerBox .leftBox{float:left;}
+.header .headerBox .rightBox{float:right;}
+.header .headerBox .leftBox .logo{float:left; margin-right:15px;}
+.header .headerBox .leftBox span{float:left; height:40px; line-height:40px; color:#666; font-size:24px; margin-top:6px; padding-left:15px; border-left:2px solid #ccc;}
+.header .headerBox .rightBox span{float:left; height:40px; line-height:40px; color:#333; margin-top:6px;}
+.header .headerBox .rightBox a{float:left; color:#0066cc;  display:inline-block; height:40px; line-height:40px; margin:6px 0 0 10px;}
+.navigate{width:100%; min-width:1200px; height:40px; background:#404d60; font-family:'Microsoft YaHei';}
+.navigate .navListBox{width:1200px; margin:0 auto;}
+.navigate .navListBox li{float:left; height:40px; line-height:40px; font-size:16px; font-family:'Microsoft YaHei';}
+.navigate .navListBox li.on a{background:#374051;}
+.navigate .navListBox li a{ display:inline-block; height:40px; color:#fff; padding:0 20px;}
+.navigate .navListBox li a:hover{text-decoration:none; background:#374051;}
+.mainBody{width:100%; min-width:1200px; background:#f4f4f4; font-family:'Microsoft YaHei';}
+.mainBox{width:1200px; margin:0 auto; background:#ebebeb; }
+.mainBox .leftNav{ float:left; width:190px; padding-top:10px;}
+.mainBox .leftNav li{ height:35px; line-height:35px; font-size:14px; color:#999; margin-top:5px; cursor:pointer;}
+.mainBox .leftNav li a{ display:inline-block; width:145px; color:#999; margin-left:5px;}
+.mainBox .leftNav li a:hover{ color:#404d60; text-decoration:none;}
+.mainBox .leftNav li em{float:left; width:40px; height:35px; }
+.mainBox .leftNav li i{ display:inline-block; height:33px; width:33px; background-position:-20px 5px; }
+.mainBox .leftNav li.on{ background:#fff; box-shadow:0 0 3px 0px #ccc;}
+.mainBox .leftNav li.on a{ color:#404d60; }
+.mainBox .leftNav li.on em{background:url(../../../images/shop/homeIocn.png) no-repeat -54px -1px;}
+.mainBox .leftNav li.on i{background-position:7px 5px;}
+.mainBox .rightBox{ float:left; width:1000px; background:#f4f4f4; padding:10px 0 30px 10px; }
+.mainBox .rightBox .breadCrumb{height:40px; line-height:40px;}
+.mainBox .rightBox .breadCrumb a{padding:0 5px; color:#0066cc;}
+.mainBox .rightBox .breadCrumb a:hover{text-decoration:none;}
+.mainBox .rightBox .breadCrumb span{padding-left:5px; color:#333;}
+.mainBox .rightBox .breadCrumb i{ font-family:"宋体"; vertical-align:baseline; font-style:normal;}
+/*翻页*/
+.editPageBox{ height:24px; padding:0 5px; margin:30px 0; color:#333;}
+.editPageBox .pageTotal{ float:left; font-size:14px; margin-right:8px; line-height:24px;}
+.editPageBox .pageTotal span{ padding:0 2px;}
+.editPageBox .pageNumber{ float:left;}
+.editPageBox .pageNumber a{ display:inline-block; height:22px; line-height:22px; color:#333; padding:0 8px; border:1px solid #ccc; margin-right:8px;}
+.editPageBox .pageNumber a:hover{ color:#cc0000; text-decoration:none;}
+.editPageBox .pageNumber a.on{ color:#fff; background:#da111e; border:1px solid #ae010c;}
+.editPageBox .pageNumber a.on:hover{ color:#fff;}
+.editPageBox .pagePoint{ float:left;}
+.editPageBox .pagePoint span{ float:left; display:inline-block; height:24px; line-height:24px; font-size:14px; margin-right:8px;}
+.editPageBox .pagePoint span input{ width:25px; height:22px; line-height:22px; font-size:12px; text-align:center; border:1px solid #ccc; margin:0 5px; vertical-align:top;}
+.editPageBox .pagePoint .poiBut{ float:left; display:inline-block; height:22px; line-height:22px; color:#333; font-size:14px; border:1px solid #ccc; padding:0 5px; background:#f1f1f1;}
+.editPageBox .pagePoint .poiBut:hover{ color:#333; text-decoration:none;}
+/*商家后台公共样式end*/
+
+/*商家后台首页start*/
+.mainBox .rightBox .rightCon{ padding-top:5px;}
+.rightCon .conBox_1 .left{ float:left;width:758px; height:172px; border:1px solid #ccc; background:#fff; padding:15px; margin-right:10px;}
+.rightCon .conBox_1 .right{ float:left; width:198px; height:200px;  border:1px solid #ccc; background:#fff;}
+.rightCon .conBox_1 .userImg{ float:left; height:80px; width:80px; margin-right:20px;}
+.rightCon .conBox_1 .userInfo{float:left; height:70px; width:500px; padding-top:7px;}
+.rightCon .conBox_1 .userInfo li{ float:left; width:220px; height:24px; line-height:24px; color:#000;}
+.rightCon .conBox_1 .userInfo li span{ float:left; padding-right:5px; height:24px; line-height:24px;}
+.rightCon .conBox_1 .userInfo li em{ float:left; padding-right:5px; font-style:normal;}
+.rightCon .conBox_1 .userInfo li a{color:#4670c5;}
+.rightCon .conBox_1 .left .taskBox{ background:#f0f3f9; height:50px; margin-top:20px; padding:10px 15px;}
+.rightCon .conBox_1 .taskBox li{ float:left; width:145px; height:24px; line-height:24px; }
+.rightCon .conBox_1 .taskBox li a{ color:#5482e0;}
+.rightCon .conBox_1 .taskBox li span{}
+.rightCon .conBox_1 .taskBox li em{font-style:normal; color:#666;}
+.rightCon .conBox_1 .right .helpTitle{height:35px; line-height:35px; color:#5482e0; font-size:22px; background:#e5edfa;}
+.rightCon .conBox_1 .right .helpTitle i{ float:left; display:inline-block; height:32px; width:32px; background-position:-92px 5px;}
+.rightCon .conBox_1 .right .helpTitle span{float:left; height:32px; line-height:32px;}
+.rightCon .conBox_1 .right .helpBox{padding:20px 15px;}
+.rightCon .conBox_1 .right .helpBox a{ display:inline-block; margin:0 5px 5px 0; padding:0 5px;}
+.rightCon .conBox_1 .right .helpBox a:hover{text-decoration:none;}
+.rightCon .conBox_1 .right .helpBox a.on{ color:#5482e0;}
+.rightCon .conBox_2{margin-top:10px;}
+.rightCon .conBox_2 .left{ float:left; width:530px; margin-right:10px }
+.rightCon .conBox_2 .right{float:left; width:460px; }
+.rightCon .conBox_2 .commonTop{height:35px;}
+.rightCon .conBox_2 .commonTop i{float:left; width:25px; height:25px; margin:0 5px 0 0; }
+.rightCon .conBox_2 .left .commonTop i{background-position:-121px 7px;}
+.rightCon .conBox_2 .topBox .commonTop i{background-position:-150px 7px;}
+.rightCon .conBox_2 .bottomBox .commonTop i{background-position:-177px 7px;}
+.rightCon .conBox_2 .commonTop span{float:left; line-height:35px; color:#5482e0; font-size:14px;  }
+.rightCon .conBox_2 .commonTop a{float:right; line-height:30px; color:#666; margin:3px 0 0 10px;}
+.rightCon .conBox_2 .commonTop a:hover{text-decoration:none;}
+.rightCon .conBox_2 .commonCon{ border:1px solid #ccc; }
+.rightCon .conBox_2 .conTitle{ height:35px; line-height:35px; color:#2b3747; font-size:14px; background:#e5edfa; padding:5px 0 0 30px;}
+.rightCon .conBox_2 .right .conTitle{ padding:5px 0 0 15px;}
+.rightCon .conBox_2 .conTitle li{float:left; padding:0 15px; cursor:pointer;}
+.rightCon .conBox_2 .right .conTitle li.rankTilte{ width:40px;}
+.rightCon .conBox_2 .right .conTitle li.idTitle{ width:70px;}
+.rightCon .conBox_2 .right .conTitle li.nameTitle{ width:130px;}
+.rightCon .conBox_2 .right .conTitle li.salesTtile{ width:50px;}
+.rightCon .conBox_2 .right .conTitle li.projectTilte{width:100px; text-align:center;}
+.rightCon .conBox_2 .right .conTitle li.orderTitle{width:100px; text-align:center;}
+.rightCon .conBox_2 .right .conTitle li.moneyTitle{width:100px; text-align:center;}
+.rightCon .conBox_2 .conTitle li.on{background:#fff;}
+.rightCon .conBox_2 .left .conBox{height:320px; overflow:hidden;}
+.rightCon .conBox_2 .right .bottomBox{margin-top:19px;}
+.rightCon .conBox_2 .topBox .conBox{height:160px; overflow:hidden;}
+.rightCon .conBox_2 .tabBox li{ height:32px;}
+.rightCon .conBox_2 .right .tabBox li{ padding-left:25px;}
+.rightCon .conBox_2 .right .tabBox li .rank{ width:35px; text-align:center;}
+.rightCon .conBox_2 .right .tabBox li .goodId{ width:100px; margin-left:15px; text-align:center;}
+.rightCon .conBox_2 .right .tabBox li .goodTitle{ width:160px; margin-left:10px; text-align:center;}
+.rightCon .conBox_2 .right .tabBox li .sales{ width:50px; margin-left:10px; text-align:center;}
+.rightCon .conBox_2 .right .tabBox li .project{ width:100px; margin-left:10px; text-align:center;}
+.rightCon .conBox_2 .right .tabBox li .order{ width:100px; margin-left:25px; text-align:center;}
+.rightCon .conBox_2 .right .tabBox li .money{ width:100px; margin-left:25px; text-align:center;}
+.rightCon .conBox_2 .tabBox li.on{ background:#fff;}
+.rightCon .conBox_2 .tabBox li span{float:left; height:32px; line-height:32px;}
+.rightCon .conBox_2 .tabBox li a{float:left; height:32px; line-height:32px; overflow:hidden;}
+.rightCon .conBox_2 .left .tabBox li a{ width:350px; }
+.rightCon .conBox_2 .right .tabBox li a{ width:250px; }
+.rightCon .conBox_2 .tabBox li a:hover{text-decoration:none;}
+.rightCon .conBox_2 .tabBox li .mark{width:30px; text-align:center;}
+.rightCon .conBox_2 .tabBox li .time{float:right; margin-right:45px;}
+/*商家后台首页end*/
+/*店铺管理*/
+.shopManageCon{ padding:5px 15px 20px; border:1px solid #ccc; background:#fff;}
+.shopManageCon .manItems{ padding-bottom:10px; border-bottom:1px dashed #ccc;}
+.manItems .man-tit{ color:#000; font-size:15px; line-height:30px; padding-top:6px;}
+.manItems ul li{ float:left; width:470px; color:#333; margin:0 10px 5px 3px;}
+.manItems ul li span{ display:inline-block; line-height:28px;}
+.manItems ul li em{ display:inline-block; line-height:28px; font-style:normal;}
+.manItems ul li i{ display:inline-block; width:5px; line-height:28px; font-style:normal; color:#F00; margin-right:5px;}
+.manItems ul li input{ width:180px; height:22px; line-height:22px; border:1px solid #ccc; background:#fff; padding:0 5px;}
+.manItems ul li .tip{ display:none; line-height:28px; color:#f00; margin-left:10px;}
+.shopBut{ height:30px;}
+.shopBut a{ display:inline-block; height:30px; line-height:30px; font-size:14px; padding:0 25px; margin-right:15px;}
+.shopBut a:hover{ text-decoration:none;}
+.shopBut .but01{ background:#176ebe; color:#fff;}
+.shopBut .but02{ background:#ccc; color:#000;}
+.shopBut.man-but{ text-align:right;}
+/*店铺基本设置*/
+.shopInforTit{ height:30px; line-height:30px; padding-left:30px; border-bottom:2px solid #176ebe;}
+.shopInforTit .Tit{ display:inline-block; height:29px; padding:0 15px; border:1px solid #ddd; border-bottom:none; background:#fff; margin-right:6px;}
+.shopInforTit .Tit:hover{ text-decoration:none;}
+.shopInforTit .Tit.on{ color:#fff; font-weight:bold; background:#176ebe; border:1px solid #176ebe;}
+.shopInforTit .myshop{ float:right; font-family:"宋体";}
+.shopInforCon{ padding:15px 15px 30px; border:1px solid #ccc; border-top:none; background:#fff;}
+.shopInforCon h3{ color:#000; font-size:14px; line-height:50px; border-bottom:1px dashed #ddd;}
+.shopInforCon .inforItems{position:relative; padding:10px 5px; border-bottom:1px dashed #ddd;}
+.inforItems p{ line-height:32px;}
+.inforItems p b{ display:inline-block; width:80px; color:#000; text-align:right; margin-right:10px;}
+.inforItems p select{ height:28px; line-height:28px; padding:0 5px; border:1px solid #ddd; margin-top:2px;}
+.inforItems p .tex{ height:26px; line-height:26px; font-size:14px; font-family:'Microsoft YaHei'; padding:0 5px; border:1px solid #ddd; margin-top:2px;}
+.inforItems p .tex01{ width:350px;}
+.inforItems p textarea{ width:550px; height:150px; font-size:14px; font-family:'Microsoft YaHei'; line-height:26px; padding:5px 10px; border:1px solid #ddd; resize:none;}
+.inforItems p .tip{color:#cc0000; display:block; margin-left:90px; display:none;}
+.inforItems .iBut{left:90px; top:40px; display:inline-block; height:24px; line-height:24px; font-size:14px; color:#333;  background:#657285; border:1px solid #5b724f;  text-align:center; margin-top:10px;}
+.inforItems .iBut{ text-decoration:none;}
+.shopBut.inforBut{ padding:20px 0 0 95px;}
+.inforItems img{margin:15px 0 5px 85px;}
+
+/*404页面*/
+.errorPage{ background:#fff; position:relative; padding:150px 0 0 20px; font-family:"黑体";}
+.errorPage .errorImg{position:absolute; right:20px; top:50px;}
+.errorPage .errorTip{ font-size:36px; line-height:46px; color:#c56d2d; font-weight:bold;}
+.errorPage .errorTip span{ color:#c2181f;}
+.errorPage .returnTip{ font-size:26px;  line-height:36px; color:#784118; font-weight:bold; margin-top:30px; position:relative; z-index:1;}
+.errorPage .returnTip .returnBtn{ float:left; background:#c2181f; color:#fff;  border-radius:3px; padding:3px 5px; font-size:20px; margin-right:30px;}
+.errorPage .returnTip span{float:left; margin-top:3px;}
+.errorPage .returnTip .returnBtn:hover{text-decoration:none;}
+.errorPage .otherTip{ font-size:48px; color:#ffaaaa; line-height:58px; font-weight:bold; margin:290px 0 0 150px; position:relative; z-index:1;}
+
+/*自定义弹窗插件start*/
+.bgPop03{display:none; background:#000; width:100%; height:100%; position:fixed; left:0; top:0; opacity:0.5; filter:alpha(opacity=50); _position:absolute; _top:expression(eval(document.documentElement.scrollTop)); }
+.bgPop03{ z-index:12000;}
+.popIcon{ background:url(../../../images/shop/shopDecoration/popIcon.png) no-repeat 0 0;}/*公共icon*/
+.pop-wrap1{display:none;  width:400px; height:200px; position:fixed; left:50%; top:50%; margin:-105px 0 0 -205px; _position:absolute; _top:expression(eval(document.documentElement.scrollTop)+400); background: url(../../../images/shop/shopDecoration/popBg.png); border-radius:5px; box-shadow:0 0 6px 1px #828282; z-index:12001; padding:5px;}
+.pop-wrap1 .pop-layer{ width:400px; height:200px; background:#fff; border-radius:3px;}
+.pop-wrap1 .pop-title{ height:40px; line-height:40px; background:#657285; border-top-left-radius:3px; border-top-right-radius:3px; padding-left:16px;}
+.pop-wrap1 .pop-title p{ float:left; color:#fff; font-size:14px;}
+.pop-wrap1 .pop-title i{ background-position:0 -45px; display:inline-block; float:right; width:14px; height:14px; cursor:pointer; margin:13px 13px 0 0;}
+.pop-wrap1 .pop-main{ height:79px; background:#fff; padding:41px 50px 0 50px;}
+.pop-wrap1 .pop-main i{ width:40px; height:40px; display: inline-block; float:left; display:none;}
+.pop-wrap1 .pop-main .success{ background-position:0 0;}
+.pop-wrap1 .pop-main .alarm{background-position:-41px 0;}
+.pop-wrap1 .pop-main .fail{ background-position:-81px 0;}
+.pop-wrap1 .pop-main .confirm{background-position:-121px 0;}
+.pop-wrap1 .pop-main p{ font-size:16px; font-family:"Microsoft YaHei"; color:#000; float:right; width:250px; height:38px;}
+.pop-wrap1 .pop-main p span{ display:inline; width:100%; vertical-align:middle; height:auto;}
+.pop-wrap1 .pop-main p em{ display:inline-block; vertical-align:middle; height:100%; width:0; overflow:hidden;}
+.pop-wrap1 .pop-bottom{ height:40px; background:#f1f1f1; border-bottom-left-radius:3px; border-bottom-right-radius:3px; text-align:right; padding-right:25px;}
+.pop-wrap1 .pop-bottom span{ display:inline-block; width:58px; height:22px; font-size:0; border-radius:2px; text-align:center; line-height:22px; cursor:pointer; margin:8px 0 0 5px;}
+.pop-wrap1 .pop-bottom .confirm{ border:1px solid #657285; color:#657285; background:#d5e6e6;}
+.pop-wrap1 .pop-bottom span b{ font-size:12px; font-weight:normal; display:inline-block;}
+.pop-wrap1 .pop-bottom .cancel{ border:1px solid #ccc; color:#666666; background:#fff; display:none;}
+/*自定义弹窗插件end*/

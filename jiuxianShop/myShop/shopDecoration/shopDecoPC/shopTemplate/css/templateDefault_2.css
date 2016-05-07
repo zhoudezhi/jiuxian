@@ -1,0 +1,14 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/* 
+* Name: 店铺装修-默认模板2
+* Copyright: 赵雪珊 
+* Date: 2015-01-12  
+*/
+/*商品列表*/
+.shopComBox .sComIntro{ background:#333;}
+.shopComBox .sComIntro .sCom-name a{ color:#fff;}
+.shopComBox .sComIntro .sCom-pro{ color:#Fa0; }
+.shopComBox .sComIntro .sCom-price span{ color:#Fb0;}
+.shopComFilter .filterBox .fil-tit span{ background:#333;}
+.shopDefaultTit{ background:#333;}

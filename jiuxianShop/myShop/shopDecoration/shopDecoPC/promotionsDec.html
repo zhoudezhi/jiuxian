@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>活动装修</title>
+<link rel="stylesheet" type="text/css" href="../../../css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/frame.css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/decPublic.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	/*装修模块高度控制start*/
+	var winHeight2 = $(window).height();
+	$(".mainEditCon").css({"height":winHeight2-71});
+	$(window).bind("resize",function(){
+		var reHeight2 = $(window).height();
+		$(".mainEditCon").css({"height":reHeight2-71});
+	});
+});
+</script>
+</head>
+<body>
+<div class="shopMain">
+	<div class="topNav clearfix">
+    	<a class="jxShopLogo" href="javascript:;"><img src="images/JXShop_logo.png" alt="" /></a>
+        <div class="navList">
+        	<ul class="clearfix">
+        	<li><i class="editIcon"></i><a class="returnBack" href="indexPC.html">首页</a><em class="editIcon"></em></li>
+            <li><i class="editIcon"></i><a class="returnBack" href="home.html">店铺装修</a><em class="editIcon"></em></li>
+            <li class="on"><i class="editIcon"></i><a class="returnBack" href="promotionsDec.html">活动装修</a><em class="editIcon"></em></li>
+            <li><a class="returnBack" href="picManage.html">图片管理</a><em class="editIcon"></em></li>
+            </ul>
+        </div>
+        
+        <div class="userInfoBox">
+        <span>你好，</span>
+        <span class="userName">userName</span>
+        <span>，欢迎进入酒仙网店铺运营平台！</span>
+        <a class="returnBack" href="javascript:;">退出</a>
+        </div>
+    </div>
+    <div class="shopBox clearfix">
+    	<div class="leftNav">
+        <div class="pageBox">
+        <span>活动列表</span><a href="actionDoca.html" title="添加活动页面"><i class="editIcon"></i></a>
+        </div>
+        <div class="templateMarket">
+        <a href="promotionsDec.html">显示列表<i class="editIcon"></i></a>   
+        </div>
+        <div class="pageList">
+        <ul>
+        <li>
+        	<div class="sort"><a href="javascript:;"><i class="editIcon"></i>已上线活动</a></div>
+            <div class="sub"><a href="javascript:;">页面1</a><a href="javascript:;">页面2</a></div>
+        </li>
+        <li>
+        	<div class="sort"><a href="javascript:;"><i class="editIcon"></i>已下线活动</a></div>
+            <div class="sub"><a href="javascript:;">页面1</a><a href="javascript:;">页面2</a></div>
+        </li>
+        </ul>
+        </div>
+        <div class="navSwitch"><i class="editIcon"></i></div>
+        </div>
+        <div class="mainEdit">
+            <div class="mainEditCon promotionsDec">
+                <div class="editSearchBox"><span class="es-tit">关键字：</span><input class="esForm form01" type="text" /><a class="but editBut01 searchBut" href="javascript:;">搜索</a></div>
+                
+                <div class="editManageBox">
+                	<table class="editManTable">
+                    <thead>
+                    <tr>
+                    	<th width="8%">活动ID</th><th width="20%">活动名称</th><th width="15%">创建时期</th><th width="15%">活动开始时间</th><th width="15%">活动结束时间</th><th width="7%">状态</th><th width="20%">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>12345</td>
+                        <td><span class="name" title="圣诞头图_05.jpg">圣诞头图_05.jpg</span></td>
+                        <td>2014-12-25 10:42:35</td>
+                        <td>2014-12-25 10:42:35</td>
+                        <td>2014-12-25 10:42:35</td>
+                        <td><span class="tfont">已上线</span></td>
+                        <td><a class="editTabBut01" href="actionDoca.html">装修</a><a class="editTabBut01" href="javascript:;">下线</a><a class="editTabBut01 delete" href="javascript:;">删除</a><a class="editTabBut01" href="javascript:;">复制链接</a> </td>
+                    </tr>
+                    <tr>
+                        <td>12345</td>
+                        <td><span class="name" title="圣诞头图_05.jpg">圣诞头图_05.jpg</span></td>
+                        <td>2014-12-25 10:42:35</td>
+                        <td>2014-12-25 10:42:35</td>
+                        <td>2014-12-25 10:42:35</td>
+                        <td><span class="tfont">已上线</span></td>
+                        <td><a class="editTabBut01" href="actionDoca.html">装修</a><a class="editTabBut01" href="javascript:;">下线</a><a class="editTabBut01 delete" href="javascript:;">删除</a><a class="editTabBut01" href="javascript:;">复制链接</a> </td>
+                    </tr>
+                    <tr>
+                        <td>12345</td>
+                        <td><span class="name" title="圣诞头图_05.jpg">圣诞头图_05.jpg</span></td>
+                        <td>2014-12-25 10:42:35</td>
+                        <td>2014-12-25 10:42:35</td>
+                        <td>2014-12-25 10:42:35</td>
+                        <td><span class="tfont">已上线</span></td>
+                        <td><a class="editTabBut01" href="actionDoca.html">装修</a><a class="editTabBut01" href="javascript:;">下线</a><a class="editTabBut01 delete" href="javascript:;">删除</a><a class="editTabBut01" href="javascript:;">复制链接</a> </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <div class="editPageBox">
+                        <div class="pageTotal">共<span>500</span>条记录</div>
+                        <div class="pageNumber">
+                            <a href="javascript:;" class="firstPage">首页</a><a href="javascript:;" class="prev">上一页</a><a href="javascript:;" class="num on">1</a><a href="javascript:;" class="num">2</a><a href="javascript:;" class="num">3</a><a href="javascript:;" class="pull">…</a><a href="javascript:;" class="num">20</a><a href="javascript:;" class="next">下一页</a><a href="javascript:;" class="lastPage">尾页</a>
+                        </div>
+                        <div class="pagePoint"><span>跳转到<input type="text" maxlength="4">页</span><a href="javascript:;" class="poiBut">GO</a></div>
+                    </div>
+                </div>
+        	</div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+//倒计时
+var shopTime111=function(i,t){
+	  var reTime=parseInt(t/1000);
+		var sertId  = setInterval(function(){
+			reTime--;
+			var h=parseInt(reTime/(3600));
+			h=h<10?'0'+h:h;
+			var m=parseInt((reTime%3600)/60);
+			m=m<10?'0'+m:m;
+			var s=parseInt(reTime%60);
+			s=s<10?'0'+s:s;
+			
+			$('.raceListTime').eq(i).find('span').text(h+'小时'+m+'分'+s+'秒');
+		},1000)
+	
+}
+
+
+
+
+$(function(){
+//倒计时执行
+for(var i=0;i<$('.raceListTime').length;i++)
+{
+		var r=$('.raceListTime').eq(i).attr('time');
+		shopTime111(i,r);	
+	
+}
+
+
+
+//倒计时计时
+		var oDate=new Date();
+		var curTime=oDate.getTime();
+		var overTime=Date.parse('2014/04/08 20:00:00');      //时间转换为毫秒
+		
+		var t=parseInt((overTime-curTime)/1000);
+		
+		var d=parseInt(t/(24*3600));   //天
+		d=d<10?'0'+d:d;
+		var h=parseInt((t%(24*3600))/3600);    //小时
+		h=h<10?'0'+h:h;
+		var m=parseInt((t%3600)/60);  //分
+		m=m<10?'0'+m:m;
+		var s=parseInt(t%60);  //秒
+		s=s<10?'0'+s:s;

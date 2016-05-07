@@ -1,0 +1,17 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.layoutBox{ margin-bottom:10px;}
+.layoutBox.noMargin{ margin-bottom:0px;}
+.layoutCon{ width:990px; margin:0 auto; overflow:hidden;}
+.layoutWidAuto{ width:100%;}
+
+.wid990,.wid740,.wid490,.wid240,.wid650,.wid330{ overflow:hidden; float:left;}
+.wid990{ width:990px;}
+.wid740{ width:740px;}
+.wid490{ width:490px;}
+.wid240{ width:240px;}
+.wid650{ width:650px;}
+.wid330{ width:330px;}
+.layoutTwo-right,.layoutThree-middle,.layoutThree-right{ margin-left:10px;}
+
+.modulesBox{ margin-bottom:10px;}

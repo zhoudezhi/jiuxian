@@ -1,0 +1,45 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/* 
+* Name: 店铺装修-默认模板3
+* Copyright: 赵雪珊 
+* Date: 2015-01-12
+*/
+/*店铺导航*/
+.shopNav{ background:#191919; border-top:2px solid #fe0000;}
+.shopNavCon{ width:990px; height:30px; margin:0 auto; overflow:hidden;}
+.shopNavCon ul{ float:left; margin-left:-1px;}
+.shopNavCon li{ float:left; height:30px; line-height:30px; font-size:14px; font-family:'Microsoft YaHei'; border-left:0px; background:url(../images/navShuxian.jpg) no-repeat left center;}
+.shopNavCon li a{ display:block; color:#fff; padding:0 30px;}
+.shopNavCon li a:hover{ color:#fff; background:#fe0000; text-decoration:none;}
+.shopNavCon li.on a{ background:#fe0000;}
+.shopNavSearch{ float:right; width:232px; height:22px; margin-top:4px;}
+.shopNavSearch .search-text{ float:left; width:190px; height:20px; line-height:20px; border:1px solid #fe0000; padding:0 5px;}
+.shopNavSearch .search-but{ float:left; display:inline-block; width:30px; height:22px; background:#fe0000; border-right-radius:5px;}
+.shopNavSearch .search-but i{ display:inline-block; width:15px; height:15px; background-position:-144px 0; margin:3px 0 0 6px; cursor:pointer;}
+/*店铺优惠券*/
+.shopCouponBox{ width:110%; padding:0 0 8px 6px;}
+.shopCouponBox a{ width:239px; margin:8px 6px 0 0; font-size:0; line-height:0; display:inline-block;}
+/*店铺倒计时*/
+.shopCountdown{ background:none;}
+/*商品列表*/
+.shopComBox .sComPic{ border-bottom:none;}
+.shopComBox .sComIntro .sCom-pro{ color:#666;}
+.shopComBox .sComIntro .sCom-price span{ font-size:16px; color:#f13c5d;}
+.shopComBox .sBayBut{ padding:0 15px; background:#f13c5d; border-radius:13px;}
+.wid990 .shopComBox{ width:98%; padding:1% 1% 0; background:#e00;}
+.wid990 .shopComBox ul li{ width:235px;}
+/*店铺搜索*/
+.shopSearchBox{ height:46px; background:#292929; font-family:'Microsoft YaHei';}
+.shopSearchBox .seaTit{ line-height:46px; color:#fff; font-size:14px;}
+.shopSearchBox .seaText{ height:26px; line-height:26px; border:none; margin:10px 0 0 10px;}
+.shopSearchBox .seaPri .pri{ line-height:46px; color:#fff; font-size:14px;}
+.shopSearchBox .seaPri .priVal{ height:26px; border:none; margin:10px 0 0 5px;}
+.shopSearchBox .seaPri .priVal i{ line-height:26px; font-size:14px;}
+.shopSearchBox .seaPri .priVal input{height:26px; line-height:26px; font-size:14px;}
+.shopSearchBox .seaPri .zhi{ margin:23px 0 0 5px;}
+.shopSearchBox .seaBut{ height:26px; background:#e00;  margin:10px 0 0 15px;}
+.shopSearchBox .seaBut i{ margin:6px 0 0 20px;}
+/*排行版*/
+.shopDefaultTit{ background:#292929; border-bottom:1px solid #ccc;}
+
