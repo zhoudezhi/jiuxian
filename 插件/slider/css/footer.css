@@ -1,0 +1,56 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.footerContact i,.footerTopRight .ftRight-form i,.footerServices ul li h3 i,.jxMicroblogging div i{ background:url(../images/public-24.png) no-repeat;}
+
+.footer{ width:100%; background:#f9f9f9;}
+.footerTopBox{ width:100%; background:#333;}
+.footerTop{ width:1200px; margin:0px auto; height:84px; border-bottom:1px solid #494949;}
+.footerTop .footerContact{ float:left; height:40px; line-height:40px; padding:22px 0; font-family:"微软雅黑";}
+.footerContact i,.footerContact b,.footerContact span{ display:inline-block; float:left;}
+.footerContact i{ width:40px; height:40px; background-position:-144px -22px; margin-right:18px;}
+.footerContact b{ font-size:24px; color:#cc0000; margin-right:25px;}
+.footerContact span{ font-size:14px; color:#fff; margin-right:8px;}
+.footerTop .footerTopRight{ float:right; height:32px; padding:26px 0;}
+.footerTopRight .ftRight-tit{ float:left; line-height:32px; color:#fff; font-family:"微软雅黑"; padding-right:10px;}
+.footerTopRight .ftRight-form{ float:left; width:240px; height:30px; border:1px solid #494949; position:relative; z-index:100;}
+.footerTopRight .ftRight-form input{ width:190px; height:30px; line-height:30px; padding:0 6px; background:none; border:none; float:left; color:#fff;}
+.footerTopRight .ftRight-form span{ display:inline-block; height:30px; line-height:30px; color:#999; position:absolute; left:6px; top:0px;}
+.footerTopRight .ftRight-form i{ display:inline-block; width:22px; height:18px; background-position:-133px 0; margin:6px 0 0 10px; cursor:pointer; float:left;}
+
+.footerServices{ width:1200px; margin:0px auto; overflow:hidden; padding:30px 0 60px;}
+.footerServices ul li{ width:158px; float:left; display:inline; margin-right:15px;}
+.footerServices ul li h3{ font-weight:normal; height:26px; line-height:26px; padding:5px 0;}
+.footerServices ul li h3 i{ display:inline-block; width:26px; height:26px; margin-right:9px; float:left;}
+.footerServices ul li.servicesItme01 h3 i{ background-position:0 -131px;}
+.footerServices ul li.servicesItme02 h3 i{ background-position:-30px -131px;}
+.footerServices ul li.servicesItme03 h3 i{ background-position:-60px -131px;}
+.footerServices ul li.servicesItme04 h3 i{ background-position:-90px -131px;}
+.footerServices ul li.servicesItme05 h3 i{ background-position:-120px -131px;}
+.footerServices ul li.servicesItme06 h3 i{ background-position:-150px -131px;}
+.footerServices ul li h3 span{ display:inline-block; width:123px; font-size:14px; color:#fff; font-family:"微软雅黑"; float:left; overflow:hidden; white-space:nowrap;}
+.footerServices ul li p{ width:123px; height:26px; line-height:26px; padding-left:35px; overflow:hidden; white-space:nowrap;}
+.footerServices ul li p a,.footerServices ul li p a:hover{ color:#ccc;}
+
+.footerServices ul li.jxMicroblogging{ margin-right:0px;}
+.jxMicroblogging .item{ width:158px; height:28px; line-height:28px; padding:5px 0 13px; position:relative;}
+.jxMicroblogging .item i{ display:inline-block; width:28px; height:28px; margin-right:9px; float:left;}
+.jxMicroblogging .weixin i{ background-position:-103px -74px;}
+.jxMicroblogging .sinaMb i{ background-position:-140px -74px;}
+.jxMicroblogging .item a{ display:inline-block; color:#fff; font-family:"微软雅黑"; float:left;}
+.jxMicroblogging .item a:hover{ color:#fff; text-decoration:none;}
+.jxMicroblogging .weixin .weixinCode{ width:84px; height:84px; position:absolute; left:37px; top:35px; display:none;}
+
+.footerBotBox{ width:100%;}
+.footerBot{ width:1200px; margin:0px auto; padding:20px 0 40px;}
+.footerBotLeft{ float:left; width:760px; overflow:hidden;}
+.footerBotLeft p{ line-height:26px; text-align:left;}
+.footerBotLeft .footerInfo{ height:12px; margin-left:-9px; padding:5px 0;}
+.footerBotLeft .footerInfo a{ display:inline-table; height:12px; line-height:12px; padding:0 8px; border-left:1px solid #666; overflow:hidden;}
+.footerBotLeft .footerPro{ color:#cc0000; padding:12px 0 6px;}
+.footerBotLeft .copybot{ height:47px;}
+.footerBotLeft .copybot a{ display:inline-table; margin-right:5px;}
+
+.footerBotCode{ float:right; text-align:center; padding-top:20px;}
+.footerBotCode div{ float:left; width:80px; display:inline; margin-left:40px;}
+.footerBotCode div .codePic{ width:80px; height:80px;}
+.footerBotCode div .codeText{ width:80px; height:24px; line-height:24px; overflow:hidden; white-space:nowrap; padding-top:5px;}

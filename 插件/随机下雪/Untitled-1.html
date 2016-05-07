@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+#wrap{ width:1000px; background:#000; margin:0 auto; position:relative}
+.wine{ position:absolute; left:0; top:-30px; width:33px;height:33px; background:url(img/bottle.png) no-repeat; opacity:1;} 
+
+</style>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
+<script>
+
+function CreateDiv()
+{
+	this.timer=null;
+}	
+
+CreateDiv.prototype={
+	
+	init	:	function(opt){
+		
+		var This=this;
+		This.setCode={
+			arrbg	:	[],
+			w	    :	33,
+			h		:	33,
+			ot		:	10,
+			ct		:	2
+		};
+		
+		$.extend(this.setCode,opt)
+		This.move();
+		setTimeout(function(){			
+			This.cDiv=function(){};
+			This.move=function(){};
+			
+		},This.setCode.ot*1000)
+		
+	},
+	cDiv	:	function(a){
+		
+		for(var i=0; i<8 ;i++)
+		{
+			var numDiv=Math.floor(Math.random()*1000);
+			var arrNum=Math.floor(Math.random()*a.setCode.arrbg.length);
+			var numTime=Math.floor(Math.random()*5+3);
+			var $wine=$('<div class="wine" />');
+			$wine.appendTo($('#wrap'));
+			$wine.css({'background-position':a.setCode.arrbg[arrNum][0]+'px '+a.setCode.arrbg[arrNum][1]+'px','left':numDiv+'px'}).animate({'top':($(window).height()-a.setCode.w)+'px','opacity':'0'},numTime*1000,function(){
+				$(this).remove();
+			});
+		}
+	},
+	move	:	function(){
+		var This=this;
+		This.timer=setInterval(function(){
+			This.cDiv(This)
+		},This.setCode.ct*1000)
+	}
+}
+
+$(function(){
+	
+	$('#wrap').css('height',$(window).height()+'px')
+	var arrBg=[['0','0'],['-48',0],['-88',0],['-128',0],['-160',0]];
+	var odiv=new CreateDiv();
+	
+	odiv.init({'arrbg':arrBg,'ot':10});
+	
+})
+
+</script>
+</head>
+
+<body>
+<div id="wrap">
+	
+</div>
+</body>
+</html>
