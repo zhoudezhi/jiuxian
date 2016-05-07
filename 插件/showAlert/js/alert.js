@@ -1,4 +1,4 @@
-// JavaScript Document
+﻿// JavaScript Document
 /* 
 * Name: slider_1
 * Copyright: 某年某月 (周德志)
@@ -6,6 +6,8 @@
 * Description: 自定义alert v1.0  
 * Funtion:   成功(success)、失败(fail)、警告(alarm)、对话（confirm）弹窗  
 */
+
+
 
 $(function(){
 	$.extend({
