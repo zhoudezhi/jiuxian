@@ -1,7 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-
 /*jQzoom*/
 div.zoomdiv{z-index:99999;position:absolute;top:0;left:0;width:200px;height:200px;background:#fff;border:1px solid #CCC;display:none;text-align:center;overflow:hidden;}
 div.jqZoomPup{z-index:99999;visibility:hidden;position:absolute;top:0;left:0;width:100px;height:100px;border:1px solid #aaa;background:#fff url(../img/zoomlens.gif) 50% 50% no-repeat;opacity:0.5;-moz-opacity:0.5;-khtml-opacity:0.5;filter:alpha(Opacity=50);}
