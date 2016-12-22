@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*页头、页尾start*/
+.topHeaderCon,.midHeaderCon,.navWrap .nav,.footerTop,.footerServices,.footerBot{ width:1200px;}
+.headerSearch,.headerSearch .hotWords{ width:540px;}
+.search .search-form{ width:439px;}
+.search .searchCon{ width:450px;}
+.searchCon ul a span{ width:280px;}
+.searchCon ul a em{ width:120px;}
+.footerServices ul li{ width:158px;}
+.footerServices ul li p,.footerServices ul li h3 span{ width:123px;}
+/*页头、页尾end*/
+/*首页start*/
+.mainBox,.ban_cter,.contentSecond{width:1200px;}
+.contentFirstLeft{width:1002px;}
+.contentFirstLeft .timeLimBox .titieBox li{width:332px;}
+.contentFirstLeft .timeLimBox .titleSlider{width:333px;}
+.contentFirstLeft .timeLimBox .contentBox{ width:1000px;}
+.contentFirstLeft .timeLimBox .contentBox .buyBox{width:920px;}
+.contentFirstLeft .timeLimBox .contentBox .buyBox li{ width:184px;}
+.contentSecond li{ width:240px;}
+.contentSecond li a img{ position:relative; z-index:1; margin-left:0px;}
+.contentThree .logoBox{width:1168px;}
+.contentThree .logoAll ul{width:1185px;}
+.floor .floorRight{width:1000px;}
+.promotionFirst .promotionPro{width:400px;}
+.floorRight .floorRightBox .hotProduct .hotProductRight{width:600px;}
+.floorRight .floorRightBox .brandArea{ width:999px;}
+.floorRight .floorRightBox .brandArea .brandAreaAd,.floorRight .floorRightBox .brandArea .brandAreaAd a{width:333px;}
+.wineFriendsBox .middle{width:380px;}
+.wineFriendsBox .right{width:360px;}
+.wineFriendsBox .rightContent li{padding-right:30px;}
+/*首页*/

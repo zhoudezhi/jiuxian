@@ -1,0 +1,124 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.topHeaderRight li i,.topHeaderRight .hd-n1 s,.topHeaderRight .hd-n8 s,.search-close i{ background:url(../images/public-24.png) no-repeat;}
+/*topHeader*/
+.topHeader{ width:100%; background:#f2f2f2; border-bottom:1px solid #e5e5e5;}
+.topHeaderCon{ width:1000px; height:26px; line-height:26px; margin:0 auto;}
+.topHeaderLeft{ width:290px; overflow:hidden; }
+.topHeaderLeft a,.topHeaderLeft p,.topHeaderRight li > a,.topHeaderRight li > span{ color:#999;}
+.topHeaderLeft a:hover,.topHeaderRight li a:hover{ color:#cc0001;}
+.topHeaderLeft{ height:26px; float:left;}
+.topHeaderLeft p,.topHeaderLeft a{ margin-right:15px; float:left;}
+.topHeaderLeft p span{ display:inline-block; float:left; max-width:100px; height:26px; overflow:hidden; margin-right:5px;}
+.topHeaderLeft p em{ display:inline-block; float:left; font-style:normal;}
+.topHeaderRight{ height:26px; float:right;}
+.topHeaderRight li{ height:26px; float:left; padding:0 7px; position:relative;}
+.topHeaderRight li i,.topHeaderRight li a,.topHeaderRight li span,.topHeaderRight li s{ display:inline-block; float:left;}
+.topHeaderRight li i{ width:12px; height:12px; margin:7px 5px 0 0; overflow:hidden; }
+/*.topHeaderRight .hd-n2 a,.topHeaderRight .hd-n7 a{ color:#cc0000;}*/
+.topHeaderRight .hd-n3 i{ background-position:-18px 1px;}
+/*.topHeaderRight .hd-n4 i{ background-position:-36px 0; width:20px; margin:3px 2px 0 0;}*/
+.topHeaderRight .hd-n5 i{ background-position:-62px 0;}
+.topHeaderRight .hd-n4 s{ width: 0px; height: 12px; border-left: 1px solid #ccc; right: 0; top: 7px; overflow: hidden; position:absolute;}
+.topHeaderRight .hd-n4 a{ height:16px; line-height:16px; padding:0 3px; background:#cc0001; border-radius:3px; color:#fff; margin:5px 5px 0 0;}
+.topHeaderRight .hd-n4 a:hover{ color:#fff; text-decoration:none;}
+
+.topHeaderRight .hd-n1,.topHeaderRight .hd-n8{ border-left:1px solid #f2f2f2; border-right:1px solid #f2f2f2; z-index:205; padding:0 4px 0 7px;}
+.topHeaderRight .hd-n1.on,.topHeaderRight .hd-n8.on{ border-left:1px solid #ededed; border-right:1px solid #ededed; background:#fff; height:27px; margin-bottom:-1px;}
+.topHeaderRight .hd-n1 s,.topHeaderRight .hd-n8 s{ width:9px; height:8px; background-position:-99px 3px; margin:9px 1px 9px 3px; transition: all 0.5s ease-in-out 0s; }
+.topHeaderRight .hd-n1:hover s,.topHeaderRight .hd-n8:hover s{ transform: rotate(180deg); background-position:-99px 3px;}
+.topHeaderRight .hd-n8 i{ background-position:-80px 0;}
+
+.hd-n8 .subNav span{ color:#999;}
+.hd-n8 .subNavBox{ width:205px; border-left:1px solid #e5e5e5; border-right:1px solid #e5e5e5; position:absolute; top:27px; left:-1px; z-index:206; background:#fff; display:none;}
+.hd-n8.on .subNavBox{ display:block;}
+.subNavBox .subNav-item{ width:165px; padding:6px 20px 8px; overflow:hidden; border-bottom:1px solid #ededed;}
+.subNavBox .subNav-item.bg{ background:#f9f9f9;}
+.subNav-item .snItem-tit{ line-height:28px;}
+.subNav-item .snItem-tit h3{ font-size:14px; font-family:"微软雅黑"; color:#333; font-weight:normal;}
+.subNav-item .snItem-con{ width:180px; line-height:24px;}
+.subNav-item .snItem-con a{height:24px; text-align:left; width:48px; margin-right:10px; overflow:hidden;}
+/*.subNav-item .sn-Tel{ padding:6px 0; font-size:14px; font-family:"微软雅黑";}
+.subNav-item .sn-Tel span{ color:#333;}
+.subNav-item .sn-Tel b{ color:#cc0001; font-weight:normal;}*/
+.topHeaderRight .hd-tel{ padding:0 5px 0 7px;}
+.topHeaderRight .hd-tel strong{ position: relative; top:1px; color: #ca1926; font-size: 16px; font-style:italic; padding-left: 5px;}
+
+.topHeaderRight .hd-n1 .myJiuxian a{ height:26px; color:#999;}
+.topHeaderRight .hd-n1 .myJiuxian a:hover{ color:#cc0001;}
+.topHeaderRight .hd-n1 .myJiuxianBox{ width:72px; border:1px solid #e5e5e5; border-top:none; position:absolute; top:27px; left:-1px; z-index:206; background:#fff; padding:5px 0; display:none;}
+.topHeaderRight .hd-n1.on .myJiuxianBox{ display:block;}
+.topHeaderRight .hd-n1 .myJiuxianBox a{ width:72px; text-align:center;}
+/*topHeader end*/
+/*顶通*/
+.topFocusBox a{ display:block; width:100%; height:90px;}
+/*顶通end*/
+/*midHeader*/
+.midHeader{ width:100%; background:#fff;}
+.midHeaderCon{ width:1000px; height:125px; margin:0 auto;}
+.headerLogo{ width:260px; height:65px; float:left; display:inline-block; margin-top:30px; overflow:hidden;}
+.headerLogo p{ float:left; text-align:left;}
+.headerLogo .jxwLogo{ width:137px; height:65px; margin-right:13px; display:inline-block;}
+.headerLogo .jxwLogo a{ display:inline-block; width:137px; height:65px;}
+.headerLogo img{ vertical-align:middle;}
+
+.headerSearch{ width:340px; float:left; display:inline-block; margin:32px 0 0 25px;}
+.headerSearch .search{ height:32px; border:3px solid #cc0000; position:relative; z-index:204;}
+.search .search-form{ width:239px; height:22px; line-height:22px; padding:5px; border:0px none; color:#666; float:left;}
+.search .search-btn{ width:85px; height:32px; line-height:32px; text-align:center; border:none; font-size:16px; color:#fff; background:#cc0000; cursor:pointer; font-family:"微软雅黑"; float:left;}
+.search .searchCon{ width:250px; position:absolute; left:-3px; top:35px; z-index:206; background:#fff; border: 1px solid #ddd; border-top:none; display:none;}
+.searchCon ul{ padding-top:3px;}
+.searchCon ul li{ height:30px;}
+.searchCon ul li.on{ background:#ffdfc6;}
+.searchCon ul a{ display: block; text-decoration:none; border-bottom: 1px dashed #ddd; display: block; height: 30px; line-height: 30px; padding:0 10px;}
+.searchCon ul a span{ color:#333; float:left; display:block; width:150px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.searchCon ul a em{ color:#999; float:right; font-style:normal; display:block; width:80px; overflow:hidden; text-align:right;}
+.searchCon ul a em b{ font-weight:normal; padding:0 2px;}
+.searchCon .bot{ height:30px;}
+.searchCon .bot .search-close{ display: block; float:right; cursor: pointer; color:#666;}
+.searchCon .bot .search-close i{ display:inline-block; background-position: -130px -192px; height: 16px; width: 16px; margin:8px 9px 0 0; float:right;}
+
+
+.headerSearch .hotWords{ width:340px; height:23px; overflow:hidden;}
+.hotWords p{ height:12px; line-height:12px; margin:11px 2px 0 -7px; overflow:hidden; white-space:nowrap;}
+.hotWords a{ float:left; display:inline-block; color:#999; padding:0 8px 0; border-left:1px solid #999;}
+.hotWords a.on{ color:#cc0000;}
+.hotWords a:hover{ color:#cc0001;}
+.headerProtect{ width:363px; float:right; height:43px; margin:33px 0 0 0; display:inline-block; background:url(../images/headerProPic.jpg) no-repeat top left;}
+.headerProtect a{ display:inline-block; width:106px; height:43px; margin-left:15px;}
+/*midHeader end*/
+
+/*标签*/
+.proTag{ position:absolute; top:5px; right:30px; height:52px; width:46px; background:url(../images/tag.png) no-repeat;} 
+.promotionPro li .indexTabPic .proTag{ top:2px; right:2px;}
+.Tag_1 { background-position: 0 0;}
+.Tag_2 { background-position: -47px 0;}
+.Tag_3 { background-position: -94px 0;}
+.Tag_4 { background-position: -141px 0;}
+.Tag_5 { background-position: -188px 0;}
+.Tag_6 { background-position: -235px 0;}
+.Tag_7 { background-position: 0 -54px;}
+.Tag_8 { background-position: -47px -54px;}
+.Tag_9 { background-position: -94px -54px;}
+.Tag_10 { background-position: -141px -54px;}
+.Tag_11 { background-position: -188px -54px;}
+.Tag_12 { background-position: -235px -54px;}
+.Tag_13 { background-position: 0 -108px;}
+.Tag_14 { background-position: -47px -108px;}
+.Tag_15 { background-position: -94px -108px;}
+.Tag_16 { background-position: -141px -108px;}
+.Tag_17 { background-position: -188px -108px;}
+.Tag_18 { background-position: -235px -108px;}
+.Tag_19 { background-position: 0 -162px;}
+.Tag_20 { background-position: -47px -162px;}
+.Tag_21 { background-position: -94px -162px;}
+.Tag_22 { background-position: -141px -162px;}
+.Tag_23 { background-position: -188px -162px;}
+.Tag_24 { background-position: -235px -162px;}
+.Tag_25 { background-position: 0 -216px;}
+.Tag_26 { background-position: -48px -216px;}
+.Tag_27 { background-position: -95px -216px;}
+.Tag_28 { background-position: -142px -216px;}
+.Tag_29 { background-position: -189px -216px;}
+.Tag_30 { background-position: -236px -216px;}
+.Tag_ { background: none;}
