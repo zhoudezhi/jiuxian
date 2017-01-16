@@ -51,19 +51,22 @@ module.exports = function(grunt) {
       afterconcat: ['static/dist/js/*.js']
     },*/
 
-    //把合并目录下的js压缩
+    //js压缩
     uglify: {
       options:{
         stripBanners: true,
         banner:'/*<%= pkg.name %>-<%= pkg.version %>  <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>*/\n'
       },              
       build: {
-        src: ['<%= concat.js.dest %>'],
-        dest: 'static/dist/js/init.js'
+        files: {
+          'modules/seajs/2.2.0/sea.min.js': ['modules/seajs/2.2.0/sea.js'], 
+          'modules/jquery/jquery/3.0.0/jquery-3.0.0.min.js': ['modules/jquery/jquery/3.0.0/jquery-3.0.0.js'],
+          'static/dist/js/init.js': ['<%= concat.js.dest %>']   //把合并目录下的js压缩
+        }
       }
     },
 
-    //把合并目录下的css压缩
+    //css压缩
     cssmin: {
       options: {
         stripBanners: true,
