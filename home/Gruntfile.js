@@ -3,44 +3,44 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    //复制文件  
-    /*copy: {
-      images: {
+    //step 1: 复制入口main.js文件到生产目录  
+    copy: {
+      js: {
         expand: true, 
         cwd: 'static/js/business/src/',
         src: 'main.js', 
         dest:'static/js/business/dist/'
       }
-    },*/
+    },
 
-    //将文件中定义的匿名函数转为具名函数
+    //step 2: 将文件中定义的匿名函数转为具名函数。保存在创建的临时目录
     transport: {  
       jiuxian: {
           options: {
-            debug: false,
+            debug:false,
+            // 是否采用相对地址
+            relative: true,
             // 生成具名函数的id的格式 默认值为 {{family}}/{{name}}/{{version}}/{{filename}} filename自动补全
-            idleading: '../js/business/src/' 
+            format: '../js/business/{{filename}}' 
          },
           files: [{
-            // 是否使用相对路径
-            expand: true, 
             // 相对路径地址           
-            cwd:'static/js/business/src/',
+            cwd:'static/js/business/',
             // 需要生成具名函数的文件集合
-            src:['*.js','!main.js'],
+            src:['src/*.js','!src/main.js','dist/main.js'],
             // 生成存放的文件目录
             dest:'.build'
           }]
       }
     },
 
-    //js，css文件合并
+    //step 3: 将临时目录下的具名函数合并为一个js文件，保存到生产目录。css文件合并。
     concat: {
       js: {
           // the files to concatenate
-          src: ['static/js/business/dist/main.js','.build/*.js'],
+          src: ['.build/*/*.js'],
           // the location of the resulting JS file
-          dest: 'static/js/business/dist/init.js'
+          dest: 'static/js/business/dist/main.js'
       },
       css: {
           // the files to concatenate  注意css的导入顺序，如果顺序无关，可以直接static/src/css/*.css
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
       afterconcat: ['static/dist/js/*.js']
     },*/
 
-    //js压缩
+    //step 4:压缩合并后的js文件
     uglify: {
       options:{
         //stripBanners: true,
@@ -69,12 +69,12 @@ module.exports = function(grunt) {
         files: {
           //'static/js/lib/seajs/2.2.0/sea.min.js': ['static/js/lib/seajs/2.2.0/sea.js'], 
           //'static/js/lib/jquery/jquery/3.0.0/jquery-3.0.0.min.js': ['static/js/lib/jquery/jquery/3.0.0/jquery-3.0.0.js'],
-          'static/js/business/dist/init.js': ['<%= concat.js.dest %>']   //把合并目录下的js压缩
+          'static/js/business/dist/main.js': ['<%= concat.js.dest %>']   //把合并目录下的js压缩
         }
       }
     },
 
-    //css压缩
+    //step 5:压缩合并后的css文件
     cssmin: {
       options: {
         stripBanners: true,
@@ -88,23 +88,22 @@ module.exports = function(grunt) {
 
     
 
-    //删除临时目录
+    //step 6:删除临时目录
     clean: {
       build: ['.build']
     }
     
   });
-  
+
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-cmd-transport');
   grunt.loadNpmTasks('grunt-contrib-concat');
   //grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  //grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  
  
-  grunt.registerTask('default', ['transport','concat','uglify','cssmin','clean']);
+  grunt.registerTask('default', ['copy','transport','concat','uglify','cssmin','clean']);
 
 };
