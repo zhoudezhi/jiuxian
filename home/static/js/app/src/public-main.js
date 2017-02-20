@@ -1,5 +1,5 @@
 
 define(function(require, exports, module) {
-	require('./public')
+	require('../src/public.js');
 	
 });

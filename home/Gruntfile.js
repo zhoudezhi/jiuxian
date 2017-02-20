@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       js: {
         expand: true, 
         cwd: 'static/js/app/src/',
-        src: 'main.js', 
+        src: ['main.js','public-main.js'], 
         dest:'static/js/app/dist/'
       }
     },
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
             // 相对路径地址           
             cwd:'static/js/',
             // 需要生成具名函数的文件集合
-            src:['app/src/*.js','!app/src/main.js','app/dist/main.js','tpl/*.js'],
+            src:['app/src/*.js','!app/src/main.js','!app/src/public-main.js','app/dist/main.js','app/dist/public-main.js','tpl/*.js'],
             // 生成存放的文件目录
             dest:'.build'
           }]
@@ -36,11 +36,17 @@ module.exports = function(grunt) {
 
     //step 3: 将临时目录下的具名函数合并为一个js文件，保存到生产目录。css文件合并。
     concat: {
-      js: {
+      main: {
           // the files to concatenate
-          src: ['.build/app/*/*.js','.build/tpl/*.js'],
+          src: ['.build/app/dist/main.js','.build/app/src/*.js','.build/tpl/*.js'],
           // the location of the resulting JS file
           dest: 'static/js/app/dist/main.js'
+      },
+      public_main: {
+          // the files to concatenate
+          src: ['.build/app/dist/public-main.js','.build/app/src/public.js'],
+          // the location of the resulting JS file
+          dest: 'static/js/app/dist/public-main.js'
       },
       css: {
           // the files to concatenate  注意css的导入顺序，如果顺序无关，可以直接static/src/css/*.css
@@ -87,7 +93,8 @@ module.exports = function(grunt) {
           //'static/js/lib/jquery/easing/1.3.0/easing.min.js': ['static/js/lib/jquery/easing/1.3.0/easing.js'],
           //'static/js/lib/template/2.0.4/template-native.min.js': ['static/js/lib/template/2.0.4/template-native.js'],
           //'static/js/lib/template/2.0.4/template.min.js': ['static/js/lib/template/2.0.4/template.js'],
-          'static/js/app/dist/main.js': ['<%= concat.js.dest %>']   //把合并目录下的js压缩
+          'static/js/app/dist/main.js': ['<%= concat.main.dest %>'],   //把合并目录下的js压缩
+          'static/js/app/dist/public-main.js': ['<%= concat.public_main.dest %>']   //把合并目录下的js压缩
         }
       }
     },
