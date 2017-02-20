@@ -128,5 +128,6 @@ module.exports = function(grunt) {
 
  
   grunt.registerTask('default', ['copy','transport','concat','uglify','cssmin']);
+  grunt.registerTask('release', ['copy','transport','concat','uglify','cssmin','clean']);
 
 };

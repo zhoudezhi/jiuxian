@@ -111,18 +111,18 @@
     </div>
 </div>
 <!--右边栏end-->
-<script type="text/javascript" src="../js/lib/seajs/2.2.0/sea.min.js"></script>
+<script type="text/javascript" src="../js/lib/seajs/3.0.1/sea.min.js"></script>
 <script type="text/javascript">
     seajs.config({
         base: "../js",
         alias: {
           "jquery": "lib/jquery/jquery/3.0.0/jquery.min.js"
-        }
+        },
+        charset:"utf-8"
     }); 
-
-    seajs.use(['../js/app/dist/public-main.js'],function(a){
-
-    });
+    
+    seajs.use(['../js/app/dist/public-main']);
+    
 </script>
 </body>
 </html>
