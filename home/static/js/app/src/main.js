@@ -5,14 +5,14 @@ define(function(require, exports, module) {
 	var $ = require('jquery');
 	require('../src/lazyload.js');  
 	require('../src/public.js');
-	require('../src/index.js');
+	require.async("../src/index.js",function(){
+        require.async([ "../src/slider_1", "../src/slider_2" ], function() {
+            $(".mainBanner").slider_1();
+            $(".bannerSlier,.floorSlider").slider_2();
+        });
+    });
 
-	//require异步加载
-	require.async(['../src/slider_1.js','../src/slider_2.js'],function(){
-		$(".mainBanner").slider_1();
-    	$(".bannerSlier,.floorSlider").slider_2();
-	});
-
+	
 	/*require('./slider_1.js');
 	require('./slider_2.js');*/
 

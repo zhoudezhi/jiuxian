@@ -3,9 +3,55 @@ define(function(require, exports, module){
 	var $ = require('jquery');
 	/*图片延迟加载*/
 	
-	function name(){
+	var data = [
+		{
+			url:"../images/topbanner_1.jpg",
+			text:"../images/topbanner_1.png",
+			color:"#bb2d47"
+		},{
+			url:"../images/topbanner_2.jpg",
+			text:"../images/topbanner_1.png",
+			color:"#90040f"
+		},{
+			url:"../images/topbanner_3.jpg",
+			text:"../images/topbanner_1.png",
+			color:"#ffcee3"
+		},{
+			url:"../images/topbanner_1.jpg",
+			text:"../images/topbanner_1.png",
+			color:"#bb2d47"
+		},{
+			url:"../images/topbanner_2.jpg",
+			text:"../images/topbanner_1.png",
+			color:"#90040f"
+		},{
+			url:"../images/topbanner_3.jpg",
+			text:"../images/topbanner_1.png",
+			color:"#ffcee3"
+		}
+	];
+
+
+	
+	
+	
+	//模版加载方式一:简单模版
+
+	var template = require('template');
+	var html = template.render('slider', {list:data});
+	$(".mainBanner").html(html);
+
+
+	//模版加载方式二：原生模版
+	var templateNative = require('templateNative');
+	var source = require("../../tpl/page");
+	var render = templateNative.compile(source);
+	var html = render({list:data});
+	$(".mainBanner").html(html);
+
+	/*function name(){
 		var name = '';
-	}
+	}*/
 
 	function lazyload(obj){
 		obj.find("img[loazy!=no]").lazyload({

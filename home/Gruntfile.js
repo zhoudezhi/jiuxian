@@ -7,9 +7,9 @@ module.exports = function(grunt) {
     copy: {
       js: {
         expand: true, 
-        cwd: 'static/js/business/src/',
+        cwd: 'static/js/app/src/',
         src: 'main.js', 
-        dest:'static/js/business/dist/'
+        dest:'static/js/app/dist/'
       }
     },
 
@@ -21,13 +21,13 @@ module.exports = function(grunt) {
             // 是否采用相对地址
             relative: true,
             // 生成具名函数的id的格式 默认值为 {{family}}/{{name}}/{{version}}/{{filename}} filename自动补全
-            format: '../js/business/{{filename}}' 
+            format: '../js/{{filename}}' 
          },
           files: [{
             // 相对路径地址           
-            cwd:'static/js/business/',
+            cwd:'static/js/',
             // 需要生成具名函数的文件集合
-            src:['src/*.js','!src/main.js','dist/main.js'],
+            src:['app/src/*.js','!app/src/main.js','app/dist/main.js','tpl/*.js'],
             // 生成存放的文件目录
             dest:'.build'
           }]
@@ -38,9 +38,9 @@ module.exports = function(grunt) {
     concat: {
       js: {
           // the files to concatenate
-          src: ['.build/*/*.js'],
+          src: ['.build/app/*/*.js','.build/tpl/*.js'],
           // the location of the resulting JS file
-          dest: 'static/js/business/dist/main.js'
+          dest: 'static/js/app/dist/main.js'
       },
       css: {
           // the files to concatenate  注意css的导入顺序，如果顺序无关，可以直接static/src/css/*.css
@@ -60,6 +60,21 @@ module.exports = function(grunt) {
     },*/
 
     //step 4:压缩合并后的js文件
+    /*uglify: {
+      options:{
+        //stripBanners: true,
+      },              
+      build: {
+        files: [{
+          expand:true,
+          cwd:'static/js/app/src',
+          src:'*.js',
+          dest:'static/js/app/dist'
+
+        }]
+      }
+    },*/
+
     uglify: {
       options:{
         //stripBanners: true,
@@ -68,8 +83,11 @@ module.exports = function(grunt) {
       build: {
         files: {
           //'static/js/lib/seajs/2.2.0/sea.min.js': ['static/js/lib/seajs/2.2.0/sea.js'], 
-          //'static/js/lib/jquery/jquery/3.0.0/jquery-3.0.0.min.js': ['static/js/lib/jquery/jquery/3.0.0/jquery-3.0.0.js'],
-          'static/js/business/dist/main.js': ['<%= concat.js.dest %>']   //把合并目录下的js压缩
+          //'static/js/lib/jquery/jquery/3.0.0/jquery.min.js': ['static/js/lib/jquery/jquery/3.0.0/jquery.js'],
+          //'static/js/lib/jquery/easing/1.3.0/easing.min.js': ['static/js/lib/jquery/easing/1.3.0/easing.js'],
+          //'static/js/lib/template/2.0.4/template-native.min.js': ['static/js/lib/template/2.0.4/template-native.js'],
+          //'static/js/lib/template/2.0.4/template.min.js': ['static/js/lib/template/2.0.4/template.js'],
+          'static/js/app/dist/main.js': ['<%= concat.js.dest %>']   //把合并目录下的js压缩
         }
       }
     },
@@ -85,8 +103,6 @@ module.exports = function(grunt) {
         dest: 'static/css/main.min.css'
       }
     },
-
-    
 
     //step 6:删除临时目录
     clean: {
@@ -104,6 +120,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
 
  
-  grunt.registerTask('default', ['copy','transport','concat','uglify','cssmin','clean']);
+  grunt.registerTask('default', ['copy','transport','concat','uglify','cssmin']);
 
 };

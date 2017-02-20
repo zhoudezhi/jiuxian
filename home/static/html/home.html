@@ -402,103 +402,7 @@
 <!--轮播-->
 <div class="mainBanner" id="turn">
 <!--<span class="prevPage arrow"></span>-->
-<div class="bigImg">
-    <ul class="bigUl">
-    <li style="background:#bb2d47;">
-        <div class="ban_cter">
-        <div class="imgBox">
-            <a  class="focusArea" target="_blank" href="javascript:;">
-            <img class="imgAnimate" src="../images/topbanner_1.jpg" width="820" height="470" />
-            <img class="imgText" src="../images/topbanner_1.png"/>
-            
-            </a>
-            </div>
-            <div class="mav">
-                <a style="background:url(../images/smallImg.png) no-repeat;" href="javascript:;" target="_blank" class="smallImg"><i></i></a>
-                <span class="mask1"></span>
-                <a style="background:url(../images/smallImg2.png) no-repeat;" href="javascript:;" target="_blank" class="smallImg"></a>
-                <span class="mask2" ></span>
-            </div>
-        </div>
-    </li>
-    <li style="background:#90040f">
-        <div class="ban_cter">
-            <div class="imgBox">
-            <a class="focusArea" target="_blank" href="javascript:;">
-             <img class="imgAnimate" src="../images/topbanner_2.jpg" width="820" height="470" />
-             <img class="imgText" src="../images/topbanner_1.png"/>
-            
-            </a>
-            </div>
-            <div class="mav">
-                <a style="background:url(../images/smallImg2.png) no-repeat;" href="javascript:;" target="_blank" class="smallImg"><i></i></a>
-                <span class="mask1"></span>
-                <a style="background:url(../images/smallImg2.png) no-repeat;" href="javascript:;" target="_blank" class="smallImg"></a>
-                <span class="mask2" ></span>
-            </div>
-        </div>
-    </li>
-    <li  style="background:#ffcee3">
-        <div class="ban_cter">
-        <div class="imgBox">
-            <a class="focusArea" target="_blank" href="javascript:;">
-             <img class="imgAnimate" src="../images/topbanner_3.jpg" width="820" height="470" />
-             <img class="imgText" src="../images/topbanner_1.png"/>
-            </a>
-            </div>
-            <div class="mav">
-                <a style="background:url(../images/smallImg.png) no-repeat;" href="javascript:;" target="_blank" class="smallImg"><i></i></a>
-                <span class="mask1"></span>
-                <a style="background:url(../images/smallImg.png) no-repeat;" href="javascript:;" target="_blank" class="smallImg"></a>
-                <span class="mask2" ></span>
-            </div>
-        </div>
-    </li>
-    <li   style="background:#bb2d47">
-        <div class="ban_cter">
-        <div class="imgBox">
-            <a class="focusArea"  target="_blank" href="javascript:;">
-             <img class="imgAnimate" src="../images/topbanner_1.jpg" width="820" height="470" />
-             <img class="imgText" src="../images/topbanner_1.png"/>
-            </a>
-            </div>
-            <div class="mav">
-                <a style="background:url(../images/smallImg2.png) no-repeat;" href="javascript:;" target="_blank" class="smallImg"><i></i></a>
-                <span class="mask1"></span>
-                <a style="background:url(../images/smallImg2.png) no-repeat;" href="javascript:;" target="_blank" class="smallImg"></a>
-                <span class="mask2" ></span>
-            </div>
-        </div>
-    </li>
-     <li  style="background:#ffcee3;">
-        <div class="ban_cter">
-        <div class="imgBox">
-            <a class="focusArea"  target="_blank" href="javascript:;">
-            
-             <img class="imgAnimate" src="../images/topbanner_3.jpg" width="820" height="470" />
-             <img class="imgText" src="../images/topbanner_1.png"/>
-            
-            </a>
-            </div>
-            <div class="mav">
-                <a style="background:url(../images/smallImg.png) no-repeat;" href="javascript:;" target="_blank" class="smallImg"><i></i></a>
-                <span class="mask1"></span>
-                <a style="background:url(../images/smallImg.png) no-repeat;" href="javascript:;" target="_blank" class="smallImg"></a>
-                <span class="mask2" ></span>
-            </div>
-        </div>
-    </li>
-    </ul>
-  </div>
-  <div class="smallBtn">
-    <ul class="smallUl">
-    <li class="on">1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    </ul>
-  </div>
+
  <!-- <span class="nextPage arrow"></span>-->
 </div>
 
@@ -2670,22 +2574,59 @@
 </div>
 <!--广告弹层end-->
 
+<script id="slider" type="text/html">
+<div class="bigImg">
+    <ul class="bigUl">
+    {{each list }}
+        <li style="background:{{$value.color}};">
+            <div class="ban_cter">
+            <div class="imgBox">
+                <a  class="focusArea" target="_blank" href="javascript:;">
+                <img class="imgAnimate" src="{{$value.url}}" width="820" height="470" />
+                <img class="imgText" src="{{$value.text}}"/>
+                </a>
+                </div>
+                <div class="mav">
+                    <a style="background:url(../images/smallImg.png) no-repeat;" href="javascript:;" target="_blank" class="smallImg"><i></i></a>
+                    <span class="mask1"></span>
+                    <a style="background:url(../images/smallImg2.png) no-repeat;" href="javascript:;" target="_blank" class="smallImg"></a>
+                    <span class="mask2" ></span>
+                </div>
+            </div>
+        </li>
+    {{/each}}
+    </ul>
+  </div>
+  <div class="smallBtn">
+    <ul class="smallUl">
+    {{each list}}
+        <li class="{{if $index==0}}on{{/if}}">{{$index+1}}</li>
+    {{/each}}
+
+    </ul>
+  </div>
+</script>
+
+
 <script type="text/javascript" src="../js/lib/seajs/2.2.0/sea.min.js"></script>
 <script type="text/javascript">
     seajs.config({
         base: "../js",
         alias: {
-          "jquery": "lib/jquery/jquery/3.0.0/jquery-3.0.0.min.js"
+          "jquery": "lib/jquery/jquery/3.0.0/jquery.min.js",
+          "template":"lib/template/2.0.4/template.min.js",
+          "templateNative":"lib/template/2.0.4/template-native.min.js"
+          //"page":"app/src/tpl/page.js"
         }
 	});  
 
     if(location.href.indexOf("dev=1") != -1){       
         console.log('开发环境');
-        seajs.use('../js/business/src/main.js');
+        seajs.use('../js/app/src/main.js');
 
     }else{        
         console.log('线上环境');
-        seajs.use('../js/business/dist/main.js');
+        seajs.use('../js/app/dist/main.js');
     }
     
 
