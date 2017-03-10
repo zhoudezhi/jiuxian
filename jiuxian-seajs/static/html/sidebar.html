@@ -111,17 +111,27 @@
     </div>
 </div>
 <!--右边栏end-->
+
 <script type="text/javascript" src="../js/lib/seajs/3.0.1/sea.min.js"></script>
 <script type="text/javascript">
     seajs.config({
         base: "../js",
         alias: {
-          "jquery": "lib/jquery/jquery/3.0.0/jquery.min.js"
-        },
-        charset:"utf-8"
-    }); 
-    
-    seajs.use(['../js/app/dist/public-main']);
+          "jquery": "lib/jquery/jquery/3.0.0/jquery.min.js",
+          "template":"lib/template/2.0.4/template.min.js",
+          "templateNative":"lib/template/2.0.4/template-native.min.js"
+          //"page":"app/src/tpl/page.js"
+        }
+    });  
+
+    if(location.href.indexOf("dev=1") != -1){       
+        console.log('开发环境');
+        seajs.use(['../js/app/src/main-public']);
+
+    }else{        
+        console.log('线上环境');
+        seajs.use(['../js/app/dist/main-public']);
+    }
     
 </script>
 </body>

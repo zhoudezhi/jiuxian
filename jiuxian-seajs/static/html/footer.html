@@ -82,13 +82,22 @@
     seajs.config({
         base: "../js",
         alias: {
-          "jquery": "lib/jquery/jquery/3.0.0/jquery.min.js"
+          "jquery": "lib/jquery/jquery/3.0.0/jquery.min.js",
+          "template":"lib/template/2.0.4/template.min.js",
+          "templateNative":"lib/template/2.0.4/template-native.min.js"
+          //"page":"app/src/tpl/page.js"
         }
-    }); 
+    });  
 
-    seajs.use(['../js/app/dist/public-main.js'],function(a){
+    if(location.href.indexOf("dev=1") != -1){       
+        console.log('开发环境');
+        seajs.use(['../js/app/src/main-public']);
 
-    });
+    }else{        
+        console.log('线上环境');
+        seajs.use(['../js/app/dist/main-public']);
+    }
+    
 </script>
 
 

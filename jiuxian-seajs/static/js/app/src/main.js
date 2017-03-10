@@ -6,12 +6,12 @@ define(function(require, exports, module) {
 	require('../src/lazyload.js');  
 	require('../src/public.js');
 	require.async("../src/index.js",function(){
-        require.async([ "../src/slider_1", "../src/slider_2" ], function() {
+        require.async([ "../../common/slider_1", "../../common/slider_2" ], function() {
             $(".mainBanner").slider_1();
             $(".bannerSlier,.floorSlider").slider_2();
         });
     });
-
+	
 	
 	/*require('./slider_1.js');
 	require('./slider_2.js');*/
