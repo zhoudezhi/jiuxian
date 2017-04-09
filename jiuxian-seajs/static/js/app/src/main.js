@@ -11,6 +11,8 @@ define(function(require, exports, module) {
             $(".bannerSlier,.floorSlider").slider_2();
         });
     });
+
+  
 	
 	
 	/*require('./slider_1.js');

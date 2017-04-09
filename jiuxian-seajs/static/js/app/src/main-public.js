@@ -2,7 +2,9 @@
 define(function(require, exports, module) {
 	require('../src/public.js');
 	var API_AJAX = require('../../common/api');
-
+	var utility = require("../../common/utility");
+    //var a = utility.checkRegEmoji("zhoudezhi")
+    //debugger
 	var data = {
         url:'http://bundlingsale.jd.com/json/bundlingSaleConsignee/getNameById.action',
         body:{

@@ -14,7 +14,7 @@ define(function(require,exports,module){
             var  start = document.cookie.indexOf(name + "=");
             if (start != -1) {
                 start = start + name.length + 1;
-                end = document.cookie.indexOf(";", start);
+                var end = document.cookie.indexOf(";", start);
                 if (end == -1){
                    end = document.cookie.length; 
                 } 
