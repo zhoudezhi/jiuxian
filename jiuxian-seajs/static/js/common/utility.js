@@ -11,7 +11,7 @@ define(function(require,exports,module){
     /*获取浏览器信息*/
     utility.getUserAgent = function () {
         var ua = navigator.userAgent||'';
-        return ua ;
+        return ua.toLowerCase();
     };
 
     utility.parseInt_10 = function (a){
@@ -171,25 +171,130 @@ define(function(require,exports,module){
         }
     };
 
-    utility.sessionstate = sessionstore
+    utility.sessionstate = sessionstore;
 
 
+    //判断是否是JDAPP
+    utility.isJDApp = function () {
+        var ua = getUserAgent();
+        var agentData = ua.split(";");
+        var result = agentData[0].toLowerCase() == "jdapp";
+        return result;
+    };
 
+    //判断是否是ios的JDAPP
+    utility.isJDios = function () {
+        var ua = getUserAgent();
+        var agentData = ua.split(";");
+        var result = ''
+        if (utility.isJDApp()) {
+            result = agentData[1].toLowerCase() == "iphone";
+        }
+        return result;
+    };
 
-    var state = {
-        _data:{},
-        setItem:function(key,data){
-            this._data[key] = data;
-        },
-        getItem:function(key,obj){
-            var data = this._data[key];
-            return data;
-        },
-        removeItem:function(key){
-            delete this._data[key];
+    //判断是否是android的JDAPP
+    utility.isJDandroid = function () {
+        var ua = getUserAgent();
+        var agentData = ua.split(";");
+        var result = ''
+        if (utility.isJDApp()) {
+            result = agentData[1].toLowerCase() == "android";
+        }
+        return result;
+    };
+
+    // 判断浏览器是否支持sticky属性
+    function isSupportSticky() {
+        var prefixTestList = ['', '-webkit-', '-ms-', '-moz-', '-o-'];
+        var stickyText = '';
+        for (var i = 0; i < prefixTestList.length; i++ ) {
+            stickyText += 'position:' + prefixTestList[i] + 'sticky;';
+        }
+        // 创建一个dom来检查
+        var div = document.createElement('div');
+        var body = document.body;
+        div.style.cssText = 'display:none;' + stickyText;
+        body.appendChild(div);
+        var isSupport = /sticky/i.test(window.getComputedStyle(div).position);
+        body.removeChild(div);
+        div = null;
+        return isSupport;
+    };
+
+    //调用sticky方法
+    utility.stickyDom = function (obj){
+        var scrollInter; /*滚动的循环变量*/
+        if(!obj){
+            return;
+        }
+        var normal = obj.normal ,
+            fixedNav = obj.fixedNav,
+            fixedTop = obj.fixedTop || 0,
+            $el = obj.view,
+            from = obj.from;
+
+        if(!obj.normal || !obj.fixedNav || normal.length==0 || fixedNav.length==0){
+            return;
+        }
+        if(isSupportSticky()){
+            normal.addClass('sticky');
+        }else/* if(isIOS)*/{
+            clearInterval(scrollInter);
+            scrollInter = setInterval(function () {
+                if($el){
+                    if($('body').has($el).length==0){
+                        clearInterval(scrollInter);
+                        return;
+                    }
+                    if($el.height()==0){
+                        if(from== 'stroeHomeShare'){
+                            clearInterval(scrollInter);
+                        }
+                        return;
+                    }
+                }
+                var rect = normal.get(0).getBoundingClientRect();
+                var top = rect.top;
+                if(top<=fixedTop){
+                    fixedNav.show();
+                    normal.css('opacity',0);
+                } else {
+                    fixedNav.hide();
+                    normal.css('opacity',1);
+                }
+            },10)
         }
     };
 
+
+
+    utility.msg = function (text,showIn) {
+        var $toast = document.getElementById('toast-box');
+        var $mask = document.getElementById('mask-page');
+        if($toast.length !=0 || !text ){
+            return false;
+        }
+
+        var showIn = showIn||1000; // 显示时间
+        if($mask.length == 0){
+            var mask = document.createElement('div');
+            mask.id = 'mask-page';
+            document.body.appendChild(mask);
+        }
+        var toast = document.createElement('div');
+        toast.id = 'toast-box';
+        toast.innerHTML = text;
+        document.body.appendChild(toast);
+        $mask = $(mask).show();
+        $toast = $(toast).show();
+        setTimeout(function(){
+            $mask.remove();
+            $toast.remove();
+        },showIn);
+    };
+
+    
 
 
 // Style properties  //#here : vendor + 参数(将第1个字符转换为大写)
