@@ -1,7 +1,7 @@
 ﻿// JavaScript Document
 define(function(require, exports, module){
-	var $ = require('jquery');
-
+	//var $ = require('jquery');
+	var $ = require('zepto');
 
 	/*右边栏*/
 	var loginStatus=false;  //用户登陆状态
@@ -231,20 +231,27 @@ define(function(require, exports, module){
 		$("#rsCartBox .rsCartTabBox").css('height',(winHei_1-203)+'px');
 		$(".rightSidebar").css('height',winHei_1+'px');
 	});
+
 	//购物车 鼠标滑过商品
-	$(".rsCartTable > .rsCartItem").hover(function(){
-		$(this).find(".comAmount a").show();
-		$(this).find(".rsCartItem-del").show();
-		$(this).css('background','#f8f8f8');
-	},function(){
-		$(this).find(".comAmount a").hide();
-		$(this).find(".rsCartItem-del").hide();
-		$(this).css('background','none');
+	$(".rsCartTable > .rsCartItem").bind({
+		"mouseenter":function(){
+			$(this).find(".comAmount a").show();
+			$(this).find(".rsCartItem-del").show();
+			$(this).css('background','#f8f8f8');
+	},
+		"mouseleave":function(){
+			$(this).find(".comAmount a").hide();
+			$(this).find(".rsCartItem-del").hide();
+			$(this).css('background','none');
+		}
 	});
-	$(".rsCartTable .rsCartComb").hover(function(){
-		$(this).find(".rsCartItem-del").show();
-	},function(){
-		$(this).find(".rsCartItem-del").hide();
+	$(".rsCartTable .rsCartComb").bind({
+		"mouseenter":function(){
+			$(this).find(".rsCartItem-del").show();
+	},
+		"mouseleave":function(){
+			$(this).find(".rsCartItem-del").hide();
+		}
 	});
 	//购物车 删除商品
 	var priAll=0;
@@ -322,10 +329,13 @@ define(function(require, exports, module){
 	/*右边栏end*/
 	
 	/*页头start*/
-	$(".topHeaderRight .hd-n1,.topHeaderRight .hd-n8").hover(function(){
-		$(this).addClass("on");		
-		},function(){
+	$(".topHeaderRight .hd-n1,.topHeaderRight .hd-n8").bind({
+		"mouseenter":function(){
+			$(this).addClass("on");		
+		},
+		"mouseleave":function(){
 			$(this).removeClass("on");	
+		}
 	});
 
 	/*搜索框*/
