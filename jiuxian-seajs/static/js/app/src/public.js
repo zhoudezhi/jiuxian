@@ -1,7 +1,7 @@
 ﻿// JavaScript Document
 define(function(require, exports, module){
-	//var $ = require('jquery');
-	var $ = require('zepto');
+	var $ = require('jquery');
+	//var $ = require('zepto');
 
 	/*右边栏*/
 	var loginStatus=false;  //用户登陆状态
