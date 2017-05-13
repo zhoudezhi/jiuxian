@@ -6,34 +6,34 @@
 * 
 */
 define(function(require,exports,module){
-    var dialog = {}
-
-    function msg(text,showIn){
-        var $toast = $('.toast-box');
-        var $mask = $('.mask-page');
+    var $ = require('jquery');
+    var dialog = {};
+    dialog.msg = function(text,showIn) {
+        var $toast = $('.toast-msg');
+        //var $mask = $('.pop-mask');
         if($toast.length !=0 || !text ){
             return false;
         }
-
-        var showIn = showIn||1000; // 显示时间
-        if($mask.length == 0){
+        var showIn = showIn||2000; // 显示时间
+        /*if($mask.length == 0){
             var mask = document.createElement('div');
-            mask.className = 'mask-page';
+            mask.className = 'pop-mask';
             document.body.appendChild(mask);
-        }
+        }*/
         var toast = document.createElement('div');
-        toast.className = 'toast-box';
+        toast.className = 'toast-msg';
         toast.innerHTML = text;
         document.body.appendChild(toast);
-        $mask = $(mask).show();
-        $toast = $(toast).show();
+        //var $mask = $('.pop-mask')
+        var $toast = $('.toast-msg');
+        //$mask.show();
+        $toast.show();
         setTimeout(function(){
-            $mask.remove();
+            //$mask.remove();
             $toast.remove();
         },showIn);
     };
     
-
     module.exports = dialog
 })
 

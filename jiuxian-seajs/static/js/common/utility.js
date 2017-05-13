@@ -2,7 +2,7 @@
 define(function(require,exports,module){
     var utility = {};
     /*常用函数*/
-
+    utility.currentUrl = location.protocol + '//' + location.host + location.pathname;
     //校验手机号码
     utility.isMobile = function (str) {
         return /^0?1(3|4|5|7|8)\d{9}$/.test((str||'').toString().trim());
@@ -269,30 +269,9 @@ define(function(require,exports,module){
 
 
 
-    utility.msg = function (text,showIn) {
-        var $toast = document.getElementById('toast-box');
-        var $mask = document.getElementById('mask-page');
-        if($toast.length !=0 || !text ){
-            return false;
-        }
+    
 
-        var showIn = showIn||1000; // 显示时间
-        if($mask.length == 0){
-            var mask = document.createElement('div');
-            mask.id = 'mask-page';
-            document.body.appendChild(mask);
-        }
-        var toast = document.createElement('div');
-        toast.id = 'toast-box';
-        toast.innerHTML = text;
-        document.body.appendChild(toast);
-        $mask = $(mask).show();
-        $toast = $(toast).show();
-        setTimeout(function(){
-            $mask.remove();
-            $toast.remove();
-        },showIn);
-    };
+    
 
     
 

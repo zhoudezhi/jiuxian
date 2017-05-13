@@ -3,6 +3,14 @@ define(function(require, exports, module) {
 	require('../src/public.js');
 	var API_AJAX = require('../../common/api');
 	var utility = require("../../common/utility");
+	var dialog = require("../../common/dialog");
+	var getLocation = require("../../common/getLocation");
+	getLocation.getLocation().done(function(result){
+		dialog.msg(result);
+	}).fail(function(error){
+		dialog.msg(error.message);
+	});
+	
     //var a = utility.checkRegEmoji("zhoudezhi")
     //debugger
 	var data = {
@@ -20,7 +28,7 @@ define(function(require, exports, module) {
 	});
 
 	var data1 = {
-		url:'//p.3.cn/prices/mgets',
+		url:'https://p.3.cn/prices/mgets',
         body:{
             skuIds:'J_1679083129',
             type:1

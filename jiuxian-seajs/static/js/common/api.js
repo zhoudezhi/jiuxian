@@ -23,9 +23,7 @@ define(function(require,exports,module){
 				dataType:'json',
 				async:data.async,
 				cache:data.cache,
-
 				success:function(resp,status,xhr){
-
 					resp || (resp={});
 					var code = resp.status;
 					if(code == 1){
