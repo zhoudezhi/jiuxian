@@ -3,12 +3,23 @@ define(function(require, exports, module) {
 	require('../src/public.js');
 	var API_AJAX = require('../../common/api');
 	var utility = require("../../common/utility");
-	var dialog = require("../../common/dialog");
+	var toast = require("../../common/toast");
 	var getLocation = require("../../common/getLocation");
+	require("../../common/dialog");
+	$.showDialog({
+		title:"标题提示",
+		type:"confirm",
+		callback:function(){
+			callBack()
+		}
+	});
+	function callBack(){
+		toast.msg("成功回调");
+	}
 	getLocation.getLocation().done(function(result){
-		dialog.msg(result);
+		toast.msg(result);
 	}).fail(function(error){
-		dialog.msg(error.message);
+		toast.msg(error.message);
 	});
 	
     //var a = utility.checkRegEmoji("zhoudezhi")
