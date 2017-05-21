@@ -1,5 +1,5 @@
 {
-  "name": "jiuxian",
+  "name": "static",
   "description": "Example project to demonstrate Grunt.",
   "version": "0.1.0",
   "private": true,
@@ -17,6 +17,8 @@
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-uglify": "^2.0.0",
-    "grunt-usemin": "^3.0.0"
+    "grunt-copy-to": "0.0.12",
+    "grunt-filerev": "^0.1.0",
+    "grunt-text-replace": "^0.4.0"
   }
 }
