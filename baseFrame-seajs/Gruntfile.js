@@ -127,7 +127,7 @@ module.exports = function(grunt) {
           }]
       }
     },
-    useminPrepare: {  
+    /*useminPrepare: {  
        html: 'build/html/index.html'  
     },  
   
@@ -139,7 +139,7 @@ module.exports = function(grunt) {
               return '<link rel="stylesheet" href="' + sitepath + block.dest + '">';  
             }  
         }  
-      }  
+      }  */
     },  
 
     //step 7:删除临时目录
@@ -159,8 +159,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-usemin');
 
- grunt.registerTask('default', ['usemin']);
- // grunt.registerTask('default', ['clean','copy','transport','concat','uglify','cssmin','imagemin','usemin']);
+ //grunt.registerTask('default', ['usemin']);
+  grunt.registerTask('default', ['clean','copy','transport','concat','uglify','cssmin','imagemin','usemin']);
   grunt.registerTask('release', ['clean','copy','transport','concat','uglify','cssmin']);
 
 };
