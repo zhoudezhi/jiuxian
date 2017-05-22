@@ -1,6 +1,10 @@
 module.exports = function(grunt) {
-  var cdn = "//misc.360buyimg.com/busiuess/static/";
-  cdn = '..';
+  //grunt用于本地查看压缩后的代码
+  //grunt release 用于往预发布和线上发布代码
+
+
+  var cdn = "//misc.360buyimg.com/business/test/";
+  //cdn = '..';
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -36,6 +40,12 @@ module.exports = function(grunt) {
         cwd: 'temp/html/',
         src: ['*.html'], 
         dest:'build/html/'
+      },      
+      images: {
+        expand: true, 
+        cwd: 'temp/images/',
+        src: ['**/*.{jpg,jpeg,png,gif}'], 
+        dest:'build/images/'
       } 
     },
 
@@ -123,7 +133,7 @@ module.exports = function(grunt) {
         },
         files: [{
             expand: true,
-            cwd: 'temp/images/',
+            cwd: 'build/images/',
             src: ['**/*.{png,jpg,jpeg,gif}'], // 优化目录下所有 png/jpg/jpeg/gif图片
             dest: 'build/images/' // 优化后的图片保存位置，
         }]
