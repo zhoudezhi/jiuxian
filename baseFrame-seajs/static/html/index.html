@@ -43,7 +43,7 @@
                   <ul class="swiper-wrapper">
                       {{each data.baseInfo.articleVos}}
                           <li class="swiper-slide">
-                              {{=$value.content}}
+                              <img src="{{$value.titlePicUrl}}">
                               <span class="title" roomId = {{$value.id}}>{{$value.title}}</span>
                           </li>
                       {{/each}}                      
@@ -59,7 +59,7 @@
                   <ul class="swiper-wrapper">
                       {{each data.baseInfo.articleVos}}
                           <li class="swiper-slide">
-                              {{=$value.content}}
+                              <img src="{{$value.titlePicUrl}}">
                               <span class="title" roomId = {{$value.id}}>{{$value.title}}</span>
                           </li>
                       {{/each}}                        
@@ -120,8 +120,8 @@
     <ul>
         {{each data}}
             <li>
-                <a href="jing-detail.html?articleId={{$value.hardcoverId}}">
-                  <img src="//img30.360buyimg.com/test/{{$value.titlePicUrl}}" onerror="this.src='../images/error.png'">
+                <a href="detail.html?articleId={{$value.hardcoverId}}">
+                  <img src="{{$value.titlePicUrl}}" onerror="this.src='../images/error.png'">
                   <span class="tag-type">{{$value.recommendType}}</span>
                   <div class="match-des">
                       <p class="article-title">{{$value.title}}</p>

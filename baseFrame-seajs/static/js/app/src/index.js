@@ -24,6 +24,69 @@ define(function(require, exports, module){
 	API_AJAX.jsonp(articleDate).done(function(res){
 		res || (res = {});
         var result = res.model;
+        var result = {
+                        baseInfo:{
+                            id: 14085,
+                            labels:"",
+                            title:"北欧风情清新地中海浪漫卧室",
+                            titlePicUrl:"",
+                            articleType:"",
+                            praisecount:"",
+                            browsecount:"",
+                            summary:"每个人的户型图都不一样，我最大的改动是把门口入户花 园的墙砸掉了。和客厅打通后做了开放式的书房。其它范 围就做了一些小范围的调。",
+                            details:'<p>每个人的户型图都不一样，我最大的改动是把门口入户花</p><img src="../images/images/demo.jpg"><p>每个人的户型图都不一样，我最大的改动是把门口入户花</p><img src="../images/images/demo.jpg"><p>每个人的户型图都不一样，我最大的改动是把门口入户花</p><img src="../images/images/demo.jpg"><p>每个人的户型图都不一样，我最大的改动是把门口入户花</p><img src="../images/images/demo.jpg"><p>每个人的户型图都不一样，我最大的改动是把门口入户花</p>',
+                            writerVo:{
+                                id:33928,
+                                nickName:"绵绵的兔兔",
+                                headPicUrl:"../images/images/designer.png",
+                                roleId:1
+                            },
+                            
+                            articleVos:[
+                                {
+                                    id:1,
+                                    title:"客厅",
+                                    titlePicUrl:"../images/images/1.jpg",
+                                    content:"",
+                                    threeDimensionalImgInfo:"",
+                                    support3d:"",
+                                    extendJson:""               
+                                },
+                                {
+                                    id:2,
+                                    title:"卧室",
+                                    titlePicUrl:"../images/images/2.jpg",
+                                    content:"",
+                                    threeDimensionalImgInfo:"",
+                                    support3d:"",
+                                    extendJson:""               
+                                },
+                                {
+                                    id:2,
+                                    title:"厨房",
+                                    titlePicUrl:"../images/images/3.jpg",
+                                    content:"",
+                                    threeDimensionalImgInfo:"",
+                                    support3d:"",
+                                    extendJson:""               
+                                }
+                                
+                            ],
+                            houses:{
+                                name:"国风美仑",
+                                provinceName:"",
+                                cityName:"北京",
+                                room:3,
+                                hall:2,
+                                cook:1,
+                                bathroom:1,
+                                houseImg:"../images/images/3.jpg",
+                                houseArea:"100"
+                            }
+                        },
+                        isAddCart:1,
+                        isLogin:1                                 
+                    }
 		//模版加载方式一:简单模版
 		isAddCart = result.isAddCart; 
         isLogin = result.isLogin; 
@@ -47,6 +110,42 @@ define(function(require, exports, module){
              res || (res = {});
             var model  = res.model || {};
             var result =  model.value || []; 
+            var result = [
+                    {
+                        hardcoverId:1437,
+                        housesName:"国风美仑",
+                        houseArea:"103",
+                        room:1,
+                        hall:3,
+                        bathroom :1,
+                        roomNum:3,
+                        recommendType:"同小区同户型",
+                        title:"北欧风情清新地中海浪漫卧室1",
+                        titlePicUrl:"../images/images/demo.jpg"
+                    },{
+                        hardcoverId:1437,
+                        housesName:"富力尚悦居",
+                        houseArea:"113",
+                        room:3,
+                        hall:2,
+                        bathroom :1,
+                        roomNum:4,
+                        recommendType:"同小区不同户型",
+                        title:"北欧风情清新地中海浪漫卧室2",
+                        titlePicUrl:"../images/images/demo.jpg"
+                    },{
+                        hardcoverId:1437,
+                        housesName:"富力尚悦居2",
+                        houseArea:"143",
+                        room:3,
+                        hall:2,
+                        bathroom :2,
+                        roomNum:5,
+                        recommendType:"同小区不同户型",
+                        title:"北欧风情清新地中海浪漫卧室3",
+                        titlePicUrl:"../images/images/demo.jpg"
+                    }
+                ]
             $(".more-match-box").html(template.render('more-match-tpl',{data:result}));
             if(isAddCart && isLogin){
                getCart(); 
