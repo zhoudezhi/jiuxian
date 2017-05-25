@@ -1,5 +1,5 @@
 seajs.config({
-        base: "../js",
+        base: "../js/",
         alias: {         
           "zepto": "lib/zepto/1.2.0/zepto.min.js",
           "template":"lib/template/2.0.4/template.min.js",

@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
   //grunt用于本地查看压缩后的代码
   //grunt release 用于往预发布和线上发布代码
-
+  require('time-grunt')(grunt);
 
   var cdn = "//misc.360buyimg.com/business/test/";
   //cdn = '..';
@@ -114,7 +114,7 @@ module.exports = function(grunt) {
     //step 6:压缩css文件
     cssmin: {
       options: {
-        banner:'/*<%= pkg.name %>-<%= pkg.version %>  <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>*/\n'
+        noAdvanced: true,
       },
       build: {
         expand: true,
@@ -169,14 +169,19 @@ module.exports = function(grunt) {
     copyto: {
       distJs: {
         files: [
-          {cwd: 'build/js/app/dist/', src: ['*.js'], dest: 'static/js/app/dist/', expand: true}
+          {
+            cwd: 'build/js/app/dist/', 
+            src: ['*.js'], 
+            dest: 'static/js/app/dist/', 
+            expand: true
+          }
         ]
       }
     },
 
     //step 11:部署CDN，替换html中静态资源的引用路径
     replace: {
-      //htnl中引用的js、css、图片
+      //html中引用的js、css、images路径
       htmlUrl: {
         src: ['build/html/*.html'],
         dest: 'build/html/',
@@ -191,16 +196,30 @@ module.exports = function(grunt) {
           to: cdn + 'images/'
           }]
       },
-      //模版中引用的图片，最后被压缩到产出目录中
+      //替换产出目录dist下js的路径
       tplUrl: {
         src: ['build/js/app/dist/*.js'],
         dest: 'build/js/app/dist/',
         replacements: [{
-          from: /..\/images\//g,
+          from: /..\/images\//g,  //公共模版目录tpl中的images路径
           to: cdn + 'images/'
+          },{
+          from: /..\/js\//g,      //产出目录dist下js的路径ID加上CDN前缀
+          to: cdn + 'js/'
           }]
+      },
+      //替换config.js中的baseUrl路径
+      configUrl:{
+        src: ['build/js/tools/config.js'],
+        dest: 'build/js/tools/',
+        replacements: [{
+          from: /..\/js\//g,
+          to: cdn + 'js/'
+        }]
       }
     }
+
+
 
 
   });

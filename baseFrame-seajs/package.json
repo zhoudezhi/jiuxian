@@ -20,6 +20,7 @@
     "grunt-copy-to": "0.0.12",
     "grunt-filerev": "^0.1.2",
     "grunt-filerev-replace": "^0.1.5",
-    "grunt-text-replace": "^0.4.0"
+    "grunt-text-replace": "^0.4.0",
+    "time-grunt": "^1.4.0"
   }
 }
