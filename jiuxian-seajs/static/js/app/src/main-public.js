@@ -1,5 +1,6 @@
 
 define(function(require, exports, module) {
+	var $ = require('jquery');
 	require('../src/public.js');
 	var API_AJAX = require('../../common/api');
 	var utility = require("../../common/utility");
