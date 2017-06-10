@@ -269,7 +269,6 @@
             return md5;
         });
     } else if(typeof define === 'function'){
-        debugger
 		define(function () {
             return md5;
         });
