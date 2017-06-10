@@ -10,6 +10,8 @@ define(function(require, exports, module){
     var toast = require("toast");	
     var goTop = require("goTop");
     var loadjs = require('loadjs');
+    var md5 = require('md5');
+    console.log(md5("周德志"))
     /*loadjs("http://misc.360buyimg.com/business/test/js/tools/swiper.js").done(function(){
         alert("1")
     });*/
