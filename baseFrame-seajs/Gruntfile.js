@@ -70,8 +70,6 @@ module.exports = function(grunt) {
       }
     },
 
-   
-
     //step 4: 将临时目录下的具名函数合并为一个js文件保存到产出目录。
     concat: {
       index: {
@@ -103,11 +101,22 @@ module.exports = function(grunt) {
         banner:'/*<%= pkg.name %>-<%= pkg.version %>  <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>*/\n'
       },              
       build: {
-        files: {
-          //'static/js/tools/swiper.js': ['static/js/tools/swiper.js'],
-          'build/js/app/dist/index.js': ['<%= concat.index.dest %>'],   //把合并目录下的js压缩
-          'build/js/app/dist/detail.js': ['<%= concat.detail.dest %>']   //把合并目录下的js压缩
-        }
+        /*files: {
+          //'static/js/lib/md5/md5.min.js': ['static/js/lib/md5/md5.min.js'],
+          //'static/js/lib/seajs/3.0.1/sea.min.js': ['static/js/lib/seajs/3.0.1/sea.js'],
+          //'static/js/lib/zepto/1.2.0/zepto.min.js': ['static/js/lib/zepto/1.2.0/zepto.js'],
+          //'static/js/lib/template/2.0.4/template.min.js': ['static/js/lib/template/2.0.4/template.js'],
+          //'static/js/lib/template/2.0.4/template-native.min.js': ['static/js/lib/template/2.0.4/template-native.js'],
+          //'build/js/app/dist/index.js': ['<%= concat.index.dest %>'],   //把合并目录下的js压缩
+          //'build/js/app/dist/detail.js': ['<%= concat.detail.dest %>']   //把合并目录下的js压缩
+        }*/
+        files:[{
+          expand: true,
+          cwd: 'build/js/app/dist/',
+          src: ['*.js'],
+          dest: 'build/js/app/dist/',
+          ext: '.js'
+        }]        
       }
     },
 
