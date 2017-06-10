@@ -12,7 +12,7 @@ define(function(require,exports,module){
      朝林广场Safari定位发送 {"longitude":116.49971450626151,"latitude":39.79195208558683,"coord_type":"
      */
     // 参数checkLocal表示若本地存在缓存，则使用本地缓存. 若为false，则强制重新设备位置
-    function getLocation(){
+    return function getLocation(){
         return $.Deferred(function(d){   
             // 太小经常会在第一次进入页面时报告定位失败，手动点击一下又可以获取到定位，
             // 之前未出现过这种情况，猜测可能是初始时时间太短(500毫秒时会出现)
@@ -56,7 +56,7 @@ define(function(require,exports,module){
             }
         });
     }
-    exports.getLocation = getLocation;
+    //exports.getLocation = getLocation;
 })
 
 

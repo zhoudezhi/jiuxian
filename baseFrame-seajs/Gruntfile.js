@@ -3,8 +3,8 @@ module.exports = function(grunt) {
   //grunt release 用于往预发布和线上发布代码
   require('time-grunt')(grunt);
 
-  var cdn = "//misc.360buyimg.com/business/test/";
-  //cdn = '..';
+  //var cdn = "//misc.360buyimg.com/business/test/";
+  cdn = '../';
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 

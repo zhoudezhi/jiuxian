@@ -10,7 +10,7 @@ callback：回调函数，用于confim确认时的回调
 */
 define(function(require,exports,module){
     var $ = require('zepto');
-    return  function showDialog(options) {
+    return  function dialog(options) {
                 var defaults = {
                     title: "提示",
                     type: "success",

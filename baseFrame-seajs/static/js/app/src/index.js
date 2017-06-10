@@ -1,13 +1,19 @@
 ﻿// JavaScript Document
 define(function(require, exports, module){
 	var $ = require('zepto');
+    var template = require('template');
+    require('helper');
 	var API_AJAX = require('api');
 	var utility = require("utility");
-	var Swiper =require("swiper");
-    var toast = require("toast");
-    var showDialog = require("dialog");
-	var template = require('template');
+	var Swiper =require("swiper");    
+    var dialog = require("dialog");
+    var toast = require("toast");	
     var goTop = require("goTop");
+    var loadjs = require('loadjs');
+    /*loadjs("http://misc.360buyimg.com/business/test/js/tools/swiper.js").done(function(){
+        alert("1")
+    });*/
+    
     goTop();
 	var param = utility.parseQueryString();
 	var articleId = param['articleId'];
@@ -95,7 +101,7 @@ define(function(require, exports, module){
         getMoreMatch();
 	}).fail(function(error){
 		error || (error ={})
-        toast.msg(error.msg);
+        toast(error.msg);
 	});
 
      //京装更多搭配   
@@ -152,7 +158,7 @@ define(function(require, exports, module){
             }
         }).fail(function(error){
             error || (error ={})
-            toast.msg(error.msg);
+            toast(error.msg);
         });
     }
 
@@ -234,7 +240,7 @@ define(function(require, exports, module){
             });
         }).fail(function(error){
             error || (error ={})
-            toast.msg(error.msg);
+            toast(error.msg);
         });
     }
 
@@ -277,7 +283,7 @@ define(function(require, exports, module){
             console.log(totalPrice);
         }).fail(function(error){
             error || (error ={})
-            toast.msg(error.msg);
+            toast(error.msg);
         });
     }
 
@@ -385,10 +391,10 @@ define(function(require, exports, module){
             flag?text = "已关注":text ="关注TA";
             flag? msg = '关注成功':msg ='取消关注成功';
             $this.toggleClass("on").find("em").text(text);
-            toast.msg(msg);
+            toast(msg);
         }).fail(function(error){
             error || (error ={})
-            toast.msg("关注失败");
+            toast("关注失败");
         });
       
     });
@@ -410,7 +416,7 @@ define(function(require, exports, module){
         if(flag){
             collectHander(flag,articleId,$this);
         }else{
-            showDialog({
+            dialog({
                 title:"确定要取消收藏吗?",
                 type:"confirm",
                 callback:function(){
@@ -433,7 +439,7 @@ define(function(require, exports, module){
             $this.toggleClass("on").find("em").text(text);
         }).fail(function(error){
             error || (error ={})
-            toast.msg(error.msg);
+            toast(error.msg);
         });
     }
 

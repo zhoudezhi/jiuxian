@@ -8,6 +8,6 @@ define(function(require, exports, module){
 	var template = require('template');
     var goTop = require("../../common/goTop");
     goTop();*/
-	toast.msg("页面初始化");
+	toast("页面初始化");
 });
 
