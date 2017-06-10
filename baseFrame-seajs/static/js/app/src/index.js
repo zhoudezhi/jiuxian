@@ -21,7 +21,7 @@ define(function(require, exports, module){
 	var articleDate = {
 		url : HOST_NAME+'/api/jz/hardcoverDetail.do',
         body:{
-            id:articleId,
+            id:91914,
             type:1
         },
         async:false

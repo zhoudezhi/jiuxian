@@ -4,7 +4,7 @@ seajs.config({
           'zepto': 'lib/zepto/1.2.0/zepto.min.js',
           'template':'lib/template/2.0.4/template.min.js',
           'templateNative':'lib/template/2.0.4/template-native.min.js',
-          'swiper':'tools/swiper.js',
+          'swiper':'tools/swiper.min.js',
           'helper':'common/helper.js',
           'api':'common/api.js',
           'dialog':'common/dialog.js',

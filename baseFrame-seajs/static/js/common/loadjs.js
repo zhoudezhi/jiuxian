@@ -1,8 +1,6 @@
 // JavaScript Document
 /* 
 * loadjs  加载js文件
-* Copyright (c) 2017 某年某月  
-* Date: 2017-05-20
 * 
 */
 define(function(require,exports,module){

@@ -1,6 +1,6 @@
 // JavaScript Document
 /* 
-* toast提示
+* H5定位
 * Copyright (c) 2017 某年某月  
 * Date: 2017-05-20
 * 
