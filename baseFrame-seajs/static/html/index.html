@@ -120,7 +120,7 @@
     <ul>
         {{each data}}
             <li>
-                <a href="detail.html?articleId={{$value.hardcoverId}}">
+                <a href="demo.html?articleId={{$value.hardcoverId}}">
                   <img src="{{$value.titlePicUrl}}" onerror="this.src='../images/error.png'">
                   <span class="tag-type">{{$value.recommendType}}</span>
                   <div class="match-des">
@@ -178,28 +178,15 @@
 
 
 <script type="text/javascript" src="../js/lib/seajs/3.0.1/sea.min.js"></script>
-<script type="text/javascript" src="../js/tools/config.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
 <script type="text/javascript">
-    /*seajs.config({
-        base: "../js",
-        alias: {         
-          "zepto": "lib/zepto/1.2.0/zepto.min.js",
-          "template":"lib/template/2.0.4/template.min.js",
-          "templateNative":"lib/template/2.0.4/template-native.min.js",
-          "swiper":"tools/swiper.js"
-        }
-    });  */
-
     if(location.href.indexOf("dev=1") != -1){       
         console.log('开发环境');
         seajs.use('../js/app/src/index.js');
-
     }else{        
         console.log('线上环境');
         seajs.use('../js/app/dist/index.js');
     }
-    
-
 </script>
 
 </html>

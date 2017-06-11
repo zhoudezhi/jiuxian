@@ -1,0 +1,49 @@
+﻿开发目录:
+	static  //项目根目录
+		
+		html  //存放所有页面
+		
+		css   //存放所有样式表
+		
+		images //存放所有图片
+		
+		js   //存放所有js文件
+		
+			js-common //存放自己定义的公共组件，如api，toast，utility等
+			js-lib    //存放库文件
+			js-tpl    //存放公共模版
+			js-toots  //存放配置文件config，第三方插件等
+			js-app-src //存放每个页面对应的业务代码，每个html文件建议对应一个业务js，命名保持相同
+			js-app-dist //存放压缩合并之后的代码，用于本地测试即将上线代码，开发中忽略此目录，构建后可自动生成
+			
+
+
+开发规范：
+	1.html
+		1.1、保证每个html具有完整的头部信息
+		1.2、静态css和js文件一律采用相对路径引用，静态资源部署CDN时，构建时可自动替换引用路径
+		1.3、当前页面模版以script标签形式全部放在html内，模版id在本页面保证唯一性（公用模版放在tpl目录下，形成公用）
+		1.4、必须引用的js包括seajs.js，config.js和本页面业务js
+	2.images
+		上线构建代码时会对所有图片进行一次压缩
+	3.css
+		引入base.css，各自页面可以自己创建css文件，然后再引入
+	4.js
+	    参照js/app/src/demo.js
+		
+		
+
+
+			
+				
+
+前端开发环境配置
+1.	安装Nodejs
+https://nodejs.org/en/
+2.	在开发目录下安装grunt打包工具
+npm install
+3.	安装grunt命令工具
+npm install -g grunt-cli
+4.	在开发目录下执行打包命令
+grunt 开发环境调试
+grunt release 预发布/线上环境
