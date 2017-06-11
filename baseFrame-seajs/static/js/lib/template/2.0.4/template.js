@@ -565,20 +565,21 @@ var _compile = (function () {
     };
 })();
 
-
-// RequireJS && SeaJS
-if (typeof define === 'function') {
+global.template = template;
+// RequireJS 
+if (typeof define === 'function' && define.amd) {
     define(function() {
         return template;
     });
-
+//seaJs
+}else if(typeof define === 'function' && define.cmd){
+    define(function() {
+        return template;
+    });
 // NodeJS
-} else if (typeof exports !== 'undefined') {
+}else if (typeof exports !== 'undefined') {
     module.exports = template;
-}
-
-global.template = template;
-
+} 
 
 })(this);
 

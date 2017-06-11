@@ -1881,7 +1881,15 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   // the user will be storing it themselves locally, and globals are frowned
   // upon in the Node module world.
   module.exports = Zepto;
-} else {
+} else if(typeof define === "function" && define.amd){  //requireJs
+  define(function () { 
+    return Zepto; 
+  });
+} else if (typeof define === "function" && define.cmd){ //seaJs
+  define(function () { 
+    return Zepto; 
+  });
+} else{
   // Otherwise expose jQuery to the global object as usual
   window.Zepto = window.$ = Zepto;
 
@@ -1892,9 +1900,9 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   // derived from file names, and jQuery is normally delivered in a lowercase
   // file name. Do this after creating the global so that if an AMD module wants
   // to call noConflict to hide this version of jQuery, it will work.
-  if ( typeof define === "function" ) {
+  /*if ( typeof define === "function" ) {
     define("zepto", [], function () { return Zepto; } );
-  }
+  }*/
 }
 
 ;(function(){
