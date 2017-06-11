@@ -1,12 +1,20 @@
 module.exports = function(grunt) {
   //grunt用于本地查看压缩后的代码
   //grunt release 用于往预发布和线上发布代码
-  require('time-grunt')(grunt);
 
+  require('time-grunt')(grunt);
+  
+  var appConfig = {
+    src: 'static'  //源代码目录
+  };
+  //CDN路径
   //var cdn = "//misc.360buyimg.com/business/test/";
-  cdn = '../';
+  var cdn = '../';
+
   grunt.initConfig({
+
     pkg: grunt.file.readJSON('package.json'),
+    appConfig:appConfig,
 
     //step 1:删除临时目录
     clean: {
@@ -19,7 +27,7 @@ module.exports = function(grunt) {
     copy: {
       all:{
         expand: true, 
-        cwd: 'static/',
+        cwd: '<%= appConfig.src %>',
         src: ['**/*.*'], 
         dest:'temp/'
       },
@@ -181,7 +189,7 @@ module.exports = function(grunt) {
           {
             cwd: 'build/js/app/dist/', 
             src: ['*.js'], 
-            dest: 'static/js/app/dist/', 
+            dest: '<%= appConfig.src %>/js/app/dist/', 
             expand: true
           }
         ]
