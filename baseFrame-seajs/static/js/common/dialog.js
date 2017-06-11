@@ -17,6 +17,9 @@ define(function(require,exports,module){
                     callback: null
                 };
                 var option = $.extend(defaults,options);
+                if($(".dialog-box").length){
+                    return false;
+                }
                 var html = '<div class="pop-mask"></div><div class="dialog-box"><p class="title">' + option.title + '</p><div class="dialog-btn"><ul><li class="cancel-btn">取消</li><li class="sure-btn">确定</li></ul></div></div>';
                 $(".pop-mask, .dialog-box").remove();
                 $("body").append(html);

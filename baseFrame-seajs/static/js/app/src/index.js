@@ -1,5 +1,7 @@
 ﻿// JavaScript Document
 define(function(require, exports, module){
+    var attachFastClick = require('fastclick');  
+    attachFastClick(document.body); 
 	var $ = require('zepto');
     var template = require('template');
     require('helper');
