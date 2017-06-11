@@ -38,12 +38,12 @@
 				
 
 前端开发环境配置
-1.	安装Nodejs
-https://nodejs.org/en/
-2.	在开发目录下安装grunt打包工具
-npm install
-3.	安装grunt命令工具
-npm install -g grunt-cli
-4.	在开发目录下执行打包命令
-grunt 开发环境调试
-grunt release 预发布/线上环境
+	1.	安装Nodejs
+	https://nodejs.org/en/
+	2.	在开发目录下安装grunt打包工具
+	npm install
+	3.	安装grunt命令工具
+	npm install -g grunt-cli
+	4.	在开发目录下执行打包命令
+	grunt 开发环境调试
+	grunt release 预发布/线上环境
