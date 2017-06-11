@@ -100,23 +100,23 @@ module.exports = function(grunt) {
       options:{
         banner:'/*<%= pkg.name %>-<%= pkg.version %>  <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>*/\n'
       },              
-      build: {
-        /*files: {
-          //'static/js/lib/md5/md5.min.js': ['static/js/lib/md5/md5.min.js'],
-          //'static/js/lib/seajs/3.0.1/sea.min.js': ['static/js/lib/seajs/3.0.1/sea.js'],
-          //'static/js/lib/zepto/1.2.0/zepto.min.js': ['static/js/lib/zepto/1.2.0/zepto.js'],
-          //'static/js/lib/template/2.0.4/template.min.js': ['static/js/lib/template/2.0.4/template.js'],
-          //'static/js/lib/template/2.0.4/template-native.min.js': ['static/js/lib/template/2.0.4/template-native.js'],
-          //'build/js/app/dist/index.js': ['<%= concat.index.dest %>'],   //把合并目录下的js压缩
-          //'build/js/app/dist/detail.js': ['<%= concat.detail.dest %>']   //把合并目录下的js压缩
-        }*/
+      build: {        
         files:[{
           expand: true,
           cwd: 'build/js/app/dist/',
           src: ['*.js'],
           dest: 'build/js/app/dist/',
           ext: '.js'
-        }]        
+        }/*,{
+          'static/js/lib/fastclick/fastclick.min.js': ['static/js/lib/fastclick/fastclick.js'],
+          'static/js/lib/md5/md5.min.js': ['static/js/lib/md5/md5.js'],
+          'static/js/lib/seajs/3.0.1/sea.min.js': ['static/js/lib/seajs/3.0.1/sea.js'],
+          'static/js/lib/zepto/1.2.0/zepto.min.js': ['static/js/lib/zepto/1.2.0/zepto.js'],
+          'static/js/lib/template/2.0.4/template.min.js': ['static/js/lib/template/2.0.4/template.js'],
+          'static/js/lib/template/2.0.4/template-native.min.js': ['static/js/lib/template/2.0.4/template-native.js'],
+          //'build/js/app/dist/index.js': ['<%= concat.index.dest %>'],   //把合并目录下的js压缩
+          //'build/js/app/dist/detail.js': ['<%= concat.detail.dest %>']   //把合并目录下的js压缩
+        }*/]        
       }
     },
 
