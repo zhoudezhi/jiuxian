@@ -10,9 +10,9 @@
 		js   //存放所有js文件
 		
 			js-common //存放自己定义的公共组件，如api，toast，utility等
-			js-lib    //存放库文件
-			js-tpl    //存放公共模版
-			js-toots  //存放配置文件config，第三方插件等
+			js-lib    //存放库文件，zepto、seajs等
+			js-tpl    //存放公共模版，公共模版需要用art-template原生语法
+			js-toots  //存放第三方插件,如MD5，swiper等
 			js-app-src //存放每个页面对应的业务代码，每个html文件建议对应一个业务js，命名保持相同
 			js-app-dist //存放压缩合并之后的代码，用于本地测试即将上线代码，开发中忽略此目录，构建后可自动生成
 			

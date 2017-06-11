@@ -86,11 +86,11 @@ module.exports = function(grunt) {
           // the location of the resulting JS file
           dest: 'build/js/app/dist/index.js'
       },
-      detail: {
+      demo: {
           // the files to concatenate
-          src: ['temp/js/app/dist/detail.js','temp/js/tpl/*.js','temp/js/common/toast.js'],
+          src: ['temp/js/app/dist/demo.js','temp/js/tpl/*.js','temp/js/common/toast.js'],
           // the location of the resulting JS file
-          dest: 'build/js/app/dist/detail.js'
+          dest: 'build/js/app/dist/demo.js'
       }      
     },
 
