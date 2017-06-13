@@ -13,7 +13,9 @@ define(function(require, exports, module){
     var goTop = require("goTop");
     var loadjs = require('loadjs');
     var md5 = require('md5');
-    console.log(md5("周德志"))
+    console.log(md5("周德志"));
+    var a = require('../../../css/aaa.json');
+    debugger
     /*loadjs("http://misc.360buyimg.com/business/test/js/tools/swiper.js").done(function(){
         alert("1")
     });*/
