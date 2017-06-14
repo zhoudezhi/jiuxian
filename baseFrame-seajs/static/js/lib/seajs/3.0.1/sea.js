@@ -1199,7 +1199,8 @@ seajs.config = function(configData) {
 
 
 /**
- * The Sea.js plugin for loading text resources such as template, json etc
+  The Sea.js plugin for loading text resources such as template, json etc
+  seajs插件sea-text.js，用于加载html，json文件
  */
 
 var global = window
