@@ -43,24 +43,6 @@ module.exports = function(grunt) {
         src: ['*.js'], 
         dest:'temp/js/app/dist/'
       }
-      //alljs: {
-        //expand: true, 
-        //cwd: 'temp/js/',
-        //src: ['**/*.js'], 
-       // dest:'build/js/'
-      //},      
-      /*html: {
-        expand: true, 
-        cwd: 'temp/html/',
-        src: ['*.html'], 
-        dest:'build/html/'
-      },   */   
-      //images: {
-        //expand: true, 
-        //cwd: 'temp/images/',
-        //src: ['**/*.{jpg,jpeg,png,gif}'], 
-       // dest:'build/images/'
-      //} 
     },
 
     //step 3: 将文件中定义的匿名函数转为具名函数。保存在创建的临时目录
