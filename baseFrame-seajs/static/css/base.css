@@ -28,60 +28,13 @@ button { outline-style: none;}
 .dialog-box .dialog-btn .cancel-btn {  margin:0 60px 0 0;}
 
 /*retina 1像素 start*/
- /*border-r（右）,border-l（左）,border-t（上）,border-b（下）加入到需要添加border的元素内即可
+ /*
+   border-r（右）,border-l（左）,border-t（上）,border-b（下）加入到需要添加border的元素内即可
    默认颜色#cbcbcb
  */
-.border-r,.border-l,.border-t,.border-b{ position: relative;}
-.border-r::after {
-    height: 100%;
-    content: '';
-    width: 1px;
-    border-right: 1px solid #e3e5e9;
-    position: absolute;
-    top: 0;
-    right: -1px;
-    transform: scaleX(0.5);
-    -webkit-transform: scaleX(0.5);
-    z-index: 10;
-}
-
-.border-l::before {
-    height: 100%;
-    content: '';
-    width: 1px;
-    border-left: 1px solid #e3e5e9;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scaleX(0.5);
-    -webkit-transform: scaleX(0.5);
-    z-index: 10;
-}
-
-.border-t::after {
-    height: 1px;
-    content: '';
-    width: 100%;
-    border-top: 1px solid #e3e5e9;
-    position: absolute;
-    top: -1px;
-    right: 0;
-    transform: scaleY(0.5);
-    -webkit-transform: scaleY(0.5);
-    z-index: 10;
-}
-
-.border-b::before {
-    height: 1px;
-    content: '';
-    width: 100%;
-    border-bottom: 1px solid #e3e5e9;
-    position: absolute;
-    bottom: -1px;
-    right: 0;
-    transform: scaleY(0.5);
-    -webkit-transform: scaleY(0.5);
-    z-index: 10;
-}
-
+.border-r,.border-l,.border-t,.border-b{position:relative}
+.border-r::after{height:100%;content:'';width:1px;border-right:1px solid #e3e5e9;position:absolute;top:0;right:0;transform:scaleX(0.5);-webkit-transform:scaleX(0.5);z-index:1}
+.border-l::before{height:100%;content:'';width:1px;border-left:1px solid #e3e5e9;position:absolute;top:0;left:0;transform:scaleX(0.5);-webkit-transform:scaleX(0.5);z-index:1}
+.border-t::after{height:1px;content:'';width:100%;border-top:1px solid #e3e5e9;position:absolute;top:0;right:0;transform:scaleY(0.5);-webkit-transform:scaleY(0.5);z-index:1}
+.border-b::before{height:1px;content:'';width:100%;border-bottom:1px solid #e3e5e9;position:absolute;bottom:0;right:0;transform:scaleY(0.5);-webkit-transform:scaleY(0.5);z-index:1}
 /*retina 1像素 end*/
