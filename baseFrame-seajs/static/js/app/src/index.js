@@ -14,8 +14,7 @@ define(function(require, exports, module){
     var loadjs = require('loadjs');
     var md5 = require('md5');
     console.log(md5("周德志"));
-    var a = require('../../tpl/page.html');
-    debugger
+    
     /*loadjs("http://misc.360buyimg.com/business/test/js/tools/swiper.js").done(function(){
         alert("1")
     });*/
@@ -102,7 +101,8 @@ define(function(require, exports, module){
 		//模版加载方式一:简单模版
 		isAddCart = result.isAddCart; 
         isLogin = result.isLogin; 
-        $(".match-detail-page").prepend(template.render('jing-detail-tpl', {data:result}));
+        var html = template.render('jing-detail-tpl', {data:result})
+        $(".match-detail-page").prepend(html);
         initSlider1();
         getMoreMatch();
 	}).fail(function(error){
@@ -158,7 +158,11 @@ define(function(require, exports, module){
                         titlePicUrl:"../images/images/demo.jpg"
                     }
                 ]
-            $(".more-match-box").html(template.render('more-match-tpl',{data:result}));
+            var tpl = require('../../tpl/page.html');
+            var render = template.compile(tpl);
+            var html = render({data:result});
+            $(".more-match-box").html(html);
+            //$(".more-match-box").html(template.render('more-match-tpl',{data:result}));
             if(isAddCart && isLogin){
                getCart(); 
             }

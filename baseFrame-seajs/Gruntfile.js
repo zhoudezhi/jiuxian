@@ -25,36 +25,42 @@ module.exports = function(grunt) {
     //        复制业务js源文件到生产目录  
     //原则就是从temp到build目录
     copy: {
-      all:{
+      toTemp:{
         expand: true, 
         cwd: '<%= appConfig.src %>',
         src: ['**/*.*'], 
         dest:'temp/'
+      },
+      toBuild:{
+        expand: true, 
+        cwd: '<%= appConfig.src %>',
+        src: ['**/*.*'], 
+        dest:'build/'
       },
       srcjs: {
         expand: true, 
         cwd: 'temp/js/app/src/',
         src: ['*.js'], 
         dest:'temp/js/app/dist/'
-      },
-      alljs: {
-        expand: true, 
-        cwd: 'temp/js/',
-        src: ['**/*.js'], 
-        dest:'build/js/'
-      },      
-      html: {
+      }
+      //alljs: {
+        //expand: true, 
+        //cwd: 'temp/js/',
+        //src: ['**/*.js'], 
+       // dest:'build/js/'
+      //},      
+      /*html: {
         expand: true, 
         cwd: 'temp/html/',
         src: ['*.html'], 
         dest:'build/html/'
-      },      
-      images: {
-        expand: true, 
-        cwd: 'temp/images/',
-        src: ['**/*.{jpg,jpeg,png,gif}'], 
-        dest:'build/images/'
-      } 
+      },   */   
+      //images: {
+        //expand: true, 
+        //cwd: 'temp/images/',
+        //src: ['**/*.{jpg,jpeg,png,gif}'], 
+       // dest:'build/images/'
+      //} 
     },
 
     //step 3: 将文件中定义的匿名函数转为具名函数。保存在创建的临时目录
@@ -71,7 +77,7 @@ module.exports = function(grunt) {
           // 相对路径地址           
           cwd:'temp/js/',
           // 需要生成具名函数的文件集合
-          src:['app/dist/*.js','tpl/*.js','common/*.js'],
+          src:['app/**/*.js','tpl/*.js','common/*.js'],
           // 生成存放的文件目录
           dest:'temp/js/'
         }]
@@ -84,13 +90,13 @@ module.exports = function(grunt) {
           // the files to concatenate
           src: ['temp/js/app/dist/index.js','temp/js/tpl/*.js','temp/js/common/*.js'],
           // the location of the resulting JS file
-          dest: 'build/js/app/dist/index.js'
+          dest: 'temp/js/app/dist/index.js'
       },
       demo: {
           // the files to concatenate
           src: ['temp/js/app/dist/demo.js','temp/js/tpl/*.js','temp/js/common/toast.js'],
           // the location of the resulting JS file
-          dest: 'build/js/app/dist/demo.js'
+          dest: 'temp/js/app/dist/demo.js'
       }      
     },
 
@@ -111,11 +117,11 @@ module.exports = function(grunt) {
       build: {        
         files:[{
           expand: true,
-          cwd: 'build/js/app/dist/',
+          cwd: 'temp/js/app/dist/',
           src: ['*.js'],
           dest: 'build/js/app/dist/',
           ext: '.js'
-        },{
+        }/*,{
           'static/js/lib/fastclick/fastclick.min.js': ['static/js/lib/fastclick/fastclick.js'],
           'static/js/lib/seajs/3.0.1/sea.min.js': ['static/js/lib/seajs/3.0.1/sea.js'],
           'static/js/lib/seajs/3.0.1/sea-css.min.js': ['static/js/lib/seajs/3.0.1/sea-css.js'],
@@ -124,7 +130,7 @@ module.exports = function(grunt) {
           'static/js/lib/template/2.0.4/template-native.min.js': ['static/js/lib/template/2.0.4/template-native.js'],
           //'build/js/app/dist/index.js': ['<%= concat.index.dest %>'],   //把合并目录下的js压缩
           //'build/js/app/dist/detail.js': ['<%= concat.detail.dest %>']   //把合并目录下的js压缩
-        }]        
+        }*/]        
       }
     },
 
@@ -135,7 +141,7 @@ module.exports = function(grunt) {
       },
       build: {
         expand: true,
-        cwd: 'temp/css/',
+        cwd: 'build/css/',
         src: ['*.css'],
         dest: 'build/css/',
         ext: '.css'
@@ -182,12 +188,12 @@ module.exports = function(grunt) {
       }
     },
 
-    //step 10:将产出文件的js复制到开发目录，用于本地测试即将发布的代码 
+    //step 10:将产出文件的js复制到开发目录，用于本地测试合并后的代码 
     copyto: {
       distJs: {
         files: [
           {
-            cwd: 'build/js/app/dist/', 
+            cwd: 'temp/js/app/dist/', 
             src: ['*.js'], 
             dest: '<%= appConfig.src %>/js/app/dist/', 
             expand: true
@@ -276,6 +282,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', steps);*/
   grunt.registerTask('default', ['clean','copy','transport','concat','uglify','cssmin','copyto']);
   grunt.registerTask('release', ['clean','copy','transport','concat','uglify','cssmin','imagemin','filerev','filerev_replace','copyto','replace']);
-  
+
 
 };
