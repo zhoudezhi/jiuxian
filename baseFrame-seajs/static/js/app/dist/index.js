@@ -1,5 +1,5 @@
 // JavaScript Document
-define("../js/app/dist/index", [ "fastclick", "zepto", "template", "helper", "api", "utility", "swiper", "dialog", "toast", "goTop", "loadjs", "md5", "../../tpl/page.html" ], function(require, exports, module) {
+define("../js/app/dist/index", [ "fastclick", "zepto", "template", "helper", "api", "utility", "swiper", "dialog", "toast", "goTop", "loadjs", "md5", "jdShare", "../../tpl/page.html" ], function(require, exports, module) {
     var attachFastClick = require("fastclick");
     attachFastClick(document.body);
     var $ = require("zepto");
@@ -14,6 +14,8 @@ define("../js/app/dist/index", [ "fastclick", "zepto", "template", "helper", "ap
     var loadjs = require("loadjs");
     var md5 = require("md5");
     console.log(md5("周德志"));
+    var jdShare = require("jdShare");
+    //jdShare.setShareInfo();
     /*loadjs("http://misc.360buyimg.com/business/test/js/tools/swiper.js").done(function(){
         alert("1")
     });*/
@@ -491,13 +493,12 @@ define("../js/common/api", [], function(require, exports, module) {
                 dataType: "json",
                 async: data.async,
                 cache: data.cache,
-                success: function(resp, status, xhr) {
-                    resp || (resp = {});
-                    var code = resp.status;
-                    if (code == 1) {
-                        d.resolve(resp.data, resp);
+                success: function(res, status, xhr) {
+                    res || (res = {});
+                    if (res.code == 1) {
+                        d.resolve(res.data, res);
                     } else {
-                        d.reject(resp);
+                        d.reject(res);
                     }
                 },
                 error: function(error) {
@@ -598,13 +599,15 @@ define("../js/common/dialog", [ "zepto" ], function(require, exports, module) {
         var defaults = {
             title: "提示",
             type: "success",
+            sureText: "确定",
+            cancelText: "取消",
             callback: null
         };
         var option = $.extend(defaults, options);
         if ($(".dialog-box").length) {
             return false;
         }
-        var html = '<div class="pop-mask"></div><div class="dialog-box"><p class="title">' + option.title + '</p><div class="dialog-btn"><ul><li class="cancel-btn">取消</li><li class="sure-btn">确定</li></ul></div></div>';
+        var html = '<div class="pop-mask"></div><div class="dialog-box"><p class="title">' + option.title + '</p><div class="dialog-btn"><ul><li class="cancel-btn">' + option.cancelText + '</li><li class="sure-btn">' + option.sureText + "</li></ul></div></div>";
         $(".pop-mask, .dialog-box").remove();
         $("body").append(html);
         $dialog = $(".dialog-box").show();
@@ -704,6 +707,32 @@ define("../js/common/getLocation", [ "zepto" ], function(require, exports, modul
 */
 define("../js/common/getMore", [ "zepto" ], function(require, exports, module) {
     var $ = require("zepto");
+    return function getMore(moreHander, item) {
+        clearInterval(moreTime);
+        var moreTime = window.setInterval(function() {
+            checkHander();
+        }, 125);
+        function checkHander() {
+            var $allItem = $(item);
+            var len = $allItem.length;
+            if (len < 4) {
+                return false;
+            }
+            //当倒数第二个元素浮出水面时，加载更多
+            var $lastItem = $allItem[len - 2];
+            if ($lastItem) {
+                var rect = $lastItem.getBoundingClientRect();
+                var windowHeight = $(window).height() || 480;
+                //对于获取不到屏幕高度的浏览器，默认为480
+                var top = rect.top;
+                var width = rect.width;
+                // 如果最后一个元素已经浮出水面，则加载更多
+                if (width > 0 && top < windowHeight + 100) {
+                    moreHander && moreHander();
+                }
+            }
+        }
+    };
 });
 // JavaScript Document
 /* 
@@ -1025,42 +1054,32 @@ define("../js/common/utility", [], function(require, exports, module) {
     }
     //调用sticky方法
     utility.stickyDom = function(obj) {
-        var scrollInter;
+        var stickyTime;
         /*滚动的循环变量*/
         if (!obj) {
-            return;
+            return false;
         }
-        var normal = obj.normal, fixedNav = obj.fixedNav, fixedTop = obj.fixedTop || 0, $el = obj.view, from = obj.from;
-        if (!obj.normal || !obj.fixedNav || normal.length == 0 || fixedNav.length == 0) {
-            return;
+        var normalDom = obj.normalDom.get(0);
+        var fixedDom = obj.fixedDom.get(0);
+        var fixedTop = obj.fixedTop || 0;
+        if (!obj.normalDom || !obj.fixedDom || normalDom.length == 0 || fixedDom.length == 0) {
+            return false;
         }
         if (isSupportSticky()) {
-            normal.addClass("sticky");
-        } else /* if(isIOS)*/ {
-            clearInterval(scrollInter);
-            scrollInter = setInterval(function() {
-                if ($el) {
-                    if ($("body").has($el).length == 0) {
-                        clearInterval(scrollInter);
-                        return;
-                    }
-                    if ($el.height() == 0) {
-                        if (from == "stroeHomeShare") {
-                            clearInterval(scrollInter);
-                        }
-                        return;
-                    }
-                }
-                var rect = normal.get(0).getBoundingClientRect();
+            normalDom.className = normalDom.className + " sticky";
+        } else {
+            clearInterval(stickyTime);
+            stickyTime = setInterval(function() {
+                var rect = normalDom.getBoundingClientRect();
                 var top = rect.top;
                 if (top <= fixedTop) {
-                    fixedNav.show();
-                    normal.css("opacity", 0);
+                    fixedDom.style.display = "block";
+                    normalDom.style.opacity = 0;
                 } else {
-                    fixedNav.hide();
-                    normal.css("opacity", 1);
+                    fixedDom.style.display = "none";
+                    normalDom.style.opacity = 1;
                 }
-            }, 10);
+            }, 100);
         }
     };
     // Style properties  //#here : vendor + 参数(将第1个字符转换为大写)

@@ -8,8 +8,8 @@ module.exports = function(grunt) {
     src: 'static'  //源代码目录
   };
   //CDN路径
-  var cdn = "//misc.360buyimg.com/business/test/";
-  //var cdn = '../';
+  //var cdn = "//misc.360buyimg.com/business/test/";
+  var cdn = '../';
 
   grunt.initConfig({
 
@@ -79,7 +79,13 @@ module.exports = function(grunt) {
           src: ['temp/js/app/dist/demo.js','temp/js/tpl/*.js','temp/js/common/toast.js'],
           // the location of the resulting JS file
           dest: 'temp/js/app/dist/demo.js'
-      }      
+      },
+      list: {
+          // the files to concatenate
+          src: ['temp/js/app/dist/list.js','temp/js/tpl/*.js','temp/js/common/*.js'],
+          // the location of the resulting JS file
+          dest: 'temp/js/app/dist/list.js'
+      }       
     },
 
     //js代码检查
@@ -104,6 +110,7 @@ module.exports = function(grunt) {
           dest: 'build/js/app/dist/',
           ext: '.js'
         }/*,{
+          'static/js/tools/jdShare.min.js': ['static/js/tools/jdShare.js'],
           'static/js/lib/fastclick/fastclick.min.js': ['static/js/lib/fastclick/fastclick.js'],
           'static/js/lib/seajs/3.0.1/sea.min.js': ['static/js/lib/seajs/3.0.1/sea.js'],
           'static/js/lib/seajs/3.0.1/sea-css.min.js': ['static/js/lib/seajs/3.0.1/sea-css.js'],

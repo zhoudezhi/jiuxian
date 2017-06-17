@@ -14,13 +14,15 @@ define(function(require,exports,module){
                 var defaults = {
                     title: "提示",
                     type: "success",
+                    sureText:"确定",
+                    cancelText:"取消",
                     callback: null
                 };
                 var option = $.extend(defaults,options);
                 if($(".dialog-box").length){
                     return false;
                 }
-                var html = '<div class="pop-mask"></div><div class="dialog-box"><p class="title">' + option.title + '</p><div class="dialog-btn"><ul><li class="cancel-btn">取消</li><li class="sure-btn">确定</li></ul></div></div>';
+                var html = '<div class="pop-mask"></div><div class="dialog-box"><p class="title">' + option.title + '</p><div class="dialog-btn"><ul><li class="cancel-btn">'+ option.cancelText +'</li><li class="sure-btn">'+ option.sureText +'</li></ul></div></div>';
                 $(".pop-mask, .dialog-box").remove();
                 $("body").append(html);
                 $dialog = $(".dialog-box").show();
@@ -52,5 +54,6 @@ define(function(require,exports,module){
 
     //module.exports = dialog
 })
+
 
 

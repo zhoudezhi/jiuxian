@@ -177,7 +177,7 @@ img {
 .dialog-box{position:fixed; top:50%; left:50%; width:80%; border-radius:8px; background:#fff; z-index:100; display:none; transform:translate(-50%,-50%); -webkit-transform:translate(-50%,-50%);}
 .dialog-box .close-dialog{position:absolute; top:10px; right:10px; width:20px; height:20px; cursor:pointer;}
 .dialog-box .title { font-size:14px; text-align:center; line-height:26px; padding:20px 15px 15px 15px;}
-.dialog-box .dialog-btn {text-align:center; border-top:1px solid #e3e5e9; border-radius:8px;}
+.dialog-box .dialog-btn {text-align:center; border-top:1px solid #e3e5e9;}
 .dialog-box .dialog-btn ul{ font-size:0;}
 .dialog-box .dialog-btn li { display:inline-block; width:50%; line-height:44px; font-size:14px;}
 .dialog-box .dialog-btn .sure-btn {color:#fff; background:#00a495; border-radius: 0 0 8px 0;}

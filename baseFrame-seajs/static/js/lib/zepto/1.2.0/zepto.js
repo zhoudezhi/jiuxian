@@ -1,9 +1,12 @@
 /* Zepto v1.2.0 - zepto event ajax form ie - zeptojs.com/license */
 (function(global, factory) {
-  if (typeof define === 'function' && define.amd)
+  if (typeof define === 'function' && define.amd){
     define(function() { return factory(global) })
-  else
+  } else if(typeof define === 'function' && define.cmd){
+    define(function() { return factory(global) })
+  } else{
     factory(global)
+  }
 }(this, function(window) {
   var Zepto = (function() {
   var undefined, key, $, classList, emptyArray = [], concat = emptyArray.concat, filter = emptyArray.filter, slice = emptyArray.slice,
@@ -1875,7 +1878,7 @@ window.$ === undefined && (window.$ = Zepto)
   $.Deferred = Deferred
 })(Zepto)
 
-if ( typeof module === "object" && module && typeof module.exports === "object" ) {
+/*if ( typeof module === "object" && module && typeof module.exports === "object" ) {
   // Expose jQuery as module.exports in loaders that implement the Node
   // module pattern (including browserify). Do not create the global, since
   // the user will be storing it themselves locally, and globals are frowned
@@ -1902,8 +1905,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   // to call noConflict to hide this version of jQuery, it will work.
   /*if ( typeof define === "function" ) {
     define("zepto", [], function () { return Zepto; } );
-  }*/
-}
+  }
+}*/
 
 ;(function(){
   // getComputedStyle shouldn't freak out when called

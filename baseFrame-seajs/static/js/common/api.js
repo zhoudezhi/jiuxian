@@ -25,13 +25,12 @@ define(function(require,exports,module){
 						dataType:'json',
 						async:data.async,
 						cache:data.cache,
-						success:function(resp,status,xhr){
-							resp || (resp={});
-							var code = resp.status;
-							if(code == 1){
-								d.resolve(resp.data,resp);
+						success:function(res,status,xhr){
+							res || (res={});
+							if(res.code == 1){
+								d.resolve(res.data,res);
 							} else {						
-								d.reject(resp);
+								d.reject(res);
 							}
 						},
 						error:function(error){

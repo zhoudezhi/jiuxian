@@ -7,6 +7,7 @@ seajs.config({
       'fastclick':'lib/fastclick/fastclick.min.js',
       'md5':'tools/md5.min.js',
       'swiper':'tools/swiper.min.js',
+      'jdShare':'tools/jdShare.min.js',
       'helper':'common/helper.js',
       'api':'common/api.js',
       'dialog':'common/dialog.js',
@@ -14,6 +15,7 @@ seajs.config({
       'goTop':'common/goTop.js',
       'toast':'common/toast.js',
       'utility':'common/utility.js',
-      'loadjs':'common/loadjs.js'
+      'loadjs':'common/loadjs.js',
+      'getMore':'common/getMore.js'
     }
 });

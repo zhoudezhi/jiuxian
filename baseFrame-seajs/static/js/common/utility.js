@@ -224,46 +224,31 @@ define(function(require,exports,module){
 
     //调用sticky方法
     utility.stickyDom = function (obj){
-        var scrollInter; /*滚动的循环变量*/
+        var stickyTime; /*滚动的循环变量*/
         if(!obj){
-            return;
+            return false;
         }
-        var normal = obj.normal ,
-            fixedNav = obj.fixedNav,
-            fixedTop = obj.fixedTop || 0,
-            $el = obj.view,
-            from = obj.from;
-
-        if(!obj.normal || !obj.fixedNav || normal.length==0 || fixedNav.length==0){
-            return;
+        var normalDom = obj.normalDom.get(0);
+        var fixedDom = obj.fixedDom.get(0);
+        var fixedTop = obj.fixedTop || 0;
+        if(!obj.normalDom || !obj.fixedDom || normalDom.length==0 || fixedDom.length==0){
+            return false;
         }
         if(isSupportSticky()){
-            normal.addClass('sticky');
-        }else/* if(isIOS)*/{
-            clearInterval(scrollInter);
-            scrollInter = setInterval(function () {
-                if($el){
-                    if($('body').has($el).length==0){
-                        clearInterval(scrollInter);
-                        return;
-                    }
-                    if($el.height()==0){
-                        if(from== 'stroeHomeShare'){
-                            clearInterval(scrollInter);
-                        }
-                        return;
-                    }
-                }
-                var rect = normal.get(0).getBoundingClientRect();
+            normalDom.className = normalDom.className + ' sticky';
+        }else{
+            clearInterval(stickyTime);
+            stickyTime = setInterval(function () {                
+                var rect = normalDom.getBoundingClientRect();
                 var top = rect.top;
-                if(top<=fixedTop){
-                    fixedNav.show();
-                    normal.css('opacity',0);
+                if(top <= fixedTop){
+                    fixedDom.style.display = 'block';
+                    normalDom.style.opacity = 0;
                 } else {
-                    fixedNav.hide();
-                    normal.css('opacity',1);
+                    fixedDom.style.display = 'none';
+                    normalDom.style.opacity = 1;
                 }
-            },10)
+            },100)
         }
     };
 

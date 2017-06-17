@@ -11,21 +11,27 @@ word-wrap:break-word; -webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-touch-c
 a { text-decoration:none; -webkit-touch-callout: none; -webkit-user-drag:none;  -webkit-user-select:none; color:#555; }
 button { outline-style: none;}
 
+/*loading*/
+.loading {height:100%; background: url(../images/loading.gif) center center no-repeat;}
+/*悬浮*/
+.sticky {position:-webkit-sticky; position:-ms-sticky ; position:-moz-sticky ; position:-o-sticky ; position:sticky ; top:0;z-index:99; left:0;}
 
-/*清浮动*/
+/*清除浮动*/
 .clear{clear:both; font-size:0; line-height:0; height:0;}
 .clearfix:after{clear:both;display:block;content:"...";visibility:hidden;height:0;font-size:0;}
 .clearfix{*zoom:1;}
 
 /*toast和alert*/
-.toast-msg{position:fixed; text-align:center; font-size:14px; color:#fff; background:rgba(0,0,0,0.7); border-radius:5px; line-height:20px; padding:20px; width:200px; top:50%; left:50%; transform:translate(-50%,-50%); -webkit-transform:translate(-50%,-50%); z-index:100;}
-.pop-mask{position:fixed; top:0; left:0; right:0; bottom:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:99;}
-.dialog-box{position:fixed; top:50%; left:50%; margin:-90px 0 0 -220px; width:380px; height:120px; padding:30px; background:#fff; z-index:100; display:none;}
+.toast-msg{position:fixed; text-align:center; font-size:14px; color:#fff; background:rgba(0,0,0,0.9); border-radius:5px; line-height:20px; padding:15px; width:200px; top:50%; left:50%; transform:translate(-50%,-50%); -webkit-transform:translate(-50%,-50%); z-index:100;}
+.pop-mask{position:fixed; top:0; left:0; right:0; bottom:0; width:100%; height:100%; background:rgba(0,0,0,0.7);  z-index:99;}
+.dialog-box{position:fixed; top:50%; left:50%; width:80%; border-radius:8px; background:#fff; z-index:100; display:none; transform:translate(-50%,-50%); -webkit-transform:translate(-50%,-50%);}
 .dialog-box .close-dialog{position:absolute; top:10px; right:10px; width:20px; height:20px; cursor:pointer;}
-.dialog-box .title { font-size:18px; font-weight:700; text-align:center; line-height:26px; margin:20px 0 30px;}
-.dialog-box .dialog-btn {text-align:center;}
-.dialog-box .dialog-btn span {display:inline-block; width:110px; line-height:36px;border-radius:20px; background:#fbb714; color:#fff; font-size:14px;cursor:pointer;}
-.dialog-box .dialog-btn .cancel-btn {  margin:0 60px 0 0;}
+.dialog-box .title { font-size:14px; text-align:center; line-height:26px; padding:20px 15px 15px 15px;}
+.dialog-box .dialog-btn {text-align:center; border-top:1px solid #e3e5e9;}
+.dialog-box .dialog-btn ul{ font-size:0;}
+.dialog-box .dialog-btn li { display:inline-block; width:50%; line-height:44px; font-size:14px;}
+.dialog-box .dialog-btn .sure-btn {color:#fff; background:#00a495; border-radius: 0 0 8px 0;}
+.dialog-box .dialog-btn .only-sure-btn{ width:100%; border-radius:0 0 8px 8px;}
 
 /*retina 1像素 start*/
  /*
