@@ -182,7 +182,7 @@ module.exports = function(grunt) {
       distJs: {
         files: [
           {
-            cwd: 'temp/js/app/dist/', 
+            cwd: 'build/js/app/dist/', 
             src: ['*.js'], 
             dest: '<%= appConfig.src %>/js/app/dist/', 
             expand: true
