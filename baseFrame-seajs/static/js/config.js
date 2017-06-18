@@ -8,6 +8,7 @@ seajs.config({
       'md5':'tools/md5.min.js',
       'swiper':'tools/swiper.min.js',
       'jdShare':'tools/jdShare.min.js',
+      'share':'common/share.js',
       'helper':'common/helper.js',
       'api':'common/api.js',
       'dialog':'common/dialog.js',

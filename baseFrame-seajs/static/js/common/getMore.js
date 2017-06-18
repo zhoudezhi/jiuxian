@@ -22,7 +22,7 @@ define(function(require,exports,module){
 			        var $lastItem = $allItem[len-2];
 			        if($lastItem){
 			        	var rect = $lastItem.getBoundingClientRect();
-				        var windowHeight = $(window).height()||480;//对于获取不到屏幕高度的浏览器，默认为480
+				        var windowHeight = $(window).height()||568;//对于获取不到屏幕高度的浏览器，默认为568
 				        var top = rect.top;
 				        var width = rect.width;
 				        // 如果最后一个元素已经浮出水面，则加载更多

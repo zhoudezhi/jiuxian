@@ -1,5 +1,6 @@
 // JavaScript Document
 define(function(require,exports,module){
+    var $ = require("zepto")
     var utility = {};
     /*常用函数*/
     utility.currentUrl = location.protocol + '//' + location.host + location.pathname;
@@ -122,7 +123,6 @@ define(function(require,exports,module){
     utility.createCode = function (){
         var code = "";
         var codeLength = 6;//验证码的长度
-        var checkCode = document.getElementById("checkCode");
         var selectChar = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];//所有候选组成验证码的字符，当然也可以用中文的
 
         for(var i=0;i<codeLength;i++){
@@ -176,7 +176,7 @@ define(function(require,exports,module){
 
     //判断是否是JDAPP
     utility.isJDApp = function () {
-        var ua = getUserAgent();
+        var ua = utility.getUserAgent();
         var agentData = ua.split(";");
         var result = agentData[0].toLowerCase() == "jdapp";
         return result;
@@ -184,7 +184,7 @@ define(function(require,exports,module){
 
     //判断是否是ios的JDAPP
     utility.isJDios = function () {
-        var ua = getUserAgent();
+        var ua = utility.getUserAgent();
         var agentData = ua.split(";");
         var result = ''
         if (utility.isJDApp()) {
@@ -195,7 +195,7 @@ define(function(require,exports,module){
 
     //判断是否是android的JDAPP
     utility.isJDandroid = function () {
-        var ua = getUserAgent();
+        var ua = utility.getUserAgent();
         var agentData = ua.split(";");
         var result = ''
         if (utility.isJDApp()) {
@@ -253,6 +253,10 @@ define(function(require,exports,module){
     };
 
 
+    
+    
+
+
 
     
 
@@ -266,25 +270,9 @@ define(function(require,exports,module){
     transition = prefixStyle('transition'),  // webkitTransform
 
 // Browser capabilities
-    navigator_appVersion = navigator.appVersion,
-    isAndroid = (/android/gi).test(navigator_appVersion),
-    isIOS = (/iPhone|iPad/gi).test(navigator_appVersion),
-    isIOS8 = isIOS && (/OS 8/i).test(navigator_appVersion),
-    isIOS9 = isIOS && (/OS 9/i).test(navigator_appVersion),
+    
     isMobileQQ = (/QQ\/([\d.]+)/gi).test(navigator_appVersion),
-    isUCBrowser = (/UCBrowser/gi).test(navigator_appVersion),
-    isMeiZu = isAndroid && (/\bM(\d)+\s*Build/gi).test(navigator_appVersion),
-
-
-    isWin = (/Windows/gi).test(navigator_appVersion),
-    isMAC = (/Mac/gi).test(navigator_appVersion),
-    isLinux = (/Linux/gi).test(navigator_appVersion),
-    isWindowsPhone = /(?:Windows Phone)/.test(navigator_appVersion),
-    isSymbian = /(?:SymbianOS)/.test(navigator_appVersion) || isWindowsPhone,
-    isFireFox = /(?:Firefox)/.test(navigator_appVersion),
-    isTablet = /(?:iPad|PlayBook)/.test(navigator_appVersion)||(isFireFox && /(?:Tablet)/.test(navigator_appVersion)),
-    isPc = !isIOS && !isAndroid && !isSymbian,
-
+    
 
 // 微信
     isWeixin = (/MicroMessenger/gi).test(navigator_appVersion),
