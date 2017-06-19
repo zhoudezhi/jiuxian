@@ -1,4 +1,8 @@
 // JavaScript Document
+/* 
+* Name：utility js常用方法集合
+* Date: 2017-05-20
+*/
 define(function(require,exports,module){
     var $ = require("zepto")
     var utility = {};

@@ -1,9 +1,7 @@
 // JavaScript Document
 /* 
-* cookie  创建和存储 cookie
-* Copyright (c) 2017 某年某月  
+* Name：cookie  创建和存储 cookie 
 * Date: 2017-05-20
-* 
 */
 define(function(require,exports,module){
 

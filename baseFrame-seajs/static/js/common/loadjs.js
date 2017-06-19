@@ -1,7 +1,7 @@
 // JavaScript Document
 /* 
-* loadjs  加载js文件
-* 
+* Name：loadjs 加载js文件，返回deferred延迟对象
+* Date: 2017-05-20
 */
 define(function(require,exports,module){
     var $ = require('zepto');

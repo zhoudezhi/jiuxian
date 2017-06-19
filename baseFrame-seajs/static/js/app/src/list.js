@@ -6,7 +6,8 @@ define(function(require, exports, module){
 	var template = require('template');	
 	var api = require('api');
     var toast = require('toast');
-	require('helper')
+	require('helper');
+    var goTop = require('goTop');
     var getMore = require("getMore");
     var utility = require('utility');   
     var share = require('share');
@@ -17,7 +18,7 @@ define(function(require, exports, module){
     var pageSize = 10;
     var HOST_NAME = '//ihome.m.jd.com';
     $(".list-page").html(template.render('loading-page-tpl',{loading:true}));
-
+    goTop();
 
     share.shareFromApp({
         title : "京东家-问答",
@@ -126,6 +127,7 @@ define(function(require, exports, module){
                 return false;
             }
             $(".question-list-new ul").append(template.render("question-item-tpl",{result:result}));
+            
             isLoading1 = false;   
         }
     }
@@ -202,8 +204,7 @@ define(function(require, exports, module){
               type:data.type,
               page:data.page,
               size:data.pageSize
-            },
-            async:false
+            }
         };
         api.json(data).done(function(result){
             result || (result = []);

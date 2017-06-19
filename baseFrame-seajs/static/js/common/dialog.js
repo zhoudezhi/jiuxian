@@ -1,12 +1,11 @@
 // JavaScript Document
 /* 
-* alert提示
-* Copyright (c) 2017 某年某月  
+* Name：alert 对话框提示
 * Date: 2017-05-20
-* 参数说明
+参数说明
 title：提示标题
 type：success（成功）、confirm（确认）、fail（失败）
-callback：回调函数，用于confim确认时的回调
+callback：回调函数，confim确认时的回调
 */
 define(function(require,exports,module){
     var $ = require('zepto');

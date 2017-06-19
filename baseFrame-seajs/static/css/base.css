@@ -15,7 +15,7 @@ button { outline-style: none;}
 .loading {height:100%; background: url(../images/loading.gif) center center no-repeat;}
 /*悬浮*/
 .sticky {position:-webkit-sticky; position:-ms-sticky ; position:-moz-sticky ; position:-o-sticky ; position:sticky ; top:0;z-index:99; left:0;}
-
+.go-top{ position:fixed; right:15px; bottom:80px; width:50px; height:50px; background:url(../images/go-top.png) no-repeat center center; background-size:50px auto; z-index:99; display:none;}
 /*清除浮动*/
 .clear{clear:both; font-size:0; line-height:0; height:0;}
 .clearfix:after{clear:both;display:block;content:"...";visibility:hidden;height:0;font-size:0;}

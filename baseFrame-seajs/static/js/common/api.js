@@ -1,4 +1,10 @@
+// JavaScript Document
+/* 
+* Name：api  ajax公共方法，返回deferred延迟对象 
+* Date: 2017-05-20
+*/
 define(function(require,exports,module){
+	var $ = require('zepto');
 	var API_AJAX = {};
 	// 默认为异步GET请求,
 	// timeout 超时设置，默认5000ms

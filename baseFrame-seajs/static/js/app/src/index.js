@@ -160,8 +160,9 @@ define(function(require, exports, module){
                         titlePicUrl:"../images/images/demo.jpg"
                     }
                 ]
-            var tpl = require('../../tpl/page.html');
-            var render = template.compile(tpl);
+            var tpl = require('../../tpl/page.js');
+            var templateNative =require('templateNative');
+            var render = templateNative.compile(tpl);
             var html = render({data:result});
             $(".more-match-box").html(html);
             //$(".more-match-box").html(template.render('more-match-tpl',{data:result}));

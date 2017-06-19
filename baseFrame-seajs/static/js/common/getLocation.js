@@ -1,9 +1,7 @@
 // JavaScript Document
 /* 
-* H5定位
-* Copyright (c) 2017 某年某月  
+* Name：getLocation H5原生方法获取用户地理位置
 * Date: 2017-05-20
-* 
 */
 define(function(require,exports,module){
     var $ = require('zepto');
@@ -32,15 +30,8 @@ define(function(require,exports,module){
                 try{
                     navigator.geolocation.getCurrentPosition(function(position){
                         var coords = (position||{}).coords;
-                        if (isValidCoords(coords)) {
-                            //getLocation.savedCoords_ = coords;
-                            //sessionstore.setItem(key,coords);
-                            d.resolve(coords);
-                        } else {
-                            d.reject();
-                        }
+                        d.resolve(coords);                        
                     },function(error){
-                        //d.resolve(error);
                         d.reject(error);
                         // andriod 获取不到位置
                     },{

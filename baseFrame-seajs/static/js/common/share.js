@@ -1,9 +1,7 @@
 // JavaScript Document
 /* 
-* 分享组件，所有渠道的分享，单独将分享作为一个组件
-* Copyright (c) 2017 某年某月  
+* Name：share分享组件，所有渠道的分享，单独将分享作为一个组件
 * Date: 2017-05-20
-* 
 */
 define(function(require,exports,module){
 	var share = {};

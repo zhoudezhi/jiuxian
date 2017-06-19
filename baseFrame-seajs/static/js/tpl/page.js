@@ -1,43 +1,30 @@
-
+// JavaScript Document
+/* 
+* Name：tpl  公共模版文件 
+* Date: 2017-05-20
+*/
 define(function(require, exports, module) {
-	
-	var source = '<div class="bigImg">'
-		+    '<ul class="bigUl">'
-		+    '<% for (var i = 0; i < list.length; i ++) { %>'
-		+        '<li style="background:<%= list[i].color %>;">'
-	    +         	'<div class="ban_cter">'
-	    +         '<div class="imgBox">'
-	    +             '<a  class="focusArea" target="_blank" href="javascript:;">'
-	    +             '<img class="imgAnimate" src="<%= list[i].url %>" width="820" height="470" />'
-	    +            '<img class="imgText" src="<%= list[i].text %>"/>'
-	    +             '</a>'
-	    +             '</div>'
-	    +             '<div class="mav">'
-	    +                 '<a style="background:url(../images/smallImg.png) no-repeat;" href="javascript:;" target="_blank" class="smallImg"><i></i></a>'
-	    +                 '<span class="mask1"></span>'
-	    +               '<a style="background:url(../images/smallImg2.png) no-repeat;" href="javascript:;" target="_blank" class="smallImg"></a>'
-	    +                 '<span class="mask2" ></span>'
-	    +             '</div>'
-	    +         '</div>'
-	    +     '</li>'
-	    +    '<% } %>'
-	    + 	'</ul>'
-	  	+ '</div>'
-
-	  	+ '<div class="smallBtn">'
-	    + '<ul class="smallUl">'
-	   +    '<% for (var i = 0; i < list.length; i ++) { %>'
-	    +     '<li class="<% if (i==0) { %>on<% } %>"> <%= i+1 %></li>'
-	    +	'<% } %>'
-	    +  '</ul>'
-	  	+ '</div>';
 
 
-	/*var source = '<ul>'
-	+    '<% for (var i = 0; i < list.length; i ++) { %>'
-	+        '<li>索引 <%= i + 1 %> ：<%= list[i] %></li>'
-	+    '<% } %>'
-	+ '</ul>';*/
+	var source = '<p class="more-title"><span>更多搭配</span><img src="../images/moreMatch.png"></p>'
+	+'<ul>'
+	+'<% for (var i = 0; i < data.length; i ++) { %>'
+	+'    <li>'
+	+'        <a href="demo.html?articleId=<%= data[i].hardcoverId %> ">'
+	+'          <img src="<%= data[i].titlePicUrl %> ">'
+	+'          <span class="tag-type"><%= data[i].recommendType %> </span>'
+	+'          <div class="match-des">'
+	+'              <p class="article-title"><%= data[i].title %></p>'
+	+'              <p class="house-type">'
+	+'                  <span class="border-r"><% if (data[i].room) { %> <em><%= data[i].room %> 室</em><% } %> <% if (data[i].hall) { %> <em><%= data[i].hall %> 厅</em><% } %> <% if (data[i].bathroom) { %> <em><%= data[i].bathroom %> 卫</em><% } %> </span>'
+	+'                  <% if (data[i].houseArea) { %> <span><%= data[i].houseArea %> m²</span><% } %> '
+	+'              </p>'
+	+'              <% if (data[i].roomNum) { %> <em class="room-number"><%= data[i].roomNum %> 个空间</em><% } %> '
+	+'          </div>'
+	+'        </a>'               
+	+'    </li>'
+	+'<% } %> '      
+	+'</ul>';
 	
  	return source;
 });

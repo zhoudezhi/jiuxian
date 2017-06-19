@@ -1,36 +1,24 @@
 // JavaScript Document
 /* 
-* toast提示
-* Copyright (c) 2017 某年某月  
+* Name：toast 弹出框提示
 * Date: 2017-05-20
-* 
 */
 define(function(require,exports,module){
-    var $ = require('zepto');
     //var toast = {};
     return function toast(text,showIn) {
-                var $toast = $('.toast-msg');
-                //var $mask = $('.pop-mask');
-                if($toast.length !=0 || !text ){
+                var toast = document.querySelector('.toast-msg');
+                if(toast || !text ){
                     return false;
                 }
-                var showIn = showIn||2000; // 显示时间
-                /*if($mask.length == 0){
-                    var mask = document.createElement('div');
-                    mask.className = 'pop-mask';
-                    document.body.appendChild(mask);
-                }*/
+                var showIn = showIn||2000; // 显示时间                
                 var toastDom = document.createElement('div');
                 toastDom.className = 'toast-msg';
                 toastDom.innerHTML = text;
                 document.body.appendChild(toastDom);
-                //var $mask = $('.pop-mask')
-                var $toast = $('.toast-msg');
-                //$mask.show();
-                $toast.show();
+                toast = document.querySelector('.toast-msg');
+                toast.style.display = 'block';
                 setTimeout(function(){
-                    //$mask.remove();
-                    $toast.remove();
+                    document.body.removeChild(toast);
                 },showIn);
             };   
     //module.exports = toast

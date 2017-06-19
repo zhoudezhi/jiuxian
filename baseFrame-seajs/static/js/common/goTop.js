@@ -1,28 +1,29 @@
 // JavaScript Document
 /* 
-* 返回顶部
-* Copyright (c) 2017 某年某月  
+* Name：goTop 返回顶部
 * Date: 2017-05-20
-* 
 */
 define(function(require,exports,module){
-    var $ = require('zepto');
     return  function goTop(){
                 clearInterval(time);
-                var $goTop = $(".go-top")
+                var goTop = document.querySelector('.go-top');
+                if(!goTop){
+                    goTop = document.createElement("div");
+                    goTop.className = 'go-top';
+                    document.body.appendChild(goTop);
+                }
                 var time = setInterval(function(){            
-                    var scrollTop = $(window).scrollTop();
+                    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
                     if(scrollTop>400){
-                        $goTop.show();
+                        goTop.style.display = "block";
                     }else{
-                        $goTop.hide();
+                        goTop.style.display = "none";
                     }
                 },500);
-
-               $goTop.bind("click",function(){
-                    $goTop.hide();
-                    $(window).scrollTop(0); 
-               }); 
+                goTop.onclick = function(){
+                    goTop.style.display = "none";
+                   document.documentElement.scrollTop = document.body.scrollTop = 0; 
+               }; 
             }
 })
 
