@@ -31,9 +31,6 @@
     <link rel="stylesheet" type="text/css" href="../css/swiper.css">
 </head>
 <script type="text/javascript">
-    window.onpageshow = function (e) {
-        e.persisted && (FROMCACHE = true);
-    }
     var deviceWidth = document.documentElement.clientWidth;
     if (deviceWidth > 750) {
         deviceWidth = 750;
@@ -121,7 +118,7 @@
         <p class="show-more-detail"><span><i class="detail-icons"></i>点击展开更多图文详情</span></p>
     </div>
 
-    <div class="more-match-box" style="min-height:{{$getWinHeight}}px"></div>
+    <div class="more-match-box" style=""></div>
 
 
     <div class="collect-box">
