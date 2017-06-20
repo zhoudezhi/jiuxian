@@ -1,21 +1,21 @@
 // JavaScript Document
 /* 
-* Name：cookie  创建和存储 cookie 
-* Date: 2017-05-20
-*/
-define(function(require,exports,module){
+ * Name：cookie  创建和存储 cookie
+ * Date: 2017-05-20
+ */
+define(function (require, exports, module) {
 
     var cookie = {}
 
     cookie.getCookie = function (name) {
         if (document.cookie.length > 0) {
-            var  start = document.cookie.indexOf(name + "=");
+            var start = document.cookie.indexOf(name + "=");
             if (start != -1) {
                 start = start + name.length + 1;
                 var end = document.cookie.indexOf(";", start);
-                if (end == -1){
-                   end = document.cookie.length; 
-                } 
+                if (end == -1) {
+                    end = document.cookie.length;
+                }
                 return unescape(document.cookie.substring(start, end));
             }
         }
@@ -37,7 +37,7 @@ define(function(require,exports,module){
                 cookie.setCookie('username', username, 365);
             }
         }
-    } 
+    }
 
     module.exports = cookie
 })

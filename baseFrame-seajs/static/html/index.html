@@ -1,203 +1,218 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <title>设计帮-京装搭配详情</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="format-detection" content="telephone=no">
-  <!-- 启用360浏览器的极速模式(webkit) -->
-  <meta name="renderer" content="webkit">
-  <!-- 避免IE使用兼容模式 -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
-  <meta name="HandheldFriendly" content="true">
-  <!-- 微软的老式浏览器 -->
-  <meta name="MobileOptimized" content="320">
-  <!-- uc强制竖屏 -->
-  <meta name="screen-orientation" content="portrait">
-  <!-- QQ强制竖屏 -->
-  <meta name="x5-orientation" content="portrait">
-  <!-- UC强制全屏 -->
-  <meta name="full-screen" content="yes">
-  <!-- QQ强制全屏 -->
-  <meta name="x5-fullscreen" content="true">
-  <!-- windows phone 点击无高光 -->
-  <meta name="msapplication-tap-highlight" content="no">
-  <meta name="apple-touch-fullscreen"  content="yes"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>  
-  <link rel="stylesheet" type="text/css" href="../css/base2.css">
-  <link rel="stylesheet" type="text/css" href="../css/jing-detail.css">
-  <link rel="stylesheet" type="text/css" href="../css/swiper.css">
+    <title>设计帮-京装搭配详情</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta id="viewport" name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="stylesheet" type="text/css" href="../css/base2.css">
+    <link rel="stylesheet" type="text/css" href="../css/jing-detail.css">
+    <link rel="stylesheet" type="text/css" href="../css/swiper.css">
 </head>
-  <script type="text/javascript">
-    window.onpageshow = function(e){e.persisted && (FROMCACHE = true);}
+<script type="text/javascript">
+    window.onpageshow = function (e) {
+        e.persisted && (FROMCACHE = true);
+    }
     var deviceWidth = document.documentElement.clientWidth;
     if (deviceWidth > 750) {
-      deviceWidth = 750;
+        deviceWidth = 750;
     }
     var rootFontSize = deviceWidth / 7.5;
     document.documentElement.style.fontSize = rootFontSize + 'px';
-  </script>
+</script>
 <body>
-    <div class="match-detail-page">
-        <div class="pop-cart-mask"></div>
-        <div class="pop-cart-box hide"></div>
-    </div>  
+<div class="match-detail-page">
+    <div class="pop-cart-mask"></div>
+    <div class="pop-cart-box hide"></div>
+</div>
 </body>
 <script id="jing-detail-tpl" type="text/html">
-{{if data && data.baseInfo}}
+    {{if data && data.baseInfo}}
     {{if data.baseInfo.articleVos && data.baseInfo.articleVos.length}}
-        <div class="pop-slider-wrap">
-              <div class="pop-fix-nav">
-                <img src="../images/images/demo.jpg">
-                  <em>共{{data.baseInfo.articleVos.length}}张空间搭配图</em>
-                  <span class="show-more"><em>展开</em><i class="detail-icons"></i></span>
-              </div>             
-              <div class="pop-slider-box swiper-container">       
-                  <ul class="swiper-wrapper">
-                      {{each data.baseInfo.articleVos}}
-                          <li class="swiper-slide">
-                              <img src="{{$value.titlePicUrl}}">
-                              <span class="title" roomId = {{$value.id}}>{{$value.title}}</span>
-                          </li>
-                      {{/each}}                      
-                  </ul>              
-                  <div class="swiper-pagination pop-swiper-pagination"></div>
-                  <a class="goto-room" href="jing-room.html?articleId={{data.baseInfo.id}}&roomId={{data.baseInfo.articleVos[0].id}}">进入<span></span><i class="detail-icons"></i></a>
-               </div>
+    <div class="pop-slider-wrap">
+        <div class="pop-fix-nav">
+            <img src="../images/images/demo.jpg">
+            <em>共{{data.baseInfo.articleVos.length}}张空间搭配图</em>
+            <span class="show-more"><em>展开</em><i class="detail-icons"></i></span>
         </div>
-   
-        <div class="top-banner-box">
-              <div class="banner-slider-box swiper-container">
-                  <div class="banner-slider-bg"></div>
-                  <ul class="swiper-wrapper">
-                      {{each data.baseInfo.articleVos}}
-                          <li class="swiper-slide">
-                              <img src="{{$value.titlePicUrl}}">
-                              <span class="title" roomId = {{$value.id}}>{{$value.title}}</span>
-                          </li>
-                      {{/each}}                        
-                    </ul>                    
-                    <div class="swiper-pagination banner-swiper-pagination"></div>
-                    <a href="jing-room.html?articleId={{data.baseInfo.id}}&roomId={{data.baseInfo.articleVos[0].id}}" class="goto-room">进入<span></span><i class="detail-icons"></i></a>
-              </div>
+        <div class="pop-slider-box swiper-container">
+            <ul class="swiper-wrapper">
+                {{each data.baseInfo.articleVos}}
+                <li class="swiper-slide">
+                    <img src="{{$value.titlePicUrl}}">
+                    <span class="title" roomId={{$value.id}}>{{$value.title}}</span>
+                </li>
+                {{/each}}
+            </ul>
+            <div class="swiper-pagination pop-swiper-pagination"></div>
+            <a class="goto-room"
+               href="jing-room.html?articleId={{data.baseInfo.id}}&roomId={{data.baseInfo.articleVos[0].id}}">进入<span></span><i
+                    class="detail-icons"></i></a>
         </div>
-    {{/if}}    
+    </div>
+
+    <div class="top-banner-box">
+        <div class="banner-slider-box swiper-container">
+            <div class="banner-slider-bg"></div>
+            <ul class="swiper-wrapper">
+                {{each data.baseInfo.articleVos}}
+                <li class="swiper-slide">
+                    <img src="{{$value.titlePicUrl}}">
+                    <span class="title" roomId={{$value.id}}>{{$value.title}}</span>
+                </li>
+                {{/each}}
+            </ul>
+            <div class="swiper-pagination banner-swiper-pagination"></div>
+            <a href="jing-room.html?articleId={{data.baseInfo.id}}&roomId={{data.baseInfo.articleVos[0].id}}"
+               class="goto-room">进入<span></span><i class="detail-icons"></i></a>
+        </div>
+    </div>
+    {{/if}}
     <div class="article-box">
         {{if data.baseInfo.houses}}
-              <p class="article-title"><span>{{data.baseInfo.title}}</span><em class="houseImage" url="//img30.360buyimg.com/test/{{data.baseInfo.houses.houseImg}}"><i class="detail-icons"></i>户型图</em></p>          
-              <p class="house-type"><span class="border-r">{{data.baseInfo.houses.cityName}}{{data.baseInfo.houses.name}}</span>
-              <span class="border-r">
+        <p class="article-title"><span>{{data.baseInfo.title}}</span><em class="houseImage"
+                                                                         url="//img30.360buyimg.com/test/{{data.baseInfo.houses.houseImg}}"><i
+                class="detail-icons"></i>户型图</em></p>
+        <p class="house-type"><span
+                class="border-r">{{data.baseInfo.houses.cityName}}{{data.baseInfo.houses.name}}</span>
+            <span class="border-r">
                 {{if data.baseInfo.houses.room}}<em>{{data.baseInfo.houses.room}}室</em>{{/if}}{{if data.baseInfo.houses.hall}}<em>{{data.baseInfo.houses.hall}}厅</em>{{/if}}{{if data.baseInfo.houses.bathroom}}<em>{{data.baseInfo.houses.bathroom}}卫</em>{{/if}}
               </span>
-              {{if data.baseInfo.houses.houseArea}}<span>{{data.baseInfo.houses.houseArea}}m²</span>{{/if}}
-              </p>
-          {{/if}}
-            <p class="article-des">{{data.baseInfo.summary}}</p>
-            {{if data.baseInfo.writerInfo}}
-            <p class="designer-detail border-t border-b">             
-                <img src="//img11.360buyimg.com/test/{{data.baseInfo.writerInfo.headPicUrl}}" onerror="this.src='../images/error.png'">
-                {{if data.baseInfo.writerInfo.roleId}}<em class="user-title">{{if data.baseInfo.writerInfo.roleId ==1}}达人{{else if data.baseInfo.writerInfo.roleId ==2}}设计师{{/if}}</em>{{/if}}
-                <em class="user-name">{{data.baseInfo.writerInfo.nickName}}</em>
-                <span class="follow {{if data.attentFlag}}on{{/if}}" writerId="{{data.baseInfo.writerInfo.id}}"><i class="detail-icons"></i><em>{{if data.attentFlag}}已关注{{else}}关注TA{{/if}}</em></span>
-                <a class="consult" href="//dd1-m.jd.com/chat/index.action?venderId=147171&entry=m_shop"><i class="detail-icons"></i>免费咨询</a>      
-            </p>
-            {{/if}}
+            {{if data.baseInfo.houses.houseArea}}<span>{{data.baseInfo.houses.houseArea}}m²</span>{{/if}}
+        </p>
+        {{/if}}
+        <p class="article-des">{{data.baseInfo.summary}}</p>
+        {{if data.baseInfo.writerInfo}}
+        <p class="designer-detail border-t border-b">
+            <img src="//img11.360buyimg.com/test/{{data.baseInfo.writerInfo.headPicUrl}}"
+                 onerror="this.src='../images/error.png'">
+            {{if data.baseInfo.writerInfo.roleId}}<em class="user-title">{{if data.baseInfo.writerInfo.roleId
+            ==1}}达人{{else if data.baseInfo.writerInfo.roleId ==2}}设计师{{/if}}</em>{{/if}}
+            <em class="user-name">{{data.baseInfo.writerInfo.nickName}}</em>
+            <span class="follow {{if data.attentFlag}}on{{/if}}" writerId="{{data.baseInfo.writerInfo.id}}"><i
+                    class="detail-icons"></i><em>{{if data.attentFlag}}已关注{{else}}关注TA{{/if}}</em></span>
+            <a class="consult" href="//dd1-m.jd.com/chat/index.action?venderId=147171&entry=m_shop"><i
+                    class="detail-icons"></i>免费咨询</a>
+        </p>
+        {{/if}}
 
-            <div class="article-detail">{{=data.baseInfo.details}}</div>
-            <p class="show-more-detail"><span><i class="detail-icons"></i>点击展开更多图文详情</span></p>
+        <div class="article-detail">{{=data.baseInfo.details}}</div>
+        <p class="show-more-detail"><span><i class="detail-icons"></i>点击展开更多图文详情</span></p>
     </div>
-        
-    <div class="more-match-box" style="min-height:{{$getWinHeight}}px"></div>  
-    
-    
+
+    <div class="more-match-box" style="min-height:{{$getWinHeight}}px"></div>
+
+
     <div class="collect-box">
-      {{if !data.isAddCart || !data.isLogin}}  
-          <span class="collect-btn {{if data.favFlag}}on{{/if}}" articleId="{{data.baseInfo.id}}">
+        {{if !data.isAddCart || !data.isLogin}}
+        <span class="collect-btn {{if data.favFlag}}on{{/if}}" articleId="{{data.baseInfo.id}}">
             <i class="detail-icons"></i>
             <em>{{if data.favFlag}}已收藏{{else}}收藏搭配{{/if}}</em>
           </span>
-      {{else}}
-          <div class="collect-btn collect-btn-1 {{if data.favFlag}}on{{/if}}" articleId="{{data.baseInfo.id}}">
+        {{else}}
+        <div class="collect-btn collect-btn-1 {{if data.favFlag}}on{{/if}}" articleId="{{data.baseInfo.id}}">
             <i class="detail-icons"></i>
             <em>{{if data.favFlag}}已收藏{{else}}收藏搭配{{/if}}</em>
-          </div>
-      {{/if}}
+        </div>
+        {{/if}}
     </div>
-    
-{{/if}}
+
+    {{/if}}
 </script>
 
 <script type="text/html" id="more-match-tpl">
-{{if data && data.length}}
+    {{if data && data.length}}
     <p class="more-title"><span>更多搭配</span><img src="../images/moreMatch.png"></p>
     <ul>
         {{each data}}
-            <li>
-                <a href="demo.html?articleId={{$value.hardcoverId}}">
-                  <img src="{{$value.titlePicUrl}}" onerror="this.src='../images/error.png'">
-                  <span class="tag-type">{{$value.recommendType}}</span>
-                  <div class="match-des">
-                      <p class="article-title">{{$value.title}}</p>
-                      <p class="house-type">
-                          <span class="border-r">{{if $value.room}}<em>{{$value.room}}室</em>{{/if}}{{if $value.hall}}<em>{{$value.hall}}厅</em>{{/if}}{{if $value.bathroom }}<em>{{$value.bathroom}}卫</em>{{/if}}</span>
-                          {{if $value.houseArea}}<span>{{$value.houseArea}}m²</span>{{/if}}
-                      </p>
-                      {{if $value.roomNum}}<em class="room-number">{{$value.roomNum}}个空间</em>{{/if}}
-                  </div>     
-                </a>               
-            </li>
-        {{/each}}        
+        <li>
+            <a href="demo.html?articleId={{$value.hardcoverId}}">
+                <img src="{{$value.titlePicUrl}}" onerror="this.src='../images/error.png'">
+                <span class="tag-type">{{$value.recommendType}}</span>
+                <div class="match-des">
+                    <p class="article-title">{{$value.title}}</p>
+                    <p class="house-type">
+                        <span class="border-r">{{if $value.room}}<em>{{$value.room}}室</em>{{/if}}{{if $value.hall}}<em>{{$value.hall}}厅</em>{{/if}}{{if $value.bathroom }}<em>{{$value.bathroom}}卫</em>{{/if}}</span>
+                        {{if $value.houseArea}}<span>{{$value.houseArea}}m²</span>{{/if}}
+                    </p>
+                    {{if $value.roomNum}}<em class="room-number">{{$value.roomNum}}个空间</em>{{/if}}
+                </div>
+            </a>
+        </li>
+        {{/each}}
     </ul>
-{{/if}}
+    {{/if}}
 </script>
 
-<script type="text/html" id="cart-bottom-tpl"> 
+<script type="text/html" id="cart-bottom-tpl">
     <div class="show-btn">
         <i class="detail-icons"></i>
-          {{if promotionRule && promotionRule.length}}<p class="promotion">{{promotionRule[0].name}}</p>{{/if}}
-          <p  class="count-price {{if promotionRule && promotionRule.length}} no-promotion{{/if}}">{{skuNum}}件搭配价：<span class="totalPrice"></span><span class="promotionPrice"></span></p>
+        {{if promotionRule && promotionRule.length}}<p class="promotion">{{promotionRule[0].name}}</p>{{/if}}
+        <p class="count-price {{if promotionRule && promotionRule.length}} no-promotion{{/if}}">{{skuNum}}件搭配价：<span
+                class="totalPrice"></span><span class="promotionPrice"></span></p>
     </div>
     <div class="hide-btn"><i class="detail-icons"></i>收起列表</div>
 </script>
 
 <script type="text/html" id="cart-list-tpl">
-{{if data && data.length}}
+    {{if data && data.length}}
     <div class="cart-promotion">
         <p class="count-price">已选{{skuNum}}件：<span class="totalPrice"></span><span class="promotionPrice"></span></p>
-        {{if promotionRule && promotionRule.length}}<p class="promotion border-t border-b">{{promotionRule[0].name}}</p>{{/if}}
-        <a href="{{GetCartURL}}" class="goto-cart">去购物车<i class="detail-icons"></i></a>           
+        {{if promotionRule && promotionRule.length}}<p class="promotion border-t border-b">{{promotionRule[0].name}}</p>
+        {{/if}}
+        <a href="{{GetCartURL}}" class="goto-cart">去购物车<i class="detail-icons"></i></a>
 
     </div>
     <div class="cart-list-box">
         {{each data}}
         <div class="cart-item-box">
-          <p class="cart-title border-b">{{$value.name}}</p>
+            <p class="cart-title border-b">{{$value.name}}</p>
             {{if $value.articleAssemble && $value.articleAssemble.length}}
-                <ul class="border-b">
-                    {{each $value.articleAssemble as $skus}}
-                        <li class="border-b">
-                            <img src="{{$skus.skuImgUrl}}" onerror="this.src='../images/error.png'">
-                              <p class="good-title">{{$skus.skuName}}</p>
-                              <p class="good-price" skuId = "{{$skus.skuId}}">¥<em>500.22</em></p>
-                        </li>
-                    {{/each}}                  
-                </ul>
+            <ul class="border-b">
+                {{each $value.articleAssemble as $skus}}
+                <li class="border-b">
+                    <img src="{{$skus.skuImgUrl}}" onerror="this.src='../images/error.png'">
+                    <p class="good-title">{{$skus.skuName}}</p>
+                    <p class="good-price" skuId="{{$skus.skuId}}">¥<em>500.22</em></p>
+                </li>
+                {{/each}}
+            </ul>
             {{/if}}
         </div>
         {{/each}}
-  </div> 
-{{/if}}           
+    </div>
+    {{/if}}
 </script>
 
 
 <script type="text/javascript" src="../js/lib/seajs/3.0.1/sea.js"></script>
 <script type="text/javascript" src="../js/config.js"></script>
 <script type="text/javascript">
-    if(location.href.indexOf("dev=1") != -1){       
+    if (location.href.indexOf("dev=1") != -1) {
         console.log('开发环境');
         seajs.use('../js/app/src/index.js');
-    }else{        
+    } else {
         console.log('线上环境');
         seajs.use('../js/app/dist/index.js');
     }
