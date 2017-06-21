@@ -1,1 +1,4 @@
 /.idea
+/baseFrame-seajs/node_modules
+/baseFrame-seajs/build
+/baseFrame-seajs/temp
