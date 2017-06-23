@@ -99,11 +99,11 @@ define(function (require, exports, module) {
             },
             isAddCart: 1,
             isLogin: 1
-        }
+        };
         //模版加载方式一:简单模版
         isAddCart = result.isAddCart;
         isLogin = result.isLogin;
-        var html = template.render('jing-detail-tpl', {data: result})
+        var html = template.render('jing-detail-tpl', {data: result});
         $(".match-detail-page").prepend(html);
         initSlider1();
         getMoreMatch();
@@ -118,8 +118,8 @@ define(function (require, exports, module) {
             url: HOST_NAME + '/api/jz/recommend.do',
             body: {
                 id: articleId
-            },
-        }
+            }
+        };
         API_AJAX.jsonp(data).done(function (res) {
             res || (res = {});
             var model = res.model || {};
@@ -159,7 +159,7 @@ define(function (require, exports, module) {
                     title: "北欧风情清新地中海浪漫卧室3",
                     titlePicUrl: "../images/images/demo.jpg"
                 }
-            ]
+            ];
             var tpl = require('../../tpl/page.js');
             var templateNative = require('templateNative');
             var render = templateNative.compile(tpl);
@@ -181,8 +181,8 @@ define(function (require, exports, module) {
             url: HOST_NAME + '/api/jz/getSkusByArticleIds.do',
             body: {
                 id: articleId
-            },
-        }
+            }
+        };
         API_AJAX.jsonp(data).done(function (res) {
             res || (res = {});
             var model = res.model || {};
@@ -222,13 +222,13 @@ define(function (require, exports, module) {
                         }
                     ]
                 }
-            ]
+            ];
             var data2 = {
                 url: HOST_NAME + "/api/sales/getSalesContent.do",
                 body: {
                     id: articleId
-                },
-            }
+                }
+            };
             API_AJAX.jsonp(data2).done(function (promotion) {
                 promotion = {
                     "SalesPromotion": [
@@ -245,14 +245,14 @@ define(function (require, exports, module) {
                             "favorable": 50
                         }
                     ]
-                }
+                };
                 promotion || (promotion = {});
                 var promotionRule = promotion.SalesPromotion || [];
 
                 getPrices(result, promotionRule);
             });
         }).fail(function (error) {
-            error || (error = {})
+            error || (error = {});
             toast(error.msg);
         });
     }
@@ -283,7 +283,7 @@ define(function (require, exports, module) {
             body: {
                 skuids: skuIds.join(",")
             }
-        }
+        };
         API_AJAX.jsonp(data).done(function (result) {
             result || (result = []);
             $.each(result, function (index, value) {
@@ -299,7 +299,7 @@ define(function (require, exports, module) {
             $(".totalPrice").text("¥" + totalPrice);
             console.log(totalPrice);
         }).fail(function (error) {
-            error || (error = {})
+            error || (error = {});
             toast(error.msg);
         });
     }
@@ -403,15 +403,15 @@ define(function (require, exports, module) {
                 writerId: writerId,
                 flag: flag
             }
-        }
+        };
         API_AJAX.jsonp(data).done(function (res) {
             flag ? text = "已关注" : text = "关注TA";
             flag ? msg = '关注成功' : msg = '取消关注成功';
             $this.toggleClass("on").find("em").text(text);
             toast(msg);
         }).fail(function (error) {
-            error || (error = {})
-            toast("关注失败");
+            error || (error = {});
+            toast(error.msg);
         });
 
     });

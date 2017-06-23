@@ -28,17 +28,18 @@ define(function (require, exports, module) {
     });
     //tab切换
     $("body").delegate(".question-type-box li", "click", function (e) {
-        $target = $(e.currentTarget);
+        var $target = $(e.currentTarget);
         var index = $target.index();
         $(".question-list-type li").eq(index).addClass("on").siblings().removeClass("on");
         $(".question-list-type-fixed li").eq(index).addClass("on").siblings().removeClass("on");
-        $(".question-list>div").eq(index).show().siblings().hide();
+        $(".question-list>div").hide();
+        $(".question-list>div").eq(index).show();
         var height = $(".question-banner").height();
-        if (index == 1 && $(".question-list-hot li").length == 0) {
+        if (index === 1 && $(".question-list-hot li").length === 0) {
             getHotList();
             //切换时，导航条保持在固定位置
             $(window).scrollTop(height);
-        } else if (index == 2 && $(".question-list-useful li").length == 0) {
+        } else if (index === 2 && $(".question-list-useful li").length === 0) {
             getUsefulList();
             $(window).scrollTop(height);
         }
@@ -51,7 +52,7 @@ define(function (require, exports, module) {
 
     //加载更多
     function more1() {
-        console.log(1)
+        console.log(1);
         if (hasNextPage1 && !isLoading1) {
             pageNumber1++;
             getNewList();
@@ -60,7 +61,7 @@ define(function (require, exports, module) {
 
     //加载更多
     function more2() {
-        console.log(2)
+        console.log(2);
         if (hasNextPage2 && !isLoading2) {
             pageNumber2++;
             getHotList();
@@ -69,7 +70,7 @@ define(function (require, exports, module) {
 
     //加载更多
     function more3() {
-        console.log(3)
+        console.log(3);
         if (hasNextPage3 && !isLoading3) {
             pageNumber3++;
             getUsefulList();
@@ -79,7 +80,7 @@ define(function (require, exports, module) {
     function getNewQuestion() {
         var data = {
             url: HOST_NAME + "/qaList/newestQuestion"
-        }
+        };
         api.json(data).done(function (result) {
             result || (result = {});
             var html = template.render('question-list-tpl', {result: result});
@@ -91,7 +92,7 @@ define(function (require, exports, module) {
             });
         }).fail(function (error) {
             error || (error = {});
-            toast(error.msg)
+            toast(error.msg);
         });
     }
 
@@ -105,23 +106,23 @@ define(function (require, exports, module) {
             type: 1,
             page: pageNumber1,
             pageSize: pageSize
-        }
+        };
         getQAList(data, callback);
         function callback(result) {
             //在第一个插入活跃回答者
-            if (pageNumber1 == 1) {
+            if (pageNumber1 === 1) {
                 recommentInvite();
             }
-            if (pageNumber1 == 1 && result.length < pageSize) {
+            if (pageNumber1 === 1 && result.length < pageSize) {
                 $(".question-list-new .load-more-status").hide();
             }
-            if (pageNumber1 == 1 && result.length == 0) {
+            if (pageNumber1 === 1 && result.length === 0) {
                 //如果没有内容，就加载空模版
                 $(".question-list-new").html(template.render("qa-list-empty-tpl", {}));
                 isLoading1 = false;
                 return false;
             }
-            if (result.length == 0) {
+            if (result.length === 0) {
                 hasNextPage1 = false;
                 $(".question-list-new .load-more-status").removeClass("show-status").text("已经到底啦");
                 return false;
@@ -143,57 +144,25 @@ define(function (require, exports, module) {
             type: 2,
             page: pageNumber2,
             pageSize: pageSize
-        }
+        };
         getQAList(data, callback);
         function callback(result) {
-            if (pageNumber2 == 1 && result.length < pageSize) {
+            if (pageNumber2 === 1 && result.length < pageSize) {
                 $(".question-list-hot .load-more-status").hide();
             }
-            if (pageNumber2 == 1 && result.length == 0) {
+            if (pageNumber2 === 1 && result.length === 0) {
                 //如果没有内容，就加载空模版
                 $(".question-list-hot").html(template.render("qa-list-empty-tpl", {}));
                 isLoading2 = false;
                 return false;
             }
-            if (result.length == 0) {
+            if (result.length === 0) {
                 hasNextPage2 = false;
                 $(".question-list-hot .load-more-status").removeClass("show-status").text("已经到底啦");
                 return false;
             }
             $(".question-list-hot ul").append(template.render("question-item-tpl", {result: result}));
             isLoading2 = false;
-        }
-    }
-
-    //获取有用问答
-    function getUsefulList() {
-        if (isLoading3 || !hasNextPage3) {
-            return false;
-        }
-        isLoading3 = true;
-        var data = {
-            type: 3,
-            page: pageNumber3,
-            pageSize: pageSize
-        }
-        getQAList(data, callback);
-        function callback(result) {
-            if (pageNumber3 == 1 && result.length < pageSize) {
-                $(".question-list-useful .load-more-status").hide();
-            }
-            if (pageNumber3 == 1 && result.length == 0) {
-                //如果没有内容，就加载空模版
-                $(".question-list-useful").html(template.render("qa-list-empty-tpl", {}));
-                isLoading3 = false;
-                return false;
-            }
-            if (result.length == 0) {
-                hasNextPage3 = false;
-                $(".question-list-useful .load-more-status").removeClass("show-status").text("已经到底啦");
-                return false;
-            }
-            $(".question-list-useful ul").append(template.render("question-item-tpl", {result: result}));
-            isLoading3 = false;
         }
     }
 
@@ -215,12 +184,44 @@ define(function (require, exports, module) {
         });
     }
 
+    //获取有用问答
+    function getUsefulList() {
+        if (isLoading3 || !hasNextPage3) {
+            return false;
+        }
+        isLoading3 = true;
+        var data = {
+            type: 3,
+            page: pageNumber3,
+            pageSize: pageSize
+        };
+        getQAList(data, callback);
+        function callback(result) {
+            if (pageNumber3 === 1 && result.length < pageSize) {
+                $(".question-list-useful .load-more-status").hide();
+            }
+            if (pageNumber3 === 1 && result.length === 0) {
+                //如果没有内容，就加载空模版
+                $(".question-list-useful").html(template.render("qa-list-empty-tpl", {}));
+                isLoading3 = false;
+                return false;
+            }
+            if (result.length === 0) {
+                hasNextPage3 = false;
+                $(".question-list-useful .load-more-status").removeClass("show-status").text("已经到底啦");
+                return false;
+            }
+            $(".question-list-useful ul").append(template.render("question-item-tpl", {result: result}));
+            isLoading3 = false;
+        }
+    }
+
 
     //获取活跃回答者
     function recommentInvite() {
         var data = {
-            url: HOST_NAME + '/qaList/activeResponsers',
-        }
+            url: HOST_NAME + '/qaList/activeResponsers'
+        };
         api.json(data).done(function (result) {
             result || (result = []);
             $(".question-list-new li").eq(4).after(template.render("invite-question-tpl", {result: result}))

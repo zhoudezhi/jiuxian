@@ -8,7 +8,7 @@ define(function (require, exports, module) {
         clearInterval(moreTime);
         var moreTime = window.setInterval(function () {
             checkHander();
-        }, 125);
+        }, 200);
 
         function checkHander() {
             var allItem = document.querySelectorAll(item);
@@ -24,6 +24,7 @@ define(function (require, exports, module) {
                 var top = rect.top;
                 var width = rect.width;
                 // 如果最后一个元素已经浮出水面，则加载更多
+                //console.log($(document).height())
                 if (width > 0 && top < windowHeight + 100) {
                     moreHander && moreHander();
                 }
