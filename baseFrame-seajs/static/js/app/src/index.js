@@ -160,10 +160,16 @@ define(function (require, exports, module) {
                     titlePicUrl: "../images/images/demo.jpg"
                 }
             ];
-            var tpl = require('../../tpl/page.js');
+           /* var tpl = require('../../tpl/page.js');
             var templateNative = require('templateNative');
             var render = templateNative.compile(tpl);
+            var html = render({data: result});*/
+            var tpl = require('http://ihome.m.jd.com/baseFrame-seajs/static/html/page.tpl');
+            debugger
+            var render = template.compile(tpl);
             var html = render({data: result});
+
+
             $(".more-match-box").html(html);
             //$(".more-match-box").html(template.render('more-match-tpl',{data:result}));
             if (isAddCart && isLogin) {
