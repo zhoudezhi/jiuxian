@@ -5,7 +5,7 @@
  */
 define(function (require, exports, module) {
 
-    var cookie = {}
+    var cookie = {};
 
     cookie.getCookie = function (name) {
         if (document.cookie.length > 0) {
@@ -16,16 +16,16 @@ define(function (require, exports, module) {
                 if (end == -1) {
                     end = document.cookie.length;
                 }
-                return unescape(document.cookie.substring(start, end));
+                return decodeURI(document.cookie.substring(start, end));
             }
         }
         return "";
-    }
+    };
     cookie.setCookie = function (name, value, expiredays) {
         var exdate = new Date();
         exdate.setDate(exdate.getDate() + expiredays);
-        document.cookie = name + "=" + escape(value) + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
-    }
+        document.cookie = name + "=" + encodeURI(value) + ((expiredays == null) ? "" : ";expires=" + exdate.toUTCString());
+    };
 
     cookie.checkCookie = function () {
         var username = cookie.getCookie('username');
@@ -37,9 +37,9 @@ define(function (require, exports, module) {
                 cookie.setCookie('username', username, 365);
             }
         }
-    }
+    };
 
     module.exports = cookie
-})
+});
 
 

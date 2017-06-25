@@ -22,6 +22,6 @@ define(function (require, exports, module) {
         }, showIn);
     };
     //module.exports = toast
-})
+});
 
 

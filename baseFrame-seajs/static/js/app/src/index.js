@@ -164,7 +164,7 @@ define(function (require, exports, module) {
             var templateNative = require('templateNative');
             var render = templateNative.compile(tpl);
             var html = render({data: result});*/
-            var tpl = require('http://ihome.m.jd.com/baseFrame-seajs/static/html/page.tpl');
+            var tpl = require('../../../html/page.tpl');
             debugger
             var render = template.compile(tpl);
             var html = render({data: result});

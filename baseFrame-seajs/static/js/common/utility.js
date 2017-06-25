@@ -4,7 +4,7 @@
  * Date: 2017-05-20
  */
 define(function (require, exports, module) {
-    var $ = require("zepto")
+    //var $ = require("zepto");
     var utility = {};
     /*常用函数*/
     utility.currentUrl = location.protocol + '//' + location.host + location.pathname;
@@ -120,7 +120,7 @@ define(function (require, exports, module) {
             i = "0" + i;
         }
         return i;
-    };
+    }
 
     /*32位随机码*/
     utility.createCode = function () {
@@ -223,7 +223,7 @@ define(function (require, exports, module) {
         body.removeChild(div);
         div = null;
         return isSupport;
-    };
+    }
 
     //调用sticky方法
     utility.stickyDom = function (obj) {

@@ -37,15 +37,15 @@ define(function (require, exports, module) {
                 s.onerror = function () {
                     loadjs[src] = null;
                     d.reject();
-                }
+                };
 
                 var p = document.getElementsByTagName('head')[0];
                 p.appendChild(s);
             })
-        }
+        };
 
         return loadjs[src].Deferred;
     }
-})
+});
 
 

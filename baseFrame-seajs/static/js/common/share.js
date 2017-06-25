@@ -9,7 +9,7 @@ define(function (require, exports, module) {
 
     //京东app分享
     share.shareFromApp = function (data) {
-        data || (data = {})
+        data || (data = {});
         if (utility.isJDApp()) {
             var jdShare = require('jdShare');
             jdShare.setShareInfo({

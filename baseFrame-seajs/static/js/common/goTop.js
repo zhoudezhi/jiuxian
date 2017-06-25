@@ -25,6 +25,6 @@ define(function (require, exports, module) {
             document.documentElement.scrollTop = document.body.scrollTop = 0;
         };
     }
-})
+});
 
 

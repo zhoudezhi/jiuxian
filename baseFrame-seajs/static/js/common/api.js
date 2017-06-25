@@ -39,13 +39,13 @@ define(function (require, exports, module) {
                         d.reject(res);
                     }
                 },
-                error: function (error) {
-                    d.reject({type: 'network', msg: '加载失败，请稍后重试'});
+                error: function () {
+                    d.reject({ msg: '加载失败，请稍后重试'});
                 }
             });
             d.xhr = xhr;
         });
-    }
+    };
 
 
     API_AJAX.jsonp = function (data) {
@@ -76,7 +76,7 @@ define(function (require, exports, module) {
                 }
             })
         })
-    }
+    };
     module.exports = API_AJAX;
 
 });
