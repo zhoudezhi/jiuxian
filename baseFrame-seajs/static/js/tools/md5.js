@@ -268,6 +268,10 @@
         define(function () {
             return md5;
         });
+    } else if (typeof define === 'function' && define.cmd) {
+        define(function () {
+            return md5;
+        });
     } else {
         $.md5 = md5;
     }

@@ -165,7 +165,6 @@ define(function (require, exports, module) {
             var render = templateNative.compile(tpl);
             var html = render({data: result});*/
             var tpl = require('../../../html/page.tpl');
-            debugger
             var render = template.compile(tpl);
             var html = render({data: result});
 
