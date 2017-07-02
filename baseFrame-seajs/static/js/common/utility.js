@@ -72,35 +72,6 @@ define(function (require, exports, module) {
         return /^[^\uD800-\uDBFF]+$/.test((str || '').toString().trim())
     };
 
-    //获取cookie
-    utility.getCookie = function (name) {
-        if (document.cookie.length > 0) {
-            var start = document.cookie.indexOf(name + "=");
-            if (start != -1) {
-                start = start + name.length + 1;
-                var end = document.cookie.indexOf(";", start);
-                if (end == -1) {
-                    end = document.cookie.length;
-                }
-                return unescape(document.cookie.substring(start, end));
-            }
-        }
-        return "";
-    };
-
-    //设置cookie
-    utility.setCookie = function (name, value, expiredays) {
-        var exdate = new Date();
-        exdate.setDate(exdate.getDate() + expiredays);
-        document.cookie = name + "=" + escape(value) + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
-    };
-
-    //删除cookie
-    utility.deleteCookie = function (name, value, expiredays) {
-
-    };
-
-
     //时间戳转为时分秒
     utility.houMinSec = function (time) {
         var hh = parseInt(time / (60 * 60));

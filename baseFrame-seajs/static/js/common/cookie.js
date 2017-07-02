@@ -6,7 +6,6 @@
 define(function (require, exports, module) {
 
     var cookie = {};
-
     cookie.getCookie = function (name) {
         if (document.cookie.length > 0) {
             var start = document.cookie.indexOf(name + "=");
@@ -21,6 +20,7 @@ define(function (require, exports, module) {
         }
         return "";
     };
+
     cookie.setCookie = function (name, value, expiredays) {
         var exdate = new Date();
         exdate.setDate(exdate.getDate() + expiredays);
@@ -37,6 +37,15 @@ define(function (require, exports, module) {
                 cookie.setCookie('username', username, 365);
             }
         }
+    };
+
+    //删除cookie
+    cookie.deleteCookie = function (name) {
+        /*var exdate = new Date();
+         exdate.setDate(exdate.getDate() - 1);
+         var value = cookie.getCookie(name);
+         if (value != null) document.cookie = name + "=" + encodeURI(value) + ";expires=" + exp.toUTCString();*/
+        cookie.setCookie(name, '', -1);
     };
 
     module.exports = cookie

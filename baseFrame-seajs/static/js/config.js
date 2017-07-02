@@ -17,6 +17,7 @@ seajs.config({
         'toast': 'common/toast.js',
         'utility': 'common/utility.js',
         'loadjs': 'common/loadjs.js',
-        'getMore': 'common/getMore.js'
+        'getMore': 'common/getMore.js',
+        'cookie':'common/cookie.js'
     }
 });
