@@ -93,6 +93,7 @@ define(function (require, exports, module) {
         }).fail(function (error) {
             error || (error = {});
             toast(error.msg);
+            window.location.href="error.html"
         });
     }
 

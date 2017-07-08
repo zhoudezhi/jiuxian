@@ -164,13 +164,13 @@ define(function (require, exports, module) {
             var templateNative = require('templateNative');
             var render = templateNative.compile(tpl);
             var html = render({data: result});*/
-            var tpl = require('../../../html/page.tpl');
+            /*var tpl = require('../../../html/page.tpl');
             var render = template.compile(tpl);
-            var html = render({data: result});
+            var html = render({data: result});*/
 
 
-            $(".more-match-box").html(html);
-            //$(".more-match-box").html(template.render('more-match-tpl',{data:result}));
+            //$(".more-match-box").html(html);
+            $(".more-match-box").html(template.render('more-match-tpl',{data:result}));
             if (isAddCart && isLogin) {
                 getCart();
             }

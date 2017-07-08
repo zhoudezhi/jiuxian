@@ -1,5 +1,5 @@
 ﻿// JavaScript Document
-define(function (require/*, exports, module*/) {
+define(function (require, exports, module) {
     var attachFastClick = require('fastclick');
     attachFastClick(document.body); //页面注册快速点击事件
     var $ = require('zepto');
