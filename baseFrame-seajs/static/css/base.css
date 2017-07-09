@@ -36,7 +36,7 @@ button { outline-style: none;}
 /*retina 1像素 start*/
  /*
    border-r（右）,border-l（左）,border-t（上）,border-b（下）加入到需要添加border的元素内即可
-   默认颜色#cbcbcb
+   默认颜色#e3e5e9
  */
 .border-r,.border-l,.border-t,.border-b{position:relative}
 .border-r::after{height:100%;content:'';width:1px;border-right:1px solid #e3e5e9;position:absolute;top:0;right:0;transform:scaleX(0.5);-webkit-transform:scaleX(0.5);z-index:1}
