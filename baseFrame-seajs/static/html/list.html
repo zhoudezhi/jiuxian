@@ -1,70 +1,71 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <title>设计帮-京装搭配详情</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="format-detection" content="telephone=no">
-  <!-- 启用360浏览器的极速模式(webkit) -->
-  <meta name="renderer" content="webkit">
-  <!-- 避免IE使用兼容模式 -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
-  <meta name="HandheldFriendly" content="true">
-  <!-- 微软的老式浏览器 -->
-  <meta name="MobileOptimized" content="320">
-  <!-- uc强制竖屏 -->
-  <meta name="screen-orientation" content="portrait">
-  <!-- QQ强制竖屏 -->
-  <meta name="x5-orientation" content="portrait">
-  <!-- UC强制全屏 -->
-  <meta name="full-screen" content="yes">
-  <!-- QQ强制全屏 -->
-  <meta name="x5-fullscreen" content="true">
-  <!-- windows phone 点击无高光 -->
-  <meta name="msapplication-tap-highlight" content="no">
-  <meta name="apple-touch-fullscreen"  content="yes"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>  
-  <link rel="stylesheet" type="text/css" href="../css/base.css">
-  <link rel="stylesheet" type="text/css" href="../css/list.css">
+    <title>设计帮-京装搭配详情</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta id="viewport" name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/list.css">
 </head>
 
 <body>
-  <div class="list-page"></div>
+<div class="list-page"></div>
 </body>
 
 <script type="text/html" id="loading-page-tpl">
-  
 
-      <!-- loading、insert不应该同时出现 -->
-      {{if insert}}
-        {{include(insert)}}
-      {{/if}}
-      {{if loading}}
-        <div class="loading" style="height:{{$getWinHeight()}}px">
-          
-        </div>
-      {{/if}}
+
+    <!-- loading、insert不应该同时出现 -->
+    {{if insert}}
+    {{include(insert)}}
+    {{/if}}
+    {{if loading}}
+    <div class="loading" style="height:{{$getWinHeight()}}px">
+
+    </div>
+    {{/if}}
 
 </script>
 
 <script type="text/html" id="question-list-tpl">
-  <div class="question-list-page">
-      <div class="question-banner">
+    <div class="question-list-page">
+        <div class="question-banner">
             {{if result}}
             <p class="new-question clearfix">
-                    <a href="#questionDetail&questionId={{result.qid}}">
-                      <span>最新提问</span>
-                        <em class="detail">{{result.title}}</em>
-                        <i class="time border-l">{{result.timeDesc}}</i>
-                    </a>
-                </p>
+                <a href="#questionDetail&questionId={{result.qid}}">
+                    <span>最新提问</span>
+                    <em class="detail">{{result.title}}</em>
+                    <i class="time border-l">{{result.timeDesc}}</i>
+                </a>
+            </p>
             {{/if}}
-          <a class="goto-question" href="#question">我要提问</a>
+            <a class="goto-question" href="#question">我要提问</a>
             <p class="text">48小时内解答问题</p>
         </div>
 
-      <div class="question-type-box question-list-type">
+        <div class="question-type-box question-list-type">
             <ul>
                 <li class="on">最新回答</li>
                 <li>热门回答</li>
@@ -115,6 +116,7 @@
             </a>
         </li>
     {{/each}}      
+
 </script>
 
 
@@ -136,6 +138,7 @@
         </dl>
     </li>         
 {{/if}}
+
 </script>
 
 
@@ -145,15 +148,16 @@
         <p>哎呦！暂时没有任何问答动态哦~ </p>
         <a href="#question">去提问</a>
     </div>
+
 </script>
 
 <script type="text/javascript" src="../js/lib/seajs/3.0.1/sea.min.js"></script>
 <script type="text/javascript" src="../js/config.js"></script>
 <script type="text/javascript">
-    if(location.href.indexOf("dev=1") != -1){       
+    if (location.href.indexOf("dev=1") != -1) {
         console.log('开发环境');
         seajs.use('../js/app/src/list.js');
-    }else{        
+    } else {
         console.log('线上环境');
         seajs.use('../js/app/dist/list.js');
     }
