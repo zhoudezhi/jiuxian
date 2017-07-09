@@ -471,8 +471,7 @@ define(function (require, exports, module) {
         //$("body").addClass("overflowHide");
         $(".collect-box .show-btn").hide().siblings(".hide-btn").show();
         $(".pop-cart-box").removeClass('todown').addClass('toup');
-        $(".pop-cart-mask").show();
-        $(".pop-cart-box").removeClass("hide");
+        $(".pop-cart-mask,.pop-cart-box").show();
     });
 
     //收起购物车
@@ -481,8 +480,7 @@ define(function (require, exports, module) {
         $(".collect-box .hide-btn").hide().siblings(".show-btn").show();
         $(".pop-cart-box").removeClass('toup').addClass('todown');
         setTimeout(function () {
-            $(".pop-cart-mask").hide();
-            $(".pop-cart-box").addClass("hide");
+            $(".pop-cart-mask,.pop-cart-box").hide();
         }, 100);
     });
 
