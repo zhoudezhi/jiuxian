@@ -11,7 +11,6 @@ define(function (require, exports, module) {
     var render = template.compile(errorTpl);
     var html = render({msg: '加载失败'});
     $(".match-detail-page").html(html);
-
     $("body").click(function () {
         require.async("toast", function (toast) {
             //toast(cookie.getCookie("username"));

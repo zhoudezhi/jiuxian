@@ -13,7 +13,7 @@ define(function (require, exports, module) {
     var goTop = require("goTop");
     var loadjs = require('loadjs');
     var md5 = require('md5');
-    console.log(md5("周德志"));
+    //console.log(md5("周德志"));
     var jdShare = require('jdShare');
     //jdShare.setShareInfo();
 
@@ -299,10 +299,10 @@ define(function (require, exports, module) {
                 $(".good-price[skuId='" + skuId + "']").find("em").text(value.p);
             });
             //totalPrice = totalPrice.toFixed(2);
-            console.log(priceArr);
+            //console.log(priceArr);
             totalPrice = countPromotion(priceArr, promotionRule);
             $(".totalPrice").text("¥" + totalPrice);
-            console.log(totalPrice);
+            // console.log(totalPrice);
         }).fail(function (error) {
             error || (error = {});
             toast(error.msg);

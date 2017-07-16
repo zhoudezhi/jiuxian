@@ -203,15 +203,15 @@
 </script>
 
 
-<script type="text/javascript" src="../js/lib/seajs/3.0.1/sea.min.js"></script>
+<script type="text/javascript" src="../js/lib/seajs/3.0.1/sea.js"></script>
 <script type="text/javascript" src="../js/config.js"></script>
 <script type="text/javascript">
     if (location.href.indexOf("dev=1") !== -1) {
-        console.log('开发环境');
         seajs.use('../js/app/src/index.js');
+        console.log('开发环境');
     } else {
-        console.log('线上环境');
         seajs.use('../js/app/dist/index.js');
+        console.log('线上环境');
     }
 </script>
 
