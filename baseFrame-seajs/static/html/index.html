@@ -44,7 +44,7 @@
     <div class="pop-cart-box" style="display: none;"></div>
 </div>
 </body>
-<script id="jing-detail-tpl" type="text/html">
+<script id="jing-detail-tpl" type="text/tpl">
     {{if data && data.baseInfo}}
     {{if data.baseInfo.articleVos && data.baseInfo.articleVos.length}}
     <div class="pop-slider-wrap">
@@ -138,7 +138,7 @@
     {{/if}}
 </script>
 
-<script type="text/html" id="more-match-tpl">
+<script type="text/tpl" id="more-match-tpl">
     {{if data && data.length}}
     <p class="more-title"><span>更多搭配</span><img src="../images/moreMatch.png"></p>
     <ul>
@@ -162,7 +162,7 @@
     {{/if}}
 </script>
 
-<script type="text/html" id="cart-bottom-tpl">
+<script type="text/tpl" id="cart-bottom-tpl">
     <div class="show-btn">
         <i class="detail-icons"></i>
         {{if promotionRule && promotionRule.length}}<p class="promotion">{{promotionRule[0].name}}</p>{{/if}}
@@ -172,7 +172,7 @@
     <div class="hide-btn"><i class="detail-icons"></i>收起列表</div>
 </script>
 
-<script type="text/html" id="cart-list-tpl">
+<script type="text/tpl" id="cart-list-tpl">
     {{if data && data.length}}
     <div class="cart-promotion">
         <p class="count-price">已选{{skuNum}}件：<span class="totalPrice"></span><span class="promotionPrice"></span></p>
@@ -206,7 +206,7 @@
 <script type="text/javascript" src="../js/lib/seajs/3.0.1/sea.min.js"></script>
 <script type="text/javascript" src="../js/config.js"></script>
 <script type="text/javascript">
-    if (location.href.indexOf("dev=1") != -1) {
+    if (location.href.indexOf("dev=1") !== -1) {
         console.log('开发环境');
         seajs.use('../js/app/src/index.js');
     } else {
