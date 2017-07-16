@@ -10,7 +10,7 @@ module.exports = function (grunt) {
     //CDN路径
     var cdn = "//misc.360buyimg.com/business/test/";
     // var cdn = '../';
-    // var cdn = '//ihome.m.jd.com/baseFrame-seajs/build/';
+    var cdn = '//ihome.m.jd.com/baseFrame-seajs/build/';
 
     grunt.initConfig({
 
@@ -77,7 +77,7 @@ module.exports = function (grunt) {
             },
             demo: {
                 // the files to concatenate
-                src: ['temp/js/app/dist/demo.js', 'temp/js/tpl/*.js', 'temp/js/common/toast.js'],
+                src: ['temp/js/app/dist/demo.js', 'temp/js/tpl/*.js', 'temp/js/common/*.js'],
                 // the location of the resulting JS file
                 dest: 'temp/js/app/dist/demo.js'
             },
@@ -225,6 +225,9 @@ module.exports = function (grunt) {
                 replacements: [{
                     from: /("|')..\/js\/([\S]+)("|')/g,      //产出目录dist下js的路径ID加上CDN前缀
                     to: '$1' + cdn + 'js/' + '$2$3'
+                }, {
+                    from: /("|')..\/..\/tpl\/([\S]+)("|')/g,  //替换dist下js中require的tpl中的js文件
+                    to: '$1' + cdn + 'js/tpl/' + '$2$3'
                 }, {
                     from: /("|')..\/..\/..\/html\/([\S]+)("|')/g,  //替换dist下js中require的html中的tpl文件
                     to: '$1' + cdn + 'html/' + '$2$3'

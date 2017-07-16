@@ -8,7 +8,7 @@
 		images //存放所有图片
 		
 		js   //存放所有js文件
-		
+		    config.js  //js配置文件
 			js-common //存放自己定义的公共组件，如api，toast，utility等
 			js-lib    //存放库文件，zepto、seajs等
 			js-tpl    //存放公共模版，公共模版需要用art-template原生语法
