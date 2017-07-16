@@ -6,10 +6,10 @@ define(function (require, exports, module) {
     var cookie = require("cookie");
     //cookie.checkCookie();
     $("body").click(function () {
-        require.async("toast",function (toast) {
+        require.async("toast", function (toast) {
             //toast(cookie.getCookie("username"));
             //cookie.deleteCookie("username");
-            toast("toast提示",200000)
+            toast("toast提示", 200000)
         });
     });
 

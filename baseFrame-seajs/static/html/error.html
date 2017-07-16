@@ -39,24 +39,25 @@
 <body>
 
 </body>
-<script type="text/html" id="error-page-tpl">
+<script type="text/tpl" id="error-page-tpl">
     <div class="error-page" style="min-height:{{$getWinHeight()}}px">
         <div class="error-box">
             <p class="error-title">{{ msg || "请检查您的网络连接" }}</p>
             <a class="error-btn" href="javascript:window.history.back(-1);">重新加载</a>
         </div>
     </div>
+
 </script>
 <script type="text/javascript" src="../js/lib/seajs/3.0.1/sea.min.js"></script>
 <script type="text/javascript" src="../js/config.js"></script>
 <script type="text/javascript">
-     if(location.href.indexOf("dev=1") !== -1){
-     console.log('开发环境');
-     seajs.use('../js/app/src/error.js');
-     }else{
-     console.log('线上环境');
-     seajs.use('../js/app/dist/error.js');
-     }
+    if (location.href.indexOf("dev=1") !== -1) {
+        console.log('开发环境');
+        seajs.use('../js/app/src/error.js');
+    } else {
+        console.log('线上环境');
+        seajs.use('../js/app/dist/error.js');
+    }
 </script>
 
 </html>
