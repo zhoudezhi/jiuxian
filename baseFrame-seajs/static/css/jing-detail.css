@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
-.match-detail-page{font-family:"Microsoft YaHei"; color:#000; font-size:.28rem;}
+.match-detail-page{font-family:"Microsoft YaHei",sans-serif; color:#000; font-size:.28rem;}
 .detail-icons{background:url(../images/icon/matchDetail.png) no-repeat; background-size:.5rem auto; vertical-align:middle; display:inline-block;}
 .banner-slider-box{ padding:1rem 0 2rem 0; transition-duration:500ms; background:rgba(0,0,0,0.7);}
 .banner-slider-box li{ width:76%; transform:scale(.92,.92); -webkit-transform:scale(.92,.92); position:relative; }
@@ -156,7 +156,7 @@
 .article-box .article-des{ line-height:.44rem; font-size:.28rem; }
 .article-box .designer-detail{ position:relative; padding:.4rem 0; margin:.5rem 0; line-height:1rem; font-size:.24rem;}
 .article-box .designer-detail img{ border-radius:50%; width:1rem; height:1rem; margin:0 .1rem 0 0;}
-.article-box .designer-detail .user-title{position:absolute; background:#fff; font-size:.2rem; top:1.2rem; line-height:.3rem; left:0rem; width:1rem; text-align:center; border: 1px solid #01a396; border-radius:.16rem; color:#01a396;}
+.article-box .designer-detail .user-title{position:absolute; background:#fff; font-size:.2rem; top:1.2rem; line-height:.3rem; left:0; width:1rem; text-align:center; border: 1px solid #01a396; border-radius:.16rem; color:#01a396;}
 .article-box .designer-detail .user-name{font-size:.28rem;}
 .article-box .designer-detail .follow{position:absolute; top:.64rem; line-height:.4rem; padding:.04rem .2rem; background:#fff; color:#000; border:1px solid #01a396; border-radius:.3rem; right:2rem;}
 .article-box .designer-detail .consult{position:absolute; top:.64rem; line-height:.4rem; padding:.04rem .2rem; background:#fff; color:#000; border:1px solid #01a396; border-radius:.3rem; right:0;}
@@ -254,7 +254,6 @@
     -webkit-box-orient: vertical;
     box-orient: vertical;
     display: -webkit-box;
-    display: box;
 }
 .pop-cart-box .cart-item-box li .good-price{ position:absolute; bottom:.2rem; left:2.2rem; font-size:.28rem;}
 .toup{animation:up 0.8s forwards; -webkit-animation:up 0.8s forwards;}
