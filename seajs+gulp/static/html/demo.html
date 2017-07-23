@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta id="viewport" name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+</head>
+<script type="text/javascript">
+    var deviceWidth = document.documentElement.clientWidth;
+    if (deviceWidth > 750) {
+        deviceWidth = 750;
+    }
+    var rootFontSize = deviceWidth / 7.5;
+    document.documentElement.style.fontSize = rootFontSize + 'px';
+</script>
+<body>
+<div class="match-detail-page" style="min-height: 500px;">
+    <div class="loading"></div>
+</div>
+<div class="go-top"></div>
+</body>
+
+<script type="text/javascript" src="../js/lib/seajs/3.0.1/sea.min.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script type="text/javascript">
+    if (location.href.indexOf("dev=1") !== -1) {
+        seajs.use('../js/app/src/demo.js');
+        console.log('开发环境');
+    } else {
+        seajs.use('../js/app/dist/demo.js');
+        console.log('线上环境');
+    }
+</script>
+
+</html>

@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */	
+.question-list-page .question-banner{ padding:15px; background:#2e7569; color:#fff; text-align:center;}
+.question-list-page .new-question {text-align:left; }
+.question-list-page .new-question span{ float:left; margin:3px 0 0 0; font-size:10px; height:17px; line-height:17px; color:#000; background:#ebf2f2; padding:0 5px; border-radius:10px; margin-right:5px; text-align:left;}
+.question-list-page .new-question .detail{float:left; display:inline-block; height:22px; line-height:22px; font-size:13px; color:#fff; margin:0 5px 0 0; max-width:55%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.question-list-page .new-question .time{float:left; margin:3px 0 0 0; font-size:11px; padding-left:10px; color:#fff;}
+.question-list-page .goto-question{ display:inline-block; margin:10px 0 5px 0; width:140px; height:33px; line-height:33px; text-align:center; background:#fdb92e; color:#fff; border-radius:15px;}
+.question-list-page .text{ font-size:11px;}
+.question-list-page .question-type-box{ background:#fff; height:42px; font-size:0; margin-bottom:10px;}
+.question-list-page .question-list-type-fixed{ width:100%; display:none; position:fixed; left:0; top:0; z-index:101;}
+.question-list-page .question-type-box li{ display:inline-block; width:33.33%; height:40px; line-height:40px; border-bottom:2px solid #fff; font-size:14px; font-weight:bold; text-align:center;}
+.question-list-page .question-type-box li.on{ border-bottom:2px solid #00a495; color:#00a495;}
+.question-list-page .question-list>div{ display:none;}
+.question-list-page .question-list .question-list-new{ display:block;}
+.question-list-page .question-list li{ background:#fff; margin-bottom:10px; padding:15px;}
+.question-list-page .question-list li .article-title{ font-weight:bolder; font-size:17px; line-height:25px; color:#000;}
+.question-list-page .question-list li .answer-box{ margin:10px 0; font-size:13px;}
+.question-list-page .question-list li .answer-box div{ margin:10px 0 0 0;}
+.question-list-page .question-list li .answer-box img{width:100%; height:auto; margin:10px 0 0 0;}
+.question-list-page .question-list li .article-description{ font-size:13px; line-height:21px; }
+.question-list-page .question-list li .article-attribute{font-size:11px; margin:10px 0; height:25px; line-height:25px; color:#666; overflow:hidden;}
+.question-list-page .question-list li .article-attribute .user-avatar{ width:25px; height:25px; border-radius:50%; margin-right:5px; vertical-align:top;}
+.question-list-page .question-list li .article-attribute .answer-time{ padding:0 8px; margin-left:8px; border-left:1px solid #e4e4e4;}
+.question-list-page .question-list li .article-comment{ font-size:11px; margin-top:10px; color:#666;}
+.question-list-page .question-list li .article-comment .answer-number{padding:0 8px; margin-left:8px; border-left:1px solid #e4e4e4;}
+.question-list-page .invite-item .title{font-weight:bold; margin:0 0 10px 0;}
+.question-list-page .invite-item .title i{ width:20px; height:20px; background-position:-3px -240px;}
+.question-list-page .invite-item dl{ white-space:nowrap; overflow:auto;}
+.question-list-page .invite-item dd{ position:relative; display:inline-block; width:37%; padding:15px; border:1px solid #e4e4e4; border-radius:5px; margin-right:10px; text-align:center;}
+.question-list-page .invite-item .rank{ position:absolute; top:15px; left:45px; background:#00a496; color:#fff; height:15px; width:15px; line-height:15px; font-size:10px; border-radius:50%; }
+.question-list-page .invite-item .user-post{position:absolute; top:75px; left:50%; display:inline-block; width:68px; border-radius:15px; height:18px; line-height:18px; background:#ecf3f3; font-size:10px; color:#2f2f2f;  margin-right: 5px; transform:translateX(-50%);  -webkit-transform:translateX(-50%);}
+.question-list-page .invite-item .user-avatar{ border-radius:50%;}
+.question-list-page .invite-item .user-post i{width:15px; height:15px; margin:-3px 0px 0 -3px;}
+.question-list-page .invite-item .user-post .designer{ background-position:1px 0; }
+.question-list-page .invite-item .user-post .talent{ background-position:1px -16px; }
+.question-list-page .invite-item .user-name{ font-size:15px; margin:5px 0;}
+.question-list-page .invite-item .number{ font-size:12px;}
+.question-list-page .invite-item .invite-btn{ display:inline-block; text-align:center; height:25px; line-height:25px; width:85px; border-radius:15px; background:#fdb92e; color:#fff; margin:10px 0 0 0; font-size:10px;}
+.question-list-page .invite-item .invite-btn i{ width:15px; height:15px; background-position:-4px -221px;}
+.question-page .question-submit-btn.sure{ background:#fbb716;}

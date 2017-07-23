@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>设计帮-京装搭配详情</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta id="viewport" name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/list.css">
+</head>
+
+<body>
+<div class="list-page"></div>
+</body>
+
+<script type="text/tpl" id="loading-page-tpl">
+
+
+    <!-- loading、insert不应该同时出现 -->
+    {{if insert}}
+    {{include(insert)}}
+    {{/if}}
+    {{if loading}}
+    <div class="loading" style="height:{{$getWinHeight()}}px">
+
+    </div>
+    {{/if}}
+
+</script>
+
+<script type="text/html" id="question-list-tpl">
+    <div class="question-list-page">
+        <div class="question-banner">
+            {{if result}}
+            <p class="new-question clearfix">
+                <a href="demo.html">
+                    <span>最新提问</span>
+                    <em class="detail">{{result.title}}</em>
+                    <i class="time border-l">{{result.timeDesc}}</i>
+                </a>
+            </p>
+            {{/if}}
+            <a class="goto-question" href="demo.html">我要提问</a>
+            <p class="text">48小时内解答问题</p>
+        </div>
+
+        <div class="question-type-box question-list-type">
+            <ul>
+                <li class="on">最新回答</li>
+                <li>热门回答</li>
+                <li>有用回答</li>
+            </ul>
+        </div>
+
+        <div class="question-type-box question-list-type-fixed">
+            <ul>
+                <li class="on">最新回答</li>
+                <li>热门回答</li>
+                <li>有用回答</li>
+            </ul>
+        </div>
+
+        <div class="question-list">
+            <div class="question-list-new">
+                <ul>
+                </ul>
+                <p class="load-more-status show-status"></p>
+            </div>
+            <div class="question-list-hot">
+                <ul>
+                </ul>
+                <p class="load-more-status show-status"></p>
+            </div>
+            <div class="question-list-useful">
+                <ul>
+                </ul>
+                <p class="load-more-status show-status"></p>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/tpl" id="question-item-tpl">
+    {{each result}}
+        <li>
+            <a href="#questionDetail&questionId={{$value.qid}}">
+                <p class="article-title" >{{$value.qTitle}}</p>
+                <p class="article-attribute">
+                    <img class="user-avatar" src="{{$value.headPicUrl}}" onerror="this.src='../images/error.png'">
+                    {{if $value.nickName}}<span class="other-user">{{$value.nickName}} 回答了这个问题</span>{{/if}}
+                    <span class="answer-time">{{$value.timeDesc}}</span>
+                </p>
+                 <div class="answer-box">{{=$value.aContent}}</div>
+                <p class="article-comment"><span class="useful">{{$value.usefulCount}}人有用</span><span class="answer-number">{{$value.answerCount}}个回答</span></p>
+            </a>
+        </li>
+    {{/each}}      
+
+</script>
+
+
+<script type="text/tpl" id="invite-question-tpl">
+{{if result && result.length}}
+    <li class="invite-item">
+        <p class="title"><i class="q-icons"></i>活跃回答者：</p>
+        <dl>
+            {{each result}}                            
+                <dd writerId={{$value.id}}> 
+                    <em class="rank">{{$index+1}}</em>                             
+                    <a href="#designerDetail&writerId={{$value.id}}"><img class="user-avatar" src="{{$value.headPicUrl}}" onerror="this.src='../images/error.png'" width="75" height="75"></a>
+                    <p class="user-post designer"><i class="q-icons {{if $value.role==1}}talent{{else}}designer{{/if}}"></i>{{$value.roleStr}}</p>
+                    <p class="user-name">{{$value.nickName}}</p>
+                    <p class="number">已回答{{$value.answerNum}}个问题</p>
+                    <a href="#question&writerId={{$value.id}}" class="invite-btn"><i class="q-icons"></i>向TA提问</a>
+                </dd>
+            {{/each}}
+        </dl>
+    </li>         
+{{/if}}
+
+</script>
+
+
+<script type="text/tpl" id="qa-list-empty-tpl">
+    <div class="qa-empty-box" style="min-height:{{$getWinHeight()-116-52-40}}px">
+        <img src="images/empty.png" width="90" height="90">
+        <p>哎呦！暂时没有任何问答动态哦~ </p>
+        <a href="#question">去提问</a>
+    </div>
+
+</script>
+
+<script type="text/javascript" src="../js/lib/seajs/3.0.1/sea.min.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script type="text/javascript">
+    if (location.href.indexOf("dev=1") !== -1) {
+        seajs.use('../js/app/src/list.js');
+        console.log('开发环境');
+    } else {
+        seajs.use('../js/app/dist/list.js');
+        console.log('线上环境');
+    }
+</script>
+
+</html>
