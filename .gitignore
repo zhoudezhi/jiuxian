@@ -1,4 +1,4 @@
 /.idea
-/seajs+grunt/node_modules
-/seajs+grunt/build
-/seajs+grunt/temp
+/*/node_modules
+/*/build
+/*/temp
