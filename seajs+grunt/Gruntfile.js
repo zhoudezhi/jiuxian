@@ -10,7 +10,7 @@ module.exports = function (grunt) {
     //CDN路径
     var cdn = "//misc.360buyimg.com/business/test/";
     // var cdn = '../';
-    var cdn = '//ihome.m.jd.com/baseFrame-seajs/build/';
+    var cdn = '//ihome.jd.com/jiuxian/seajs+grunt/build/';
 
     grunt.initConfig({
 
