@@ -160,13 +160,13 @@ define(function (require, exports, module) {
                     titlePicUrl: "../images/images/demo.jpg"
                 }
             ];
-            var tpl = require('../../tpl/page');
+            /*var tpl = require('../../tpl/page');
              var templateNative = require('templateNative');
              var render = templateNative.compile(tpl);
-            var html = render({data: result});
-            /* var tpl = require('../../../html/page.tpl');
+            var html = render({data: result});*/
+             var tpl = require('../../../html/page.tpl');
              var render = template.compile(tpl);
-             var html = render({data: result});*/
+             var html = render({data: result});
             $(".more-match-box").html(html);
 
 

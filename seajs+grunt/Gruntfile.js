@@ -10,7 +10,7 @@ module.exports = function (grunt) {
     //CDN路径
     var cdn = "//misc.360buyimg.com/business/test/";
     // var cdn = '../';
-    var cdn = '//ihome.jd.com/jiuxian/seajs+grunt/build/';
+    var cdn = '//ihome.m.jd.com/jiuxian/seajs+grunt/build/';
 
     grunt.initConfig({
 
@@ -86,12 +86,6 @@ module.exports = function (grunt) {
                 src: ['temp/js/app/dist/list.js', 'temp/js/tpl/*.js', 'temp/js/common/*.js'],
                 // the location of the resulting JS file
                 dest: 'temp/js/app/dist/list.js'
-            },
-            error: {
-                // the files to concatenate
-                src: ['temp/js/app/dist/error.js', 'temp/js/tpl/*.js', 'temp/js/common/helper.js'],
-                // the location of the resulting JS file
-                dest: 'temp/js/app/dist/error.js'
             }
         },
 

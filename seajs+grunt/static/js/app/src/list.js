@@ -16,7 +16,7 @@ define(function (require, exports, module) {
     var hasNextPage1 = hasNextPage2 = hasNextPage3 = true;
     var isLoading1 = isLoading2 = isLoading3 = false;
     var pageSize = 10;
-    var HOST_NAME = '//ihome.jd.com';
+    var HOST_NAME = '//ihome.m.jd.com';
     $(".list-page").html(template.render('loading-page-tpl', {loading: true}));
     goTop();
 
@@ -93,7 +93,6 @@ define(function (require, exports, module) {
         }).fail(function (error) {
             error || (error = {});
             toast(error.msg);
-            window.location.href = "error.html"
         });
     }
 
