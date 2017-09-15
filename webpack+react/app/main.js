@@ -4,9 +4,9 @@
 //main.js
 import React from 'react';
 import ReactDom from 'react-dom';
-import Component1 from './components/Component1.jsx';
+import Index from './components/index/Index.jsx';
 
 ReactDom.render(
-    <Component1 name="zhoudezhi" />,
+    <Index  />,
     document.querySelector('.content')
 );
