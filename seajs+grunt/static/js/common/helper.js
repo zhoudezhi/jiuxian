@@ -9,13 +9,13 @@
  */
 define(function (require, exports, module) {
     var template = require("template");
-    template.helper('$getWinHeight', function () {
-        return window.innerHeight;
-    });
+    template.defaults.imports.add = function (num1,num2,num3) {
+        return num1+num2+num3;
+    };
 
-    template.helper('$halfWinWidth', function () {
-        return window.innerWidth * 0.5;
-    });
+    template.defaults.imports.hander = function (num1,num2,num3) {
+        return num1+num2*num3;
+    };
 
     return template
 });
