@@ -1,7 +1,0 @@
-  
-1.消除小窗口下的右边空白
-{
-  width:100%;
-  min-width:960px;
-  _width: expression((document.documentElement.clientWidth||document.body.clientWidth)<960?"960px":"auto");
-  }
